@@ -9,6 +9,8 @@ import {Route , Routes , BrowserRouter,} from 'react-router-dom';
 import Home from './pages/home';
 import LongnAdm from './pages/adm/loginAdm';
 import NovoProduto from './pages/adm/novoProduto';
+import AreaAdm from './pages/adm/areaAdm';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,7 +21,8 @@ root.render(
 
     <Route path='home' element= {<Home />} />
     <Route path='longinadm' element= {<LongnAdm />} />
-    <Route path= '/' element = {<NovoProduto/>}/>
+    <Route path= 'Novo produto' element = {<NovoProduto/>}/>
+    <Route path= '/' element = {<AreaAdm/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
