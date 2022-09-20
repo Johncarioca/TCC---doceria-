@@ -14,7 +14,7 @@ export default function AreaAdm() {
 
                     <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
                 </div>
-                <p> home</p>
+                <a className='ab'> home</a>
 
             </header>
             <section className='J'>
