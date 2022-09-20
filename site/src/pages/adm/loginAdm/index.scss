@@ -1,0 +1,61 @@
+
+
+
+.login-adm{
+    padding:1.5em;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .sub-f1{
+        display: flex;
+        flex-direction: column;
+
+    }
+    
+
+
+    .seta{
+        width: 10em;
+        margin-bottom: 1em;
+    }
+
+    .bt-salvar{ 
+        border-radius: 10vh;
+        background-color: #944236;
+        border:0em;
+        width: 7em;
+        height: 3em;
+        color: aliceblue;
+        
+    }
+    header{
+        background-color: #69160A;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0rem 5rem ;
+        width: 100vw;
+        height: 6rem;
+        
+
+        .div-1{
+            display: flex;
+            width: 20rem;
+            justify-content: space-between;
+            align-items: center;
+            .seta{
+                width: 1.9rem;
+                height: 1.3rem;
+            }
+            
+        }
+        
+    }
+   
+}
+
+

@@ -20,9 +20,9 @@ root.render(
     <Routes>
 
     <Route path='home' element= {<Home />} />
-    <Route path='longinadm' element= {<LongnAdm />} />
+    <Route path='/' element= {<LongnAdm />} />
     <Route path= 'Novo produto' element = {<NovoProduto/>}/>
-    <Route path= '/' element = {<AreaAdm/>}/>
+    <Route path= 'areaadm' element = {<AreaAdm/>}/>
     </Routes>
     </BrowserRouter>
   </React.StrictMode>
