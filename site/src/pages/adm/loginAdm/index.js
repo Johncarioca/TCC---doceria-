@@ -4,18 +4,18 @@ export default function LoginAdm(){
 
 
     return(
-        <section className= 'login-adm'>
-             
+        <section >
+             <h1> LOGIN DO ADMINISTRADOR</h1>
 
-                <div classname= 'f1-loginadm'>
+                <div className= 'f1-loginadm'>
                     
-                    <div classname='sub1-f1'>
+                    <div className='sub1-f1'>
                         <img className='seta' src="/assets/image/cardlogadm.png" alt="" />
                         <button className='bt-salvar'> Salvar </button>
 
                     </div>
 
-                    <div classname='sub2-f1'>
+                    <div className='sub2-f1'>
                         
                         <h3 > E-Mail: </h3>
                         <input type='text' />

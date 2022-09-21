@@ -1,16 +1,39 @@
 
 
 
-.login-adm{
-    padding:1.5em;
+.f1-loginadm{
+    padding: 5em;
+    height: 40rem;
+   
+    
+    background-image: url(../../../../public/assets/image/loginadm.png);
+
     
     display: flex;
     flex-direction: row;
     align-items: center;
 
-    .sub-f1{
+    .sub1-f1{
         display: flex;
-        flex-direction: column;
+        flex-direction: column ;
+        align-items: center;
+
+        padding-right: 5em;
+
+    }
+    
+    .sub2-f1{
+        display: flex;
+        flex-direction: column ;
+       
+        
+        
+        height: 10em;  
+        padding-left: 10em ;
+
+        color: #fff;
+
+        padding-bottom: 5em;
 
     }
     
@@ -42,17 +65,7 @@
         height: 6rem;
         
 
-        .div-1{
-            display: flex;
-            width: 20rem;
-            justify-content: space-between;
-            align-items: center;
-            .seta{
-                width: 1.9rem;
-                height: 1.3rem;
-            }
-            
-        }
+        
         
     }
    
