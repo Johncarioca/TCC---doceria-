@@ -20,8 +20,8 @@ root.render(
     <Routes>
 
     <Route path='home' element= {<Home />} />
-    <Route path='/' element= {<LongnAdm />} />
-    <Route path= 'Novo produto' element = {<NovoProduto/>}/>
+    <Route path='loginadm' element= {<LongnAdm />} />
+    <Route path= '/' element = {<NovoProduto/>}/>
     <Route path= 'areaadm' element = {<AreaAdm/>}/>
     </Routes>
     </BrowserRouter>
