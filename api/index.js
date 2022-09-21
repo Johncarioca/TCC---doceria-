@@ -2,12 +2,12 @@
 import express, { json }  from "express";
 import cors from 'cors';
 
-const serve = express();
-serve.use(cors);
-serve.use(json());
+const server = express();
+server.use(cors);
+server.use(json());
 
 
 
 
-serve.listen(process.env.PORT, 
-    () => console.log(`Api na porta ${process.env.PORT}`));
+server.listen(process.env.PORT, 
+    () => console.log(` Api na porta ${process.env.PORT}`));
