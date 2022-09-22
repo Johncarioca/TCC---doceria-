@@ -1,8 +1,22 @@
 use paticeri;
 
-/*login do adm*/
+
+--- login do adm  
+select    id_admin         id,
+                  ds_email         email
+             from tb_admin_login
+            where ds_email         = "adm@gmail.com"
+              and ds_senha         = "1234";
+
+
 insert into tb_admin_login (ds_email,ds_senha) 
             values ("adm@gmail.com","1234");
+
+
+
+
+
+
 
 /*inserir nova categoria*/
 insert into tbm_categoria(nm_categoria)
