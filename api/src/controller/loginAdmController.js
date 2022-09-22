@@ -1,15 +1,21 @@
-
 import {Router} from 'express';
-import { loginAdm } from '../repository/loginAdmRepository.js';
-
 const server = Router();
 
+import { loginAdm } from '../repository/loginAdmRepository.js';
 
-server.post('/login', (req,resp) => {
-    const {email, senha} = req.body;
+server.post('/adm/login', async (req,resp) => {
+    try {
+        const { email, senha } = req.body;
 
-    const reposta =  loginAdm(email,senha);
-    
-    
-
+        const reposta =  await loginAdm(email,senha);
+        //if(!reposta){
+        //    throw new Error('informações erradas');
+        //}
+        resp.send(reposta)   
+    } 
+    catch (err) {
+        resp.status(401).send({erro: err.message});
+    }
 });
+
+export default server; 

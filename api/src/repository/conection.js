@@ -18,6 +18,6 @@ const con = await mysql.createConnection({
 
 })
 
-console.log(' BD está conectada'); 
+console.log(' BD está conectada!!'); 
 
 export { con }
