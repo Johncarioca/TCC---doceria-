@@ -7,15 +7,16 @@ export default function NovoProduto(){
         <main>
                 <header className='cab-1'>
 
-                <div className='f-1'>
+                    <div className='f-1'>
 
-                    <img className='seta' src="/assets/image/seta.png" alt="" />
+                        <img className='seta' src="/assets/image/seta.png" alt="" />
 
-                    <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
+                        <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
                     </div>
-                    <a className='ab'> home</a>
-                    <a className='ab'> Lista de pedidos </a>
-
+                    <div>
+                        <a className='ab'> home</a>
+                        <a className='ab'> Lista de pedidos </a>
+                    </div>
 
                 </header>
 

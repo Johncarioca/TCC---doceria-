@@ -11,19 +11,14 @@ select    id_admin         id,
 
 insert into tb_admin_login (ds_email,ds_senha) 
             values ("adm@gmail.com","1234");
-
-
-
-
-
-
+            
 
 /*inserir nova categoria*/
 insert into tbm_categoria(nm_categoria)
                 values(" ? ");
 
 /*inserir novo produto*/
-insert into tb_produto(nm_produto ,img_produto ,id_categoria ,nr_peso ,nr_preco ,ds_produto ,ds_ingredientes ,nr_estoque ,bt_destaque )
+insert into tb_produto(id_produto, nm_produto ,nr_peso ,nr_preco ,ds_produto ,ds_ingredientes ,nr_estoque ,bt_destaque )
             values (" ? "," ? ", ? , ? , ? ," ? "," ? ", ? , ?);
 
 /*cadastro de clientes*/

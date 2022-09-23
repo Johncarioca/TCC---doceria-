@@ -16,16 +16,16 @@ nm_categoria         varchar(100)
 
 /*tabala de produto*/
 create table tb_produto(
-id_produto           int primary key auto_increment,
-id_categoria         int,
-nm_produto           varchar(300),
-img_produto          varchar(500),
-nr_peso              decimal(5,3),
-nr_preco             decimal(5,2),
-ds_produto           varchar(300),
-ds_ingredientes      varchar(300),
-nr_estoque           int,
-bt_destaque          boolean,
+    id_produto           int primary key auto_increment,
+    id_categoria         int,
+    nm_produto           varchar(300),
+    img_produto          varchar(500),
+    nr_peso              decimal(5,3),
+    nr_preco             decimal(5,2),
+    ds_sinopse           varchar(300),
+    ds_ingredientes      varchar(300),
+    nr_estoque           int,
+    bt_destaque          boolean,   
 foreign key (id_categoria) references tb_categoria(id_categoria)
 );
 

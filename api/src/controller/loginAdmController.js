@@ -8,9 +8,9 @@ server.post('/adm/login', async (req,resp) => {
         const { email, senha } = req.body;
 
         const reposta =  await loginAdm(email,senha);
-        //if(!reposta){
-        //    throw new Error('informações erradas');
-        //}
+        if(!reposta){
+            throw new Error('informações erradas');
+        }
         resp.send(reposta)   
     } 
     catch (err) {

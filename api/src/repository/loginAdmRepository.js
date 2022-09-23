@@ -4,7 +4,7 @@ export async function loginAdm (email, senha ){
 
     const comando = 
     `   select    id_admin         id,
-                  ds_email         email,
+                  ds_email         email
              from tb_admin_login
             where ds_email         = ?
               and ds_senha         = ?`
