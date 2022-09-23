@@ -1,5 +1,11 @@
-.cab-1{
-    
+*{
+    box-sizing: border-box ;
+    margin: 0;
+    /*border: 1px green solid;*/
+}
+main{
+    header{
+        
         background-color: #69160A;
         display: flex;
         flex-direction: row;
@@ -9,7 +15,6 @@
         padding: 0rem 5rem ;
         width: 100vw;
         height: 6rem;
-        
 
         .f-1{
             display: flex;
@@ -20,58 +25,110 @@
                 width: 1.9rem;
                 height: 1.3rem;
             }
-            
+                
         }
         .ab{
+            margin-right: 4rem;
             color: #ffffff;
         }
 
-}
-.f-2{
+    }
+    section{
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #fde7dc;
-    
-    
-  
-    .f2-sub1{
-         margin-top: 5.5em;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #FDD9C5;
+        height: 40rem;
+        width: 100vw;
 
-    }
+        
+        
+    
+        .div-1{
+            margin-top: 5.5em;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 10rem;
+
+           
 
 
-    .inpt-img{
-        background-color: #EEDCCF;
-        width: 376px;
-        height: 353px;
-        border-radius: 39px;
-        margin-bottom: 2em;
-      
-    }
+            input{
+                display: flex;
+                flex-direction: row;
+                justify-content:center ;
+                background-color: #EEDCCF;
+                width: 20rem;
+                height: 15rem;
+                border-radius: 39px;
+                margin-bottom: 2em;
+            
+            }
+            button{ 
+                border-radius: 0.5rem;
+                background-color: #69160A;
+                width: 8em;
+                height: 3em;
+                color: aliceblue;
+            
+            }
+            .cadas{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
 
-    .input-txt{
-        background-color: #EEDCCF;
-        margin: 0em;
+        }
+        
+        .div-2{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            height: 20rem;
+            width: 20rem;
 
-    }
+            .destaque{
+                background-image: url('../../../../public/assets/image/panquecaAreaAdm.png');
+            }
+        }
+        .div-3{
 
-    .bt-salvar{ 
-        border-radius: 10vh;
-        background-color: #944236;
-        border:0em;
-        width: 7em;
-        height: 3em;
-        color: aliceblue;
-      
-    }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+            height: 20rem;
+            width: 20rem;
 
-    .txt{
-        font-size: 1em;
-        font-family: Arial, Helvetica, sans-serif;
-        color: #69160A;
+            select{
+                border-radius:0.5rem ;
+                background-color: #EEDCCF;
+                height: 3rem;
+            }
+
+        }
+
+
+        input{
+            background-color: #EEDCCF;
+            margin: 0em;
+            border-radius: 0.4rem;
+            height: 3rem;
+            padding-bottom: 1rem;
+
+        }
+
+       
+        h3{
+            font-size: 0.8em;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #69160A;
+            padding-top: 1rem;
+
+        }
+        
     }
 }

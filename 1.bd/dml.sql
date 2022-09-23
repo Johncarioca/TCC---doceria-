@@ -12,6 +12,9 @@ select    id_admin         id,
 insert into tb_admin_login (ds_email,ds_senha) 
             values ("adm@gmail.com","1234");
             
+/*Produto categoria*/
+insert into tb_produto_categoria (id_categoria, id_produto)
+                          values (1, 1);
 
 /*inserir nova categoria*/
 insert into tbm_categoria(nm_categoria)

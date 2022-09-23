@@ -17,6 +17,7 @@ export default function AreaAdm() {
                 <a className='ab'> home</a>
 
             </header>
+            
             <section className='J'>
 
                 <div className='div-2'>

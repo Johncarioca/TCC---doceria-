@@ -4,63 +4,76 @@ export default function NovoProduto(){
 
 
     return(
-        <main>
-                <header className='cab-1'>
+        <main>  
 
-                    <div className='f-1'>
+            <header >
 
-                        <img className='seta' src="/assets/image/seta.png" alt="" />
+                <div className='f-1'>
 
-                        <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
-                    </div>
-                    <div>
-                        <a className='ab'> home</a>
-                        <a className='ab'> Lista de pedidos </a>
-                    </div>
+                    <img className='seta' src="/assets/image/seta.png" alt="" />
 
-                </header>
+                    <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
+                </div>
+                    
+                <div>
+                    <a className='ab'> Lista de pedidos </a>
+                    <a className='ab'> home</a>
+                </div>
+            </header>
 
                 
-                <div className='f-2'>
-                    <div className='f2-sub1'>
-                    <h3 className='txt'> Imagem do produto: </h3>
-                        <input className='inpt-img'type='file' />
-                        
-                        <button className='bt-salvar'> cadastrar </button>
+            <section >
 
-                    </div>
+                <div className='div-1'>
 
-                    <div className='f2-sub2'>
-                        
-                    <h3 className='txt' > Nome do produto:  </h3>
-                        <input className='input-txt' type='text' />
-                        <h3 className='txt'> Peso:  </h3>
-                        <input className='input-txt' type='text' />
-                        <h3 className='txt'>  Ingredientes:  </h3>
-                        <input className='input-txt' type='text' />
-
-                    </div>
-
-                    <div className='f2-sub3'>
-                    <h3 className='txt'> Categoria: </h3>
-                    <select  >
-                            <option selected disabled hidden>Selecione</option>
-                    </select>
-
-                    <h3 className='txt' >  Preço:  </h3>
-                        <input className='input-txt'type='text' />
-                        <h3 className='txt'>  Estoque:  </h3>
-                        <input className='input-txt' type='text' />
-                        <h3 className='txt'> Descrição </h3>
-                        <input className='input-txt' type='text' />
-                        
-                        
-                    </div>
-
-
+                    <h3> Imagem do produto: </h3>
+                    <input type='file' />
                     
+                    <div className='cadas'>
+                        <button > cadastrar </button>
+                    </div>
 
                 </div>
+
+                <div className='div-2'>
+                    
+                    <h3 > Nome do produto:  </h3>
+                    <input  type='text' />
+
+                    <h3 > Peso:  </h3>
+                    <input  type='text' />
+                        
+                    <h3>  Ingredientes:  </h3>
+                    <input  type='text' />
+
+                    
+                    <input className="destaque" type="checkbox" /> Em Destaque 
+
+                </div>
+
+                <div className='div-3'>
+
+                    <h3> Categoria: </h3>
+                    <select  >
+                        <option selected disabled hidden>Selecione</option>
+                        <option>doces</option>
+                        <option>Salgados</option>
+                        <option>Bolos</option>
+                    </select>
+
+                    <h3 >  Preço:  </h3>
+                     <input type='text' />
+
+                    <h3>  Estoque:  </h3>
+                    <input  type='text' />
+
+                    <h3> Descrição </h3>
+                    <input  type='text' />
+                        
+                        
+                </div>
+
+            </section>
         </main>
     );
 }

@@ -14,12 +14,12 @@ export async function NovoProduto(cadastro){
 }
 
 export async function ImagemProduto(Imagem, id){
-
+    console.log(Imagem, id);
     const comando =
     `
         update tb_produto
            set img_produto   = ?
-        wherer id_produto    = ?
+        where id_produto    = ?
     `
     const [resposta] = await con.query(comando, [Imagem, id]);
     return resposta.affectedRows;
