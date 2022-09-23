@@ -23,5 +23,16 @@ export async function ImagemProduto(Imagem, id){
     `
     const [resposta] = await con.query(comando, [Imagem, id]);
     return resposta.affectedRows;
+}
+export async function SalvarProduto (idProduto, idCategoria){
+
+    const comando = 
+    `
+    insert into tb_produto_categoria (id_categoria, id_produto)
+                            values (?, ?)
+    `
+    const [resposta] = await con.query(comando, [ idProduto, idCategoria]);
+
 
 }
+
