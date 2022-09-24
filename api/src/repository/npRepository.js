@@ -24,7 +24,9 @@ export async function ImagemProduto(Imagem, id){
     const [resposta] = await con.query(comando, [Imagem, id]);
     return resposta.affectedRows;
 }
-export async function SalvarProduto (idProduto, idCategoria){
+
+
+export async function SalvarCategoriaProduto (idProduto, idCategoria){
 
     const comando = 
     `
@@ -34,5 +36,17 @@ export async function SalvarProduto (idProduto, idCategoria){
     const [resposta] = await con.query(comando, [ idProduto, idCategoria]);
 
 
+}
+////////////////////////// Categoria ///////////////////////////////////////
+export async function listaCategoria (){
+
+    const comando = 
+    `
+    select id_categoria         as id,
+           nm_categoria         as categoria
+      from tb_categoria
+    `
+    const [lista ] = await con.query(comando);
+    return linhas; 
 }
 
