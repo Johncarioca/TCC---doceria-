@@ -38,15 +38,6 @@ export async function SalvarCategoriaProduto (idProduto, idCategoria){
 
 }
 ////////////////////////// Categoria ///////////////////////////////////////
-export async function listaCategoria (){
 
-    const comando = 
-    `
-    select id_categoria         as id,
-           nm_categoria         as categoria
-      from tb_categoria
-    `
-    const [lista ] = await con.query(comando);
-    return linhas; 
-}
+                                                                                                   n
 

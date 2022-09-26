@@ -11,10 +11,15 @@ server.post('/adm/cadastro', async (req,resp) => {
     try {
         const Cadastro = req.body;
         
-            await ValidarProduto(Cadastro); 
+        await ValidarProduto(Cadastro); 
 
         const Produto  = await NovoProduto(Cadastro);
-        
+         
+        for(const CategoriaId of Cadastro.categoria ){
+
+        }
+
+
 
         resp.status(204).send();
     } 

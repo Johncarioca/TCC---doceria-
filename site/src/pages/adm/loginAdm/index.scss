@@ -1,58 +1,5 @@
+main{
 
-
-
-.f1-loginadm{
-    padding: 5em;
-    height: 40rem;
-   
-    
-    background-image: url(../../../../public/assets/image/loginadm.png);
-
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    .sub1-f1{
-        display: flex;
-        flex-direction: column ;
-        align-items: center;
-
-        padding-right: 5em;
-
-    }
-    
-    .sub2-f1{
-        display: flex;
-        flex-direction: column ;
-       
-        
-        
-        height: 10em;  
-        padding-left: 10em ;
-
-        color: #fff;
-
-        padding-bottom: 5em;
-
-    }
-    
-
-
-    .seta{
-        width: 10em;
-        margin-bottom: 1em;
-    }
-
-    .bt-salvar{ 
-        border-radius: 10vh;
-        background-color: #944236;
-        border:0em;
-        width: 7em;
-        height: 3em;
-        color: aliceblue;
-        
-    }
     header{
         background-color: #69160A;
         display: flex;
@@ -63,12 +10,63 @@
         padding: 0rem 5rem ;
         width: 100vw;
         height: 6rem;
-        
-
-        
-        
+         
     }
-   
+
+    section{
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        padding: 5em;
+        height: 40rem;
+        background-image: url(../../../../public/assets/image/loginadm.png);
+
+        
+    
+        .sub1-f1    {
+            display: flex;
+            flex-direction: column ;
+            align-items: center;
+            padding-right: 5em;
+
+            button{ 
+                border-radius: 10vh;
+                background-color: #944236;
+                border:0em;
+                width: 7em;
+                height: 3em;
+                color: aliceblue;
+                
+            }
+    
+        }
+        
+        .sub2-f1{
+            display: flex;
+            flex-direction: column ;
+           
+            
+            
+            height: 10em;  
+            padding-left: 10em ;
+    
+            color: #fff;
+    
+            padding-bottom: 5em;
+    
+        }
+        
+    
+    
+        .seta{
+            width: 10em;
+            margin-bottom: 1em;
+        }
+    
+        
+        
+       
+    }
 }
-
-
