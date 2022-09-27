@@ -1,7 +1,7 @@
 *{
     box-sizing: border-box ;
     margin: 0;
-    /*border: 1px green solid;*/
+    border: 1px green solid;
 }
 main{
     header{
@@ -51,6 +51,7 @@ main{
             display: flex;
             flex-direction: column;
             padding-bottom: 10rem;
+            
 
            
 
@@ -91,7 +92,7 @@ main{
             width: 20rem;
 
             .destaque{
-                background-image: url('../../../../public/assets/image/panquecaAreaAdm.png');
+             
             }
         }
         .div-3{
