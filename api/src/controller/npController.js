@@ -1,7 +1,7 @@
 
 import multer from 'multer'; 
 import { Router } from "express";
-import { ImagemProduto, NovoProduto } from "../repository/npRepository.js";
+import { ImagemProduto, NovoProduto ,ListarCategorias} from "../repository/npRepository.js";
 import { ValidarProduto } from '../service/validacao.js';
 const server = Router();
 const upload = multer({dest: 'storage/imagem' });
@@ -39,6 +39,17 @@ server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
         resp.status(204).send();
     } 
     catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
+
+server.get('/adm/listarcategoria', async(req,resp)=>{
+    try {
+        const cat=await ListarCategorias();
+        resp.send(cat);
+    } catch (err) {
         resp.status(400).send({
             erro: err.message
         })

@@ -26,5 +26,14 @@ export async function ImagemProduto(Imagem, id){
 
 
 
-
+export async function ListarCategorias(){
+    const comando =`
+    select 
+    id_categoria   as id,
+    nm_categoria   as categoria
+    from tb_categoria
+    `
+    const[resposta]= await con.query(comando);
+    return resposta;
+}
 
