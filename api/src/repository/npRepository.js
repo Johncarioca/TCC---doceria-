@@ -4,13 +4,12 @@ export async function NovoProduto(cadastro){
 
     const comando = 
     `
-    insert into tb_produto(nm_produto ,nr_peso ,nr_preco ,ds_sinopse ,ds_ingredientes ,nr_estoque ,bt_destaque )
+    insert into tb_produto(nm_produto, nr_peso ,nr_preco ,ds_sinopse ,ds_ingredientes ,nr_estoque ,bt_destaque )
                     values (? ,? ,? ,? ,? ,? ,? )
     `
     const [resposta] = await con.query(comando, [cadastro.nome, cadastro.peso, cadastro.preco, cadastro.sinopse, cadastro.ingredientes, cadastro.estoque, cadastro.destaque ]);
     cadastro.id = resposta.insertid;
-
-    return cadastro; 
+    return cadastro;
 }
 
 export async function ImagemProduto(Imagem, id){
@@ -26,12 +25,15 @@ export async function ImagemProduto(Imagem, id){
 }
 
 
-export async function SalvarCategoriaProduto (idProduto, idCategoria){
+
+////////////////////////// Categoria ///////////////////////////////////////
+
+export async function SalvarCategoria (idProduto, idCategoria){
 
     const comando = 
     `
-    insert into tb_produto_categoria (id_categoria, id_produto)
-                            values (?, ?)
+    insert into tb_produto_categoria (nm_categoria)
+                            values (?)
     `
     const [resposta] = await con.query(comando, [ idProduto, idCategoria]);
 

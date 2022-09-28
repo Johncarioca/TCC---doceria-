@@ -14,14 +14,9 @@ server.post('/adm/cadastro', async (req,resp) => {
         await ValidarProduto(Cadastro); 
 
         const Produto  = await NovoProduto(Cadastro);
-         
-        for(const CategoriaId of Cadastro.categoria ){
+        
 
-        }
-
-
-
-        resp.status(204).send();
+        resp.send(Cadastro);
     } 
     catch (err) {
         resp.status(401).send({
