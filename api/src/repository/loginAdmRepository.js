@@ -7,7 +7,8 @@ export async function loginAdm (email, senha ){
                   ds_email         email
              from tb_admin_login
             where ds_email         = ?
-              and ds_senha         = ?`
+              and ds_senha         = ?
+    `
     const [linhas ] = await con.query(comando, [email,senha]);
     return linhas[0];
 

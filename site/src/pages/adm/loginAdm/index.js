@@ -1,6 +1,28 @@
 import './index.scss';
 
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import { useState }  from 'react'
+
+const navigate = useNavigate();
+
 export default function LoginAdm(){
+
+    const [Email, SetEmail ] = useState('');
+    const [Senha, SetSenha ] = useState('');
+    const [Erro, SetErro ] = useState('');
+
+    async function InserirClick (){
+        try {
+            const j = await axios.post('http://localhost:5000/adm/login', {email: Email, senha:Senha });
+            navigate('/areaAdm');      
+        } 
+        catch (err) {
+            if (err.response.status === 401) {
+                SetErro(err.response.data.erro);
+            }
+        }
+    }
 
 
     return(
@@ -24,17 +46,20 @@ export default function LoginAdm(){
                     </div>
 
                     <div className="button">
-                        <button > Salvar </button>
+                        <button onClick={InserirClick}> Salvar </button>
                     </div>
 
                 </div>
 
                 <div className='sub2-f1'>
-                        
-                    <h3 > E-Mail: </h3>
-                    <input type='text' />
+                    <div>    
+                        <h3 > E-Mail: </h3>
+                        <input type='text' placeholder='Email' value={Email}  onChange={ e => SetEmail(e.target.value)}/>
+                    </div>
+                    
                     <h3> Senha:</h3>     
-                    <input type='text' />                    
+                    <input type='password' placeholder='***' value={Senha}  onChange={ e => SetSenha(e.target.value)}/>
+                    
                 </div>
 
             </section>

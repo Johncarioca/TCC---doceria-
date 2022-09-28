@@ -10,6 +10,8 @@ import Home from './pages/home';
 import LongnAdm from './pages/adm/loginAdm';
 import NovoProduto from './pages/adm/novoProduto';
 import AreaAdm from './pages/adm/areaAdm';
+import LoginUsuario from './pages/usuario/loginCliente';
+
 
 
 
@@ -27,8 +29,7 @@ root.render(
     <Route path='/' element = {<NovoProduto/>}/>
 
     <Route path='/areaAdm' element = {<AreaAdm/>}/>
-
-    </Routes>
+    <Route path='/loginUsuario' element = {<LoginUsuario/>}/>    </Routes>
     </BrowserRouter>
   </React.StrictMode>
 );
