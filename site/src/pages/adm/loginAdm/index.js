@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useState }  from 'react'
 
-const navigate = useNavigate();
+
 
 export default function LoginAdm(){
 
@@ -12,6 +12,8 @@ export default function LoginAdm(){
     const [Senha, SetSenha ] = useState('');
     const [Erro, SetErro ] = useState('');
 
+    const navigate = useNavigate();
+    
     async function InserirClick (){
         try {
             const j = await axios.post('http://localhost:5000/adm/login', {email: Email, senha:Senha });
