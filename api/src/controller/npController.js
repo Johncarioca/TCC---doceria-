@@ -46,3 +46,5 @@ server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
 });
 
 export default server;
+
+

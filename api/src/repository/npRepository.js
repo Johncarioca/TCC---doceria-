@@ -26,20 +26,5 @@ export async function ImagemProduto(Imagem, id){
 
 
 
-////////////////////////// Categoria ///////////////////////////////////////
-
-export async function SalvarCategoria (idProduto, idCategoria){
-
-    const comando = 
-    `
-    insert into tb_produto_categoria (nm_categoria)
-                            values (?)
-    `
-    const [resposta] = await con.query(comando, [ idProduto, idCategoria]);
-
-
-}
-////////////////////////// Categoria ///////////////////////////////////////
-
 
 
