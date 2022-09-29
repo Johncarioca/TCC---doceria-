@@ -33,7 +33,7 @@ export default function LoginAdm(){
             <header>
                 
                 <div>
-                    <img src="/assets/image/logoLoginAdm.png" alt="" />
+                    <img src="/assets/image/oi.png" alt="" />
                 </div>
 
             </header>

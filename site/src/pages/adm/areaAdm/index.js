@@ -1,4 +1,4 @@
-import './index.scss'
+    import './index.scss'
 
 
 export default function AreaAdm() {
@@ -12,7 +12,7 @@ export default function AreaAdm() {
 
                     <img className='seta' src="/assets/image/seta.png" alt="" />
 
-                    <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
+                    <img className='logo' src="/assets/image/oi.png" alt="" />
                 </div>
                 <a className='ab'> home</a>
 
