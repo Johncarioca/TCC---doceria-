@@ -28,9 +28,9 @@ export default function LoginAdm(){
 
 
     return(
-        <main >
+        <main className="Login-adm" >
 
-            <header>
+            <header className="cabeçalho">
                 
                 <div>
                     <img src="/assets/image/oi.png" alt="" />
@@ -39,7 +39,7 @@ export default function LoginAdm(){
             </header>
              
 
-            <section>
+            <section className=" estrutura">
                     
                 <div className='sub1-f1'>
 
@@ -47,8 +47,8 @@ export default function LoginAdm(){
                         <img className='seta' src="/assets/image/cardlogadm.png" alt="" />
                     </div>
 
-                    <div className="button">
-                        <button onClick={InserirClick}> Salvar </button>
+                    <div >
+                        <button className="b-salvar" onClick={InserirClick}> Salvar </button>
                     </div>
 
                 </div>

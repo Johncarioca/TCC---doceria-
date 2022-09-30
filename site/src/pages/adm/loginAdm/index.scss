@@ -1,6 +1,6 @@
-main{
+.Login-adm{
 
-    header{
+    .cabeçalho{
         background-color: #69160A;
         display: flex;
         flex-direction: row;
@@ -13,7 +13,7 @@ main{
          
     }
 
-    section{
+    .estrutura{
 
         display: flex;
         flex-direction: row;
@@ -31,7 +31,8 @@ main{
             align-items: center;
             padding-right: 5em;
 
-            button{ 
+            .b-salvar{ 
+                
                 border-radius: 10vh;
                 background-color: #944236;
                 border:0em;
