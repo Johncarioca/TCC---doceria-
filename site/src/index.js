@@ -12,7 +12,7 @@ import NovoProduto from './pages/adm/novoProduto';
 import AreaAdm from './pages/adm/areaAdm';
 import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
-
+import CabeçarioLogin from './components';
 
 
 
@@ -22,6 +22,7 @@ root.render(
     <BrowserRouter>
     <Routes>
     
+      <Route path='/' element={<CabeçarioLogin/>}/>
       <Route path='/home' element = {<Home />} />
       <Route path='/loginAdm' element = {<LongnAdm />} />
       <Route path='/novoProduto ' element = {<NovoProduto/>}/>

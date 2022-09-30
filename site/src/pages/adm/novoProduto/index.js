@@ -1,7 +1,9 @@
 import './index.scss';
-import {useState} from 'react'
+import {useState } from 'react'
 
-import{ImagemProduto,ListarCategorias}from '../../../api/admAPI.js'
+import {toast} from 'react-toastify'
+
+import{CadastrarProduto,ImagemProduto,ListarCategorias}from '../../../api/admAPI.js'
 
 export default function NovoProduto(){
     const [nome,setNome]= useState("");
@@ -11,13 +13,13 @@ export default function NovoProduto(){
     const [ingredientes,setIngredientes]= useState("");
     const [estoque,setEstoque]= useState();
     const [destaque,setDestaque]= useState(false);
-    //const [categoria,setCategoria]= useState("");
+    const [categoria,setCategoria]= useState([]);
    //const [imagem,setImagem]= useState("");
 
 
-   async function CadastrarProduto(){
+   async function Produto(){
      try {
-         //const r = await NovoProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
+         const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque);
 
         alert('Produto cadastrado');  
     } 
@@ -29,12 +31,14 @@ export default function NovoProduto(){
     async function ListarCategorias(){
     try {
         const r =await ListarCategorias();
-        
+        setCategoria(r)
     } 
     catch (err) {
                           
     }
    }
+
+
 
     return(
         <main className="novo-pedido">
@@ -68,7 +72,7 @@ export default function NovoProduto(){
                             </div>
                         </div>
                         <div className='cadas'>
-                            <button className="button" > SALVAR </button>
+                            <button className="button" onClick={Produto} > SALVAR </button>
                         </div>
 
                     </div>
@@ -97,27 +101,27 @@ export default function NovoProduto(){
 
                     <div className='div-3'>
 
-                        <div className="roger">
+                        <div >
                             <p> Categoria: </p>
-                            <select  >
+                            <select  value={categoria} onChange={e=> setCategoria(e.target.value)}>
                                 <option selected disabled hidden>Selecione</option>
-                                <option>Doces</option>
-                                <option>Salgados</option>
-                                <option>Bolos</option>
+                                {categoria.map(item=>
+                                    <option value="item.idCategoria">{item.categoria}</option>
+                                )}
                             </select>
                         </div>
 
-                        <div className="roger">
+                        <div >
                             <p >  Preço:  </p>
                             <input type='text' placeholder='R$2,00...' className="infos" value={preco} onChange={e => setPreco(e.target.value)}/>
                         </div>
 
-                        <div className="roger">
+                        <div >
                             <p>  Estoque:  </p>
                             <input type='text' placeholder='500...' className="infos" value={estoque} onChange={e => setEstoque(e.target.value)} />
                         </div>
                             
-                        <div className="roger">
+                        <div >
                             <p> Descrição </p>
                             <input type='text' placeholder='gostosinho...' className="infos descricao"  value={sinopse} onChange={e => setSinopse(e.target.value)} />
                         </div>

@@ -1,0 +1,17 @@
+.cabecario{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #69160A;
+    height: 10vh;
+    
+
+    .roger{
+        width: 89%;
+    }
+}
+
+*{
+    border: 0px greenyellow solid;
+}
