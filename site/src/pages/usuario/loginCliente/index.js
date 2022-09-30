@@ -1,5 +1,5 @@
 import './index.scss'
-import  CabeçarioLogin from '../../../components/index.js'
+//import  CabeçarioLogin from '../../../components/cabecalhoLogin/'
 
 export default function LoginUsuario(){
 
