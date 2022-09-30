@@ -21,7 +21,12 @@ root.render(
     <BrowserRouter>
     <Routes>
     
+<<<<<<< HEAD
       <Route path='/home' element = {<Home />} />
+=======
+      
+      <Route path='/' element = {<Home />} />
+>>>>>>> 723d5f4257e09414a25e9881db43239acbfb0070
       <Route path='/loginAdm' element = {<LongnAdm />} />
       <Route path='/novoProduto ' element = {<NovoProduto/>}/>
       <Route path='/NovoProduto' element = {<NovoProduto/>}/>
