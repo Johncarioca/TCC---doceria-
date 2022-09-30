@@ -1,5 +1,5 @@
 import './index.scss'
-import  CabeçarioLogin from '../../../components/index.js'
+import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
 
 export default function LoginUsuario(){
 
@@ -10,28 +10,38 @@ export default function LoginUsuario(){
             
             <section className='cont1-login'>
 
-                <div>
+                <div className="subcont1-loginuser">
                     <img src="../assets/image/cardloginuser.png" />
 
-                    <button>  
+                    <button className="bt-loginuser">  
                         Entrar
                     </button>
-
-                    <p>Não possui um cadastro ? </p>
-                    <p>clique <a href="">aqui</a> </p>
+                    
+                    <div className="link-loginuser" >
+                        <p>Não possui um cadastro ? </p>
+                        <p>clique <a className="a-loginuser" href="">aqui</a> </p>
+                    </div>
+                    
 
                 </div>
 
-                <div>
+                <div className='subcont2-loginuser'>
+                    
+                    <div className='inpucont-loginuser'>
+                        <label >E-mail:</label>
+                        <input className='input-loginuser' type="text" placeholder='@gmail.com' />
+                    </div>
 
-                    <label>E-mail:</label>
-                    <input type="text" placeholder='@gmail.com' />
+                    <div className='inpucont-loginuser'>
+                        <label>Senha:</label>
+                        <input className='input-loginuser'type="password" />
+                    </div>
 
-                    <label>Senha:</label>
-                    <input type="password" />
-
-                    <p>Esqueceu a senha ? </p>
-                    <p>clique <a href="">aqui</a> </p>
+                    <div className="link-loginuser" >
+                        <p>Esqueceu a senha ? </p>
+                        <p>clique <a className="a-loginuser" href="">aqui</a> </p>
+                    </div>
+                    
                 </div>
                
 
