@@ -8,7 +8,7 @@ export default function LoginUsuario(){
         <main className="loginusuario">
             <CabeçarioLogin/>    
             
-            <section>
+            <section className='cont1-login'>
 
                 <div>
                     <img src="../assets/image/cardloginuser.png" />
