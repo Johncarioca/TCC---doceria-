@@ -1,23 +1,23 @@
 import './index.scss';
-import {usestate} from 'react'
+import {useState} from 'react'
 
 export default function NovoProduto(){
-    const [nome,setNome]= usestate("");
-    const [peso,setPeso]= usestate();
-    const [preco,setPreco]= usestate();
-    const [sinopse,setSinopse]= usestate("");
-    const [ingredientes,setIngredientes]= usestate("");
-    const [estoque,setEstoque]= usestate();
-    const [destaque,setDestaque]= usestate(false);
-    const [categoria,setCategoria]= usestate("");
-    const [imagem,setImagem]= usestate("");
+    const [nome,setNome]= useState("");
+    const [peso,setPeso]= useState();
+    const [preco,setPreco]= useState();
+    const [sinopse,setSinopse]= useState("");
+    const [ingredientes,setIngredientes]= useState("");
+    const [estoque,setEstoque]= useState();
+    const [destaque,setDestaque]= useState(false);
+    //const [categoria,setCategoria]= useState("");
+   //const [imagem,setImagem]= useState("");
 
 
 
     return(
-        <main>  
+        <main className="novo-pedido">
 
-            <header >
+            <header className='vermelho'>
 
                 <div className='f-1'>
 
@@ -25,65 +25,83 @@ export default function NovoProduto(){
 
                     <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
                 </div>
-                    
+
                 <div>
                     <a className='ab'> Lista de pedidos </a>
-                    <a className='ab'> home</a>
+                    <a className='ab'> Home</a>
                 </div>
             </header>
 
-                
-            <section >
 
-                <div className='div-1'>
+            <section className="robson">
 
-                    <h3> Imagem do produto: </h3>
-                    <input type='file' vaue ={imagem} onChange={e => setImagem(e.target.value)} />
-                    
-                    <div className='cadas'>
-                        <button > cadastrar </button>
+                <section className="cleito">
+                    <div className='div-1'>
+
+                        <div className="dois">
+                            <p> Imagem do produto: </p>
+
+                            <div className="inserir-imagem">
+                                <button className="colocar"  />
+                            </div>
+                        </div>
+                        <div className='cadas'>
+                            <button className="button" > SALVAR </button>
+                        </div>
+
                     </div>
 
-                </div>
+                    <div className='div-2'>
+                        <div className="roger">
+                            <p > Nome do produto:  </p>
+                            <input type='text' placeholder='coxinha...'  className="infos"   value={nome} onChange={e=>setNome(e.target.value)}/>
+                        </div>
 
-                <div className='div-2'>
-                    
-                    <h3 > Nome do produto:  </h3>
-                    <input  type='text' value={nome} onChange={e=>setNome(e.target.value)} />
+                        <div className="roger">
+                            <p > Peso:  </p>
+                            <input type='text' placeholder='10g...'  className="infos" value={peso} onChange={e => setPeso(e.target.value)} />
+                        </div>
 
-                    <h3 > Peso:  </h3>
-                    <input  type='text' value={peso} onChange={e => setPeso(e.target.value)} />
-                        
-                    <h3>  Ingredientes:  </h3>
-                    <input  type='text' value={ingredientes} onchange={e => setIngredientes(e.target.value)}/>
+                        <div className="roger">
+                            <p>  Ingredientes:  </p>
+                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onchange={e => setIngredientes(e.target.value)}/>
+                        </div>
 
-                    
-                    <input className="destaque" type="checkbox" value={destaque} onChange={e => setDestaque(e.target.value)}/> Em Destaque 
+                        <div className='div-destaque'>
+                            <input className="destaque" type="checkbox"  value={destaque} onChange={e => setDestaque(e.target.value)} />
+                            <p>Em destaque</p>
+                        </div>
+                    </div>
 
-                </div>
+                    <div className='div-3'>
 
-                <div className='div-3'>
+                        <div className="roger">
+                            <p> Categoria: </p>
+                            <select  >
+                                <option selected disabled hidden>Selecione</option>
+                                <option>Doces</option>
+                                <option>Salgados</option>
+                                <option>Bolos</option>
+                            </select>
+                        </div>
 
-                    <h3> Categoria: </h3>
-                    <select  >
-                        <option selected disabled hidden>Selecione</option>
-                        <option>doces</option>
-                        <option>Salgados</option>
-                        <option>Bolos</option>
-                    </select>
+                        <div className="roger">
+                            <p >  Preço:  </p>
+                            <input type='text' placeholder='R$2,00...' className="infos" value={preco} onChange={e => setPreco(e.target.value)}/>
+                        </div>
 
-                    <h3 >  Preço:  </h3>
-                     <input type='text' value={preco} onChange={e => setPreco(e.target.value)}/>
+                        <div className="roger">
+                            <p>  Estoque:  </p>
+                            <input type='text' placeholder='500...' className="infos" value={estoque} onChange={e => setEstoque(e.target.value)} />
+                        </div>
+                            
+                        <div className="roger">
+                            <p> Descrição </p>
+                            <input type='text' placeholder='gostosinho...' className="infos descricao"  value={sinopse} onChange={e => setSinopse(e.target.value)} />
+                        </div>
 
-                    <h3>  Estoque:  </h3>
-                    <input  type='text' value={estoque} onChange={e => setEstoque(e.target.value)}/>
-
-                    <h3> Descrição </h3>
-                    <input  type='text' value={sinopse} onChange={e => setSinopse(e.target.value)}/>
-                        
-                        
-                </div>
-
+                    </div>
+                </section>
             </section>
         </main>
     );
