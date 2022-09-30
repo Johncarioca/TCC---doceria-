@@ -1,6 +1,8 @@
 import './index.scss';
 import {useState} from 'react'
 
+import{NovoProduto,ImagemProduto,ListarCategorias}from '../../../api/admAPI.js'
+
 export default function NovoProduto(){
     const [nome,setNome]= useState("");
     const [peso,setPeso]= useState();
@@ -13,6 +15,24 @@ export default function NovoProduto(){
    //const [imagem,setImagem]= useState("");
 
 
+   async function CadastrarProduto(){
+     try {
+      const r= await NovoProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
+
+    alert('Produto cadastrado');  
+     } catch (err) {
+        alert(err.message);
+     }
+   }; 
+
+   async function ListarCategorias(){
+    try {
+        const r=await ListarCategorias();
+        
+    } catch (err) {
+                          
+    }
+   }
 
     return(
         <main className="novo-pedido">

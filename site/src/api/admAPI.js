@@ -31,3 +31,8 @@ export async function ImagemProduto(id,imagem){
 
     return resposta.status;
 };
+
+export async function ListarCategorias(){
+    const resposta=await api.get('/adm/listarcategoria');
+    return resposta.data;
+}
