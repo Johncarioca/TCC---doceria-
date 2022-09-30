@@ -1,4 +1,12 @@
+ 
+
 .Login-adm{
+    *{
+        box-sizing: border-box ;
+        margin: 0;
+        //border: 1px green solid;
+
+    }   
 
     .cabeçalho{
         background-color: #69160A;
@@ -18,25 +26,43 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: space-evenly;
 
         padding: 5em;
-        height: 40rem;
+        height: 89.5vh;
         background-image: url(../../../../public/assets/image/loginadm.png);
 
         
     
-        .sub1-f1    {
+        .sub1-f1{
             display: flex;
             flex-direction: column ;
+            justify-content: space-between;
             align-items: center;
-            padding-right: 5em;
+            
+            width: 20rem;
+            height: 28rem;
+            
+            .igm-bottão{
+                display: flex;
+                flex-direction: column ;
+                
+                align-items: center;
+
+            }
+
+            .imagem-1{
+                
+                width: 90%;
+            }
+
 
             .b-salvar{ 
                 
-                border-radius: 10vh;
+                border-radius: 0.7rem;
                 background-color: #944236;
                 border:0em;
-                width: 7em;
+                width: 12em;
                 height: 3em;
                 color: aliceblue;
                 
@@ -47,15 +73,36 @@
         .sub2-f1{
             display: flex;
             flex-direction: column ;
-           
+            align-items: center;
+            justify-content: space-between;
+            width: 23rem;
+            height: 19em;
+            padding-bottom: 4rem;
             
             
-            height: 10em;  
-            padding-left: 10em ;
-    
+            
             color: #fff;
+            
+            .japão{
+                width: 100%;
+                .dois{
+                    width: 100%;
     
-            padding-bottom: 5em;
+                    p{
+                        font-size: 1rem;
+                    }
+    
+                    .info{
+                        width: 100%;
+                        height: 2.4rem;
+                        font-size: 1rem;
+                        border: none;
+                        border-radius: 0.3rem;
+                    }
+                }
+            }
+            
+            
     
         }
         
@@ -67,7 +114,7 @@
         }
     
         
-        
+       
        
     }
 }

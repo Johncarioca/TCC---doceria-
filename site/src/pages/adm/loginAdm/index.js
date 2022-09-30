@@ -43,24 +43,33 @@ export default function LoginAdm(){
                     
                 <div className='sub1-f1'>
 
-                    <div>
-                        <img className='seta' src="/assets/image/cardlogadm.png" alt="" />
+                    <div className="igm-bottão">
+                        <img className='imagem-1' src="/assets/image/cardlogadm.png" alt="" />
                     </div>
 
-                    <div >
-                        <button className="b-salvar" onClick={InserirClick}> Salvar </button>
+                    <div className="igm-bottão" >
+                        <button className="b-salvar" onClick={InserirClick}> Cadastrar </button>
                     </div>
 
                 </div>
 
                 <div className='sub2-f1'>
-                    <div>    
-                        <h3 > E-Mail: </h3>
-                        <input type='text' placeholder='Email' value={Email}  onChange={ e => SetEmail(e.target.value)}/>
-                    </div>
+
                     
-                    <h3> Senha:</h3>     
-                    <input type='password' placeholder='***' value={Senha}  onChange={ e => SetSenha(e.target.value)}/>
+                    <h1> Login do administrador</h1>
+                    
+                    <div className="japão">
+                        <div className="dois">    
+                            <p> E-mail: </p>
+                            <input type='text'  className="info" value={Email}  onChange={ e => SetEmail(e.target.value)}/>
+                        </div>
+
+
+                        <div className="dois">
+                            <p> Senha:</p>     
+                            <input type='password'  className="info" value={Senha}  onChange={ e => SetSenha(e.target.value)}/>
+                        </div>
+                    </div>
                     
                 </div>
 
