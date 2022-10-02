@@ -1,11 +1,12 @@
 import './index.scss';
 import {useState } from 'react'
 
-import {toast} from 'react-toastify'
 
-import{CadastrarProduto,ImagemProduto,ListarCategorias}from '../../../api/admAPI.js'
+import{CadastrarProduto}from '../../../api/admAPI'
+
 
 export default function NovoProduto(){
+
     const [nome,setNome]= useState("");
     const [peso,setPeso]= useState();
     const [preco,setPreco]= useState();
@@ -16,27 +17,16 @@ export default function NovoProduto(){
     const [categoria,setCategoria]= useState([]);
    //const [imagem,setImagem]= useState("");
 
-
    async function Produto(){
-     try {
-         const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque);
-
-        alert('Produto cadastrado');  
-    } 
-     catch (err) {
-        alert(err.message);
-        }
-    }; 
-
-    async function ListarCategorias(){
     try {
-        const r =await ListarCategorias();
-        setCategoria(r)
-    } 
-    catch (err) {
-                          
+        const r= CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
+
+        alert("Produto Cadastrado")
+    } catch (err) {
+        alert("err.message")
     }
    }
+
 
 
 
@@ -53,7 +43,7 @@ export default function NovoProduto(){
                 </div>
 
                 <div>
-                    <a className='ab'> Lista de pedidos </a>
+                    <a  className='ab'> Lista de pedidos </a>
                     <a className='ab'> Home</a>
                 </div>
             </header>
@@ -72,7 +62,7 @@ export default function NovoProduto(){
                             </div>
                         </div>
                         <div className='cadas'>
-                            <button className="button" onClick={Produto} > SALVAR </button>
+                            <button className="button" onClick={Produto}  > SALVAR </button>
                         </div>
 
                     </div>
@@ -94,7 +84,7 @@ export default function NovoProduto(){
                         </div>
 
                         <div className='div-destaque'>
-                            <input className="destaque" type="checkbox"  value={destaque} onChange={e => setDestaque(e.target.value)} />
+                            <input className="destaque" type="checkbox"  value={destaque} onChange={e => setDestaque(e.target.checked)} />
                             <p>Em destaque</p>
                         </div>
                     </div>
@@ -103,7 +93,7 @@ export default function NovoProduto(){
 
                         <div >
                             <p> Categoria: </p>
-                            <select  value={categoria} onChange={e=> setCategoria(e.target.value)}>
+                            <select  value={categoria}  onChange={e=> setCategoria(e.target.value)}>
                                 <option selected disabled hidden>Selecione</option>
                                 {categoria.map(item=>
                                     <option value="item.idCategoria">{item.categoria}</option>
