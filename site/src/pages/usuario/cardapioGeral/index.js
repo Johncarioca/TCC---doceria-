@@ -7,14 +7,24 @@ export default function CardapioGeral(){
 
     return(
 
-        <main>
+        <main className="geral">
 
             <header>
                 <CardCabecario/>
             </header>
 
-            <section>
-                <CardCardapioGeral/>
+            <section className="CardapioGeral">
+
+                <div className="dois">
+                    <div className="Pesquisa">
+                        <input className="barra" type="text" placeholder='Pesquisa...' /> <div> <img className="lupe" src="/assets/image/lupa.png" alt="" /></div>
+                    </div>
+
+                    <div className="corpor">
+                        <CardCardapioGeral/>
+                    </div>
+                </div>
+                
             </section>
 
         </main>
