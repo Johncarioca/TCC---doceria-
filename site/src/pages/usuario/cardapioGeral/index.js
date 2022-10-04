@@ -20,9 +20,9 @@ export default function CardapioGeral(){
                         <input className="barra" type="text" placeholder='Pesquisa...' /> <div> <img className="lupe" src="/assets/image/lupa.png" alt="" /></div>
                     </div>
 
-                    <div className="corpor">
-                        <CardCardapioGeral/>
-                    </div>
+                    
+                    <CardCardapioGeral/>
+                    
                 </div>
                 
             </section>
