@@ -12,6 +12,7 @@ import NovoProduto from './pages/adm/novoProduto';
 import AreaAdm from './pages/adm/areaAdm';
 import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
+import CardapioGeral from './pages/usuario/cardapioGeral';
 
 
 
@@ -26,6 +27,7 @@ root.render(
       <Route path='/areaAdm' element = {<AreaAdm/>}/>
       <Route path='/loginUsuario' element = {<LoginUsuario/>}/>    
       <Route path='/tabelaProduto' element = {<TabelaProduto/>}/>
+      <Route path='/cardapiogeral' element = {<CardapioGeral/>}/>
     </Routes>
 
     </BrowserRouter>
