@@ -5,18 +5,18 @@ export default function CardCardapioGeral(){
     return(
         <main className="Card">
 
-            <section className="corpo">
+            
                 
-                <div className="Vermelha">
+                <div className="vermelha">
 
                     <div className="verdeClaro">
-                        <img src="" alt="" />
+                        <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
                     </div>
 
                     <div className="verdeEscuro">
 
                         <div className="amarela">
-                            <img src="" alt="" />
+                        <img className="ima" src="../assets/image/destaqueNovoProduto.png" alt="" />
                         </div>
 
                         <div className="azul">
@@ -32,7 +32,7 @@ export default function CardCardapioGeral(){
                     
                 </div>
 
-            </section>
+            
 
 
 
