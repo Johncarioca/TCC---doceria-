@@ -13,8 +13,8 @@ import AreaAdm from './pages/adm/areaAdm';
 import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
 import CardapioGeral from './pages/usuario/cardapioGeral';
-
-
+import CadastroUsuario   from './pages/usuario/cadastro';
+ 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -28,6 +28,8 @@ root.render(
       <Route path='/loginUsuario' element = {<LoginUsuario/>}/>    
       <Route path='/tabelaProduto' element = {<TabelaProduto/>}/>
       <Route path='/cardapiogeral' element = {<CardapioGeral/>}/>
+      <Route path='/cadastrouser' element = {<CadastroUsuario/>}/>
+      
     </Routes>
 
     </BrowserRouter>

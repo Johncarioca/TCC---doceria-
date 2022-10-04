@@ -1,0 +1,82 @@
+
+.loginusuario{
+
+    display: flex;
+    flex-direction: column;
+
+    .cont1-cadastro{
+        display: flex;
+        flex-direction: row;
+        background-image:url(../../../../public/assets/image/fund_cadastrouser.png);
+        width: 100vw;
+        height: 90vh; 
+        background-repeat: no-repeat;
+        background-size: 118% 100%;
+        background-position: 47%;
+        justify-content: center;
+       
+        align-items: center;
+
+
+
+    }
+
+    .subcon1-cadastro{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       margin-left: 3vh ;
+
+        
+    }
+
+    .subcon2-cadastro{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        
+    }
+    .subcon3-cadastro{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+       margin-left: 3vh ;
+
+        
+    }
+    .inpucont-cadastro{
+
+        display: flex;
+        flex-direction: column;
+        width: 17em;
+        color: #ffffff;
+        justify-content: space-between;
+
+    }
+    
+    .input-cadastro{
+        background-color: #EEDCCF;
+        border-radius: 0.5em;
+        height: 5vh;
+    }
+
+    
+    
+    
+    
+    .bt-cadastrar{
+            color: #ffffff;
+            background-color: #944236;
+            width: 14vw;
+            height: 4.5vh;
+            border-radius: 14px;
+            align-self: center;
+        }
+}
+
+
+    
