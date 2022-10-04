@@ -1,8 +1,8 @@
 import './index.scss';
-import {useState } from 'react'
+import {useState ,useEffect} from 'react'
 
 
-import{CadastrarProduto}from '../../../api/admAPI'
+import{CadastrarProduto,ListarCategorias}from '../../../api/admAPI'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -17,23 +17,35 @@ export default function NovoProduto(){
     const [ingredientes,setIngredientes]= useState("");
     const [estoque,setEstoque]= useState();
     const [destaque,setDestaque]= useState(false);
-    const [categoria,setCategoria]= useState([]);
+    const [categoria,setCategoria]= useState([0]);
+    const [idCategoria,setIdCategoria]=useState(0);
    //const [imagem,setImagem]= useState("");
 
-   async function Produto(){
-    try {
-        const r= await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
+   useEffect(() => {
+        ListCategoria();
+    }, [])
 
+    async function Produto(){
+    try {
+        const r= await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
         toast("Produto Cadastrado")
     } catch (err) {
-        toast.error("err.message")
+
+        if (err.response) {
+            toast.error(err.response.data.erro);
+        }    }
     }
-   }
 
-
-
-
-
+    async function ListCategoria(){
+    try {
+        const r=await ListarCategorias();
+        setCategoria(r);
+    } 
+    catch (err) {
+        
+    }
+    }
+ 
 
     return(
         <main className="novo-pedido">
@@ -45,11 +57,11 @@ export default function NovoProduto(){
 
                     <img className='seta' src="/assets/image/seta.png" alt="" />
 
-                    <img className='logo' src="/assets/image/logoAreaAdm.png" alt="" />
+                    <img className='logo' src="/assets/image/oi.png" alt="" />
                 </div>
 
                 <div>
-                    <a  className='ab'> Lista de pedidos </a>
+                    <a className='ab'> Lista de pedidos </a>
                     <a className='ab'> Home</a>
                 </div>
             </header>
@@ -86,8 +98,9 @@ export default function NovoProduto(){
 
                         <div className="roger">
                             <p>  Ingredientes:  </p>
-                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onchange={e => setIngredientes(e.target.value)} />
+                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onChange={e => setIngredientes(e.target.value)} />
                         </div>
+                    
 
                         <div className='div-destaque'>
                             <input className="destaque" type="checkbox"  value={destaque} onChange={e => setDestaque(e.target.checked)} />
@@ -99,10 +112,10 @@ export default function NovoProduto(){
 
                         <div >
                             <p> Categoria: </p>
-                            <select  value={categoria}  onChange={e=> setCategoria(e.target.value)}>
-                                <option selected disabled hidden>Selecione</option>
+                            <select value={idCategoria}  onChange={e=> setIdCategoria(e.target.value)}>
+                                <option >Selecione</option>
                                 {categoria.map(item=>
-                                    <option value="item.idCategoria">{item.categoria}</option>
+                                    <option value={item.id}>{item.categoria} {item.id}</option>
                                 )}
                             </select>
                         </div>
