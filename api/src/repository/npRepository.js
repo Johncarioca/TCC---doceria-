@@ -4,10 +4,10 @@ export async function NovoProduto(cadastro){
 
     const comando = 
     `
-    insert into tb_produto(nm_produto, nr_peso ,nr_preco ,ds_sinopse ,ds_ingredientes ,nr_estoque ,bt_destaque )
-                    values (? ,? ,? ,? ,? ,? ,? )
+    insert into tb_produto(nm_produto, nr_peso ,nr_preco ,ds_sinopse ,ds_ingredientes ,nr_estoque ,bt_destaque,id_categoria )
+                    values (? ,? ,? ,? ,? ,? ,? ,?)
     `
-    const [resposta] = await con.query(comando, [cadastro.nome, cadastro.peso, cadastro.preco, cadastro.sinopse, cadastro.ingredientes, cadastro.estoque, cadastro.destaque ]);
+    const [resposta] = await con.query(comando, [cadastro.nome, cadastro.peso, cadastro.preco, cadastro.sinopse, cadastro.ingredientes, cadastro.estoque, cadastro.destaque,cadastro.categoria ]);
     cadastro.id = resposta.insertid;
     return cadastro;
 }

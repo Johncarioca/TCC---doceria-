@@ -4,6 +4,9 @@ import {useState } from 'react'
 
 import{CadastrarProduto}from '../../../api/admAPI'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function NovoProduto(){
 
@@ -19,19 +22,22 @@ export default function NovoProduto(){
 
    async function Produto(){
     try {
-        const r= CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
+        const r= await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,categoria);
 
-        alert("Produto Cadastrado")
+        toast("Produto Cadastrado")
     } catch (err) {
-        alert("err.message")
+        toast.error("err.message")
     }
    }
 
 
 
 
+
+
     return(
         <main className="novo-pedido">
+            <ToastContainer/>
 
             <header className='vermelho'>
 
@@ -80,7 +86,7 @@ export default function NovoProduto(){
 
                         <div className="roger">
                             <p>  Ingredientes:  </p>
-                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onchange={e => setIngredientes(e.target.value)}/>
+                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onchange={e => setIngredientes(e.target.value)} />
                         </div>
 
                         <div className='div-destaque'>
