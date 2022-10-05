@@ -10,7 +10,7 @@ export default function CardCardapioGeral(){
                 <div className="vermelha">
 
                     <div className="verdeClaro">
-                        <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
+                    <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
                     </div>
 
                     <div className="verdeEscuro">

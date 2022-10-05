@@ -19,21 +19,23 @@
         padding-top: 4rem;
 
         .dois{
+            
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: center;
-            //text-align: center;
-            border: 1px green solid;
-
+            //border: 1px rgb(128, 0, 113) solid;
             width: 90%;
-            height: 100rem;
-            
+            height: 80rem;
 
             .divPesguisa{
 
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
                 width: 100%;
-                    
+
                 .Pesquisa{
                     display: flex;
                     flex-direction: row;
@@ -48,13 +50,12 @@
                         width: 82%;
                         background-color: #8C392E;
                         color: #fff;
+                        outline: none;
     
                     }   
                 }
             }
-            
-            
-            
+  
         }
 
         .card{
@@ -63,7 +64,7 @@
             flex-direction: row;
             justify-content: space-around;
             padding: 2rem;
-            border: 1px green solid;
+            //border: 1px green solid;
 
             width: 100%;
             height: 90rem;
