@@ -70,31 +70,24 @@
                 .inserir-imagem {
 
                     display: flex;
-                    flex-direction: row;
+                    flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     background-color: #EEDCCF;
                     width: 20rem;
                     height: 15rem;
                     border-radius: 39px;
-
-                    button{
-                        //background-image: url('../../../public/assets/images/inseririmg.png');
-                        width: 5rem;
-                        height: 5rem;
-                        background-size: 100%;
-                        background-color: #69170a00;
-                        cursor: pointer;
-                        border: none;
-                    }
-
                 }
 
+                .inserir-imagem img {
+                    cursor: pointer;
+                }
 
+                .inserir-imagem input[type=file]{
+                    visibility: hidden;
+                }
 
-
-
-                .button {
+                .botao-NP {
                     border-radius: 0.5rem;
                     background-color: #69160A;
                     width: 8em;
@@ -102,6 +95,7 @@
                     border: none;
                     color: #ffffff;
                     font-family: inter;
+                    cursor: pointer;
                 }
 
                 .cadas {

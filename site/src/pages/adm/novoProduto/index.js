@@ -19,7 +19,7 @@ export default function NovoProduto(){
     const [destaque,setDestaque]= useState(false);
     const [categoria,setCategoria]= useState([0]);
     const [idCategoria,setIdCategoria]=useState(0);
-   //const [imagem,setImagem]= useState("");
+    const [imagem,setImagem]= useState();
 
    useEffect(() => {
         ListCategoria();
@@ -41,11 +41,21 @@ export default function NovoProduto(){
         const r=await ListarCategorias();
         setCategoria(r);
     } 
-    catch (err) {
-        
-    }
+    catch (err) { }
     }
  
+    function escolherImagem(inputId){
+        document.getElementById(inputId).click();
+    }
+
+    function ExibirImagem(imagem){
+        if (imagem == undefined) {
+            return '/assets/image/SelecionarImagem.png'
+        } else {
+            return URL.createObjectURL(imagem);
+        }
+    }
+
 
     return(
         <main className="novo-pedido">
@@ -76,11 +86,14 @@ export default function NovoProduto(){
                             <p> Imagem do produto: </p>
 
                             <div className="inserir-imagem">
-                                <button className="colocar"  />
+                                <img src={ExibirImagem(imagem)} alt="" onClick={()=> escolherImagem('imagem')}/>
+                                <input type="file" onChange={e => setImagem(e.target.files[0])}/>
                             </div>
+
                         </div>
+
                         <div className='cadas'>
-                            <button className="button" onClick={Produto}  > SALVAR </button>
+                            <button className="botao-NP" onClick={Produto}  > SALVAR </button>
                         </div>
 
                     </div>
