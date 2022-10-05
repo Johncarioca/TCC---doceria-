@@ -20,6 +20,7 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+            align-items: flex-end;
             width: 92%;
             
             
@@ -47,20 +48,16 @@
             .sdcbk{
                 display: flex;
                 flex-direction: row;
-                justify-content: center;
-                align-self: flex-end;
+                justify-content: space-evenly;
+                align-items: flex-end;
                 text-align: center;
-                width: 50%;
-                height:3rem ;
-                margin-right: 6rem;
+                width: 60%;
+                height:4rem ;
+                padding-right: 1.5rem;
+                
                 
 
-                .nomeCategoria{
-                    font-size: 1.5rem;
-                    color: #D9D9D9;
-                    margin: 1.5rem;
-                    height: 2rem;
-                }
+               
 
 
             }
@@ -73,8 +70,8 @@
                 justify-content: space-between  ;
                 width: 8%;
                 height: 2.5rem;
-                margin-bottom: 3rem;
-    
+                align-self: flex-start;
+                
                 .inconLogin{
                     width: 1.8rem;
                     height: 2.4rem;
@@ -89,4 +86,40 @@
             
         }             
     }
- }
+    .selecionado{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        color: #D9D9D9;
+                   
+        height: 2rem;
+        
+
+        hr{
+            width: 0rem;
+            height: 0rem;
+            background-color: #94423000;
+        }
+        
+
+        
+    }
+    .selecionado:hover{
+
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        
+        hr{
+            width: 5rem;
+            height: 0.20rem;
+            background-color: #944230;
+            transition: 0.3s;
+        }
+    }
+
+    
+}

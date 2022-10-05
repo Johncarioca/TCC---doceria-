@@ -5,11 +5,16 @@ export default function CardCardapioGeral(){
     return(
         <main className="Card">
 
-            <section className="vermelha">
+            <div className="vermelha">
 
                 <div className="verdeClaro">
                     <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
                 </div>
+
+                
+                    <button className="btVer"> Ver Produto </button>
+                    
+
 
                 <div className="verdeEscuro">
 
@@ -17,6 +22,7 @@ export default function CardCardapioGeral(){
                         <img className="ima" src="../assets/image/destaqueNovoProduto.png" alt="" />
                     </div>
 
+                    
                     <div className="azul">
                         <div className="textu">
                             <p> beijinhos </p>
@@ -33,8 +39,8 @@ export default function CardCardapioGeral(){
                 
                 </div>
                     
-            </section>
-
+            </div>
+            
 
         </main>
         

@@ -1,65 +1,79 @@
+.CardapioGeral {
 
-        .CardapioGeral{
+    * {
+        box-sizing: border-box;
+        margin: 0;
 
-        *{
-            box-sizing: border-box ;
-            margin: 0;
-            //border: 1px green solid;
-        }
+    }
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    align-items: center;
+    background-color: #FDE5DE;
+    width: 100%;
+    padding-top: 4rem;
+    margin-bottom: 7rem;
+
+    .dois {
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
 
         align-items: center;
-        background-color: #FDE5DE;
-        width: 100%;
-        height: 86.2rem;
-        padding-top: 4rem;
+        //border: 1px rgb(128, 0, 113) solid;
+        width: 90%;
 
-        .dois{
-            
+        .divPesguisa {
+
             display: flex;
             flex-direction: column;
-            
+            justify-content: space-between;
             align-items: center;
-            //border: 1px rgb(128, 0, 113) solid;
-            width: 90%;
-            height: 80rem;
+            width: 100%;
 
-            .divPesguisa{
-
+            .Pesquisa {
                 display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                flex-direction: row;
+                justify-content: space-around;
                 align-items: center;
-                width: 100%;
+                width: 50%;
+                height: 2.3rem;
+                background-color: #8C392E;
+                border-radius: 2rem;
 
-                .Pesquisa{
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-around;
-                    align-items: center;
-                    width:50%;
-                    height: 2.3rem;
+                .barra {
+                    width: 82%;
                     background-color: #8C392E;
-                    border-radius: 2rem;
-    
-                    .barra{
-                        width: 82%;
-                        background-color: #8C392E;
-                        color: #fff;
-                        outline: none;
-    
-                    }   
+                    color: #fff;
+                    outline: none;
+
                 }
             }
 
-             
-             
-            
         }
 
-      
-
     }
+
+
+    .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 100%;
+
+        margin-top: 2em;
+    }
+
+    .card-container > .Card {
+        margin-bottom: 10px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+
+
+
+
+}

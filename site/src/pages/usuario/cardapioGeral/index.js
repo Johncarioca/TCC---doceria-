@@ -18,16 +18,22 @@ export default function CardapioGeral(){
                 <div className="dois">
                     
                     <div className="divPesguisa">
-                        
                         <div className="Pesquisa">
                             <input className="barra" type="text" placeholder='Pesquisa...' /> <div> <img className="lupe" src="/assets/image/lupa.png" alt="" /></div>
                         </div>
+                    </div>
 
+                    <div className="card-container">
+                        <CardCardapioGeral/> 
+                        <CardCardapioGeral/> 
+                        <CardCardapioGeral/> 
+                        <CardCardapioGeral/> 
+                        <CardCardapioGeral/> 
+                        <CardCardapioGeral/> 
                     </div>
                     
-                        <CardCardapioGeral/>    
-                    
                 </div>
+                
                 
             </section>
 
