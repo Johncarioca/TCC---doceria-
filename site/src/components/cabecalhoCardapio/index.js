@@ -23,11 +23,11 @@ export default function CardCabecario(){
 
                     <div className="sdcbk">
 
-                        <p className="nomeCategoria" >Salgado</p>
+                        <p className="nomeCategoria" >Salgados</p>
                         <p className="nomeCategoria" >Doces</p>
                         <p className="nomeCategoria" >Cardapio</p>
                         <p className="nomeCategoria" >Bolos</p>
-                        <p className="nomeCategoria" >kits</p>
+                        <p className="nomeCategoria" >Kits</p>
         
                     </div>
 

@@ -6,10 +6,17 @@
         //border: 1px rgb(7, 2, 63) solid;
     }
 
+    border: 1px rgb(7, 2, 63) solid;
+
     display: flex;
-    flex-direction: row;
-    width: 19%;
-    height: 17.8rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    height: 16rem;
+    margin-top: 3rem;
+
+    
+         
     
             
     .vermelha{
@@ -18,65 +25,70 @@
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        //background-image: url('../../../public/assets/image/cardCardapio/linhasCard.png');
-        
-
-            
+        margin-left: 1rem;            
         border-radius: 0.5rem;
-        width: 100%;
-        height: 17.8rem;
-        
-            
-    }
+        width: 19%;
+        height: 16rem;
+          
+        position: relative;
+        .verdeClaro{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding-top: 0.5rem;
+    
+                
+            width: 95%;
+            height: 9rem;
+    
+            .ima{
+                 width: 99%;
+                height: 8.5rem;
+            }
+        }
 
+        .verdeEscuro{
+    
+            display: flex;
+            flex-direction: row;
+            justify-content: baseline;
+        
+            width: 95%;
+            padding-top: 2rem;
+        }
+    
+        .amarela{
+                
+            width: 43%;
+            border-bottom: 0.1rem solid black ;
+            border-left: 0.1rem solid black ;
+    
+        }
+    
+        .azul{
+
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 49%;
+            height: 4.1rem;
+            text-align: center;
+            font-size: 12px;
+
+            //border: 0.1rem solid rgb(0, 136, 255) ;
+        }
+    
+        .roxo{
+            border-right: 0.1rem solid black ;
+            border-bottom: 0.1rem solid black ;
+            width: 45%;              
+        }
+    }
     .vermelha:hover{
                 
-        scale: 1.02;
+        scale: 1.03;
         transition: 0.5s;
         background-color: #E9C1B5;
 
     }
-
-
-    .verdeClaro{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-
-            
-        width: 95%;
-        height: 9rem;
-
-        .ima{
-             width: 99%;
-            height: 8.5rem;
-        }
-    }
-
-
-    .verdeEscuro{
-
-        display: flex;
-        flex-direction: row;
-        justify-content: baseline;
-
-            
-        width: 95%;
-
-    }
-
-    .amarela{
-            
-        width: 30%;
-
-    }
-
-    .azul{
-        width: 50%;
-        text-align: center;
-        font-size: 13px;
-            
-    }
-
-    
 }
