@@ -69,6 +69,9 @@ export default function LoginAdm(){
                             <p> Senha:</p>     
                             <input type='password'  className="info" value={Senha}  onChange={ e => SetSenha(e.target.value)}/>
                         </div>
+                        <div className="erro">
+                            {Erro}
+                        </div>
                     </div>
                     
                 </div>

@@ -4,7 +4,7 @@ export default function CabeçarioLogin(){
     
     return(
         <main className='cabecario'>
-            <a href="../novoproduto">
+            <a href="../../../loginUsuario">
                 <img className="setinha-cabecariologin" src="../assets/image/setinha.png" /> 
             </a>
                 

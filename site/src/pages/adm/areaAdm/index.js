@@ -1,7 +1,22 @@
-    import './index.scss'
+import './index.scss'
+import { useNavigate } from 'react-router-dom';
 
 
 export default function AreaAdm() {
+
+    const navigate = useNavigate();
+
+    function pedidos() {
+        navigate('/tabelaProduto')
+    }
+
+    function cardapio() {
+        navigate('/cardapiogeral')
+    }
+
+    function inicio() {
+        navigate('/')
+    }
 
     return (
         <main className='main-principal'>
@@ -14,7 +29,7 @@ export default function AreaAdm() {
 
                     <img className='logo' src="/assets/image/oi.png" alt="" />
                 </div>
-                <a className='ab'> home</a>
+                <a onClick={inicio} className='ab'> Home</a>
 
             </header>
             
@@ -25,8 +40,8 @@ export default function AreaAdm() {
                     <h1>Area administrativa</h1>
 
                     <div className='b'>
-                        <a > Pedidos </a>
-                        <a> Cardapio</a>
+                        <a onClick={pedidos} > Pedidos </a>
+                        <a onClick={cardapio}> Cardapio</a>
                     </div>
                 </div>
 

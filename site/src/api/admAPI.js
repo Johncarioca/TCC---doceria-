@@ -36,3 +36,8 @@ export async function ListarCategorias(){
     const resposta=await api.get('/adm/listarcategoria');
     return resposta.data;
 }
+
+export async function LoginCliente() {
+    const r = await api.post('/cliente/login');
+    return r.data;
+}

@@ -1,8 +1,30 @@
 import './index.scss'
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
+import { LoginCliente } from '../../../api/admAPI';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function LoginUsuario(){
 
+    const [email, SetEmail ] = useState('');
+    const [senha, SetSenha ] = useState('');
+    const [Erro, SetErro ] = useState('');
+
+
+    const navigate= useNavigate();
+
+    async function Logar(email, senha) {
+        try {
+            const f = await Logar(email , senha)
+            navigate('/cardapiogeral')
+        } catch (err) {
+            if (err.response.status === 401) {
+                SetErro(err.response.data.erro);
+            }
+        }
+    }
+    
+    
     return(
 
         <main className="loginusuario">
@@ -13,9 +35,12 @@ export default function LoginUsuario(){
                 <div className="subcont1-loginuser">
                     <img src="../assets/image/cardloginuser.png" />
 
-                    <button className="bt-loginuser">  
+                    <button onClick={Logar} className="bt-loginuser">  
                         Entrar
                     </button>
+                    <div className='erro'>
+                        {Erro}
+                    </div>
                     
                     <div className="link-loginuser" >
                         <p>Não possui um cadastro ? </p>
@@ -29,12 +54,12 @@ export default function LoginUsuario(){
                     
                     <div className='inpucont-loginuser'>
                         <label >E-mail:</label>
-                        <input className='input-loginuser' type="text" placeholder='@gmail.com' />
+                        <input value={email} className='input-loginuser' type="text" placeholder='@gmail.com' onChange={e => SetEmail(e.target.value)} />
                     </div>
 
                     <div className='inpucont-loginuser'>
                         <label>Senha:</label>
-                        <input className='input-loginuser'type="password" />
+                        <input value={senha} className='input-loginuser'type="password" onChange={e => SetSenha(e.target.value)} />
                     </div>
 
                     <div className="link-loginuser" >
