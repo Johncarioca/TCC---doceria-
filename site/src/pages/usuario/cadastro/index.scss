@@ -44,8 +44,8 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-       margin-left: 3vh ;
-
+        margin-left: 3vh ;
+        height: 30em;
         
     }
     .inpucont-cadastro{
@@ -63,10 +63,6 @@
         border-radius: 0.5em;
         height: 5vh;
     }
-
-    
-    
-    
     
     .bt-cadastrar{
             color: #ffffff;
@@ -75,7 +71,32 @@
             height: 4.5vh;
             border-radius: 14px;
             align-self: center;
-        }
+    }
+
+    .fun-cad{
+        width: 18em;
+    }
+
+    .inserir-imagem{
+        background-color: #EEDCCF;
+        height: 12em;
+        width: 12em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1em;  
+        align-items: center;
+        padding-top: 20px;  
+    }
+
+    .inserir-imagem img{
+        width: 4em;
+    }
+
+    .inserir-imagem input{
+        visibility: hidden;
+    }
+
 }
 
 

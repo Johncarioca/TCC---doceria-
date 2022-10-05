@@ -16,7 +16,9 @@ export default function CadastroUsuario (){
                         <p> Foto de perfil: </p>
 
                         <div className="inserir-imagem">
-                            <button className="colocar"  />
+                            <img src="/assets/image/SelecionarImagem.png" alt="" />
+
+                            <input type="file" />
                         </div>
                     </div>
 

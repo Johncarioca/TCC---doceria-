@@ -2,7 +2,7 @@ import './index.scss';
 import {useState ,useEffect} from 'react'
 
 
-import{CadastrarProduto,ListarCategorias}from '../../../api/admAPI'
+import{CadastrarProduto,ListarCategorias,ImagemProduto}from '../../../api/admAPI'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,6 +28,8 @@ export default function NovoProduto(){
     async function Produto(){
     try {
         const r= await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
+        await ImagemProduto(r.id,imagem);
+
         toast("Produto Cadastrado")
     } catch (err) {
 
@@ -49,7 +51,7 @@ export default function NovoProduto(){
     }
 
     function ExibirImagem(imagem){
-        if (imagem == undefined) {
+        if (imagem === undefined) {
             return '/assets/image/SelecionarImagem.png'
         } else {
             return URL.createObjectURL(imagem);
@@ -87,7 +89,7 @@ export default function NovoProduto(){
 
                             <div className="inserir-imagem">
                                 <img src={ExibirImagem(imagem)} alt="" onClick={()=> escolherImagem('imagem')}/>
-                                <input type="file" onChange={e => setImagem(e.target.files[0])}/>
+                                <input type="file" id="imagem" onChange={e => setImagem(e.target.files[0])}/>
                             </div>
 
                         </div>
