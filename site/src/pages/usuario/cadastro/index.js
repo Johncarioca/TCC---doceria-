@@ -5,24 +5,25 @@ export default function CadastroUsuario (){
 
     return(
 
-        
-        <main className="loginusuario">
+        <main className="cadastrousuario">
             <CabeçarioLogin/>    
 
             <section className = " cont1-cadastro">
 
-                <div className="subcon1-cadastro">   
-                    <div className="inpucont-cadastro">
-                        <p> Foto de perfil: </p>
+                <div className="alinhamento-cadastrouser"> 
+                    <div className="subcon1-cadastro">   
+                    
+                        <div className="inpucont-cadastro">
+                            <p> Foto de perfil: </p>
 
-                        <div className="inserir-imagem">
-                            <img src="/assets/image/SelecionarImagem.png" alt="" />
+                            <div className="inserir-imagem">
+                                <img src="/assets/image/SelecionarImagem.png" alt="" />
 
-                            <input type="file" />
+                                <input type="file" />
+                            </div>
                         </div>
-                    </div>
 
-                    <div className='inpucont-cadastro'>
+                        <div className='inpucont-cadastro'>
                             <label >E-mail:</label>
                             <input className='input-cadastro' type="text" placeholder='@gmail.com' />
                         </div>
@@ -36,9 +37,9 @@ export default function CadastroUsuario (){
                             <label > Nome completo:</label>
                             <input className='input-cadastro' type="text" placeholder='...' />
                         </div>
-                </div>
+                    </div>
 
-                <div className="subcon1-cadastro">
+                    <div className="subcon2-cadastro">
 
                         <div className='inpucont-cadastro'>
                             <label > Nome de usuerio:</label>
@@ -60,28 +61,30 @@ export default function CadastroUsuario (){
                             <label > CPF: </label>
                             <input className='input-cadastro' type="text" placeholder='...' />
                         </div>
+
                         <div className='inpucont-cadastro'>
                             <label > Comfirmar senha: </label>
                             <input className='input-cadastro' type="text" placeholder='...' />
                         </div>
-                </div>
-
-
-                <div className="subcon3-cadastro">
-
-                    <img className="fun-cad" src="../assets/image/cardloginuser.png" />
-
-                    <button className="bt-cadastrar">  
-                        Cadastrar
-                    </button>
-
-                    <div className="link-loginuser" >
-                        <p> Já possui uma conta? </p>
-                        <p>clique <a className="a-loginuser" href="../loginUsuario">aqui</a> </p>
                     </div>
+                
 
+                    <div className="subcon3-cadastro">
+
+                        <img className="fun-cad" src="../assets/image/cardloginuser.png" />
+
+                        <button className="bt-cadastrar">  
+                        Cadastrar
+                        </button>
+
+                        <div className="link-logincadastro" >
+                            <p> Já possui uma conta? </p>
+                            <p>clique <a className="a-logincadastro" href="../loginUsuario">aqui</a> </p>
+                        </div>
+
+                    </div>
                 </div>
-        
+
             </section>
         </main>
 

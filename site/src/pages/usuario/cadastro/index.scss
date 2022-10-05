@@ -1,8 +1,19 @@
 
-.loginusuario{
+.cadastrousuario{
 
     display: flex;
     flex-direction: column;
+    
+    .alinhamento-cadastrouser{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 32em;
+        width: 64em;
+    }
+
+    
 
     .cont1-cadastro{
         display: flex;
@@ -22,29 +33,26 @@
     }
 
     .subcon1-cadastro{
-
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-       margin-left: 3vh ;
-
-        
+        justify-content: space-evenly;
+        height: 37em
     }
 
     .subcon2-cadastro{
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-
+        justify-content: space-evenly;
+        height: 37em
         
     }
+
     .subcon3-cadastro{
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        margin-left: 3vh ;
         height: 30em;
         
     }
@@ -63,6 +71,7 @@
         border-radius: 0.5em;
         height: 5vh;
     }
+
     
     .bt-cadastrar{
             color: #ffffff;
@@ -79,8 +88,8 @@
 
     .inserir-imagem{
         background-color: #EEDCCF;
-        height: 12em;
-        width: 12em;
+        height: 10em;
+        width: 10em;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -95,6 +104,21 @@
 
     .inserir-imagem input{
         visibility: hidden;
+    }
+
+    .link-logincadastro{
+        color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .a-logincadastro{
+        color: #E9877A;
+    }
+
+    .a-logincadastro:hover{
+        font-size: 17.5px;
     }
 
 }
