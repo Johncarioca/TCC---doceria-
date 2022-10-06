@@ -22,13 +22,13 @@ root.render(
     <BrowserRouter>
     <Routes>
       <Route path='/' element = {<Home />} />      
-      <Route path='/loginAdm' element = {<LongnAdm />} />
-      <Route path='/novoProduto' element = {<NovoProduto/>}/>
-      <Route path='/areaAdm' element = {<AreaAdm/>}/>
-      <Route path='/loginUsuario' element = {<LoginUsuario/>}/>    
-      <Route path='/tabelaProduto' element = {<TabelaProduto/>}/>
+      <Route path='/adm/login' element = {<LongnAdm />} />
+      <Route path='/adm/novoproduto' element = {<NovoProduto/>}/>
+      <Route path='/adm/areaadm' element = {<AreaAdm/>}/>
+      <Route path='/login' element = {<LoginUsuario/>}/>    
+      <Route path='/adm/tabelaProduto' element = {<TabelaProduto/>}/>
       <Route path='/cardapiogeral' element = {<CardapioGeral/>}/>
-      <Route path='/cadastrouser' element = {<CadastroUsuario/>}/>
+      <Route path='/cadastro' element = {<CadastroUsuario/>}/>
       
     </Routes>
 
