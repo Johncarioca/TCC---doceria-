@@ -53,6 +53,8 @@ export default function TabelaProduto(){
                                 <th>Peso</th>
                                 <th>Estoque</th>
                                 <th>Descrição</th>
+                                <th>categoria</th>
+                                <th>detaque</th>
                                 <th>Ações</th>
 
                             </tr>
@@ -63,6 +65,8 @@ export default function TabelaProduto(){
                                 <td>brigadeiro de apaixonado</td>
                                 <td>02,00</td>
                                 <td>2kg</td>
+                                <td>500</td>
+                                <td>500</td>
                                 <td>500</td>
                                 <td>500</td>
                                 <td className="imgs">

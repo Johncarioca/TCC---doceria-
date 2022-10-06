@@ -16,8 +16,8 @@ insert into tbm_categoria(nm_categoria)
                 values(" ? ");
 
 /*inserir novo produto*/
-insert into tb_produto(id_produto, nm_produto ,nr_peso ,nr_preco ,ds_produto ,ds_ingredientes ,nr_estoque ,bt_destaque )
-            values (" ? "," ? ", ? , ? , ? ," ? "," ? ", ? , ?);
+insert into tb_produto(nm_produto, nr_peso ,nr_preco ,ds_sinopse ,ds_ingredientes ,nr_estoque ,bt_destaque,id_categoria )
+                    values (? ,? ,? ,? ,? ,? ,? ,?)
 
 /*cadastro de clientes*/
 insert into tb_cliente(nm_cliente,img_cliente,ds_cpf,dt_nascimento,nr_telefone)
