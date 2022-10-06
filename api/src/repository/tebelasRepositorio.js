@@ -6,7 +6,7 @@ export async function listaProduto(){
  
     const comando =
     `
-        select tb_produto.id_produto,
+        select tb_produto.id_produto    as id,
                 nm_produto              as nome,
                 nr_preco                as preco,
                 nr_peso                 as peso,
@@ -23,3 +23,5 @@ export async function listaProduto(){
     console.log(registro);
     return registro;
 }
+
+

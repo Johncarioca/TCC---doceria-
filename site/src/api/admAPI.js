@@ -41,3 +41,12 @@ export async function LoginCliente() {
     const r = await api.post('/cliente/login');
     return r.data;
 }
+
+
+
+////////// tabela de produto ////////////////
+
+export async function listaProduto(){
+    const j = await api.get('/adm/produto');
+    return j.data;
+}

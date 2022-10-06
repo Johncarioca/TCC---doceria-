@@ -113,7 +113,7 @@ export default function NovoProduto(){
 
                         <div className="roger">
                             <p>  Ingredientes:  </p>
-                            <input type='text' placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onChange={e => setIngredientes(e.target.value)} />
+                            <textarea  placeholder='ingredientes...' className="infos ingrediente" value={ingredientes} onChange={e => setIngredientes(e.target.value)} />
                         </div>
                     
 
@@ -147,7 +147,7 @@ export default function NovoProduto(){
                             
                         <div >
                             <p> Descrição </p>
-                            <input type='text' placeholder='gostosinho...' className="infos descricao"  value={sinopse} onChange={e => setSinopse(e.target.value)} />
+                            <textarea type='text' placeholder='gostosinho...' className="infos descricao"  value={sinopse} onChange={e => setSinopse(e.target.value)} />
                         </div>
 
                     </div>

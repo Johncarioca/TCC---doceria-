@@ -1,7 +1,22 @@
+import { useEffect, useState } from 'react';
+import { listaProduto } from '../../../api/admAPI';
 import './index.scss';
 
 
+
 export default function TabelaProduto(){
+
+    const [Produto, setProduto] = useState([]);
+
+    async function carregarProduto(){
+        const i = await listaProduto();
+        setProduto(i)
+    }
+
+
+    useEffect( () => {
+        carregarProduto();
+    }, []);
 
     return (
         <main className="page-tabela">
@@ -54,27 +69,31 @@ export default function TabelaProduto(){
                                 <th>Estoque</th>
                                 <th>Descrição</th>
                                 <th>categoria</th>
-                                <th>detaque</th>
+                                <th>destaque</th>
                                 <th>Ações</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>brigadeiro de apaixonado</td>
-                                <td>02,00</td>
-                                <td>2kg</td>
-                                <td>500</td>
-                                <td>500</td>
-                                <td>500</td>
-                                <td>500</td>
-                                <td className="imgs">
-                                   <button className="but"><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
-                                   <button><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>
+                            {Produto.map( item =>
 
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>{item.id}</td>
+                                    <td>{item.nome}</td>
+                                    <td>{item.preco}</td>
+                                    <td>{item.peso}</td>
+                                    <td>{item.estoque}</td>
+                                    <td>{item.sinopse}</td>
+                                    <td>{item.categoria}</td>
+                                    <td>{item.destaque ? 'Sim' : 'Não'}</td>
+                                    <td className="imgs">
+                                    <button className="but"><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
+                                    <button><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>
+
+                                    </td>
+                                </tr>
+                            )}
+                            
                         </tbody>
                     </table>
                 </div>
