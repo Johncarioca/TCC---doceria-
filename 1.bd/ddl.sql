@@ -33,20 +33,14 @@ foreign key (id_categoria) references tb_categoria(id_categoria)
 create table tb_cliente(
 id_cliente           int primary key auto_increment,
 nm_cliente           varchar(500),
+ds_email             varchar(500),
+ds_senha             varchar(100),
 img_cliente          varchar(500),
 ds_cpf               varchar(14),
 dt_nascimento        date,
 nr_telefone          varchar(30)
 );
 
-/*tabela de login dos clientes */
-create table tb_login(
-id_login             int primary key auto_increment,
-id_cliente           int,
-ds_email             varchar(500),
-ds_senha             varchar(100),
-foreign key (id_cliente) references tb_cliente(id_cliente)
-);
 
 /*tabela de pedidos de cada cliente */
 create table tb_pedido(

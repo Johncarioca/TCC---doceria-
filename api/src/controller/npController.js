@@ -29,7 +29,7 @@ server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
 
     try {
         const { id } = req.params;
-        const Imagem = req.file.path;
+        const Imagem = req.file;
 
         const resposta = await ImagemProduto(Imagem, id);
         if(resposta != 1){
