@@ -26,7 +26,7 @@ root.render(
       <Route path='/adm/novoproduto' element = {<NovoProduto/>}/>
       <Route path='/adm/areaadm' element = {<AreaAdm/>}/>
       <Route path='/login' element = {<LoginUsuario/>}/>    
-      <Route path='/adm/tabelaProduto' element = {<TabelaProduto/>}/>
+      <Route path='/adm/tabelaproduto' element = {<TabelaProduto/>}/>
       <Route path='/cardapiogeral' element = {<CardapioGeral/>}/>
       <Route path='/cadastro' element = {<CadastroUsuario/>}/>
       
