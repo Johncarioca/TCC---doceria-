@@ -1,6 +1,6 @@
 import './index.scss';
 
-export default function CardCardapioGeral(){
+export default function CardCardapioGeral(props){
 
     return(
         <main className="Card">
@@ -11,11 +11,8 @@ export default function CardCardapioGeral(){
                     <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
                 </div>
 
-                
-                    <button className="btVer"> Ver Produto </button>
+                <button className="btVer"> Ver Produto </button>
                     
-
-
                 <div className="verdeEscuro">
 
                     <div className="amarela">
@@ -25,12 +22,12 @@ export default function CardCardapioGeral(){
                     
                     <div className="azul">
                         <div className="textu">
-                            <p> beijinhos </p>
-                            <p>50 unidades</p>
+                            <p className="textu1">{props.item.nome}</p>
+                            <p>{props.item.estoque} unidades</p>
                         </div>
 
                         <div className="textu">
-                            <p className="r">R$ 25,00</p>
+                            <p className="r">R${props.item.preco},00</p>
                         </div>
                     
                     </div>

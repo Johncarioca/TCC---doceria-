@@ -6,11 +6,11 @@ export async function ProdutosDestaque(){
 
    const comando =
    `
-    select img_produto,
-           nm_produto,
-           nr_estoque,
-           nr_preco,
-           bt_destaque
+    select img_produto    as imagem,
+           nm_produto     as nome,
+           nr_estoque     as estoque,
+           nr_preco       as preco,
+           bt_destaque    as destaque
       from tb_produto
      where bt_destaque like '%1%';
    `

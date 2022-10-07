@@ -2,12 +2,21 @@ import './index.scss';
 
 import CardCabecario from '../../../components/cabecalhoCardapio';
 import CardCardapioGeral from '../../../components/CorpoCardapioGeral'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { ProdutosDestaque } from '../../../api/userAPI';
 
 export default function CardapioGeral(){
 
     const [Produto, setProduto] = useState([]);
 
+    async function cardDestaques(){
+        const q = await ProdutosDestaque();
+        setProduto(q);
+    } 
+
+    useEffect( () => {
+        cardDestaques();
+    }, []);
     
 
     return(
@@ -30,8 +39,9 @@ export default function CardapioGeral(){
 
                     <div className="card-container">
 
-                        {}
-                        <CardCardapioGeral/> 
+                        {Produto.map(item => 
+                            <CardCardapioGeral item={item}/> 
+                        )}
                         
                     </div>
                     

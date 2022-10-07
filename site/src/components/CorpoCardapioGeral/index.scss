@@ -26,7 +26,7 @@
         align-items: center;
         border-radius: 0.5rem;
         width: 93%;
-        height: 17rem;
+        height: 18.5rem;
 
        
 
@@ -52,28 +52,30 @@
             display: flex;
             flex-direction: row;
             justify-content: baseline;
-            
+            align-items: flex-end;
         
             width: 95%;
-            
+            height: 5em;
+            //border: 1px rgb(7, 2, 63) solid;
         }
     
         .amarela{
                 
-            width: 43%;
+            width: 40%;
             border-bottom: 0.1rem solid black ;
             border-left: 0.1rem solid black ;
-    
+            height: 4.5em;
         }
     
         .azul{
 
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            width: 49%;
-            height: 4.1rem;
+            justify-content: space-around;
+            width: 54%;
+            height: 6.5em;
             text-align: center;
+            
             font-size: 12px;
 
             //border: 0.1rem solid rgb(0, 136, 255) ;
@@ -82,7 +84,8 @@
         .roxo{
             border-right: 0.1rem solid black ;
             border-bottom: 0.1rem solid black ;
-            width: 45%;              
+            width: 35%;    
+            height: 4.5em;     
         }
     }
     .vermelha:hover{
@@ -113,6 +116,15 @@
 
         background-color: #69170a00;
         color: #d9d9d900;
+        
+        //border: 1px rgb(7, 2, 63) solid;
+    }
+    .textu1{
+        width: 100% ;
+        margin-bottom:3.5px ;
+        font-size: 11px;
+    }
+    .textu{
         
         //border: 1px rgb(7, 2, 63) solid;
     }
