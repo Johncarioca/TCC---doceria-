@@ -2,9 +2,12 @@
 
 .loginusuario{
 
+    *{
+        outline: none;
+    }
+
     display: flex;
     flex-direction: column;
-    
 
 
     .cont1-login{
@@ -18,13 +21,17 @@
         background-position: 47%;
         justify-content: center;
         align-items: center;
+
+        //border: 1px green solid;
     }
 
     .subcont1-loginuser{
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 65%;
+        height: 55%;
+
+        
     }
 
     .bt-loginuser{
@@ -62,6 +69,8 @@
         width: 27%;
         align-items: center;
         justify-items: center;
+
+        border: 1px green solid;
 
     }
     

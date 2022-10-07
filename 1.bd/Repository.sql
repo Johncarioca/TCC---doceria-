@@ -28,9 +28,8 @@ select    id_cliente         id,
             bt_destaque             as destaque,
             nm_categoria            as categoria
             from tb_produto
-    inner join tb_produto_categoria on tb_produto_categoria.id_produto = tb_produto.id_produto
-    inner join tb_categoria on tb_categoria.id_categoria = tb_produto_categoria.id_categoria
-
+    
+    inner join tb_categoria on tb_categoria.id_categoria = tb_produto.id_categoria
 `
 /////////////////////////////// Novo Produto ///////////////////////////////
 

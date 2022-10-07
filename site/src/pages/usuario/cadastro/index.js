@@ -79,7 +79,7 @@ export default function CadastroUsuario (){
 
                         <div className="link-logincadastro" >
                             <p> Já possui uma conta? </p>
-                            <p>clique <a className="a-logincadastro" href="../loginUsuario">aqui</a> </p>
+                            <p>clique <a className="a-logincadastro" href="../login">aqui</a> </p>
                         </div>
 
                     </div>
