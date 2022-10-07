@@ -6,7 +6,7 @@
 
 .page-tabela{
 
-   .cabeçalho{
+   .cabeçalho-TP{
         display: flex;
         flex-direction: row;
         align-items: center;    
@@ -14,7 +14,7 @@
         height: 8rem;
         background-color: #69160A;
         
-        .div-principal{
+        .div1-cabTP{
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -22,13 +22,23 @@
             width: 100%;
             height: 8rem;
 
-            .sub-div1{
+            .sub-div1-cabTP{
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                width: 60%;
                 height: 7rem;
+                width: 23%;
+            
+                .seta-cabTP{
+                    margin-left: 20px;
+                }
+                    
+
+                .oi{
+                    width: 15rem;
+                    height: 2.8rem;
+                }
 
                 .sub{
                     display: flex;
@@ -37,38 +47,42 @@
                     align-items: center;
                     padding-bottom: 1.8rem;
                     width: 19rem;
-                    height: 55%;
-                    
-
-                    .oi{
-
-                        width: 15rem;
-                        height: 2.8rem;
-                    }
-
-                }
-                .lista{
+                    height: 55%;    
+                }   
+            }
+            
+            .tit-cabTP{
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                height: 100%;
+                
+                .lista-cabTP{
                     color:#ffffffff ;
                     align-self: end;
                     padding-bottom: 1rem;
                 }
             }
-            .sub-div2{
-                
-                width: 20%;
-                height: 15%;
-                padding-bottom: 4rem;
 
-                a{
-                    padding-left: 2rem;
+            
+            .sub-div2-cabTP{
+                
+                width: 23%;
+                height: 100%;
+                padding-bottom: 4rem;
+                display: flex;
+                align-items: flex-end ;
+
+                .a-sub-div2-cabTP{
+                    padding: 0rem 2rem;
                     color: #ffffffff;
                 }
             }
-            
-
         }
-
+        
+        
     }
+
     .corpo{
         
         display: flex;

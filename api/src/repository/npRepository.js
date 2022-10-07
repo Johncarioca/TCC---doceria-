@@ -37,3 +37,13 @@ export async function ListarCategorias(){
     return resposta;
 }
 
+export async function DeletarProduto(idProduto){
+    const comando=`
+        delete from tb_produto
+            where id_produto = ?
+    `
+    const [resp]=await con.query(comando,[idProduto])
+    return resp.affectedRows;
+
+}
+

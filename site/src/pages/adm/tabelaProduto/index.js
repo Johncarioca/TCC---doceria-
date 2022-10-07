@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
-import { listaProduto } from '../../../api/admAPI';
+
+import { listaProduto , DeletarProduto } from '../../../api/admAPI';
+import { ToastContainer, toast } from 'react-toastify';
+
+
 import './index.scss';
-
-
 
 export default function TabelaProduto(){
 
@@ -13,6 +15,17 @@ export default function TabelaProduto(){
         setProduto(i)
     }
 
+    async function removerProduto(id){
+        try {
+            await DeletarProduto(id);
+            await carregarProduto();
+            toast("produto deletado!")
+            
+        } catch (err) {
+            toast.error(err.message.response.data)
+        }
+    }
+
 
     useEffect( () => {
         carregarProduto();
@@ -20,27 +33,28 @@ export default function TabelaProduto(){
 
     return (
         <main className="page-tabela">
+            <ToastContainer/>
 
-            <header className='cabeçalho'> 
+            <header className='cabeçalho-TP'> 
                 
-                <div className="div-principal">
+                <div className="div1-cabTP">
 
-                    <div className="sub-div1">
+                    <div className="sub-div1-cabTP">
                         
-                        <div className="sub">
+                        <img className="seta-cabTP" src="/assets/image/seta.png" alt="" />
+                        <img className="oi" src="/assets/image/oi.png" alt="" />
+                    
+                    </div>
 
-                            <img className="oie" src="/assets/image/seta.png" alt="" />
-                            <img className="oi" src="/assets/image/oi.png" alt="" />
-                        </div>
+                    <div className='tit-cabTP'>
                         
-                        
-                        <h2 className="lista">Lista de produtos</h2>
+                        <h2 className="lista-cabTP">Lista de produtos</h2>
                         
                     </div>
 
-                    <div className="sub-div2">
-                        <a href="/" className="oi">Lista de pedidos</a>
-                        <a href="/">Home</a>
+                    <div className="sub-div2-cabTP">
+                        <a className='a-sub-div2-cabTP' href="/">Lista de pedidos</a>
+                        <a className='a-sub-div2-cabTP' href="/">Home</a>
                     </div>
                 </div>
                 
@@ -88,7 +102,7 @@ export default function TabelaProduto(){
                                     <td>{item.destaque ? 'Sim' : 'Não'}</td>
                                     <td className="imgs">
                                     <button className="but"><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
-                                    <button><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>
+                                    <button onClick={()=>removerProduto(item.id)}><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>
 
                                     </td>
                                 </tr>
