@@ -18,7 +18,6 @@ export async function listaProduto(){
     inner join tb_categoria on tb_categoria.id_categoria = tb_produto.id_categoria;
 `
     const [registro] = await con.query(comando);
-    console.log(registro);
     return registro;
 }
 

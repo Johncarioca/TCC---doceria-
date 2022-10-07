@@ -2,8 +2,13 @@ import './index.scss';
 
 import CardCabecario from '../../../components/cabecalhoCardapio';
 import CardCardapioGeral from '../../../components/CorpoCardapioGeral'
+import { useState } from 'react';
 
 export default function CardapioGeral(){
+
+    const [Produto, setProduto] = useState([]);
+
+    
 
     return(
 
@@ -24,12 +29,10 @@ export default function CardapioGeral(){
                     </div>
 
                     <div className="card-container">
+
+                        {}
                         <CardCardapioGeral/> 
-                        <CardCardapioGeral/> 
-                        <CardCardapioGeral/> 
-                        <CardCardapioGeral/> 
-                        <CardCardapioGeral/> 
-                        <CardCardapioGeral/> 
+                        
                     </div>
                     
                 </div>

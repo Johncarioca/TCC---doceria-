@@ -13,3 +13,10 @@ export async function LoginCliente(email,senha){
     return resposta;
 };
 
+
+////////// cardapio geral ////////////////
+
+export async function ProdutosDestaque(){
+    const j = await api.get('/cardapioGeral');
+    return j.data;
+}
