@@ -19,11 +19,20 @@ export async function CadastrarProduto(nome,peso,preco,sinopse,ingredientes,esto
     return resposta.data;
 };
 
-export async function ImagemProduto(id,imagem){
+
+
+
+
+
+
+
+
+
+export async function ImagemProduto(imagem,Id){
     const formData= new FormData();
     formData.append('imagem',imagem);
 
-    const resposta = await api.put(`/adm/${id}/imagem`, formData, {
+    const resposta = await api.put(`/adm/${Id}/imagem`, formData, {
         headers:{
             "content-type":"multipart/form-data"
         },
@@ -31,6 +40,17 @@ export async function ImagemProduto(id,imagem){
 
     return resposta.status;
 };
+
+
+
+
+
+
+
+
+
+
+
 
 export async function ListarCategorias(){
     const resposta=await api.get('/adm/listarcategoria');
@@ -46,6 +66,13 @@ export async function LoginCliente() {
 
 ////////// tabela de produto ////////////////
 
+export async function BuscarProdutoPelaTabela(nome){
+    console.log(nome);
+    const resposta = await api.get(`/adm/busca?nome=${nome}`);
+    return resposta.data;
+
+}
+
 export async function listaProduto(){
     const j = await api.get('/adm/produto');
     return j.data;
@@ -55,3 +82,5 @@ export async function DeletarProduto(id){
     const r=await api.delete('/adm/produto/'+id);
     return r.data;
 }
+
+ 

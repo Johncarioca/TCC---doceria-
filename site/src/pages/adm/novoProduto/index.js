@@ -2,7 +2,7 @@ import './index.scss';
 import {useState ,useEffect} from 'react'
 
 
-import{CadastrarProduto,ListarCategorias,ImagemProduto}from '../../../api/admAPI'
+import{CadastrarProduto, ListarCategorias, ImagemProduto }from '../../../api/admAPI'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -19,6 +19,9 @@ export default function NovoProduto(){
     const [destaque,setDestaque]= useState(false);
     const [categoria,setCategoria]= useState([0]);
     const [idCategoria,setIdCategoria]=useState(0);
+
+
+
     const [imagem,setImagem]= useState();
 
    useEffect(() => {
@@ -26,16 +29,25 @@ export default function NovoProduto(){
     }, [])
 
     async function Produto(){
-    try {
-        const r= await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
-        await ImagemProduto(r.id,imagem);
+        try {
 
-        toast("Produto Cadastrado")
-    } catch (err) {
+            if(!imagem)
+                throw new Error('Escolha a img do produto');
 
-        if (err.response) {
-            toast.error(err.response.data.erro);
-        }    }
+            const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
+            console.log(r);
+            await ImagemProduto(imagem, r.Id);
+
+            toast("Produto Cadastrado")
+        } 
+        catch (err) {
+
+            if (err.response) {
+                toast.error(err.response.data.erro);
+            }
+            else
+                toast.error(err.message);
+        }   
     }
 
     async function ListCategoria(){
@@ -75,6 +87,7 @@ export default function NovoProduto(){
                 <div>
                     <a className='ab'> Lista de pedidos </a>
                     <a className='ab'> Home</a>
+                    
                 </div>
             </header>
 
@@ -87,11 +100,12 @@ export default function NovoProduto(){
                         <div className="dois">
                             <p> Imagem do produto: </p>
 
-                            <div className="inserir-imagem">
-                                <img src={ExibirImagem(imagem)} alt="" onClick={()=> escolherImagem('imagem')}/>
-                                <input type="file" id="imagem" onChange={e => setImagem(e.target.files[0])}/>
-                            </div>
+                            <div className="inserir-imagem" onClick={()=> escolherImagem('imagem')}>  
 
+                                <img src={ExibirImagem(imagem)} alt="" />
+                                <input type="file" id="imagem" onChange={e => setImagem(e.target.files[0])}/>
+                            
+                            </div>
                         </div>
 
                         <div className='cadas'>
@@ -130,7 +144,7 @@ export default function NovoProduto(){
                             <select value={idCategoria}  onChange={e=> setIdCategoria(e.target.value)}>
                                 <option >Selecione</option>
                                 {categoria.map(item=>
-                                    <option value={item.id}>{item.categoria} {item.id}</option>
+                                    <option value={item.id}>{item.categoria} </option>
                                 )}
                             </select>
                         </div>

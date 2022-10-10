@@ -3,11 +3,17 @@ import './index.scss';
 import CardCabecario from '../../../components/cabecalhoCardapio';
 import CardCardapioGeral from '../../../components/CorpoCardapioGeral'
 import { useEffect, useState } from 'react';
-import { ProdutosDestaque } from '../../../api/userAPI';
+import { ProdutosDestaque,BuscarProdutoCardapio } from '../../../api/userAPI';
 
 export default function CardapioGeral(){
 
     const [Produto, setProduto] = useState([]);
+    const [Filtros, setFiltros] = useState('');
+
+    async function BuscaCard(){
+        const [resposta] = await BuscarProdutoCardapio(Filtros);
+        setFiltros(resposta);
+    }   
 
     async function cardDestaques(){
         const q = await ProdutosDestaque();
@@ -33,7 +39,8 @@ export default function CardapioGeral(){
                     
                     <div className="divPesguisa">
                         <div className="Pesquisa">
-                            <input className="barra" type="text" placeholder='Pesquisa...' /> <div> <img className="lupe" src="/assets/image/lupa.png" alt="" /></div>
+                            <input className="barra" type="text" placeholder='Pesquisa...' value={Filtros}  onChange={e => setFiltros(e.target.value)} /> 
+                            <div> <img className="lupe" src="/assets/image/lupa.png" alt="" onClick={BuscaCard} /></div>
                         </div>
                     </div>
 

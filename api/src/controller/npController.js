@@ -25,9 +25,14 @@ server.post('/adm/cadastro', async (req,resp) => {
     }
 });
 
+
+
 server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
 
     try {
+
+            if(!req.file)
+                    throw new Error('Escolha a imagem do produto')
         const { id } = req.params;
         const Imagem = req.file.path;
 
@@ -44,6 +49,10 @@ server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
         })
     }
 });
+
+
+
+
 
 server.get('/adm/listarcategoria', async(req,resp)=>{
     try {

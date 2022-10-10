@@ -13,7 +13,7 @@ export async function NovoProduto(cadastro){
 }
 
 export async function ImagemProduto(Imagem, id){
-    console.log(Imagem, id);
+    // console.log(Imagem, id);
     const comando =
     `
         update tb_produto

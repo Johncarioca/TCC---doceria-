@@ -1,19 +1,31 @@
 import { useEffect, useState } from 'react';
 
-import { listaProduto , DeletarProduto } from '../../../api/admAPI';
+import { listaProduto , DeletarProduto, BuscarProdutoPelaTabela } from '../../../api/admAPI';
 import { ToastContainer, toast } from 'react-toastify';
 
 
 import './index.scss';
 
+
 export default function TabelaProduto(){
 
     const [Produto, setProduto] = useState([]);
+    const [Filtro, setFiltro] = useState('');
+
+
+
+    async function FiltraProduto (){
+        const reposta = await BuscarProdutoPelaTabela(Filtro)
+        console.log(Filtro);
+        setFiltro([reposta]);
+    }
+
 
     async function carregarProduto(){
         const i = await listaProduto();
         setProduto(i)
     }
+
 
     async function removerProduto(id){
         try {
@@ -26,6 +38,7 @@ export default function TabelaProduto(){
         }
     }
 
+   
 
     useEffect( () => {
         carregarProduto();
@@ -64,10 +77,10 @@ export default function TabelaProduto(){
 
                 <div className="barraPesquisa">
 
-                    <input type="text" placeholder='Pesquisa...' /> 
+                    <input type="text" placeholder='Pesquisa...' value={Filtro} onChange={e => setFiltro(e.target.value)} /> 
 
                     
-                    <img src="/assets/image/lupa.png" alt="" />
+                    <img src="/assets/image/lupa.png" alt="" onClick={FiltraProduto}/>
                     
 
                 </div>

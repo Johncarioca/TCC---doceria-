@@ -17,7 +17,7 @@ export default function CardCabecario(){
                         </div>
 
                         <div>
-                            <img className="logos" src="/assets/image/oi.png" alt="" />                            
+                            <img className="logos" src="/assets/image/oi.png"  alt="" />                            
                         </div>    
                     </div>
 
