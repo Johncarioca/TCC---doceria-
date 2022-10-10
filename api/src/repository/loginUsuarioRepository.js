@@ -1,7 +1,6 @@
 import { con } from './conection.js'
 
 export async function loginUsuario (email, senha ){
-
     const comando = 
     `   select    id_cliente         id,
                   ds_email         email
@@ -15,7 +14,7 @@ export async function loginUsuario (email, senha ){
 
 export async function CadastroUsuar(cliente){
 
-  
+
   const comando = 
   `
     insert into tb_cliente(nm_cliente, 
@@ -27,14 +26,7 @@ export async function CadastroUsuar(cliente){
                            ds_ConfirSenha)
                    values (? ,? ,? ,? ,? ,? ,? );
   `
-  const [registro] = con.query(comando,[cliente.nome, 
-                                        cliente.email,
-                                        cliente.senha,
-                                        cliente.cpf,
-                                        cliente.nascimento,
-                                        cliente.telefone,
-                                        cliente.ConfirSenha
-                                      ]);
+  const [registro] = con.query(comando,[cliente.nome, cliente.email,cliente.senha,cliente.cpf, cliente.nascimento, cliente.telefone,  cliente.ConfirSenha]);
   cliente.id = registro.isertid;
   return cliente;
 }

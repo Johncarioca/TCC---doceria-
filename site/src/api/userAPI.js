@@ -8,11 +8,11 @@ const api = axios.create({
 
 export async function LoginCliente(email,senha){
 
-    const resposta =await api.post('/user/login',{
+    const resposta = await api.post('/user/login',{
         email:email,
         senha:senha
     });
-    return resposta;
+    return resposta.data;
 };
 
 

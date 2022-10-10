@@ -17,7 +17,8 @@ export default function LoginUsuario(){
 
     async function Logar(email, senha) {
         try {
-            await LoginCliente(email , senha);
+            const f = await LoginCliente(email, senha);
+            
             toast("login realizado")
             navigate('/cardapiogeral')
         } catch (err) {
@@ -39,7 +40,7 @@ export default function LoginUsuario(){
                 <div className="subcont1-loginuser">
                     <img src="../assets/image/cardloginuser.png" />
 
-                    <button  onClick={Logar} className="bt-loginuser">  
+                    <button  className="bt-loginuser" onClick={Logar} >  
                         Entrar
                     </button>
                     
@@ -56,12 +57,12 @@ export default function LoginUsuario(){
                     
                     <div className='inpucont-loginuser'>
                         <label >E-mail:</label>
-                        <input value={email} className='input-loginuser' type="text" placeholder='@gmail.com' onChange={e => SetEmail(e.target.value)} />
+                        <input className='input-loginuser' type="text" placeholder='@gmail.com' value={email}  onChange={e => SetEmail(e.target.value)} />
                     </div>
 
                     <div className='inpucont-loginuser'>
                         <label>Senha:</label>
-                        <input value={senha} className='input-loginuser' type="password" onChange={e => SetSenha(e.target.value)} />
+                        <input className='input-loginuser' type="password" value={senha}  onChange={e => SetSenha(e.target.value)} />
                     </div>
 
                     <div className="link-loginuser" >

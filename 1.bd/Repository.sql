@@ -54,3 +54,12 @@ select    id_cliente         id,
 
 
 
+{
+  "nome": "john",
+  "email": "john@gmail.com",
+  "senha": "1234",
+  "cpf": "13003603728",
+  "nascimento": "2004-10-10",
+  "telefone": "02195704016",
+  "ConfirSenha": "1234"
+}
