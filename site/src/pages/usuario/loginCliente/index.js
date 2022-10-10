@@ -17,7 +17,7 @@ export default function LoginUsuario(){
 
     async function Logar(email, senha) {
         try {
-            const f = await LoginCliente(email , senha);
+            await LoginCliente(email , senha);
             toast("login realizado")
             navigate('/cardapiogeral')
         } catch (err) {
@@ -39,7 +39,7 @@ export default function LoginUsuario(){
                 <div className="subcont1-loginuser">
                     <img src="../assets/image/cardloginuser.png" />
 
-                    <button onClick={Logar} className="bt-loginuser">  
+                    <button  onClick={Logar} className="bt-loginuser">  
                         Entrar
                     </button>
                     

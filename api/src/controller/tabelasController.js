@@ -24,7 +24,7 @@ server.get('/adm/busca', async (req,resp) => {
 
         const resposta = await BuscarNome(nome);
         
-        if(resposta.length === 0)
+        if(!resposta)
             resp.status(404).send([])
         else
             resp.send(resposta);

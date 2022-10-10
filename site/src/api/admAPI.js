@@ -20,14 +20,6 @@ export async function CadastrarProduto(nome,peso,preco,sinopse,ingredientes,esto
 };
 
 
-
-
-
-
-
-
-
-
 export async function ImagemProduto(imagem,Id){
     const formData= new FormData();
     formData.append('imagem',imagem);
@@ -40,7 +32,6 @@ export async function ImagemProduto(imagem,Id){
 
     return resposta.status;
 };
-
 
 
 

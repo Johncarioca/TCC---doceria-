@@ -35,9 +35,9 @@ export default function NovoProduto(){
                 throw new Error('Escolha a img do produto');
 
             const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
-            console.log(r);
+            
             await ImagemProduto(imagem, r.Id);
-
+            console.log(r.Id);
             toast("Produto Cadastrado")
         } 
         catch (err) {

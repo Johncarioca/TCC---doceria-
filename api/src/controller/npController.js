@@ -33,10 +33,10 @@ server.put('/adm/:id/imagem', upload.single('imagem'),async (req, resp) => {
 
             if(!req.file)
                     throw new Error('Escolha a imagem do produto')
-        const { id } = req.params;
-        const Imagem = req.file.path;
+        const { Id } = req.params;
+        const imagem = req.file.path;
 
-        const resposta = await ImagemProduto(Imagem, id);
+        const resposta = await ImagemProduto(imagem, Id);
         if(resposta != 1){
             throw new Error('A imagem não foi salva.');
         }

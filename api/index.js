@@ -20,5 +20,6 @@ server.use(loginUsuario);
 server.use(tabelasController);
 server.use(cardapioController);
 
+server.use('/storage/imagem', express.static('storage/imagem'));
 
 server.listen(process.env.PORT, () => console.log(` Api está online na porta ${process.env.PORT}`));

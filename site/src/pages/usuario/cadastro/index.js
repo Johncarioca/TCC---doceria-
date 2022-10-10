@@ -1,8 +1,18 @@
 import './index.scss'
+import {useState} from 'react'
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
 
 export default function CadastroUsuario (){
 
+    const [Email, setEmail] = useState('');
+    const [Senha, setSenha] = useState('');
+    const [Nome, setNome] = useState('');
+    const [Telefone, setTelefone] = useState('');
+    const [Nascimento, setNascimento] = useState('');
+    const [CPF, setCPF] = useState('');
+    const [ConfirSenha, setConfirSenha] = useState('');
+
+    
     return(
 
         <main className="cadastrousuario">
@@ -40,11 +50,6 @@ export default function CadastroUsuario (){
                     </div>
 
                     <div className="subcon2-cadastro">
-
-                        <div className='inpucont-cadastro'>
-                            <label > Nome de usuerio:</label>
-                            <input className='input-cadastro' type="text" placeholder='...' />
-                        </div>
 
                         <div className='inpucont-cadastro'>
                             <label > Data de nascimento:

@@ -15,9 +15,9 @@ export default function TabelaProduto(){
 
 
     async function FiltraProduto (){
-        const reposta = await BuscarProdutoPelaTabela(Filtro)
+        const reposta = await BuscarProdutoPelaTabela(Filtro);
         console.log(Filtro);
-        setFiltro([reposta]);
+        setProduto(reposta);
     }
 
 
@@ -37,8 +37,6 @@ export default function TabelaProduto(){
             toast.error(err.message.response.data)
         }
     }
-
-   
 
     useEffect( () => {
         carregarProduto();

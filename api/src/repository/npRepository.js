@@ -12,7 +12,7 @@ export async function NovoProduto(cadastro){
     return cadastro;
 }
 
-export async function ImagemProduto(Imagem, id){
+export async function ImagemProduto(imagem, Id){
     // console.log(Imagem, id);
     const comando =
     `
@@ -20,7 +20,7 @@ export async function ImagemProduto(Imagem, id){
            set img_produto   = ?
         where id_produto    = ?
     `
-    const [resposta] = await con.query(comando, [Imagem, id]);
+    const [resposta] = await con.query(comando, [imagem, Id]);
     return resposta.affectedRows;
 }
 

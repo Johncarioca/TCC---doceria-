@@ -4,6 +4,8 @@ const api = axios.create({
     baseURL:'http://localhost:5000'
 })
 
+
+
 export async function LoginCliente(email,senha){
 
     const resposta =await api.post('/user/login',{

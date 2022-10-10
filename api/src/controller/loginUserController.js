@@ -1,7 +1,8 @@
 import {Router} from 'express';
 const server = Router();
 
-import { loginUsuario } from '../repository/loginUsuarioRepository.js';
+import { CadastroUsuar, loginUsuario } from '../repository/loginUsuarioRepository.js';
+import { ValidarCadastro } from '../service/validacao.js';
 
 server.post('/user/login', async (req,resp) => {
     try {
@@ -19,5 +20,26 @@ server.post('/user/login', async (req,resp) => {
         resp.status(401).send({erro: err.message});
     }
 });
+
+server.post('/user/cadastro', async (req,resp) => {
+    
+    try {
+        const cliente = req.body;
+        
+        await ValidarCadastro(cliente); 
+        const reposta = await CadastroUsuar(cliente);
+
+        resp.send(cliente);
+    } 
+    catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+});
+
+
+
+
 
 export default server; 
