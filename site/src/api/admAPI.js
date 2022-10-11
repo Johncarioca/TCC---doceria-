@@ -58,7 +58,7 @@ export async function LoginCliente() {
 ////////// tabela de produto ////////////////
 
 export async function BuscarProdutoPelaTabela(nome){
-    console.log(nome);
+    // console.log(nome);
     const resposta = await api.get(`/adm/busca?nome=${nome}`);
     return resposta.data;
 

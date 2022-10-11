@@ -51,9 +51,6 @@ select    id_cliente         id,
                     values (? ,? ,? ,? ,? ,? ,? ,?)
 `
 
-
-
-
 {
   "nome": "john",
   "email": "john@gmail.com",

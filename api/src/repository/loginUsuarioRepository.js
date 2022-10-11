@@ -14,7 +14,6 @@ export async function loginUsuario (email, senha ){
 
 export async function CadastroUsuar(cliente){
 
-
   const comando = 
   `
     insert into tb_cliente(nm_cliente, 
@@ -26,7 +25,7 @@ export async function CadastroUsuar(cliente){
                            ds_ConfirSenha)
                    values (? ,? ,? ,? ,? ,? ,? );
   `
-  const [registro] = con.query(comando,[cliente.nome, cliente.email,cliente.senha,cliente.cpf, cliente.nascimento, cliente.telefone,  cliente.ConfirSenha]);
-  cliente.id = registro.isertid;
+  const [registro] = await con.query(comando,[cliente.nome, cliente.email,cliente.senha,cliente.cpf, cliente.nascimento, cliente.telefone,  cliente.ConfirSenha]);
+  cliente.id = registro.insertId;
   return cliente;
 }

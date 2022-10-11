@@ -22,14 +22,14 @@ server.post('/user/login', async (req,resp) => {
 });
 
 server.post('/user/cadastro', async (req,resp) => {
-    
     try {
         const cliente = req.body;
         
-        await ValidarCadastro(cliente); 
+        await ValidarCadastro(cliente);
+        console.log(cliente);
         const reposta = await CadastroUsuar(cliente);
 
-        resp.send(cliente);
+        resp.send(reposta);
     } 
     catch (err) {
         resp.status(401).send({

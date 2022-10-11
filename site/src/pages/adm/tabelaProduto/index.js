@@ -13,7 +13,6 @@ export default function TabelaProduto(){
     const [Filtro, setFiltro] = useState('');
 
 
-
     async function FiltraProduto (){
         const reposta = await BuscarProdutoPelaTabela(Filtro);
         console.log(Filtro);
@@ -77,10 +76,7 @@ export default function TabelaProduto(){
 
                     <input type="text" placeholder='Pesquisa...' value={Filtro} onChange={e => setFiltro(e.target.value)} /> 
 
-                    
                     <img src="/assets/image/lupa.png" alt="" onClick={FiltraProduto}/>
-                    
-
                 </div>
 
                 <div className="tabela">
