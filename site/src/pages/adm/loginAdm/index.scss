@@ -4,6 +4,7 @@
     *{
         box-sizing: border-box ;
         margin: 0;
+        outline: none;
         //border: 1px green solid;
 
     }   
@@ -16,7 +17,7 @@
         justify-content: space-between;
 
         padding: 0rem 5rem ;
-        width: 100vw;
+        width: 100%;
         height: 6rem;
          
     }
@@ -49,6 +50,7 @@
                 
                 align-items: center;
 
+                
             }
 
             .imagem-1{
@@ -65,7 +67,22 @@
                 width: 12em;
                 height: 3em;
                 color: aliceblue;
+
+                .b-salvar:hover{
+                    cursor: pointer;
+                    transition: 1s;
+                }
                 
+            }
+            .erro{
+                display: flex;
+                justify-content: center;
+                font: 700 14px 'Inter';
+                color: #f95d48;
+                letter-spacing: 1px;
+                position: relative;
+                top: 40px;
+                height: 50px;
             }
     
         }

@@ -32,11 +32,26 @@
                 
             }
             .ab{
+                text-align: center;
                 color: #ffffff;
-                text-decoration: underline; 
+                font-size: 20px;
+
+                hr{
+                    width: 0rem;
+                    height: 0rem;
+                    background-color: #94423000;
+                }
             }
             .ab:hover{
                 cursor: pointer;
+
+                hr{
+                    cursor: pointer;
+                    width: 4.5rem;
+                    height: 0.20rem;
+                    background-color: #a85441;
+                    transition: 0.9s;
+                }
             }
 
         }
@@ -46,7 +61,7 @@
             align-items: center;
             justify-content: space-around;
             width: 100vw;
-            height: 80vh;
+            height: 87vh;
             background-image: url('../../../../public/assets/image/panquecaAreaAdm.png');
             background-size: 100em;
             background-repeat: no-repeat;
@@ -54,6 +69,9 @@
             
 
             .div-2{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 text-align: center;
                 width: 60rem;
                 padding-bottom: 5rem ;
@@ -63,29 +81,34 @@
                     color: #ffffff;
                     margin-bottom: 4rem ;
                 }
-
-
-
                 .b{
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     
-                    
+                    width: 40%;
                    
-
-                    a{
-                        
-                        border-radius: 35rem 0rem;
-                        width: 17rem;
-                        height: 3.3rem;
+                    
+                    .ap{
+                        border-radius: 1.5rem 0rem;
+                        width: 18rem;
+                        height: 3.6rem;
                         background-color: #C8AE89;
                         margin: 0rem 0rem 2rem;
-                        font-size: 1.5rem;                    
+                        font-size: 1.5rem;
+                        padding-top: 0.5rem;          
+                        
+                        
                     }
-                    a:hover{
+                    .ap:hover{
+
                         cursor: pointer;
-                        width: 18rem;
+                        background-color: #8C392E;
+                        color: #ffffff;
+                        transition: 1s;
+                        width: 85%;
+
+                        
                     }
                 } 
 

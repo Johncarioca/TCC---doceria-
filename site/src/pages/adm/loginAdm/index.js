@@ -1,25 +1,39 @@
 import './index.scss';
 
-import axios from 'axios'
+
 import { useNavigate } from 'react-router-dom'
-import { useState }  from 'react'
+import { useState, Ref, useRef }  from 'react'
+import LoadingBar from 'react-top-loading-bar'
 
-
+import { LoginAdmin } from '../../../api/admAPI.js'
 
 export default function LoginAdm(){
 
     const [Email, SetEmail ] = useState('');
     const [Senha, SetSenha ] = useState('');
     const [Erro, SetErro ] = useState('');
+    const [Carregando, SetCarregando ] = useState(false);
+    
 
     const navigate = useNavigate();
-    
+    const ref = useRef();
+
+
     async function InserirClick (){
+        ref.current.continuousStart();
+        SetCarregando(true);
+
         try {
-            const j = await axios.post('http://localhost:5000/adm/login', {email: Email, senha:Senha });
-            navigate('/areaAdm');      
+            const j = await LoginAdmin(Email,Senha);
+
+            setTimeout(() => {
+                navigate('/adm/areaadm');    
+            }, 3000);
+                  
         } 
         catch (err) {
+            ref.current.complete();
+            SetCarregando(false)
             if (err.response.status === 401) {
                 SetErro(err.response.data.erro);
             }
@@ -29,6 +43,8 @@ export default function LoginAdm(){
 
     return(
         <main className="Login-adm" >
+
+            <LoadingBar color='#FDE5DE' ref={ref}/>
 
             <header className="cabeçalho">
                 
@@ -48,7 +64,11 @@ export default function LoginAdm(){
                     </div>
 
                     <div className="igm-bottão" >
-                        <button className="b-salvar" onClick={InserirClick}> Cadastrar </button>
+                        <button className="b-salvar" onClick={InserirClick} disabled={Carregando}> Cadastrar </button>
+                    </div>
+
+                    <div className="erro">
+                        {Erro}
                     </div>
 
                 </div>
@@ -69,9 +89,7 @@ export default function LoginAdm(){
                             <p> Senha:</p>     
                             <input type='password'  className="info" value={Senha}  onChange={ e => SetSenha(e.target.value)}/>
                         </div>
-                        <div className="erro">
-                            {Erro}
-                        </div>
+                        
                     </div>
                     
                 </div>

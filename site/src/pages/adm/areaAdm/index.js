@@ -7,11 +7,11 @@ export default function AreaAdm() {
     const navigate = useNavigate();
 
     function pedidos() {
-        navigate('/tabelaProduto')
+        navigate('/adm/tabelaproduto')
     }
 
     function cardapio() {
-        navigate('/cardapiogeral')
+        navigate('/adm/novoproduto')
     }
 
     function inicio() {
@@ -29,7 +29,12 @@ export default function AreaAdm() {
 
                     <img className='logo' src="/assets/image/oi.png" alt="" />
                 </div>
-                <a onClick={inicio} className='ab'> Home</a>
+                
+
+                <div className="ab">
+                    <p className="nomeCategoria" onClick={inicio}>Home</p>
+                    <hr/>
+                </div>
 
             </header>
             
@@ -39,9 +44,13 @@ export default function AreaAdm() {
                     
                     <h1>Area administrativa</h1>
 
-                    <div className='b'>
-                        <a onClick={pedidos} > Pedidos </a>
-                        <a onClick={cardapio}> Cardapio</a>
+                    <div className='b' onClick={pedidos}>
+                        <div className="ap">
+                            <a onClick={pedidos} > Pedidos </a>
+                        </div>
+                        <div className="ap" onClick={cardapio}>
+                            <a onClick={cardapio}> Produto</a>
+                        </div>
                     </div>
                 </div>
 

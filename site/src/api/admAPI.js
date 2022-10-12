@@ -33,23 +33,16 @@ export async function ImagemProduto(imagen,id){
     return r.data;
 };
 
-
-
-
-
-
-
-
-
-
-
 export async function ListarCategorias(){
     const resposta=await api.get('/adm/listarcategoria');
     return resposta.data;
 }
 
-export async function LoginCliente() {
-    const r = await api.post('/cliente/login');
+export async function LoginAdmin(Email,Senha) {
+    const r = await api.post('/adm/login', {
+        email: Email, 
+        senha:Senha 
+    });
     return r.data;
 }
 
