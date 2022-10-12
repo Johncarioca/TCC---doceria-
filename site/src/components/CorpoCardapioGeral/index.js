@@ -1,4 +1,6 @@
+import { buscarFilmes } from '../../api/adm/novoProdutoAPI';
 import './index.scss';
+
 
 export default function CardCardapioGeral(props){
 
@@ -8,7 +10,7 @@ export default function CardCardapioGeral(props){
             <div className="vermelha">
 
                 <div className="verdeClaro">
-                    <img className="ima" src="../assets/image/cardCardapio/fotoTeste.png" alt="" />
+                    <img className="ima" src={buscarFilmes(props.item.imagem)} alt="" />
                 </div>
 
                 <button className="btVer"> Ver Produto </button>

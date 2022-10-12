@@ -38,3 +38,6 @@ export async function ListarCategorias(){
     return resposta.data;
 }
 
+export  function buscarFilmes(imagem){
+    return `${api.getUri()}/${imagem}` 
+}
