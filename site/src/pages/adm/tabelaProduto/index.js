@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { listaProduto , DeletarProduto, BuscarProdutoPelaTabela } from '../../../api/admAPI';
+import { listaProduto , DeletarProduto, BuscarProdutoPelaTabela } from '../../../api/adm/tabelasAdmAPI.js';
 import { ToastContainer, toast } from 'react-toastify';
 
 

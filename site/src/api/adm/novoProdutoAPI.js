@@ -38,33 +38,3 @@ export async function ListarCategorias(){
     return resposta.data;
 }
 
-export async function LoginAdmin(Email,Senha) {
-    const r = await api.post('/adm/login', {
-        email: Email, 
-        senha:Senha 
-    });
-    return r.data;
-}
-
-
-
-////////// tabela de produto ////////////////
-
-export async function BuscarProdutoPelaTabela(nome){
-    // console.log(nome);
-    const resposta = await api.get(`/adm/busca?nome=${nome}`);
-    return resposta.data;
-
-}
-
-export async function listaProduto(){
-    const j = await api.get('/adm/produto');
-    return j.data;
-}
-
-export async function DeletarProduto(id){
-    const r=await api.delete('/adm/produto/'+id);
-    return r.data;
-}
-
- 

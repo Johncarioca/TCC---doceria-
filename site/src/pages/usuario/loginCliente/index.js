@@ -1,6 +1,6 @@
 import './index.scss'
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
-import { LoginCliente } from '../../../api/userAPI.js';
+import { LoginCliente } from '../../../api/usuario/loginUserAPI.js';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 

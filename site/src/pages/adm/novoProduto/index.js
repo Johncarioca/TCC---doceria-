@@ -2,7 +2,7 @@ import './index.scss';
 import {useState ,useEffect} from 'react'
 
 
-import{CadastrarProduto, ListarCategorias, ImagemProduto }from '../../../api/admAPI'
+import{CadastrarProduto, ListarCategorias, ImagemProduto }from '../../../api/adm/novoProdutoAPI.js'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

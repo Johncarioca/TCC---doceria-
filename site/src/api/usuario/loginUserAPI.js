@@ -15,20 +15,6 @@ export async function LoginCliente(email,senha){
     return resposta.data;
 };
 
-////////// cardapio geral ////////////////
-
-export async function ProdutosDestaque(){
-    const j = await api.get('/cardapioGeral');
-    return j.data;
-}
-
-export async function BuscarProdutoCardapio(nome){
-    console.log(nome);
-    const resposta = await api.get(`/adm/busca?nome=${nome}`);
-    return resposta.data;
-
-}
-
 ////////// cadastro do cliente ////////////////
 
 export async function cadastrarCliente(nome,email,senha,cpf,nascimento,telefone,ConfirSenha){
@@ -44,3 +30,4 @@ export async function cadastrarCliente(nome,email,senha,cpf,nascimento,telefone,
     });
     return r.data;
 }
+

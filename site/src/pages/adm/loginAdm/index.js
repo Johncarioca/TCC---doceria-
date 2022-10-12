@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState, Ref, useRef }  from 'react'
 import LoadingBar from 'react-top-loading-bar'
 
-import { LoginAdmin } from '../../../api/admAPI.js'
+import { LoginAdmin } from '../../../api/adm/loginAdmAPI.js'
 
 export default function LoginAdm(){
 

@@ -1,7 +1,7 @@
 import './index.scss'
 import {useState} from 'react'
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
-import { cadastrarCliente } from '../../../api/userAPI';
+import { cadastrarCliente } from '../../../api/usuario/loginUserAPI';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
