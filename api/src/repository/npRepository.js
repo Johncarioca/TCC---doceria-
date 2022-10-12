@@ -8,11 +8,11 @@ export async function NovoProduto(cadastro){
                     values (? ,? ,? ,? ,? ,? ,? ,?)
     `
     const [resposta] = await con.query(comando, [cadastro.nome, cadastro.peso, cadastro.preco, cadastro.sinopse, cadastro.ingredientes, cadastro.estoque, cadastro.destaque,cadastro.categoria ]);
-    cadastro.id = resposta.insertid;
-    return cadastro;
+    
+    return resposta.insertId;
 }
 
-export async function ImagemProduto(imagem, Id){
+export async function ImagemProduto(imagen, id){
     // console.log(Imagem, id);
     const comando =
     `
@@ -20,8 +20,8 @@ export async function ImagemProduto(imagem, Id){
            set img_produto   = ?
         where id_produto    = ?
     `
-    const [resposta] = await con.query(comando, [imagem, Id]);
-    return resposta.affectedRows;
+    const [resposta] = await con.query(comando, [imagen, id]);
+    return resposta;
 }
 
 

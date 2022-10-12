@@ -20,17 +20,17 @@ export async function CadastrarProduto(nome,peso,preco,sinopse,ingredientes,esto
 };
 
 
-export async function ImagemProduto(imagem,Id){
-    const formData= new FormData();
-    formData.append('imagem',imagem);
+export async function ImagemProduto(imagen,id){
+    let form= new FormData();
+    form.append('imagem',imagen);
 
-    const resposta = await api.put(`/adm/${Id}/imagem`, formData, {
-        headers:{
-            "content-type":"multipart/form-data"
-        },
+    const r = await api.put('/adm/produto/' + id, form, {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
     });
 
-    return resposta.status;
+    return r.data;
 };
 
 

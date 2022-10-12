@@ -22,7 +22,7 @@ export default function NovoProduto(){
 
 
 
-    const [imagem,setImagem]= useState();
+    const [imagen,setImagem]= useState();
 
    useEffect(() => {
         ListCategoria();
@@ -31,14 +31,14 @@ export default function NovoProduto(){
     async function Produto(){
         try {
 
-            if(!imagem)
+            if(!imagen)
                 throw new Error('Escolha a img do produto');
 
             const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
             
-            await ImagemProduto(imagem, r.Id);
-            // console.log(r.Id);
-            toast("Produto Cadastrado")
+            await ImagemProduto(imagen, r.id);
+             console.log(r.Id);
+            toast.dark("Produto Cadastrado")
         } 
         catch (err) {
 
@@ -100,9 +100,9 @@ export default function NovoProduto(){
                         <div className="dois">
                             <p> Imagem do produto: </p>
 
-                            <div className="inserir-imagem" onClick={()=> escolherImagem('imagem')}>  
+                            <div className="inserir-imagem" >  
 
-                                <img src={ExibirImagem(imagem)} alt="" />
+                                <img  alt="" src={ExibirImagem(imagen)} onClick={()=> escolherImagem('imagem')}/>
                                 <input type="file" id="imagem" onChange={e => setImagem(e.target.files[0])}/>
                             
                             </div>
