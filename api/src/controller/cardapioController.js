@@ -4,7 +4,7 @@ import { BuscarPeloNome, ProdutosDestaque } from "../repository/cardapioReposito
 const server = Router()
 
 
-server.get('/cardapioGeral', async (req,resp) => {
+server.get('/api/cardapioGeral', async (req,resp) => {
     try {
         const i = await ProdutosDestaque();
         resp.send(i);

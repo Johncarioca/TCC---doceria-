@@ -1,0 +1,74 @@
+.home{
+
+    .cabeçalho{
+        *{
+            //border: 1px solid green ;
+        }
+
+        display: flex;
+        justify-content: center;
+        background-color: #69160A;
+        height: 6rem;
+        
+        .duasDivs{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 90%;
+
+            .logo{
+
+            }
+
+            .iconTexto{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 42%;
+                height: 3.5rem;
+
+                .text{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 58%;
+                    color: #fff;
+                    .ps{
+                        font-size: 14px;
+                        width: 20%;
+                    }
+                       
+                }
+
+                .icons{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    justify-items: flex-end;
+                    align-items: center;
+                    align-self: center;
+                    width: 20%;
+
+                    .divImagem{
+                        
+                        width: 100%;
+                        height: 2.9rem;
+
+                        .Carrinho{
+                            width: 65%;
+                            height: 2rem;
+                        }
+                        .logi{
+                            width: 45%;
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+            
+            
+        }
+    }
+}

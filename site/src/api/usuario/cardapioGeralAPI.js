@@ -5,7 +5,7 @@ const api = axios.create({
 })
 
 export async function ProdutosDestaque(){
-    const j = await api.get('/cardapioGeral');
+    const j = await api.get('/api/cardapioGeral');
     return j.data;
 }
 
@@ -16,3 +16,4 @@ export async function BuscarProdutoCardapio(nome){
 
 }
 
+export default api;

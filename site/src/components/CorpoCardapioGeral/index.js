@@ -1,8 +1,21 @@
-import { buscarFilmes } from '../../api/adm/novoProdutoAPI';
 import './index.scss';
+import api from '../../api/usuario/cardapioGeralAPI';
+
+
+
+
+
 
 
 export default function CardCardapioGeral(props){
+
+    function exibir(imagem){
+        if (!imagem) {
+            return`/assets/image/caixa.png`;
+        }
+        else
+            return `http://localhost:5000/${imagem}`
+    }
 
     return(
         <main className="Card">
@@ -10,7 +23,8 @@ export default function CardCardapioGeral(props){
             <div className="vermelha">
 
                 <div className="verdeClaro">
-                    <img className="ima" src={buscarFilmes(props.item.imagem)} alt="" />
+                    <img className="ima" src={exibir(props.item.imagem)} alt="" />
+                   
                 </div>
 
                 <button className="btVer"> Ver Produto </button>

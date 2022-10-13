@@ -2,6 +2,7 @@ import './index.scss';
 
 import CardCabecario from '../../../components/cabecalhoCardapio';
 import CardCardapioGeral from '../../../components/CorpoCardapioGeral'
+
 import { useEffect, useState } from 'react';
 import { ProdutosDestaque,BuscarProdutoCardapio } from '../../../api/usuario/cardapioGeralAPI.js';
 
