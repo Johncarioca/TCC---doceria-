@@ -10,6 +10,7 @@ import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
 import CardapioGeral from './pages/usuario/cardapioGeral';
 import CadastroUsuario from './pages/usuario/cadastro';
+import CarrinhoUsuario from './pages/usuario/carrinho';
 
 export default function AppsRoutes() {
 
@@ -25,6 +26,7 @@ export default function AppsRoutes() {
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />
                 <Route path='/cardapiogeral' element={<CardapioGeral />} />
                 <Route path='/cadastro' element={<CadastroUsuario />} />
+                <Route path='/carrinho' element={<CarrinhoUsuario/>} />
 
             </Routes>
         </BrowserRouter>

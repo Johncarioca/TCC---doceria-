@@ -1,0 +1,69 @@
+.cont1-car {
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #69160A;
+    width: 100%;
+
+    .img-cab{
+     
+        display: flex;
+        flex-direction: row;
+       
+    }
+     .inconLogin{
+            width: 1.8rem;
+            height: 2.4rem;
+        }
+
+        .inconCarrinho{
+            width: 2.6rem;
+            height: 2.3rem;
+        }
+    }
+
+    .links-car{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between; 
+        color: beige;
+        margin-left: 25%;
+    }
+
+    .selecionado{
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5rem;
+        color: #D9D9D9;
+                   
+        margin: 2rem;
+        
+
+        hr{
+            width: 0rem;
+            height: 0rem;
+            background-color: #94423000;
+        }
+        
+
+
+        
+    }
+    .selecionado:hover{
+
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        
+        
+        hr{
+            width: 5rem;
+            height: 0.20rem;
+            background-color: #944230;
+            transition: 0.3s;
+        }
+    }
