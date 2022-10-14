@@ -6,13 +6,10 @@ const api = axios.create({
 
 
 ////////// Login do cliente ////////////////
-export async function LoginCliente(email,senha){
+export async function loginUsuario(email,senha){
 
-    const resposta = await api.post('/user/login',{
-        email:email,
-        senha:senha
-    });
-    return resposta.data;
+    const r = await api.post('/user/Login',{ email, senha});
+    return r.data;
 };
 
 ////////// cadastro do cliente ////////////////

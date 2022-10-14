@@ -1,77 +1,99 @@
 import './index.scss'
-import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
-import { LoginCliente } from '../../../api/usuario/loginUserAPI.js';
+import { useRef, useState } from 'react';
+
+import CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
+import { loginUsuario } from '../../../api/usuario/loginUserAPI.js';
+
+import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
-export default function LoginUsuario(){
-
-    const [email, SetEmail ] = useState('');
-    const [senha, SetSenha ] = useState('');
+import Storage from 'local-storage';
+import LoadingBar from 'react-top-loading-bar';
 
 
-    const navigate= useNavigate();
 
-    async function Logar(email, senha) {
+
+export default function LoginUsuario() {
+
+    const [email, SetEmail] = useState('');
+    const [senha, SetSenha] = useState('');
+    const [Carregando, SetCarregando] = useState(false);
+    
+
+    const ref = useRef();
+    const Navigate = useNavigate()
+
+    async function LogarU() {
+        ref.current.continuousStart();
+        SetCarregando(true);
+
         try {
-            const f = await LoginCliente(email, senha);
-            
-            toast("login realizado")
-            navigate('/cardapiogeral')
-        } catch (err) {
-            if (err.response.status === 401) {
-                toast.error(err.response.data.erro);
-            }
+            const f = await loginUsuario(email,senha);
+            Storage('Cliente-logado', f);
+            toast.dark('Usuario Logado', { autoClose: 1800, hideProgressBar: true});
+
+            setTimeout(() => {
+                Navigate('/')
+            }, 3000);
+
+        }
+        catch (err) {
+            ref.current.complete();
+            SetCarregando(false);
+            toast.error(err.response.data.erro, { autoClose: 700, hideProgressBar: true});
+
         }
     }
-    
-    
-    return(
+
+    return (
 
         <main className="loginusuario">
-            <ToastContainer/>
-            <CabeçarioLogin/>    
-            
+            <LoadingBar color='#FDE5DE' ref={ref}/>   
+            <CabeçarioLogin />
+
             <section className='cont1-login'>
 
                 <div className="subcont1-loginuser">
-                    <img src="../assets/image/cardloginuser.png" />
 
-                    <button  className="bt-loginuser" onClick={Logar} >  
-                        Entrar
-                    </button>
-                    
-                    
-                    <div className="link-loginuser" >
-                        <p>Não possui um cadastro ? </p>
-                        <p>clique <a className="a-loginuser" href="../cadastrouser">aqui</a> </p>
+                    <div className="oir">
+                        <img className="oir" src="../assets/image/cardloginuser.png" />
                     </div>
-                    
+
+                    <div className=" btLinks">
+                        <div className="bt">
+                            <button className="bt-loginuser" onClick={LogarU} disabled={Carregando}>Entrar</button>
+                        </div>
+                        <div className="link-loginuser" >
+                            <p>Não possui um cadastro ? </p>
+                            <a className="a-loginuser" href="../cadastrouser"> Clique aqui</a>
+                        </div>
+
+                    </div>
 
                 </div>
 
                 <div className='subcont2-loginuser'>
-                    
-                    <div className='inpucont-loginuser'>
-                        <label >E-mail:</label>
-                        <input className='input-loginuser' type="text" placeholder='@gmail.com' value={email}  onChange={e => SetEmail(e.target.value)} />
-                    </div>
 
-                    <div className='inpucont-loginuser'>
-                        <label>Senha:</label>
-                        <input className='input-loginuser' type="password" value={senha}  onChange={e => SetSenha(e.target.value)} />
-                    </div>
+                    <div className="vid">
 
-                    <div className="link-loginuser" >
-                        <p>Esqueceu a senha ? </p>
-                        <p>clique <a className="a-loginuser" href="">aqui</a> </p>
+                        <div className='inpucont-loginuser'>
+                            <label>E-mail:</label>
+                            <input className='input-loginuser' type="text" placeholder='@gmail.com' value={email} onChange={e => SetEmail(e.target.value)} />
+                        </div>
+
+                        <div className='inpucont-loginuser'>
+                            <label>Senha:</label>
+                            <input className='input-loginuser' type="password" value={senha} onChange={e => SetSenha(e.target.value)} />
+                        </div>
+
+                        <div className="link-loginuser" >
+                            <p>Esqueceu a Senha ? </p>
+                            <p>clique <a className="a-loginuser" href="">aqui</a> </p>
+                        </div>
                     </div>
                     
+
                 </div>
-               
+
 
             </section>
 

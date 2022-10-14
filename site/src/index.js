@@ -4,7 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 
-import { ToastContainer, ToastContent } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; 
 
 import Routes from './routes';
 

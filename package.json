@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Johncarioca/TCC---doceria-/issues"
   },
-  "homepage": "https://github.com/Johncarioca/TCC---doceria-#readme"
+  "homepage": "https://github.com/Johncarioca/TCC---doceria-#readme",
+  "dependencies": {
+    "local-storage": "^2.0.0"
+  }
 }
