@@ -10,7 +10,7 @@ export default function Home() {
 
                 <div className="duasDivs">
 
-                    <div className="logo">
+                    <div >
                         <img src="/assets/image/oi.png" alt="" />
                     </div>
 
@@ -38,6 +38,26 @@ export default function Home() {
 
                 </div>
             </header>
+
+
+            <section className='section1-landing-page'>
+
+                <div className='div-section1-land'>
+                    <p className='p-section1-land'>Bem-Vindo</p>
+                </div>
+
+                <div className='div-texto-section1'>
+                    <p> A nossa doceria delicious gourmet aqui você encontra os melhores tipos de doces!!! </p>
+                </div>
+
+                <div className='div-button-section1'>
+                    <button className='button-cardapio-section1'> Cardapio </button>
+                </div>
+
+            </section>
+
+
+
         </main>
     );
 }

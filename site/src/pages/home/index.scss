@@ -1,7 +1,7 @@
-.home{
+.home {
 
-    .cabeçalho{
-        *{
+    .cabeçalho {
+        * {
             //border: 1px solid green ;
         }
 
@@ -9,19 +9,15 @@
         justify-content: center;
         background-color: #69160A;
         height: 6rem;
-        
-        .duasDivs{
+
+        .duasDivs {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
             width: 90%;
 
-            .logo{
-
-            }
-
-            .iconTexto{
+            .iconTexto {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -29,20 +25,21 @@
                 width: 42%;
                 height: 3.5rem;
 
-                .text{
+                .text {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
                     width: 58%;
                     color: #fff;
-                    .ps{
+
+                    .ps {
                         font-size: 14px;
                         width: 20%;
                     }
-                       
+
                 }
 
-                .icons{
+                .icons {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-around;
@@ -51,24 +48,53 @@
                     align-self: center;
                     width: 20%;
 
-                    .divImagem{
-                        
+                    .divImagem {
+
                         width: 100%;
                         height: 2.9rem;
 
-                        .Carrinho{
+                        .Carrinho {
                             width: 65%;
                             height: 2rem;
                         }
-                        .logi{
+
+                        .logi {
                             width: 45%;
                             height: 2rem;
                         }
                     }
                 }
             }
-            
-            
+        }
+    }
+
+    .section1-landing-page{
+        display: flex;
+        flex-direction: column;
+        background-image: url("../../../public/assets/image/back-sec1-land.png") ;
+        height: 76vh;
+
+        .p-section1-land{
+            font-family: 'coiny';
+            color: #FFB58C;
+            font-size: 5em;
+        }
+
+        .div-texto-section1{
+            font-family: 'coiny';
+            color: #ffffff;
+            font-size: 2em;
+            width: 49%;
+            line-height: 37px;
+        }
+
+        .button-cardapio-section1{
+            font-family: 'coiny';
+            color: #FFB58C;
+            background-color: #69160A;
+            font-size: 1.3em;
+            border-radius: 35px 0px 35px 0px;
+            padding: 7px 45px;
         }
     }
 }
