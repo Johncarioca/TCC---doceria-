@@ -24,6 +24,7 @@ export default function CardCardapioGeral(props){
 
                 <div className="verdeClaro">
                     <img className="ima" src={exibir(props.item.imagem)} alt="" />
+                    
                    
                 </div>
 
