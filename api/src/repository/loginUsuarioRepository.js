@@ -18,19 +18,25 @@ export async function loginUsuario(email, senha) {
 
 
 export async function CadastroUsuar(cliente) {
-
   const comando =
     `
-    insert into tb_cliente(nm_cliente, 
-                           ds_email, 
-                           ds_senha, 
-                           ds_cpf, 
-                           dt_nascimento, 
-                           nr_telefone, 
-                           ds_ConfirSenha)
-                   values (? ,? ,? ,? ,? ,? ,? );
-  `
-  const [registro] = await con.query(comando, [cliente.nome, cliente.email, cliente.senha, cliente.cpf, cliente.nascimento, cliente.telefone, cliente.ConfirSenha]);
+    insert into tb_usuario( nm_usuario, ds_cpf, dt_nascimento, ds_telefone)
+                   values (? ,? ,? ,? );
+    `
+  const [registro] = await con.query(comando, [cliente.nome, cliente.cpf, cliente.nascimento, cliente.telefone]);
   cliente.id = registro.insertId;
   return cliente;
+}
+
+
+export async function CadastroImagemUser(imangen, id){
+  // console.log(Imagem, id);
+  const comando =
+  `
+    update tb_usuario
+       set img_usuario   = ?
+     where id_usuario    = ? 
+  `
+  const [resposta] = await con.query(comando, [imangen, id]);
+  return resposta;
 }

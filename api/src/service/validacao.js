@@ -35,12 +35,6 @@ export async function ValidarCadastro(cliente){
     if (!cliente.nome || cliente.nome === '' ) {
         throw new Error('O nome é obrigatorio');
     }
-    if (!cliente.email || cliente.email === '' ) {
-        throw new Error('A email é obrigatorio');
-    }
-    if (!cliente.senha || cliente.senha === '' ) {
-        throw new Error('A senha é obrigatorio');
-    }
     if (!cliente.cpf || cliente.cpf <= 0 ) {
         throw new Error('O cpf do é obrigatorio');
     }
@@ -52,8 +46,5 @@ export async function ValidarCadastro(cliente){
     }
     if (!cliente.telefone || cliente.telefone <= 0 ) {
         throw new Error('O telefone é obrigatorio');
-    }
-    if (!cliente.ConfirSenha || cliente.ConfirSenha === '' ) {
-        throw new Error('A confirmação senha é obrigatorio');
     }
 }

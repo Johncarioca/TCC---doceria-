@@ -69,8 +69,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className='d2'>
-                    <img=
-
+                    <img src="" alt="" />
                 </div>
             </section>
 

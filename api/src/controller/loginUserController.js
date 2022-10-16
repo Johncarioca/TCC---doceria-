@@ -1,8 +1,11 @@
 import {Router} from 'express';
 const server = Router();
 
-import { CadastroUsuar, loginUsuario } from '../repository/loginUsuarioRepository.js';
+import { CadastroUsuar, loginUsuario, CadastroImagemUser } from '../repository/loginUsuarioRepository.js';
 import { ValidarCadastro } from '../service/validacao.js';
+
+import multer from 'multer'; 
+const upload = multer({dest: 'storage/cadastroLogin' });
 
 server.post('/user/Login', async (req,resp) => {
     try {
@@ -24,16 +27,11 @@ server.post('/user/Login', async (req,resp) => {
     }
 });
 
-
-
-
-
-server.post('/user/cadastro', async (req,resp) => {
+server.post('/user/cadastro/', async (req,resp) => {
     try {
         const cliente = req.body;
-        
         await ValidarCadastro(cliente);
-        console.log(cliente);
+        // console.log(cliente);
         const reposta = await CadastroUsuar(cliente);
 
         resp.send(reposta);
@@ -46,7 +44,25 @@ server.post('/user/cadastro', async (req,resp) => {
 });
 
 
+server.put('/user/cadastro/:id', upload.array('imagem'),async (req, resp) => {
+    try {
+            
+        const imangen = req.files;
+        const id = req.params.id;
 
+        for(const imagem of imangen){
+            
+            await CadastroImagemUser(imagem.path, id);
+        }
+
+        resp.status(204).send();
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
 
 
 export default server; 
