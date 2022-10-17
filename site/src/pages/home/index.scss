@@ -114,8 +114,8 @@
 
     .section2-landing-page{
         display: flex;
-        flex-direction: row;
-
+        flex-direction: column;
+        
         background-color: #FDD9C5;
 
         height: 43em;
@@ -125,7 +125,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            justify-content:left;
+            
+            
 
             .img-section2-d1{
 
@@ -133,14 +134,33 @@
                 border-radius: 1rem;
                 background-color: #69160A;
             }
+            .div-p1{
+                font-family: 'Sail ';
+                font-size: 1.5em;
+                height: 5em;
+            }
+            .div-p2{
+                font-family: 'livvic';
+                font-size: 1.5em;
+                height: 5em;
+            }
         }
         
         .d2-img{
+            display: flex;
+            flex-wrap: wrap;
+
             height: 10em;
             width: 50em;
+            padding: 3em;
+            
 
             border: #0000 solid 1px;
             border-radius: 2rem;
+        }
+        img{
+            margin:0.8em;
+            
         }
     }
 }
