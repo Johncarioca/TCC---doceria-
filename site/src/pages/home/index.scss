@@ -120,12 +120,27 @@
 
         height: 43em;
 
-        .duasdivs2{
+        .d1{
 
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content:left;
 
+            .img-section2-d1{
+
+                border: #69160A solid 10px;
+                border-radius: 1rem;
+                background-color: #69160A;
+            }
         }
+        
+        .d2-img{
+            height: 10em;
+            width: 50em;
 
+            border: #0000 solid 1px;
+            border-radius: 2rem;
+        }
     }
 }
