@@ -69,10 +69,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className='d2-img'>
-                    <img src="/assets/image/image189.png" alt=""></img>
-                    <img src="/assets/image/image191.png" alt=""></img>
-                    <img src="/assets/image/image217.png" alt=""></img>
-                    <img src="/assets/image/image220.png" alt=""></img>
+                    
 
                 </div>
             </section>

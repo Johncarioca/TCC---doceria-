@@ -1,9 +1,4 @@
 import './index.scss';
-import api from '../../api/usuario/cardapioGeralAPI';
-
-
-
-
 
 
 
@@ -24,8 +19,6 @@ export default function CardCardapioGeral(props){
 
                 <div className="verdeClaro">
                     <img className="ima" src={exibir(props.item.imagem)} alt="" />
-                    
-                   
                 </div>
 
                 <button className="btVer"> Ver Produto </button>
@@ -40,11 +33,11 @@ export default function CardCardapioGeral(props){
                     <div className="azul">
                         <div className="textu">
                             <p className="textu1">{props.item.nome}</p>
-                            <p>{props.item.estoque} unidades</p>
+                            <p>{props.item.estoque}uni.</p>
                         </div>
 
                         <div className="textu">
-                            <p className="r">R${props.item.preco},00</p>
+                            <p className="r">R$ {props.item.preco},00</p>
                         </div>
                     
                     </div>

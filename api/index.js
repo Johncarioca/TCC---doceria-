@@ -21,5 +21,6 @@ server.use(tabelasController);
 server.use(cardapioController);
 
 server.use('/storage/imagemProduto', express.static('storage/imagemProduto'));
+server.use('/storage/cadastroLogin', express.static('storage/cadastroLogin'));
 
 server.listen(process.env.PORT, () => console.log(` Api está online na porta ${process.env.PORT}`));

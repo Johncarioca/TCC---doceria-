@@ -14,17 +14,24 @@ export async function loginUsuario(email,senha){
 
 ////////// cadastro do cliente ////////////////
 
-export async function cadastrarCliente(nome,email,senha,cpf,nascimento,telefone,ConfirSenha){
-    const r = await api.get('/user/cadastro', + {
-        nome:nome,
-        email:email,
-        senha:senha,
-        cpf:cpf,
-        nascimento: nascimento,
-        telefone:telefone,
-        ConfirSenha:ConfirSenha
-        
+export async function CadastroUsuar(Nome,CPF,Nascimento,Telefone){
+    const r = await api.post('/user/cadastro/', {
+        nome:Nome,
+        cpf:CPF,
+        nascimento: Nascimento,
+        telefone:Telefone,
     });
     return r.data;
 }
 
+export async function ImagemCadastroUser(imangen,id){
+    let form= new FormData();
+    form.append('imagem',imangen);
+
+    const r = await api.put('/user/cadastro/' + id, form, {
+        headers: {
+            'content-type': 'multipart/form-data'
+        }
+    });
+    return r.data;
+};

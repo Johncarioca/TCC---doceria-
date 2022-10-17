@@ -37,7 +37,7 @@ export default function NovoProduto(){
             const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
             
             await ImagemProduto(imagen, r.id);
-             console.log(r.Id);
+            //  console.log(r.Id);
             toast.dark("Produto Cadastrado")
         } 
         catch (err) {

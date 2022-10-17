@@ -1,6 +1,28 @@
 create database paticeri ;
 use paticeri;
 
+create table tb_usuario(
+id_usuario           int primary key auto_increment,
+nm_usuario           varchar(500),
+img_usuario          varchar(500),
+ds_cpf               varchar(14),
+dt_nascimento        date,
+ds_telefone          varchar(40),
+ds_ConfirSenha       varchar(500)
+);
+
+
+create table tb_login_usuario(
+id_login_usuario  			 int primary key auto_increment,
+id_usuario					 int,
+ds_email					 varchar(800),
+ds_senha					 varchar(800),
+bt_trocar					 boolean,
+cod_reset					 varchar(20),
+cod_expiracao_cod 			 datetime,
+foreign key (id_usuario)  references tb_usuario(id_usuario)
+);
+
 /*tabela de login do adm*/
 create table tb_admin_login (
 id_admin             int primary key auto_increment,

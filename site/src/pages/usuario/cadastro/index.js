@@ -1,7 +1,8 @@
 import './index.scss'
 import {useState} from 'react'
+
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
-import { cadastrarCliente } from '../../../api/usuario/loginUserAPI';
+import { CadastroUsuar, ImagemCadastroUser } from '../../../api/usuario/loginUserAPI';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,19 +15,32 @@ export default function CadastroUsuario (){
     const [Telefone, setTelefone] = useState('');
     const [Nascimento, setNascimento] = useState('');
     const [CPF, setCPF] = useState('');
-    const [ConfirSenha, setConfirSenha] = useState('');
-
-    const [id, setId] = useState(0);
-
+    const [imangen,setImangen]= useState()
 
         async function Cadastrar(){
             try {
-                const novoCliente = await cadastrarCliente(Nome,Email,Senha,CPF,Nascimento,Telefone,ConfirSenha);
-                setId(novoCliente,id)
-                toast.dark('Cliente não foi cadastrado ')
-            } 
+
+                if(!imangen)
+                    throw new Error('Escolha a img do produto');
+
+                const r = await CadastroUsuar(Nome,CPF,Nascimento,Telefone);
+                // console.log(r.id);
+                    await ImagemCadastroUser(imangen, r.id);    
+                toast.dark('Usuario foi cadastrado ');
+            }
             catch (err) {
                 toast.error(err.response.data.erro);
+            }
+        }
+        function escolherImagem(inputId){
+            document.getElementById(inputId).click();
+        }
+
+        function ExibirImagem(imangen){
+            if (imangen === undefined) {
+                return '/assets/image/SelecionarImagem.png'
+            } else {
+                return URL.createObjectURL(imangen);
             }
         }
      
@@ -46,9 +60,8 @@ export default function CadastroUsuario (){
                             <p> Foto de perfil: </p>
 
                             <div className="inserir-imagem">
-                                <img src="/assets/image/SelecionarImagem.png" alt="" />
-
-                                <input type="file" />
+                                <img  alt="" src={ExibirImagem(imangen)} onClick={()=> escolherImagem('imagem')}/>
+                                <input type="file" id="imagem" onChange={e => setImangen(e.target.files[0])}/>
                             </div>
                         </div>
 
@@ -87,10 +100,6 @@ export default function CadastroUsuario (){
                             <input className='input-cadastro' type="text" placeholder='...' value={CPF} onChange={e => setCPF(e.target.value)}/>
                         </div>
 
-                        <div className='inpucont-cadastro'>
-                            <label > Comfirmar senha: </label>
-                            <input className='input-cadastro' type="text" placeholder='...' value={ConfirSenha} onChange={e => setConfirSenha(e.target.value)}/>
-                        </div>
                     </div>
                 
 
