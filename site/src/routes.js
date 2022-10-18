@@ -8,7 +8,6 @@ import NovoProduto from './pages/adm/novoProduto';
 import AreaAdm from './pages/adm/areaAdm';
 import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
-import CardapioGeral from './pages/usuario/cardapioGeral';
 import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
@@ -27,7 +26,6 @@ export default function AppsRoutes() {
                 <Route path='/adm/areaadm' element={<AreaAdm />} />
                 <Route path='/login' element={<LoginUsuario />} />
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />
-                <Route path='/cardapiogeral' element={<CardapioGeral />} />
                 <Route path='/cadastro' element={<CadastroUsuario />} />
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />

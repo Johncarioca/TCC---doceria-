@@ -15,9 +15,10 @@ export default function CardapioSalgados(props){
                     
                 <div className="verdeEscuro">
 
-                    
+                    <div className="amarela">
+                        
+                    </div>
 
-                    
                     <div className="azul">
                         <div className="textu">
                             <p className="textu1">{props.item.nome}</p>

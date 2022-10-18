@@ -6,6 +6,7 @@ import CardapioTorta from '../../../components/CorpoCardapio/tortas';
 import CardCardapioGeral from '../../../components/CorpoCardapio/Geral'
 import CardapioBolos from '../../../components/CorpoCardapio/bolo'
 import CardapioKits from '../../../components/CorpoCardapio/Kits'
+import CardapioSalgados from '../../../components/CorpoCardapio/salgados'
 
 
 import { ProdutosDestaque, BuscarProdutoCardapio, CategoriaBolo, CategoriaDoces, CategoriaKits, CategoriaSalgados, CategoriaTortas } from '../../../api/usuario/cardapioAPI.js';
@@ -14,6 +15,21 @@ import { useEffect, useState } from 'react';
 // import { ProdutosDestaque,BuscarProdutoCardapio } from '../../../api/userAPI';
 
 export default function Cardapio() {
+
+    // const [HeaderSelecionado, setHeaderSelecionado ] = useState('home');
+
+    // function SelecionarHeader(header) {
+    //     setHeaderSelecionado(header);
+    // }
+
+    // function verificarHeaderSelecionado(header) {
+    //     if (header === HeaderSelecionado) {
+    //         return 'selecionadoHover'
+    //     }
+    //     else
+    //         return '';
+    // }
+
 
 
     const [Doces, setDoces] = useState([]);
@@ -68,7 +84,7 @@ export default function Cardapio() {
         setCTtorta(false);
         setCTdoces(false);
         setCTbolo(false);
-        setCTdestaques(true);
+        setCTdestaques(true);   
         setCTkits(false);
         setCTsalgados(false);
     }
@@ -107,6 +123,21 @@ export default function Cardapio() {
         setKits(q);
     }
 
+    function exibirSalgados() {
+        setCTtorta(false);
+        setCTdoces(false);
+        setCTbolo(false);
+        setCTdestaques(false);
+        setCTkits(false);
+        setCTsalgados(true);
+    }
+
+    async function cardSalgados() {
+        const q = await CategoriaSalgados();
+        setSalgados(q);
+    }
+
+
 
     async function BuscaCard() {
         const resposta = await BuscarProdutoCardapio(Filtros);
@@ -121,6 +152,7 @@ export default function Cardapio() {
         cardTortas();
         cardBolos();
         cardKits();
+        cardSalgados();
     }, []);
 
 
@@ -145,8 +177,8 @@ export default function Cardapio() {
 
                     <div className="sdcbk">
 
-                        <div className="selecionado">
-                            <p className="nomeCategoria" >Salgados</p>
+                        <div className="selecionado" onClick={exibirSalgados} >
+                            <p className="nomeCategoria" onClick={exibirSalgados} >Salgados</p>
                             <hr />
                         </div>
                         <div className="selecionado" onClick={exibirDoces}>
@@ -246,6 +278,17 @@ export default function Cardapio() {
 
                             {Kits.map(item =>
                                 <CardapioKits item={item} />
+                            )}
+
+                        </div>
+                    }
+
+                    {CTsalgados === true &&
+
+                        <div className="card-container">
+
+                            {Salgados.map(item =>
+                                <CardapioSalgados item={item} />
                             )}
 
                         </div>

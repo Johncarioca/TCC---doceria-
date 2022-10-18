@@ -23,7 +23,8 @@ export async function ProdutosDestaque() {
 
    const comando =
    `
-    select img_produto    as imagem,
+    select id_produto		as id,
+           img_produto    as imagem,
            nm_produto     as nome,
            nr_estoque     as estoque,
            nr_preco       as preco,
@@ -39,7 +40,8 @@ export async function CategoriaKits() {
 
    const comando =
    `
-     select img_produto    	as imagem,
+          select id_produto		as id,
+                 img_produto    	as imagem,
                  nm_produto     	as nome,
                  nr_estoque     	as estoque,
                  nr_preco       	as preco,
@@ -55,7 +57,8 @@ export async function CategoriaKits() {
 export async function CategoriaSalgados() {
    const comando =
    `
-     select img_produto    	as imagem,
+            select id_produto		as id, 
+                 img_produto    	as imagem,
                  nm_produto     	as nome,
                  nr_estoque     	as estoque,
                  nr_preco       	as preco,
@@ -73,7 +76,8 @@ export async function CategoriaDoces() {
 
    const comando =
    `
-     select img_produto    	as imagem,
+          select id_produto		as id, 
+                 img_produto    	as imagem,
                  nm_produto     	as nome,
                  nr_estoque     	as estoque,
                  nr_preco       	as preco,
@@ -91,7 +95,8 @@ export async function CategoriaBolo() {
 
    const comando =
    `
-     select img_produto    	as imagem,
+         select  id_produto		as id, 
+                 img_produto    	as imagem,
                  nm_produto     	as nome,
                  nr_estoque     	as estoque,
                  nr_preco       	as preco,
@@ -108,7 +113,8 @@ export async function CategoriaTortas() {
 
    const comando =
    `
-          select img_produto    	as imagem,
+          select id_produto		as id,
+                 img_produto    	as imagem,
                  nm_produto     	as nome,
                  nr_estoque     	as estoque,
                  nr_preco       	as preco,
