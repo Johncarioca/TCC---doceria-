@@ -1,4 +1,4 @@
-.DetalhesProdutos{
+.DetalhesProdutos {
 
     display: flex;
     flex-direction: row;
@@ -9,18 +9,18 @@
     height: 50rem;
     background-color: #FFD3C6;
 
-    .sectionPrincipal{
+    .sectionPrincipal {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        
-        
+
+
         width: 85%;
         height: 40rem;
         // border: solid 0.2px green;
 
-        .div1{
+        .div1 {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -29,12 +29,13 @@
             height: 40rem;
 
             border: solid 0.2px blue;
-            .gmi{
+
+            .gmi {
                 // border: solid 0.2px blue;
                 width: 100%;
                 height: 37rem;
 
-                .g{
+                .g {
                     width: 100%;
                     max-height: 38rem;
                     border-radius: 3rem;
@@ -42,30 +43,31 @@
 
             }
         }
-        .div2{
+
+        .div2 {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            
+
 
             width: 44%;
             height: 40rem;
-            border: solid 0.2px yellow;
+            // border: solid 0.2px yellow;
 
-            .chapeu{
+            .chapeu {
                 width: 100%;
                 height: 7rem;
 
-                border: solid 0.2px rgb(80, 1, 88);
-                
-                .chefe{
+                // border: solid 0.2px rgb(80, 1, 88);
+
+                .chefe {
                     max-width: 25%;
                     max-width: 7rem;
                 }
             }
 
-            .divTextos{
-                border: solid 0.2px orangered;
+            .divTextos {
+                // border: solid 0.2px orangered;
 
                 display: flex;
                 flex-direction: column;
@@ -73,22 +75,75 @@
                 width: 100%;
                 height: 20rem;
 
-                .tt{
-                    border: solid 0.2px rgb(255, 0, 0);
+                .tt {
+                    // border: solid 0.2px rgb(255, 0, 0);
 
                     width: 100%;
                     height: 5rem;
 
-                    h1{
+                    h1 {
                         font-size: x-large;
                         color: #6D5959;
-                    }
-                    P{
-                        color: black;
-                        font-size: 17.5px;
-                        // font-family: inter;
+                        font-weight: 500;
+                        //font-family: inter;
+
                     }
 
+                    P {
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 600;
+                    }
+
+                }
+            }
+
+            .botãoInput {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 9rem;
+                // border: solid 0.2px rgb(80, 1, 88);
+
+
+                .bottão {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 50%;
+                    height: 9rem;
+                    padding-top: 5rem;
+
+                    .bt {
+
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: center ;                        
+                        width: 100%;
+                        height: 3.5rem;
+                        // background-color: #e9877aa4;
+                        // border-radius: 2rem 0rem 2rem 0rem;
+                        
+
+                        button{
+                            background-color: #e9877aa4;
+                            width: 100%;
+                            height: 3.5rem;
+                            border-radius: 2rem 0rem 2rem 0rem;
+                        }
+                    }
+                }
+
+                input{
+                    width: 50%;
+                    height: 2.5rem;
+                    background-color: #EEDCCF;
+                    
+                }
+                .a{
+                    font-weight: 600;
                 }
             }
 

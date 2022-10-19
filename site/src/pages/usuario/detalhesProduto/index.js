@@ -40,7 +40,7 @@ export default function DetalhesProdutos(){
                             <div className="divTextos">
 
                                 <div className="tt">
-                                    <h1>Ingredientes</h1>
+                                    <h1>Ingredientes</h1> 
                                     <p>Ovo, Açúcar, Farinha de trigo, Fermento, Chocolate em pó, Manteiga sem sal.</p>
                                 </div>
 
@@ -59,12 +59,14 @@ export default function DetalhesProdutos(){
                                 
                                 <div className="bottão">
 
-                                    <div><button>Adicionar Carrinho</button></div>
+                                    <div className="bt">
+                                        <button>Adicionar Carrinho</button>
+                                    </div>
                                 
                                 </div>
                                 <div className="qtdInput">
 
-                                    <div>Quantidade: <input type="number" /></div>
+                                    <div className="a">Quantidade: <input type="number" /></div>
                                 
                                 </div>
                             </div>
