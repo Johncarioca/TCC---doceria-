@@ -1,0 +1,46 @@
+.intemCar{
+    
+    display: flex;
+    flex-direction: row;
+    background-color: #FCFCFC;
+    border-radius:2vh;
+
+    
+
+
+    .info-produtos{
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-evenly;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    
+    
+    
+
+     .imgPoroduto{
+            margin-top: 2vh;
+            height: 5em;
+        }
+        
+        .dados-produto{
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            margin-top: 2vh;
+            justify-content: space-evenly;
+            
+
+        }
+
+        .dropCar{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #DEDEDE;
+            
+        }
+
+    }
+
+}

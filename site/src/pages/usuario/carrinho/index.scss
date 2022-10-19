@@ -1,4 +1,27 @@
 .cont1-carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: #FDE5DE;
+  
+    .subcont1-carrinho{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAD1CE;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    }
+
+    .delado{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+     
+    }
+
     
 }

@@ -2,6 +2,7 @@
 import './index.scss'
 
 import CabCarrinho from '../../../components/cabecarioCarrinho';
+import ItemCarrinho from '../../../components/itemcarrinho';
 
 export default function CarrinhoUsuario(){
     return(
@@ -15,15 +16,17 @@ export default function CarrinhoUsuario(){
                 <div className="subcont1-carrinho"> 
                     <h1> Itens</h1>
                     
-                    <div className="grup-produto"> 
-                    
-                    </div>
-                    <div className="grup-desc">
-                        <h3> Entrega </h3>
-                        <h5> Total de itens: </h5>
-                        <h5> Total estimado: </h5>
+                    <div className="delado">
+                        <div className="grup-produto"> 
+                            <ItemCarrinho/>
+                         </div>
+                        <div className="grup-desc">
+                            <h3> Entrega </h3>
+                            <h5> Total de itens: </h5>
+                            <h5> Total estimado: </h5>
 
-                        <button> Continuar</button>
+                            <button> Continuar</button>
+                        </div>
                     </div>
                 </div>
 
