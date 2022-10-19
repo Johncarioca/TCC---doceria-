@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from 'react-router-dom';
 import { BuscarProdutoId } from '../../../api/adm/tabelasAdmAPI';
-import{API_URL} from '../../../api/config';
+
 
 export default function NovoProduto(){
 
@@ -70,7 +70,7 @@ export default function NovoProduto(){
             return '/assets/image/SelecionarImagem.png'
         } 
         else if(typeof(imagem)== "string"){
-            return `${API_URL}/${imagem}`
+            return `http://localhost:5000/${imagem}`
         }
         else {
             return URL.createObjectURL(imagem);

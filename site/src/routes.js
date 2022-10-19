@@ -11,6 +11,8 @@ import TabelaProduto from './pages/adm/tabelaProduto';
 import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
+import DetalhesProdutos from './pages/usuario/detalhesProduto';
+
 
 
 
@@ -30,6 +32,7 @@ export default function AppsRoutes() {
                 <Route path='/cadastro' element={<CadastroUsuario />} />
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
+                <Route path='/detalhesproduto' element={<DetalhesProdutos/>} />
 
             </Routes>
         </BrowserRouter>
