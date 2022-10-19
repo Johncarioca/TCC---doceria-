@@ -8,6 +8,7 @@ import loginUsuario from './src/controller/loginUserController.js'
 import npController from './src/controller/npController.js'
 import tabelasController from './src/controller/tabelasController.js'
 import cardapioController from './src/controller/cardapioController.js'
+import produtoController  from './src/controller/produtoController.js';
 
 const server = express();
 server.use(cors());
@@ -19,6 +20,7 @@ server.use(npController);
 server.use(loginUsuario);
 server.use(tabelasController);
 server.use(cardapioController);
+server.use(produtoController);
 
 server.use('/storage/imagemProduto', express.static('storage/imagemProduto'));
 server.use('/storage/cadastroLogin', express.static('storage/cadastroLogin'));
