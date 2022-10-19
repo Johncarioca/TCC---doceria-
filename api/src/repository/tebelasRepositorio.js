@@ -41,3 +41,23 @@ export async function BuscarNome(nome) {
     const [registro] = await con.query(comando, [`%${nome}%`]);
     return registro;
 } 
+
+export async function BuscarProdutoId(idProduto){
+    const comando=`
+    select  
+    nm_produto              as nome,
+    id_categoria            as categoria,
+    img_produto             as imagem,
+    ds_ingredientes         as ingredientes,
+    nr_preco                as preco,
+    nr_peso                 as peso,
+    nr_estoque              as estoque,
+    ds_sinopse              as sinopse,
+    bt_destaque             as destaque
+    from tb_produto
+    where id_produto = ?  ;`
+
+    const registros = await con.query(comando ,[idProduto]);
+    return registros;
+}
+

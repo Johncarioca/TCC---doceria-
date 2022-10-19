@@ -1,6 +1,6 @@
 
 import { Router } from "express";
-import { BuscarNome, listaProduto } from "../repository/tebelasRepositorio.js";
+import { BuscarNome, BuscarProdutoId, listaProduto } from "../repository/tebelasRepositorio.js";
 const server = Router();
 
 
@@ -36,7 +36,24 @@ server.get('/adm/busca', async (req,resp) => {
     }
 });
 
+server.get('/adm/produto/:id', async (req,resp)=>{
+    try {
+        
+        const id= req.params.id;
+        const produto = BuscarProdutoId(id);
+        console.log(id);
+        console.log(produto);
 
+        resp.send({
+            info:produto
+        })
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
 
 
 export default server;

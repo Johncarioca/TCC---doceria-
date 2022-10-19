@@ -23,6 +23,7 @@ export default function AppsRoutes() {
                 <Route path='/' element={<Home />} />
                 <Route path='/adm/login' element={<LongnAdm />} />
                 <Route path='/adm/novoproduto' element={<NovoProduto />} />
+                <Route path='/adm/novoproduto/:id' element={<NovoProduto />} />
                 <Route path='/adm/areaadm' element={<AreaAdm />} />
                 <Route path='/login' element={<LoginUsuario />} />
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />

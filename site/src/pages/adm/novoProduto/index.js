@@ -6,7 +6,9 @@ import{CadastrarProduto, ListarCategorias, ImagemProduto }from '../../../api/adm
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { useParams } from 'react-router-dom';
+import { BuscarProdutoId } from '../../../api/adm/tabelasAdmAPI';
+import{API_URL} from '../../../api/config';
 
 export default function NovoProduto(){
 
@@ -20,12 +22,13 @@ export default function NovoProduto(){
     const [categoria,setCategoria]= useState([0]);
     const [idCategoria,setIdCategoria]=useState(0);
 
-
+    const {id}=useParams();
 
     const [imagen,setImagem]= useState();
 
    useEffect(() => {
         ListCategoria();
+        CadastrarProduto();
     }, [])
 
     async function Produto(){
@@ -65,11 +68,31 @@ export default function NovoProduto(){
     function ExibirImagem(imagem){
         if (imagem === undefined) {
             return '/assets/image/SelecionarImagem.png'
-        } else {
+        } 
+        else if(typeof(imagem)== "string"){
+            return `${API_URL}/${imagem}`
+        }
+        else {
             return URL.createObjectURL(imagem);
         }
     }
 
+    function CarregarProduto(){
+        if (!id) return ;
+        const r=BuscarProdutoId(id);
+        setNome(r.info.produto);
+        setPeso(r.info.peso);
+        setPreco(r.info.preco);
+        setSinopse(r.info.sinopse);
+        setIngredientes(r.info.ingredientes);
+        setEstoque(r.info.estoque);
+        setDestaque(r.info.destaque);
+        setIdCategoria(r.info.categoria);
+
+        if (r.info.imagem.lenght >0) {
+            setImagem(r.info.imagem)
+        }
+    }
 
     return(
         <main className="novo-pedido">

@@ -21,4 +21,8 @@ export async function DeletarProduto(id){
     return r.data;
 }
 
+export async function BuscarProdutoId(id){
+    const r=await api.get(`/adm/produto/${id}`);
+    return r.data;
+}
  

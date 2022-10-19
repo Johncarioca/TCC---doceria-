@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function TabelaProduto(){
@@ -12,6 +13,7 @@ export default function TabelaProduto(){
     const [Produto, setProduto] = useState([]);
     const [Filtro, setFiltro] = useState('');
 
+    const navigate=useNavigate();
 
     async function FiltraProduto (){
         const reposta = await BuscarProdutoPelaTabela(Filtro);
@@ -35,6 +37,10 @@ export default function TabelaProduto(){
         } catch (err) {
             toast.error(err.message.response.data)
         }
+    }
+
+    function editar(id){
+        navigate(`/adm/novoproduto${id}`)
     }
 
     useEffect( () => {
@@ -108,7 +114,7 @@ export default function TabelaProduto(){
                                     <td>{item.categoria}</td>
                                     <td>{item.destaque ? 'Sim' : 'Não'}</td>
                                     <td className="imgs">
-                                    <button className="but"><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
+                                    <button className="but" onClick={()=>editar(item.id)} ><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
                                     <button onClick={()=>removerProduto(item.id)}><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>
 
                                     </td>
