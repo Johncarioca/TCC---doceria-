@@ -114,7 +114,7 @@
 
     .section2-landing-page{
         display: flex;
-        flex-direction: column;
+        flex-direction: row-reverse;
         
         background-color: #FDD9C5;
 
@@ -124,7 +124,10 @@
 
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            justify-content: ;
+
+            width: 100%;
+            padding: 10em;
             
             
 
@@ -133,9 +136,11 @@
                 border: #69160A solid 10px;
                 border-radius: 1rem;
                 background-color: #69160A;
+
+                
             }
             .div-p1{
-                font-family: 'Sail ';
+                font-family: 'sail';
                 font-size: 1.5em;
                 height: 5em;
             }
@@ -143,12 +148,14 @@
                 font-family: 'livvic';
                 font-size: 1.5em;
                 height: 5em;
+                width: 22em;
+                
             }
         }
         
-        .d2-img{
+        .d2{
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
 
             height: 10em;
             width: 50em;
@@ -157,10 +164,17 @@
 
             border: #0000 solid 1px;
             border-radius: 2rem;
+
+            .img-d2-4{
+                display: flex;
+                flex-direction: row;
+                width: 10em;
+            }
+            img{
+                width: 16rem;
+                margin: 0.8rem;
+            }
         }
-        img{
-            margin:0.8em;
-            
-        }
+      
     }
 }
