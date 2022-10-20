@@ -63,10 +63,10 @@ export default function Home() {
                         <img className='img-section2-d1' src="/assets/image/oi.png" alt=""></img>
                     </div>
                     <div className='div-p1' >
-                        <p>Somos uma confeitaria familiar tradicional da <br/>região de interlagos desde 1990.</p>
+                        <p>Somos uma confeitaria familiar tradicional da  região de interlagos desde 1990.</p>
                     </div>
                     <div className='div-p2'>
-                        <p>Nosso cardápio é recheado de bolos e salgadinhos pra festa,<br/> tortas doces e salgadas, lanches de metro, kits completos para <br/>comemorações coletivas ou caixinhas individuais, comidinhas<br/> congeladas e uma grande variedade de docinhos.</p>
+                        <p>Nosso cardápio é recheado de bolos e salgadinhos pra festa, tortas doces e salgadas, lanches de metro, kits completos para comemorações coletivas ou caixinhas individuais, comidinhas congeladas e uma grande variedade de docinhos.</p>
                     </div>
                 </div>
                 <div className='d2'>

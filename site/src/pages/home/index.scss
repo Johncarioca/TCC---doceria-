@@ -124,10 +124,11 @@
 
             display: flex;
             flex-direction: column;
-            justify-content: ;
+            align-items: center;
 
             width: 100%;
             padding: 10em;
+            margin-left: 3rem;
             
             
 
@@ -140,15 +141,23 @@
                 
             }
             .div-p1{
+                
                 font-family: 'sail';
                 font-size: 1.5em;
                 height: 5em;
+                padding: 5rem;
+                padding-bottom: 5em;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             .div-p2{
                 font-family: 'livvic';
                 font-size: 1.5em;
-                height: 5em;
+                height: 1em;
                 width: 22em;
+                
                 
             }
         }
