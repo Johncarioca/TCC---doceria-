@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import './index.scss';
 
 
 
 export default function CardCardapioGeral(props){
+
+    const navigate = useNavigate()
 
     function exibir(imagem){
         if (!imagem) {
@@ -12,8 +15,12 @@ export default function CardCardapioGeral(props){
             return `http://localhost:5000/${imagem}`
     }
 
+    function AbrirDetalhe(id){
+        navigate('/detalhe/produto/' + id)
+    }
+
     return(
-        <main className="Card">
+        <main className="Card" >
 
             <div className="vermelha">
 
@@ -21,7 +28,7 @@ export default function CardCardapioGeral(props){
                     <img className="ima" src={exibir(props.item.imagem)} alt="" />
                 </div>
 
-                <button className="btVer"> Ver Produto </button>
+                <button className="btVer" onClick={() => AbrirDetalhe(props.item.id)}> Ver Produto </button>
                     
                 <div className="verdeEscuro">
 

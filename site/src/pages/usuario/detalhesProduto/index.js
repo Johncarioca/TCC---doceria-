@@ -1,10 +1,35 @@
 import './index.scss'
 import CardDetalhes from "../../../components/cabecalhoDT";
-
+import { useParams } from 'react-router-dom';
+import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
+import { useEffect, useState } from 'react';
 
 
 
 export default function DetalhesProdutos(){
+
+    const [Produto, setProduto] = useState({});
+
+    const { id } = useParams();
+
+    async function CarregarPagina(){
+        const r = await DetalhesProdutoId(id);
+        console.log(r );
+        setProduto(r)
+    }
+
+    function exibir(imagem){
+        if (!imagem) {
+            return`/assets/image/caixa.png`;
+        }
+        else
+            return `http://localhost:5000/${imagem}`
+    }
+
+
+    useEffect(() => {
+        CarregarPagina();
+    }, [])
 
     return (
         <main>
@@ -17,12 +42,12 @@ export default function DetalhesProdutos(){
                     <div className="div1">
                         
                         <div className="h">
-                            <h1>Bolo de camada dupla</h1>
+                            <h1>{Produto.nome}</h1>
                         </div>
 
                         <div className="gmi">
 
-                            <img className="g" src="/assets/image/boloCamada.png" alt="" />
+                            <img className="g" src={exibir(Produto.imagem)} alt="" />
                         
                         </div>
                     
@@ -41,17 +66,17 @@ export default function DetalhesProdutos(){
 
                                 <div className="tt">
                                     <h1>Ingredientes</h1> 
-                                    <p>Ovo, Açúcar, Farinha de trigo, Fermento, Chocolate em pó, Manteiga sem sal.</p>
+                                    <p>{Produto.ingrediente}.</p>
                                 </div>
 
                                 <div className="tt">
                                     <h1>Descrição</h1>
-                                    <p>Um delicioso bolo de camada dupla com pedaços de morango.</p>
+                                    <p>{Produto.descricao}.</p>
                                 </div>
 
                                 <div className="tt">
-                                    <p>300g</p>
-                                    <p>R$ 160,00</p>
+                                    <p>{Produto.peso}g</p>
+                                    <p>R$ {Produto.preco},00</p>
                                 </div>
 
                             </div>

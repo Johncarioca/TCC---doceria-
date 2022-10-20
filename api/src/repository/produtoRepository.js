@@ -8,7 +8,7 @@ export async function DetalhesProdutoId(id){
               nm_produto     	as nome,
               nr_estoque     	as estoque,
               nr_preco       	as preco,
-              ds_sinopse		as descriçao,
+              ds_sinopse		as descricao,
               nr_peso			as peso,
               ds_ingredientes	as ingrediente
          from tb_produto

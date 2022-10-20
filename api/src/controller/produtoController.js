@@ -12,7 +12,7 @@ server.get('/api/detalhe/:id', async (req, resp) => {
     try {
         const id = req.params.id;
         const r = await DetalhesProdutoId(id);
-        console.log(r);
+        // console.log(r);
 
         resp.send(r);
     } 

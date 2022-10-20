@@ -32,7 +32,7 @@ export default function AppsRoutes() {
                 <Route path='/cadastro' element={<CadastroUsuario />} />
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
-                <Route path='/detalhesproduto' element={<DetalhesProdutos/>} />
+                <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
 
             </Routes>
         </BrowserRouter>
