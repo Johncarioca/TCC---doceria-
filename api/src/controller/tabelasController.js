@@ -40,12 +40,11 @@ server.get('/adm/produto/:id', async (req,resp)=>{
     try {
         
         const id= req.params.id;
-        const produto = BuscarProdutoId(id);
-        console.log(id);
-        console.log(produto);
+        const produto = await BuscarProdutoId(id);
+        // console.log(produto);
 
         resp.send({
-            info:produto
+            info:produto,
         })
 
     } catch (err) {

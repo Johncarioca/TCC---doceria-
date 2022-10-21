@@ -55,9 +55,9 @@ export async function BuscarProdutoId(idProduto){
     ds_sinopse              as sinopse,
     bt_destaque             as destaque
     from tb_produto
-    where id_produto = ?  ;`
+    where id_produto = ?  `
 
-    const registros = await con.query(comando ,[idProduto]);
-    return registros;
+    const [registros] = await con.query(comando ,[idProduto]);
+    return registros[0];
 }
 

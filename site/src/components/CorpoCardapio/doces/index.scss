@@ -38,15 +38,16 @@
             padding-top: 0.5rem;
     
                 
-            width: 95%;
-            height: 9rem;
+            max-width: 87%;
+            max-height: 9rem;
     
             .ima{
-                 width: 70%;
-                height: 8.5rem;
+                max-width: 87%;
+                max-height: 8.5rem;
+                border-radius: 1.5rem;
             }
         }
-
+        
         .verdeEscuro{
     
             display: flex;

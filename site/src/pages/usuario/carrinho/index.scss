@@ -1,84 +1,179 @@
-.cont1-carrinho{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #FDE5DE;
-    width: 100%;
-    height: 50rem;
-  
-    .subcont1-carrinho{
+    .cont1-carrinho {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        background-color: #EAD1CE;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
-        width: 93%;
-        height: 40rem;
-        border-radius: 3rem;
+        background-color: #FDE5DE;
+        width: 100%;
+        // border: solid 0.5px green;
 
-        .asDuas{
+        min-height: 50rem;
+
+        .subcont1-carrinho {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-evenly;
-            width: 100%;
-            height: 49rem;
-            // border: solid 0.5px green;
+            justify-content: center;
+            background-color: #EAD1CE;
+            margin-top: 5vh;
+            // margin-bottom: 5vh;
+            max-width: 65rem;
+            width: 93%;
+            min-height: 40rem;
+            border-radius: 3rem;
+                // border: solid 0.5px green;
 
-            .ite{
-                width: 80%;
-                height: 3.5rem;
-                text-align: center;
-                // border: solid 0.5px black;
-                border-bottom: solid 0.5px #9e9191;
 
-            }
-            
-            .delado{
+            .asDuas {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
-                justify-content: space-between;
-                width: 91%;
-                height: 32rem;
-                
-                // border: solid 0.5px blueviolet;
-                
+                justify-content: space-evenly;
+                width: 100%;
+                min-height: 49rem;
+                padding-top: 1.7rem;
+                // border: solid 0.5px green;
 
-                .grup-produto{
+                .ite {
+                    width: 80%;
+                    min-height: 3.5rem;
+                    text-align: center;
+                    // border: solid 0.5px black;
+                    border-bottom: solid 0.5px #9e9191;
+
+                }
+
+                .delado {
                     display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-evenly;
-                    width: 70%;
-                    height: 32rem;
-                    margin-top: 2em;
+                    flex-direction: row;
+                    align-items: flex-start;
+                    justify-content: space-between;
+                    margin-top: 2rem;
+                    width: 91%;
+                    min-height: 32rem;
 
                     // border: solid 0.5px blueviolet;
-                    
-                    
+
+
+                    .grup-produto {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-evenly;
+                        width: 70%;
+                        min-height: 32rem;
+                        // margin-top: 2em;
+
+                        // border: solid 0.5px blueviolet;
+
+
+                    }
+
+                    .grup-produto>.Geralll {
+                        margin-bottom: 2rem;
+
+                    }
+
+                    .grup-desc {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        
+
+                        width: 28%;
+                        height: 40rem;
+                        // border: solid 0.5px green;
+
+                        .subtotal{
+
+                            // *{
+                            //     border: solid 0.5px blueviolet;
+
+                            // }
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            
+                            
+                            width: 100%;
+                            height: 10.9rem ;
+                            // border: solid 0.5px blueviolet;
+
+                            .sb{
+                                text-align: center;
+                            }
+                            .total{
+
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                // border: solid 0.5px blueviolet;
+
+                                width: 100%;
+                                height: 3.5rem;
+
+
+                                .itemEstimado{
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: space-between;
+                                }
+                                h6{
+                                    font-size: 13px;
+                                    
+                                }
+                                P{
+                                    font-weight: 600;
+                                    font-size: 15px;
+                                }
+   
+                            }
+                            .botto{
+
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: center;
+                                // align-items: center;
+                                // border: solid 0.5px blueviolet;
+                                width: 100%;
+                                height: 2rem;
+
+                                .bt{
+                                    display: flex;
+                                    flex-direction: row;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    
+                                    background-color: #883F35;
+                                    width: 70%;
+                                    color: #fff;
+                                    border-radius: 0.5rem;
+                                }
+
+                                .bt:hover{
+                                    width: 75%;
+                                    cursor: pointer;
+                                    background-color: #69160A;
+                                    transition: 1.2s;
+                                }
+                            }
+
+
+                        }
+
+
+                    }
+
+
                 }
-
-                .grup-produto > .Geralll{
-                    margin-bottom: 2rem;
-                   
-                }
-
-                .grup-desc{ 
-                    width: 26%;
-                    height: 32rem;
-
-                    
-                }
-
-                
             }
+
         }
+
     
+
+        
+
+
+
     }
-
-
-    
-}

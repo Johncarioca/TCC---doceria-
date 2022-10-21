@@ -47,8 +47,7 @@ export default function Cardapio() {
     const [CTsalgados, setCTsalgados] = useState(false);
     const [CTbolo, setCTbolo] = useState(false);
     const [CTkits, setCTkits] = useState(false);
-    const [CTdestaques, setCTdestaques] = useState(false);
-
+    const [CTdestaques, setCTdestaques] = useState(true);
 
 
     function exibirDoces() {

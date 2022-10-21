@@ -98,21 +98,25 @@ export default function CarrinhoUsuario(){
                             </div>
                             <div className="grup-desc">
 
-                                <div>
-                                    <div>
-                                        <h1> SubTotal</h1>
+                                <div className="subtotal">
+                                    <div className='sb'>
+                                        <h4> SubTotal</h4>
                                         
                                     </div>
-                                    <div>
-                                        <div>                            
-                                            <h5> Total de itens: </h5>{ItensQtd()} itens
+                                    <div className="total">
+                                        <div className="itemEstimado">                            
+                                            <h6> Total de itens: </h6>
+                                            <p>{ItensQtd()} itens</p>
                                         </div>
-                                        <div>
-                                            <h5> Total estimado:  </h5> <p>R$: {Valortotal()}</p>
+                                        <div className="itemEstimado">
+                                            <h6> Total estimado:  </h6> 
+                                            <p>R$: {Valortotal()}</p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <button> Continuar</button>
+                                    <div className="botto">
+
+                                     <button className='bt'> Continuar</button> 
+                                    
                                     </div>
                                 </div>
 
