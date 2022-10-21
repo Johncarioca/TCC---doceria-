@@ -1,9 +1,12 @@
 import './index.scss'
 import CardDetalhes from "../../../components/cabecalhoDT";
-import { useParams } from 'react-router-dom';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
+
+import Storage from 'local-storage'
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import { toast } from 'react-toastify'
 
 
 export default function DetalhesProdutos(){
@@ -14,7 +17,7 @@ export default function DetalhesProdutos(){
 
     async function CarregarPagina(){
         const r = await DetalhesProdutoId(id);
-        console.log(r );
+        
         setProduto(r)
     }
 
@@ -24,6 +27,24 @@ export default function DetalhesProdutos(){
         }
         else
             return `http://localhost:5000/${imagem}`
+    }
+
+    function AdicionarCarrinho(){
+        let carrinho = [];
+
+        if (Storage('carrinho')) {
+            carrinho = Storage('carrinho');
+        }
+
+        if (!carrinho.find( Produto => Produto.id === id )) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+            Storage('carrinho', carrinho)
+        }
+
+        toast.dark('Produto adicionado ao carrinho')
     }
 
 
@@ -85,7 +106,7 @@ export default function DetalhesProdutos(){
                                 <div className="bottão">
 
                                     <div className="bt">
-                                        <button>Adicionar Carrinho</button>
+                                        <button onClick={AdicionarCarrinho}>Adicionar Carrinho</button>
                                     </div>
                                 
                                 </div>
