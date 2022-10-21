@@ -4,24 +4,81 @@
     align-items: center;
     justify-content: center;
     background-color: #FDE5DE;
+    width: 100%;
+    height: 50rem;
   
     .subcont1-carrinho{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #EAD1CE;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    }
-
-    .delado{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-     
+        background-color: #EAD1CE;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        width: 93%;
+        height: 40rem;
+        border-radius: 3rem;
+
+        .asDuas{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            height: 49rem;
+            // border: solid 0.5px green;
+
+            .ite{
+                width: 80%;
+                height: 3.5rem;
+                text-align: center;
+                // border: solid 0.5px black;
+                border-bottom: solid 0.5px #9e9191;
+
+            }
+            
+            .delado{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 91%;
+                height: 32rem;
+                
+                // border: solid 0.5px blueviolet;
+                
+
+                .grup-produto{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    width: 70%;
+                    height: 32rem;
+                    margin-top: 2em;
+
+                    // border: solid 0.5px blueviolet;
+                    
+                    
+                }
+
+                .grup-produto > .Geralll{
+                    margin-bottom: 2rem;
+                   
+                }
+
+                .grup-desc{ 
+                    width: 26%;
+                    height: 32rem;
+
+                    
+                }
+
+                
+            }
+        }
+    
     }
+
 
     
 }
