@@ -57,7 +57,7 @@ export default function PerfilUser(){
 
                 <div className="rosaCLara">
 
-                    <div className="infos">
+                    <div className="info">
 
                         <div className="h4P">
                             <h2> Meu Perfil </h2>
