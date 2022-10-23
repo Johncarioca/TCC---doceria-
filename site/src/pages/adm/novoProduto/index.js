@@ -70,7 +70,7 @@ export default function NovoProduto(){
             return '/assets/image/SelecionarImagem.png'
         } 
         else if(typeof(imagem)== "string"){
-            return `http://localhost:5000/${imagem}`
+            return `http://localhost:5000/${imagem}`    
         }
         else {
             return URL.createObjectURL(imagem);
