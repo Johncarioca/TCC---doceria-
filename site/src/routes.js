@@ -13,6 +13,7 @@ import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
 import DetalhesProdutos from './pages/usuario/detalhesProduto';
 import TelaEndereco from './pages/usuario/telaEndereco';
+import PerfilUser from './pages/usuario/perfil';
 
 
 
@@ -35,6 +36,7 @@ export default function AppsRoutes() {
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
                 <Route path='/endereco' element={<TelaEndereco/>} />
+                <Route path='/perfil' element={<PerfilUser/>} />
 
             </Routes>
         </BrowserRouter>
