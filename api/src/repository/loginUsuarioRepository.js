@@ -15,15 +15,13 @@ export async function loginUsuario(email, senha) {
 }
 
 
-
-
 export async function CadastroUsuar(cliente) {
   const comando =
     `
-    insert into tb_usuario( nm_usuario, ds_cpf, dt_nascimento, ds_telefone)
-                   values (? ,? ,? ,? );
+    insert into tb_usuario( nm_usuario, ds_cpf, dt_nascimento, ds_telefone, ds_sexo)
+                   values (? ,? ,? ,? ,? );
     `
-  const [registro] = await con.query(comando, [cliente.nome, cliente.cpf, cliente.nascimento, cliente.telefone]);
+  const [registro] = await con.query(comando, [cliente.nome, cliente.cpf, cliente.nascimento, cliente.telefone, cliente.sexo]);
   cliente.id = registro.insertId;
   return cliente;
 }

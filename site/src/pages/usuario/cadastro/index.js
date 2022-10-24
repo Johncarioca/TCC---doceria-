@@ -15,7 +15,8 @@ export default function CadastroUsuario (){
     const [Telefone, setTelefone] = useState('');
     const [Nascimento, setNascimento] = useState('');
     const [CPF, setCPF] = useState('');
-    const [imangen,setImangen]= useState()
+    const [imangen,setImangen]= useState();
+    const [Sexo,setSexo]= useState();
 
         async function Cadastrar(){
             try {
@@ -23,7 +24,7 @@ export default function CadastroUsuario (){
                 if(!imangen)
                     throw new Error('Escolha a img do produto');
 
-                const r = await CadastroUsuar(Nome,CPF,Nascimento,Telefone);
+                const r = await CadastroUsuar(Nome,CPF,Nascimento,Telefone,Sexo);
                 // console.log(r.id);
                     await ImagemCadastroUser(imangen, r.id);    
                 toast.dark('Usuario foi cadastrado ');
