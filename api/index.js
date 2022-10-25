@@ -9,6 +9,7 @@ import npController from './src/controller/npController.js'
 import tabelasController from './src/controller/tabelasController.js'
 import cardapioController from './src/controller/cardapioController.js'
 import produtoController  from './src/controller/produtoController.js';
+import enderecoController from './src/controller/enderecoController.js';
 
 const server = express();
 server.use(cors());
@@ -16,6 +17,7 @@ server.use(express.json());
 
 /// configuração dos endpoints ///
 server.use(loginAdmController);
+server.use(enderecoController);
 server.use(npController);
 server.use(loginUsuario);
 server.use(tabelasController);

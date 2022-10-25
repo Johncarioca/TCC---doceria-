@@ -7,6 +7,10 @@ import { ValidarCadastro } from '../service/validacao.js';
 import multer from 'multer'; 
 const upload = multer({dest: 'storage/cadastroLogin' });
 
+
+
+
+
 server.post('/user/Login', async (req,resp) => {
     try {
         const { email, senha } = req.body;
