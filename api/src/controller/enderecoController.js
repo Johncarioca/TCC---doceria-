@@ -1,11 +1,8 @@
 import {Router} from 'express';
-
 import { CadastroEndereco, ListarEnderecoId } from '../repository/enderecoRepository.js';
 import { ValidarCadastroEndereco } from '../service/validacao.js';
 
 const server = Router();
-
-
 
 server.get('/user/listar/endereco/:id', async (req,resp) => {
     try {
@@ -27,10 +24,9 @@ server.post('/user/:id/endereco', async (req,resp) => {
         
         const id = req.params.id;
         const endereco = req.body;
-
-        await ValidarCadastroEndereco(endereco);
-
+        
         const i = await CadastroEndereco(id,endereco);
+       
         resp.status(204).send();
     } 
     catch (err) {
