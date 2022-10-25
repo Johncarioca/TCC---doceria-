@@ -45,6 +45,7 @@ export async function BuscarNome(nome) {
 export async function BuscarProdutoId(idProduto){
     const comando=`
     select  
+    id_produto              as id,
     nm_produto              as nome,
     id_categoria            as categoria,
     img_produto             as imagem,
