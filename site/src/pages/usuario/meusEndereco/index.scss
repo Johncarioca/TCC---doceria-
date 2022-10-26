@@ -64,7 +64,7 @@
                 min-height: 40rem;
                 padding-top: 3rem;
                 padding-left: 1.6rem;
-                // border: solid 4.1px green;
+                // border: solid 0.1px black;
 
                 .ph4{
                     display: flex;
@@ -83,6 +83,18 @@
                         font-weight: 600;
                         padding-bottom:1.9rem;   
                     }
+                }
+
+                .cardEnderecos{
+                    display: wrap;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
+                    width: 96%;
+                    min-height: 26rem ;
+                    padding-top: 3rem;
+                    padding-left: 5rem;
+
+                    // border: solid 0.1px green;
                 }
 
                 .botão{

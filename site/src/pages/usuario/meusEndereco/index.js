@@ -1,4 +1,6 @@
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
+import CardEndereco from '../../../components/cardEndereco';
+
 import './index.scss'
 
 
@@ -59,11 +61,11 @@ export default function MeusEndereco(){
                             </p>
                         </div>
 
-                        <div className="cardEndereco">
-
+                        <div className="cardEnderecos">
+                            <CardEndereco/>
                         </div>
 
-                        <div className="info">
+                        <div className="infos">
 
                             <div className="botão">
                                 <button> Salvar</button>
