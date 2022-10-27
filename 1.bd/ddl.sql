@@ -1,6 +1,9 @@
 create database paticeri ;
 use paticeri;
 
+
+
+/*tabela de clientes */
 create table tb_usuario(
 id_usuario           int primary key auto_increment,
 nm_usuario           varchar(500),
@@ -8,20 +11,16 @@ img_usuario          varchar(500),
 ds_cpf               varchar(14),
 dt_nascimento        date,
 ds_telefone          varchar(40),
-ds_ConfirSenha       varchar(500)
+ds_sexo				 varchar(40)
 );
-
-
 create table tb_login_usuario(
 id_login_usuario  			 int primary key auto_increment,
 id_usuario					 int,
 ds_email					 varchar(800),
 ds_senha					 varchar(800),
-bt_trocar					 boolean,
-cod_reset					 varchar(20),
-cod_expiracao_cod 			 datetime,
 foreign key (id_usuario)  references tb_usuario(id_usuario)
 );
+
 
 /*tabela de login do adm*/
 create table tb_admin_login (
@@ -51,20 +50,9 @@ create table tb_produto(
 foreign key (id_categoria) references tb_categoria(id_categoria)
 );
 
-/*tabela de clientes */
-create table tb_cliente(
-id_cliente           int primary key auto_increment,
-nm_cliente           varchar(500),
-ds_email             varchar(500),
-ds_senha             varchar(100),
-img_cliente          varchar(500),
-ds_cpf               varchar(14),
-dt_nascimento        date,
-nr_telefone          varchar(30)
-);
 
 
-/*tabela de pedidos de cada cliente */
+/*////////////////////////////tabela de pedidos de cada cliente ////////////////////////////*/
 create table tb_pedido(
 id_pedido            int primary key auto_increment,
 id_cliente           int,

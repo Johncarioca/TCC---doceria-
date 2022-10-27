@@ -8,7 +8,6 @@ export async function NovoProduto(cadastro){
                     values (? ,? ,? ,? ,? ,? ,? ,?)
     `
     const [resposta] = await con.query(comando, [cadastro.nome, cadastro.peso, cadastro.preco, cadastro.sinopse, cadastro.ingredientes, cadastro.estoque, cadastro.destaque,cadastro.categoria ]);
-    
     return resposta.insertId;
 }
 

@@ -15,6 +15,12 @@ import DetalhesProdutos from './pages/usuario/detalhesProduto';
 import Pagamento from './pages/usuario/pagamento';
 
 
+import TelaEndereco from './pages/usuario/telaEndereco';
+import PerfilUser from './pages/usuario/perfil';
+import AlterarEmail from './pages/usuario/alterarEmail';
+import MeusEndereco from './pages/usuario/meusEndereco';
+ 
+
 
 
 export default function AppsRoutes() {
@@ -34,7 +40,13 @@ export default function AppsRoutes() {
                 <Route path='/  ' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
+
                 <Route path='/pagamento' element={<Pagamento/>} />
+
+                <Route path='/endereco' element={<TelaEndereco/>} />
+                <Route path='/perfil' element={<PerfilUser/>} />
+                <Route path='/perfil/alterar' element={<AlterarEmail/>} />
+                <Route path='/meusendereco' element={<MeusEndereco/>} />
 
             </Routes>
         </BrowserRouter>

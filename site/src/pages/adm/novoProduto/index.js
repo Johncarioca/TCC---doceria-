@@ -8,9 +8,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useParams } from 'react-router-dom';
 import { BuscarProdutoId } from '../../../api/adm/tabelasAdmAPI';
+import {API_URL} from '../../../api/config.js'
 
 
 export default function NovoProduto(){
+
+    const [idProduto,setIdProduto]= useState();
 
     const [nome,setNome]= useState("");
     const [peso,setPeso]= useState();
@@ -22,24 +25,25 @@ export default function NovoProduto(){
     const [categoria,setCategoria]= useState([0]);
     const [idCategoria,setIdCategoria]=useState(0);
 
-    const {id}=useParams();
+    const { id }=useParams();
 
-    const [imagen,setImagem]= useState();
+    const [imagem,setImagem]= useState();
 
    useEffect(() => {
         ListCategoria();
         CadastrarProduto();
+        CarregarProduto();
     }, [])
 
     async function Produto(){
         try {
 
-            if(!imagen)
+            if(!imagem)
                 throw new Error('Escolha a img do produto');
 
             const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
             
-            await ImagemProduto(imagen, r.id);
+            await ImagemProduto(imagem, r.id);
             //  console.log(r.Id);
             toast.dark("Produto Cadastrado")
         } 
@@ -70,17 +74,19 @@ export default function NovoProduto(){
             return '/assets/image/SelecionarImagem.png'
         } 
         else if(typeof(imagem)== "string"){
-            return `http://localhost:5000/${imagem}`
+            console.log(`${API_URL}\${imagem}`);
+            return `${API_URL}/${imagem}`;    
         }
         else {
             return URL.createObjectURL(imagem);
         }
     }
 
-    function CarregarProduto(){
+    async function CarregarProduto(){
         if (!id) return ;
-        const r=BuscarProdutoId(id);
-        setNome(r.info.produto);
+        const r=await BuscarProdutoId(id);
+        setIdProduto(r.info.id);
+        setNome(r.info.nome);
         setPeso(r.info.peso);
         setPreco(r.info.preco);
         setSinopse(r.info.sinopse);
@@ -89,9 +95,11 @@ export default function NovoProduto(){
         setDestaque(r.info.destaque);
         setIdCategoria(r.info.categoria);
 
-        if (r.info.imagem.lenght >0) {
-            setImagem(r.info.imagem)
-        }
+        setImagem(r.info.imagem)
+
+        // if (r.info.imagem.lenght >0) {
+        //     setImagem(r.info.imagem)
+        // }
     }
 
     return(
@@ -125,7 +133,7 @@ export default function NovoProduto(){
 
                             <div className="inserir-imagem" >  
 
-                                <img  alt="" src={ExibirImagem(imagen)} onClick={()=> escolherImagem('imagem')}/>
+                                <img  alt="" src={ExibirImagem(imagem)} onClick={()=> escolherImagem('imagem')}/>
                                 <input type="file" id="imagem" onChange={e => setImagem(e.target.files[0])}/>
                             
                             </div>

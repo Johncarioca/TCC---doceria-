@@ -1,0 +1,102 @@
+.alterar-email {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100vh;
+
+  // * {
+  //   border: 2px solid pink;
+  // }
+
+  .AE-header {
+    display: flex;
+    flex-direction: row;
+    height: 11vh;
+    background-color: #69160a;
+
+    .AE-header-set {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .AE-set {
+        width: 75%;
+      }
+    }
+
+    .AE-logo {
+      width: 14%;
+      height: 58%;
+      align-self: center;
+    }
+  }
+
+  .AE-sec {
+    display: flex;
+    flex-direction: column;
+    height: 89vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../../../public/assets/image/back-AlterarEmail.png);
+    background-size: 100%;
+
+    .AE-sec-foto {
+      display: flex;
+      flex-direction: column;
+      width: 15%;
+      height: 34%;
+
+      .AE-pos-foto {
+        width: 100%;
+        height: 91%;
+        border-radius: 105px;
+        background-color: #eedccf;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .AE-foto {
+          width:58%;
+          height: auto;
+        }
+      }
+
+      .AE-input-foto {
+        visibility: hidden;
+      }
+    }
+
+    .AE-inputs-pos {
+      display: flex;
+      flex-direction: column;
+      height: 4em;
+      width: 21em;
+      color: #ffffff;
+      margin: 10px 0px;
+
+      .AE-input {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        border-style: none;
+        background-color: #eedccf;
+      }
+    }
+
+    .AE-button-pos {
+      width: 13%;
+      height: 7%;
+      margin-top: 15px;
+      
+      .AE-button {
+        width: 100%;
+        height: 100%;
+        background-color: #944236;
+        border-radius: 14px;
+        color: #ffffff;
+      }
+    }
+  }
+}

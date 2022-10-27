@@ -48,3 +48,25 @@ export async function ValidarCadastro(cliente){
         throw new Error('O telefone é obrigatorio');
     }
 }
+
+
+export async function ValidarCadastroEndereco(endereco){  
+    if (!endereco.rua || endereco.rua === '' ) {
+        throw new Error('O nome da rua é obrigatorio');
+    }
+    if (!endereco.estado || endereco.estado === '' ) {
+        throw new Error('O nome do estado é obrigatorio');
+    }
+    if (!endereco.referencia || endereco.referencia === '' ) {
+        throw new Error('A referencia é obrigatorio');
+    }
+    if (!endereco.bairro || endereco.bairro === '' ) {
+        throw new Error('O nome do bairro é obrigatorio');
+    }
+    if (!endereco.cep || endereco.cep === '' ) {
+        throw new Error('O CEP é obrigatorio');
+    }
+    // if (!endereco.cidade || endereco.cidade === '' ) {
+    //     throw new Error('O nome da cidade é obrigatorio');
+    // }
+}

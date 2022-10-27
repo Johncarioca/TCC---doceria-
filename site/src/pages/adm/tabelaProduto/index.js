@@ -40,7 +40,7 @@ export default function TabelaProduto(){
     }
 
     function editar(id){
-        navigate(`/adm/novoproduto${id}`)
+        navigate(`/adm/novoproduto/${id}`)
     }
 
     useEffect( () => {

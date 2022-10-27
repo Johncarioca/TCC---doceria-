@@ -45,6 +45,7 @@ export async function BuscarNome(nome) {
 export async function BuscarProdutoId(idProduto){
     const comando=`
     select  
+    id_produto              as id,
     nm_produto              as nome,
     id_categoria            as categoria,
     img_produto             as imagem,
@@ -61,3 +62,9 @@ export async function BuscarProdutoId(idProduto){
     return registros[0];
 }
 
+export async function RemoverImagemId(imagem){
+    const comando=`
+    delete img_produto 
+    from tb_produto where img_produto NOT IN (?)
+    `
+}
