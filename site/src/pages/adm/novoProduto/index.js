@@ -74,7 +74,7 @@ export default function NovoProduto(){
             return '/assets/image/SelecionarImagem.png'
         } 
         else if(typeof(imagem)== "string"){
-            // console.log(`${API_URL}/${imagem}`);
+            console.log(`${API_URL}\${imagem}`);
             return `${API_URL}/${imagem}`;    
         }
         else {
@@ -95,9 +95,11 @@ export default function NovoProduto(){
         setDestaque(r.info.destaque);
         setIdCategoria(r.info.categoria);
 
-        if (r.info.imagem.lenght >0) {
-            setImagem(r.info.imagem)
-        }
+        setImagem(r.info.imagem)
+
+        // if (r.info.imagem.lenght >0) {
+        //     setImagem(r.info.imagem)
+        // }
     }
 
     return(

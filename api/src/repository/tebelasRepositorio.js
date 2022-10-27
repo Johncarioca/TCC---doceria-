@@ -62,3 +62,9 @@ export async function BuscarProdutoId(idProduto){
     return registros[0];
 }
 
+export async function RemoverImagemId(imagem){
+    const comando=`
+    delete img_produto 
+    from tb_produto where img_produto NOT IN (?)
+    `
+}

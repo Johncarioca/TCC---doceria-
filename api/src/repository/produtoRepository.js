@@ -18,3 +18,33 @@ export async function DetalhesProdutoId(id){
     const [registro] = await con.query(comando, [id])
     return registro[0];    
 }
+
+export async function AlterarProduto(id,produto){
+    const comando=`
+    update tb_produto 
+        set nm_produto =?,
+            nr_peso =?,
+            ds_ingredientes =?,
+            nr_preco =?,
+            nr_estoque =?,
+            ds_descricao =?,
+            id_categoria =?,
+            bt_destaque =?,
+            ds_peso =?
+        where id_produto = ?
+    `
+    const [resp]=await con.query(comando,[
+        produto.nome,
+        produto.peso,
+        produto.ingredientes,
+        produto.preco,
+        produto.estoque,
+        produto.descricao,
+        produto.categoria,
+        produto.destaque,
+        produto.peso,
+        id
+    ])
+    return resp.affectedRows;
+
+}
