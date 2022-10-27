@@ -15,6 +15,7 @@ import DetalhesProdutos from './pages/usuario/detalhesProduto';
 import TelaEndereco from './pages/usuario/telaEndereco';
 import PerfilUser from './pages/usuario/perfil';
 import AlterarEmail from './pages/usuario/alterarEmail';
+import MeusEndereco from './pages/usuario/meusEndereco';
 
 
 
@@ -38,6 +39,7 @@ export default function AppsRoutes() {
                 <Route path='/endereco' element={<TelaEndereco/>} />
                 <Route path='/perfil' element={<PerfilUser/>} />
                 <Route path='/perfil/alterar' element={<AlterarEmail/>} />
+                <Route path='/meusendereco' element={<MeusEndereco/>} />
 
             </Routes>
         </BrowserRouter>
