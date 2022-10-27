@@ -1,17 +1,17 @@
 import { con } from "./conection.js";
 
 
-export async function CadastroEndereco(idUsuario, endereco) {
+export async function CadastroEndereco(id, endereco) {
     const comando =
       `
       insert into tb_endereco( id_usuario, ds_rua, ds_complemento, nm_estado, ds_referencia, ds_bairro, ds_cep, ds_cidade )
 				 values( ?, ?, ?, ?, ?, ?, ?, ?);
       `
-    const [infos] = await con.query(comando, [idUsuario, endereco.rua, endereco.complemento, endereco.estado, endereco.referencia, endereco.bairro, endereco.cep, endereco.cidade]);
+    const [infos] = await con.query(comando, [id, endereco.rua, endereco.complemento, endereco.estado, endereco.referencia, endereco.bairro, endereco.cep, endereco.cidade]);
     return infos.insertId;
 }
 
-export async function ListarEnderecoId(idUsuario){
+export async function ListarEnderecoId(id){
     const comando = 
     `   
          select id_endereco 		as id,
@@ -26,6 +26,6 @@ export async function ListarEnderecoId(idUsuario){
           where id_usuario = ?
 
     `
-    const [registro] = await con.query(comando, [idUsuario])
+    const [registro] = await con.query(comando, [id])
     return registro;    
 }

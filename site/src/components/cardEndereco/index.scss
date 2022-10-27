@@ -1,0 +1,111 @@
+.cardEnde{
+    
+
+    *{
+        p{
+            font-size: 13px;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+
+        }
+        h2{
+            font-size: 15px;
+            font-weight: 700;
+
+        }
+
+    }
+
+    .corpo{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30%;
+        height: 8rem;
+        // margin-top: 3rem;
+        // margin-left: 5rem;
+        border: 0.1px solid black;
+        border-radius: 15px;
+
+
+        .casa{
+            display: flex;
+            flex-direction: row;
+
+            // border: 0.1px solid blue;
+
+            .cs{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 23%;
+                height: 1.9rem;
+                padding-top: 0.3rem;
+                padding-left: 0.5rem;
+                // border: 0.1px solid blue;
+
+            }
+
+            .point{
+                width: 2rem;
+                height: 1.9rem;
+                // border: 0.1px solid green;
+                
+
+                g{
+                    max-height: 1.5rem;
+                    width: 2rem;
+                }
+            }
+        }
+        .infosEndere{
+            display: flex;
+            flex-direction: column;
+            height: 4.2rem;
+            // border: 0.1px solid green;  
+
+            .ph{
+                display: flex;
+                flex-direction: row;
+                padding-left: 0.5rem;
+
+               
+                
+                // border: 0.1px solid blueviolet;
+
+
+            }
+        }
+        
+    }
+    .corpo:hover{
+        width: 35%;
+        background-color: #883F35;
+        min-height: 9rem;
+        max-height: 9rem;
+        
+
+        transition: 1.8s;
+
+        .casa{
+            padding-left: 0.4rem;
+            transition: 1s;
+            color: #fff;
+        }
+
+        .ph{
+            padding-left: 1rem;
+            transition: 1s;
+            color: #fff;
+        }
+        .infosEndere{
+            padding-bottom: 5rem;
+            
+        }
+
+
+    }
+
+
+    
+}

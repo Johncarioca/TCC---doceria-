@@ -66,7 +66,7 @@ export async function ValidarCadastroEndereco(endereco){
     if (!endereco.cep || endereco.cep === '' ) {
         throw new Error('O CEP é obrigatorio');
     }
-    if (!endereco.cidade || endereco.cidade === '' ) {
-        throw new Error('O nome da cidade é obrigatorio');
-    }
+    // if (!endereco.cidade || endereco.cidade === '' ) {
+    //     throw new Error('O nome da cidade é obrigatorio');
+    // }
 }
