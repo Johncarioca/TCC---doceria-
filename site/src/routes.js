@@ -12,6 +12,7 @@ import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
 import DetalhesProdutos from './pages/usuario/detalhesProduto';
+import Pagamento from './pages/usuario/pagamento';
 
 
 
@@ -30,9 +31,10 @@ export default function AppsRoutes() {
                 <Route path='/login' element={<LoginUsuario />} />
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />
                 <Route path='/cadastro' element={<CadastroUsuario />} />
-                <Route path='/carrinho' element={<CarrinhoUsuario/>} />
+                <Route path='/  ' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
+                <Route path='/pagamento' element={<Pagamento/>} />
 
             </Routes>
         </BrowserRouter>
