@@ -39,7 +39,7 @@ export async function AlterarProduto(id,produto){
         produto.ingredientes,
         produto.preco,
         produto.estoque,
-        produto.descricao,
+        produto.sinopse,
         produto.categoria,
         produto.destaque,
         produto.peso,
@@ -47,4 +47,13 @@ export async function AlterarProduto(id,produto){
     ])
     return resp.affectedRows;
 
+}
+
+export async function RemoverImagemId(imagem){
+    const comando=`
+    delete img_produto 
+    from tb_produto where img_produto NOT IN (?)
+    `
+    const [resp]=await con.query(comando,[imagem])
+    return resp.affectedRows;
 }

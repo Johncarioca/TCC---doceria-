@@ -41,3 +41,19 @@ export async function ListarCategorias(){
 export  function buscarFilmes(imagem){
     return `${api.getUri()}/${imagem}` 
 }
+
+export async function AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,categoria,destaque,id){
+    await api.put(`/adm/cadastro/${id}/alt`,{
+        nome: nome ,
+        peso: peso,
+        ingredientes: ingredientes,
+        preco: preco,
+        estoque: estoque,
+        sinopse: sinopse,
+        categoria: categoria,
+        destaque: destaque,
+        id:id
+        
+    })
+
+};

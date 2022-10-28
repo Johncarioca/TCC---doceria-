@@ -1,8 +1,10 @@
 
 import { Router } from "express";
+
+import { ImagemProduto } from "../repository/npRepository.js";
+import { AlterarProduto, RemoverImagemId } from "../repository/produtoRepository.js";
 import { BuscarNome, BuscarProdutoId, listaProduto } from "../repository/tebelasRepositorio.js";
 const server = Router();
-
 
 
 server.get('/adm/produto',async(req, resp) => {
@@ -47,6 +49,27 @@ server.get('/adm/produto/:id', async (req,resp)=>{
             info:produto,
         })
 
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.put('/adm/produto/:id/alt',async (req,resp)=>{
+    try {
+
+        const produto=req.body;
+        const id = req.params.id;
+
+        console.log(id)
+        console.log(produto)
+
+        
+
+        // await AlterarProduto(id,produto)
+
+        resp.status(204).send();
     } catch (err) {
         resp.status(400).send({
             erro: err.message

@@ -2,7 +2,7 @@ import './index.scss';
 import {useState ,useEffect} from 'react'
 
 
-import{CadastrarProduto, ListarCategorias, ImagemProduto }from '../../../api/adm/novoProdutoAPI.js'
+import{CadastrarProduto, ListarCategorias, ImagemProduto, AlterarProduto }from '../../../api/adm/novoProdutoAPI.js'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -38,19 +38,28 @@ export default function NovoProduto(){
     async function Produto(){
         try {
 
-            if(!imagem)
-                throw new Error('Escolha a img do produto');
-
-            const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
+            if(!id){
+                const r = await CadastrarProduto(nome,peso,preco,sinopse,ingredientes,estoque,destaque,idCategoria);
             
-            await ImagemProduto(imagem, r.id);
-            //  console.log(r.Id);
-            toast.dark("Produto Cadastrado")
+                await ImagemProduto(imagem, r.id);
+                toast.dark("Produto Cadastrado")
+            }
+            else{
+                // await AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,idCategoria,destaque,id);
+                await ImagemProduto(imagem, id);
+
+                toast.dark("Produto Alterado")
+            }
+
+            // if(!imagem)
+            //     throw new Error('Escolha a img do produto');
+
         } 
         catch (err) {
 
             if (err.response) {
-                toast.error(err.response.data.erro);
+                // toast.error(err.response.data.erro);
+                toast.error('Erro')
             }
             else
                 toast.error(err.message);

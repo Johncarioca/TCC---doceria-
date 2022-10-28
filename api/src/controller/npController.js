@@ -39,10 +39,15 @@ server.put('/adm/produto/:id', upload.array('imagem'),async (req, resp) => {
         const imagen = req.files;
         const id = req.params.id;
 
-        for(const imagem of imagen){
+        console.log(id);
+        console.log(imagen);
+
+        // await RemoverImagemId(img)
+
+        // for(const imagem of imagen){
             
-            await ImagemProduto(imagem.path, id);
-        }
+        //     await ImagemProduto(imagem.path, id);
+        // }
         
 
         resp.status(204).send();
