@@ -58,8 +58,7 @@ export default function NovoProduto(){
         catch (err) {
 
             if (err.response) {
-                // toast.error(err.response.data.erro);
-                toast.error('Erro')
+                toast.error(err.response.data.erro); 
             }
             else
                 toast.error(err.message);

@@ -11,6 +11,7 @@ import cardapioController from './src/controller/cardapioController.js'
 import produtoController  from './src/controller/produtoController.js';
 import enderecoController from './src/controller/enderecoController.js';
 import pedidoController from './src/controller/pedidoController.js';
+import ListaPedidosController from './src/controller/listaPedidosController.js';
 
 const server = express();
 server.use(cors());
@@ -26,6 +27,7 @@ server.use(tabelasController);
 server.use(cardapioController);
 server.use(produtoController);
 server.use(pedidoController);
+server.use(ListaPedidosController);
 
 server.use('/storage/imagemProduto', express.static('storage/imagemProduto'));
 server.use('/storage/cadastroLogin', express.static('storage/cadastroLogin'));

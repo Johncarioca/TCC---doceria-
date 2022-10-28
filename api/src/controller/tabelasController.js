@@ -13,7 +13,7 @@ server.get('/adm/produto',async(req, resp) => {
         resp.send(j);
     } 
     catch (err) {
-        resp.status(400).send({
+        resp.send({
             erro: err.message
         })
     }
