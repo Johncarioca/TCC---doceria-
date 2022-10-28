@@ -1,5 +1,8 @@
+import storage  from 'local-storage';
+import { useState } from 'react';
+// import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
-// import CardEndereco from '../../../components/cardEndereco';
+
 
 import './index.scss'
 
@@ -8,6 +11,68 @@ import './index.scss'
 export default function PagamentoUser(){
 
 
+
+    const [itens, setItens] = useState([]);
+    // const vlTotal = Valortotal() ;
+
+    // async function CarregarItensCarrinho(){
+
+    //     let carrinho = storage('carrinho');
+    //     if (carrinho) {
+
+    //         for(let produto of carrinho){
+    //             const j = await DetalhesProdutoId(produto.id);
+    //             const qtdIt = produto.qtd
+    //             // console.log(j);
+    //         }
+
+            
+    //         setItens(temporario);
+
+    //     }
+        
+    // }
+    // function Valortotal() {
+    //     let total = 0 ;
+    //     for(let item of itens){
+    //         total = total + item.produto.preco * item.qtd;
+
+    //     }
+    //     return total;
+    // }
+
+    function CadastraPedido(){
+
+        // let valor = vlTotal;
+        
+        let pedido = {
+            idEndereco:1,
+            itens: 2,
+            status: "confirmando pagamento", 
+            vlTotal: 120, 
+            tpPagamento: "Cartão",
+            cartao: {
+                
+                nome:"jonatas quintanilha",
+                numero:"5555 4444 3333 2222",
+                vencimento: "out/2030",
+                codSeguranca: "55643",
+                parcelas: 2 ,
+                formaPagamento:"Débito" 
+                
+            },
+            produtos: [
+                {
+                    "id":1 ,
+                    "qtd": 3
+                },
+                {
+                    "id":111 ,
+                    "qtd": 5
+                }
+            ]   
+        }
+    }
 
     return(
         <main className="telaEndereco">
@@ -99,30 +164,35 @@ export default function PagamentoUser(){
                                     <div className="tresInputs">
                                         <div className="li">
                                             <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <input placeholder='Rua...' type="text" />
                                         </div>
                                         <div className="li">
-                                            <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <label> Nome do cartão</label>
+                                            <input placeholder='Rua...' type="text" />
                                         </div>
                                         <div className="li">
-                                            <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <label>CPF ou CNPJ </label>
+                                            <input placeholder='Rua...' type="text" />
                                         </div>
                                     </div>    
 
                                     <div className="tresInputs">
                                         <div className="li">
-                                            <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <label> Código de segurança</label>
+                                            <input placeholder='Rua...' type="text" />
                                         </div>
                                         <div className="li">
-                                            <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <label> Parcelas</label>
+                                            <select>
+                                                <option value="" key=""></option>
+                                            </select>
                                         </div>
                                         <div className="li">
-                                            <label> Nº do cartão</label>
-                                            <input type="text" />
+                                            <label>Formas de Pagamento</label>
+                                            <select>
+                                                <option value="" key=""> Débito </option>
+                                                <option value="" key=""> Crédito </option>
+                                            </select>
                                         </div>
                                     </div>     
                                 </div>

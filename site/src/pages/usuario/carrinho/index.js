@@ -30,7 +30,7 @@ export default function CarrinhoUsuario(){
         
         let carrinho = storage('carrinho');
         carrinho = carrinho.filter(item => item.id != id);
-
+ 
         storage('carrinho', carrinho)
         CarregarCarrinho()
     } 
