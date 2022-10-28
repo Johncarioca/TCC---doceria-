@@ -37,7 +37,7 @@ export default function AppsRoutes() {
                 <Route path='/login' element={<LoginUsuario />} />
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />
                 <Route path='/cadastro' element={<CadastroUsuario />} />
-                <Route path='/  ' element={<CarrinhoUsuario/>} />
+                <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
 

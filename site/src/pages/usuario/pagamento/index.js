@@ -1,6 +1,6 @@
 import storage  from 'local-storage';
-import { useState } from 'react';
-// import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
+import { useEffect, useState } from 'react';
+import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 
 
@@ -10,36 +10,50 @@ import './index.scss'
 
 export default function PagamentoUser(){
 
+    const [itens, setItens] = useState();
+    
+    const vlTotal = Valortotal() ;
+    const QTD = ItensQtd();   
 
 
-    const [itens, setItens] = useState([]);
-    // const vlTotal = Valortotal() ;
+    async function CarregarItensCarrinho(){
 
-    // async function CarregarItensCarrinho(){
+        let carrinho = storage('carrinho');
+        if (carrinho) {
 
-    //     let carrinho = storage('carrinho');
-    //     if (carrinho) {
+            for(let produto of carrinho){
+                const j = await DetalhesProdutoId(produto.id);
+                // console.log(j);
 
-    //         for(let produto of carrinho){
-    //             const j = await DetalhesProdutoId(produto.id);
-    //             const qtdIt = produto.qtd
-    //             // console.log(j);
-    //         }
-
+                temporario.push({
+                    produto: j,
+                    qtd: produto.qtd
+                });
+            }
+            setItens(temporario);
             
-    //         setItens(temporario);
-
-    //     }
+        }
         
-    // }
-    // function Valortotal() {
-    //     let total = 0 ;
-    //     for(let item of itens){
-    //         total = total + item.produto.preco * item.qtd;
+    }
 
-    //     }
-    //     return total;
-    // }
+    function ItensQtd() {
+        return itens.length
+        
+    }
+
+    function Valortotal() {
+        let total = 0 ;
+        for(let item of itens){
+            total = total + item.produto.preco * item.qtd;
+
+        }
+        return total;
+    }
+
+    useEffect(() => {
+        CarregarItensCarrinho();
+        Valortotal()
+    }, [])
 
     function CadastraPedido(){
 
@@ -47,9 +61,9 @@ export default function PagamentoUser(){
         
         let pedido = {
             idEndereco:1,
-            itens: 2,
+            itens: QTD,
             status: "confirmando pagamento", 
-            vlTotal: 120, 
+            vlTotal: vlTotal, 
             tpPagamento: "Cartão",
             cartao: {
                 

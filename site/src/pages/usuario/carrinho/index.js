@@ -20,6 +20,7 @@ export default function CarrinhoUsuario(){
         }
         return total;
     }
+    
     function ItensQtd() {
         return itens.length
         
