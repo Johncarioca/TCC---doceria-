@@ -42,12 +42,12 @@ server.put('/adm/produto/:id', upload.array('imagem'),async (req, resp) => {
         console.log(id);
         console.log(imagen);
 
-        // await RemoverImagemId(img)
+        
 
-        // for(const imagem of imagen){
+        for(const imagem of imagen){
             
-        //     await ImagemProduto(imagem.path, id);
-        // }
+            await ImagemProduto(imagem.path, id);
+        }
         
 
         resp.status(204).send();

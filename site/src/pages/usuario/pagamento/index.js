@@ -17,9 +17,11 @@ export default function PagamentoUser(){
 
 
     async function CarregarItensCarrinho(){
-
+        
         let carrinho = storage('carrinho');
         if (carrinho) {
+
+            let temporario = [];
 
             for(let produto of carrinho){
                 const j = await DetalhesProdutoId(produto.id);
@@ -30,8 +32,10 @@ export default function PagamentoUser(){
                     qtd: produto.qtd
                 });
             }
+
+            // console.log(temporario);
             setItens(temporario);
-            
+
         }
         
     }
