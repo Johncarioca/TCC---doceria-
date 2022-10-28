@@ -10,12 +10,14 @@ import tabelasController from './src/controller/tabelasController.js'
 import cardapioController from './src/controller/cardapioController.js'
 import produtoController  from './src/controller/produtoController.js';
 import enderecoController from './src/controller/enderecoController.js';
+import pedidoController from './src/controller/pedidoController.js';
 
 const server = express();
 server.use(cors());
 server.use(express.json());
 
 /// configuração dos endpoints ///
+
 server.use(loginAdmController);
 server.use(enderecoController);
 server.use(npController);
@@ -23,6 +25,7 @@ server.use(loginUsuario);
 server.use(tabelasController);
 server.use(cardapioController);
 server.use(produtoController);
+server.use(pedidoController);
 
 server.use('/storage/imagemProduto', express.static('storage/imagemProduto'));
 server.use('/storage/cadastroLogin', express.static('storage/cadastroLogin'));

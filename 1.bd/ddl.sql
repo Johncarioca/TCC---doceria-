@@ -54,22 +54,39 @@ foreign key (id_categoria) references tb_categoria(id_categoria)
 
 /*////////////////////////////tabela de pedidos de cada cliente ////////////////////////////*/
 create table tb_pedido(
-id_pedido            int primary key auto_increment,
-id_cliente           int,
-ds_contato           varchar(100),
-qtd_produtos         int,
-vl_total             decimal(6,2),
-dt_entrega           date,
-bt_aprovado          boolean,
-ds_status            varchar(100),
-foreign key (id_cliente) references tb_cliente(id_cliente)
+id_pedido             int primary key auto_increment,
+id_endereco           int,
+id_usuario			  int,
+dt_pedido             datetime,
+ds_status             varchar(100),
+tp_pagamento          varchar(100),
+foreign key (id_usuario) references tb_usuario(id_usuario),
+foreign key (id_endereco) references tb_endereco(id_endereco)
 );
 
 /*tabela intermediaria entre os produtos e pedidos*/
+
 create table tb_produto_pedido(
 id_produto_pedido   int primary key auto_increment,
 id_produto          int,
 id_pedido           int,
+qtd_produtos        int,
+vl_total            decimal(15,2),
 foreign key (id_produto) references tb_produto(id_produto),
 foreign key (id_pedido) references tb_pedido(id_pedido)
 );
+/*//// tabela de pagamento/////*/
+
+create table tb_pagamento_cartao (
+	id_pagamento_cartao	int primary key auto_increment,
+    id_pedido			int,
+    nm_cartao			varchar(200),
+    nr_cartao			varchar(200),
+    dt_vencimento		varchar(200),
+    cod_seguranca		varchar(200),
+    nr_parcelas			int,
+    ds_forma_pagamento	varchar(200),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
+);
+
+/*tabela intermediaria entre os produtos e pedidos*/

@@ -1,0 +1,28 @@
+ {
+    "idEndereco":1,
+    "itens": 2,
+    "status": "confirmando pagamento", 
+    "vlTotal": 120, 
+    "tpPagamento": "Cartão",
+    "cartao": {
+        
+        "nome":"jonatas quintanilha",
+        "numero":"5555 4444 3333 2222",
+        "vencimento": "out/2030",
+        "codSeguranca": "55643",
+        "parcelas": 2 ,
+        "formaPagamento":"Débito" 
+        
+    },
+    "produtos": [
+        {
+            "id":1 ,
+            "qtd": 3
+        },
+        {
+            "id":111 ,
+            "qtd": 5
+        }
+    ]   
+
+ }

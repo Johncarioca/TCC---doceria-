@@ -1,86 +1,155 @@
+import CabeçarioLogin from '../../../components/cabecalhoLogin';
+// import CardEndereco from '../../../components/cardEndereco';
+
 import './index.scss'
-import CardDetalhes from "../../../components/cabecalhoDT";
-export default function PagamentoUser() {
 
-return (
 
-    <main className="pagamentos">
-        <CardDetalhes/>
-         <div className="cont0-pag">
 
-            <div className="cont1-pag">
-                
-            <div className=" linkspag">
-            <a href="../perfil"> Minha conta </a>
+export default function PagamentoUser(){
+
+
+
+    return(
+        <main className="telaEndereco">
+            <div>
+                <CabeçarioLogin/>
             </div>
+            <section className="sectionPrincipal">
 
-            <div className=" linkspag">
-            <a href="../perfil"> Minhas compras </a>
-            </div>
+                <div className="rosaEscura">
 
-            <div className=" linkspag">
-            <a href="../perfil"> cardapio </a>
-            </div>
+                    <div className="textImage">
+
+                        <div className="Minhas">
+
+                            <div >
+                            
+                                <img src="../assets/image/carrinhoPreto.png" alt="" />
+                            
+                            </div>
+                            
+                            <p> Minhas Compras </p>
     
-         </div>
+                        </div>
+                        <div className="Minhas">
 
-         <div className="cont2-pag">
-            <h1> Pagamentos </h1>
-            <p> Olá , seja bem vindo</p>
+                            <div >
+                            
+                                <img src="../assets/image/IconeCardapio.png" alt="" />
+                            
+                            </div>
+                            <p>Cardápio</p>
+    
+                        </div>
 
-                <div className="sla">
-                <div className="cartao-pag">
-                    <p>Cartão</p>
-                </div>
 
-                <div className="cartao-pag">
-                    <p>Pix</p>
-                </div>
-
-                <div className="cartao-pag">
-                    <p>Boleto</p>
-           
-                </div>
-                <div className="a1a2">
+                    </div>
                     
                 </div>
-           <div className="info-pag">
-           <div className="infocar1-pag">
-                <label className="txt" > Nº do cartão:</label>
-                <input className='input-pagcar' type="text" />
 
-                <label className="txt" > Nome do proprietario do cartão :</label>
-                <input className='input-pagcar' type="text" />
+                <div className="rosaCLar">
 
-                <label className="txt" > CPF ou CNPJ :</label>
-                <input className='input-pagcar' type="text" />
+                    <div className="inf">
 
-            </div>
+                        <div className="ph">
+                            <h2 className="pag"> Pagamento </h2>
+                            <p className="grc">
+                                Olá! Bem-vindo a ultima parte antes de finalizamos sua compra. 
+                                Insira os dados de acordo como e pedido abaixo
+                            </p>
+                        </div>
 
-            <div className="info2-pag">
+                        <section className="inputsPag">
 
-            <label className="txt"> Có digo de segurança:</label>
-                <input className='input-pagcar' type="text" />
+                        
+                            <div className="tpPagamento">
 
-                <label  className="txt"> Parcelas:</label>
-                <input className='input-pagcar' type="text" />
+                                <div className=" imgTp">
+                                    <div className='imgCartão'>
+                                        <img className="cartão" src="../assets/image/iconCartão.png" alt="" />
+                                    </div>
+                                    <div className="tpTexte">
+                                        <p>Cartão</p>
+                                    </div>
+                                </div>
+                                
+                                <div className=" imgTp">
+                                    <div className='imgPix'>
+                                        <img className="Pix" src="../assets/image/pix.png" alt="" />
+                                    </div>
+                                    <div className="tpTexte">
+                                        <p>Pix</p>
+                                    </div>
+                                </div>
 
-            </div>
+                                <div className=" imgTp">
+                                    <div className='img'>
+                                        <img className="i" src="../assets/image/boleto.png" alt="" />
+                                    </div>
+                                    <div className="tpTexte">
+                                        <p>Boleto</p>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                            <div className='inputsParagrafo'>
+                                
+                                <div className="SeisInputs">
 
-            </div>
-         </div>
-           </div>
+                                    <div className="tresInputs">
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>    
 
-         <div className="cont3-pag">
-            <div className="frete">
+                                    <div className="tresInputs">
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className="li">
+                                            <label> Nº do cartão</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>     
+                                </div>
 
-            <label > Frete:</label>
-                <input className='input-pagcar' type="text" />
+                            </div>
+                            
+                            
+                        </section>
 
-            </div>
-         </div>
-         
-         </div>
-    </main>
-)
+                        <div className="infos">
+
+                            <div className="botão">
+                                <button> Finalizar</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    
+                </div>
+
+                <div className="rosaEscu">
+                    
+                </div>
+
+            </section>
+
+        </main>
+    );
 }
