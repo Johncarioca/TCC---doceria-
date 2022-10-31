@@ -27,10 +27,9 @@ export async function AlterarProduto(id,produto){
             ds_ingredientes =?,
             nr_preco =?,
             nr_estoque =?,
-            ds_descricao =?,
+            ds_sinopse =?,
             id_categoria =?,
-            bt_destaque =?,
-            ds_peso =?
+            bt_destaque =?
         where id_produto = ?
     `
     const [resp]=await con.query(comando,[
@@ -42,7 +41,6 @@ export async function AlterarProduto(id,produto){
         produto.sinopse,
         produto.categoria,
         produto.destaque,
-        produto.peso,
         id
     ])
     return resp.affectedRows;

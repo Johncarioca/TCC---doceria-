@@ -45,14 +45,17 @@ export default function NovoProduto(){
                 toast.dark("Produto Cadastrado")
             }
             else{
-                // await AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,idCategoria,destaque,id);
-                await ImagemProduto(imagem, id);
+                await AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,idCategoria,destaque,id);
 
+                // if(typeof(imagem)=== Object){
+                await ImagemProduto(imagem, id);
+                // }
+                
                 toast.dark("Produto Alterado")
             }
 
-            // if(!imagem)
-            //     throw new Error('Escolha a img do produto');
+            if(!imagem)
+                throw new Error('Escolha a img do produto');
 
         } 
         catch (err) {
@@ -82,7 +85,7 @@ export default function NovoProduto(){
             return '/assets/image/SelecionarImagem.png'
         } 
         else if(typeof(imagem)== "string"){
-            console.log(`${API_URL}\${imagem}`);
+            console.log(`${API_URL}/${imagem}`);
             return `${API_URL}/${imagem}`;    
         }
         else {
@@ -104,10 +107,6 @@ export default function NovoProduto(){
         setIdCategoria(r.info.categoria);
 
         setImagem(r.info.imagem)
-
-        // if (r.info.imagem.lenght >0) {
-        //     setImagem(r.info.imagem)
-        // }
     }
 
     return(

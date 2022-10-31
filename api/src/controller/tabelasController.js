@@ -46,7 +46,7 @@ server.get('/adm/produto/:id', async (req,resp)=>{
         // console.log(produto);
 
         resp.send({
-            info:produto,
+            info:produto
         })
 
     } catch (err) {
@@ -62,14 +62,10 @@ server.put('/adm/produto/:id/alt',async (req,resp)=>{
         const produto=req.body;
         const id = req.params.id;
 
-        console.log(id)
-        console.log(produto)
-
-        
-
-        // await AlterarProduto(id,produto)
+        await AlterarProduto(id,produto)
 
         resp.status(204).send();
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
