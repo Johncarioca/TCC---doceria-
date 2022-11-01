@@ -20,7 +20,7 @@ export default function TelaEndereco(){
         try {
             const id = Storage('Cliente-logado').id;
             const resp = await CadastroEndereco(id,rua, complemento, estado, referencia, bairro, cep, cidade);
-            // console.log(id,Rua, CEP, Bairro, Estado, Referencia,Complemento);
+            console.log(id,rua, cep, bairro, estado, referencia,complemento);
             toast.dark('Endereço Salvo');
         }
         catch (err){

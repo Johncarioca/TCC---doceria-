@@ -20,12 +20,14 @@ export default function MeusEndereco(){
         setEnderecos(j);
     }
 
+    
+
     useEffect(() => {
             ListarEndereco();
     }, []);
 
     return(
-        <main className="telaEndereco">
+        <main className="telaEndereco" >
             <div>
                 <CabeçarioLogin/>
             </div>

@@ -16,7 +16,6 @@ export default function PagamentoUser(){
     const [idEnder, setidEnder ] = useState(false);
 
 
-
     const [Numero, setNumero] = useState('');
     const [Nome, setNome] = useState('');
     // const [CNPJ, setCNPJ] = useState('');
