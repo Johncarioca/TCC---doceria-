@@ -22,6 +22,7 @@ export default function CabCarrinho() {
 
                     <div className="selecionado">
                         <p className="linkperfil" >Perfil</p>
+                        
                         <hr />
                     </div>
                     <div className="selecionado">
