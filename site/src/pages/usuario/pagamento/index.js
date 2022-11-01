@@ -1,24 +1,42 @@
 import storage  from 'local-storage';
 import { useEffect, useState } from 'react';
-import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
+import {useNavigate}  from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
+import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
+
 
 
 import './index.scss'
 
 
-
 export default function PagamentoUser(){
 
-    const [itens, setItens] = useState();
-    
-    const vlTotal = Valortotal() ;
-    const QTD = ItensQtd();   
+    const [idEnder, setidEnder ] = useState(false);
 
+
+
+    const [Numero, setNumero] = useState('');
+    const [Nome, setNome] = useState('');
+    // const [CNPJ, setCNPJ] = useState('');
+    const [codSeguranca, setcodSeguranca] = useState('');
+    const [Parcelas, setParcelas] = useState('');
+    const [FormaPag, setFormaPag] = useState('');
+    const [Vencimento, setVencimento] = useState('');
+
+
+    const [itens, setItens] = useState([]);
+    const vlTotal = Valortotal(0) ;
+    const QTD = ItensQtd(0);   
+
+    const Navigate = useNavigate();
 
     async function CarregarItensCarrinho(){
-        
+
         let carrinho = storage('carrinho');
+        
+
         if (carrinho) {
 
             let temporario = [];
@@ -32,10 +50,8 @@ export default function PagamentoUser(){
                     qtd: produto.qtd
                 });
             }
-
-            // console.log(temporario);
             setItens(temporario);
-
+            
         }
         
     }
@@ -59,37 +75,41 @@ export default function PagamentoUser(){
         Valortotal()
     }, [])
 
-    function CadastraPedido(){
+    async function CadastraPedido(){
 
-        // let valor = vlTotal;
-        
-        let pedido = {
-            idEndereco:1,
-            itens: QTD,
-            status: "confirmando pagamento", 
-            vlTotal: vlTotal, 
-            tpPagamento: "Cartão",
-            cartao: {
-                
-                nome:"jonatas quintanilha",
-                numero:"5555 4444 3333 2222",
-                vencimento: "out/2030",
-                codSeguranca: "55643",
-                parcelas: 2 ,
-                formaPagamento:"Débito" 
-                
-            },
-            produtos: [
-                {
-                    "id":1 ,
-                    "qtd": 3
+        try {
+            let Produtos = storage('carrinho');
+            let id = storage('Cliente-logado').id;
+
+            let pedido = {
+                idEndereco:idEnder,
+                itens: QTD,
+                status: "confirmando pagamento", 
+                vlTotal: vlTotal, 
+                // tpPagamento: "Cartão",
+                cartao: {
+                    
+                    nome:Nome,
+                    numero:Numero,
+                    vencimento: Vencimento,
+                    codSeguranca: codSeguranca,
+                    parcelas: Parcelas ,
+                    formaPagamento: FormaPag 
+                    
                 },
-                {
-                    "id":111 ,
-                    "qtd": 5
-                }
-            ]   
+                produtos: Produtos
+            }
+                const r = await SalvarNovoPedido(id, pedido); 
+                toast.dark('pedido feito com sucesso');
+                storage('carrinho', []);
+                Navigate('/');
+            } 
+        catch (err) {
+            toast.error(err.response.data.erro);
+
         }
+
+        
     }
 
     return(
@@ -182,34 +202,40 @@ export default function PagamentoUser(){
                                     <div className="tresInputs">
                                         <div className="li">
                                             <label> Nº do cartão</label>
-                                            <input placeholder='Rua...' type="text" />
+                                            <input  placeholder='Rua...' type="text" value={Numero} onChange={e => setNumero(e.target.value)}/>
                                         </div>
                                         <div className="li">
                                             <label> Nome do cartão</label>
-                                            <input placeholder='Rua...' type="text" />
+                                            <input placeholder='Rua...' type="text" value={Nome} onChange={e => setNome(e.target.value)}/>
                                         </div>
                                         <div className="li">
-                                            <label>CPF ou CNPJ </label>
-                                            <input placeholder='Rua...' type="text" />
+                                            <label>Vencimento </label>
+                                            <input placeholder='Rua...' type="text" value={Vencimento} onChange={e => setVencimento(e.target.value)}/>
                                         </div>
                                     </div>    
 
                                     <div className="tresInputs">
                                         <div className="li">
                                             <label> Código de segurança</label>
-                                            <input placeholder='Rua...' type="text" />
+                                            <input placeholder='Rua...' type="text" value={codSeguranca} onChange={e => setcodSeguranca(e.target.value)}/>
                                         </div>
                                         <div className="li">
-                                            <label> Parcelas</label>
-                                            <select>
-                                                <option value="" key=""></option>
+                                            <label>Parcelas:</label>
+                                            <select value={Parcelas} onChange={e => setParcelas(e.target.value)}  >
+                                                <option disabled hidden selected>Selecione</option>
+                                                <option value={1}>01x à Vista</option>
+                                                <option value={1}>01x sem Juros</option>
+                                                <option value={2}>02x sem Juros</option>
+                                                <option value={3}>03x sem Juros</option>
                                             </select>
                                         </div>
+
                                         <div className="li">
-                                            <label>Formas de Pagamento</label>
-                                            <select>
-                                                <option value="" key=""> Débito </option>
-                                                <option value="" key=""> Crédito </option>
+                                            <label>Formas de Pagamento:</label>
+                                            <select value={FormaPag} onChange={e => setFormaPag(e.target.value)}   >
+                                                <option disabled hidden selected>Selecione</option>
+                                                <option>Crédito</option>
+                                                <option>Débito</option>
                                             </select>
                                         </div>
                                     </div>     
@@ -223,7 +249,7 @@ export default function PagamentoUser(){
                         <div className="infos">
 
                             <div className="botão">
-                                <button> Finalizar</button>
+                                <button onClick={CadastraPedido}> Finalizar</button>
                             </div>
 
                         </div>

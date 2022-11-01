@@ -2,7 +2,9 @@ import './index.scss'
 
 
 
-export default function CardEndereco(){
+export default function CardEndereco({item: {rua, complemento, estado, referencia, bairro, cep, cidade} }){
+
+
 
     return(
         <main className="cardEnde">
@@ -12,7 +14,7 @@ export default function CardEndereco(){
                 <div className="casa">
 
                     <div className="cs">
-                        <h2>CASA</h2>    
+                        <h2>{referencia}</h2>    
                     </div>
                     <div className="point">
                         <img className="g" src="../assets/image/point.png" alt="" />
@@ -23,23 +25,23 @@ export default function CardEndereco(){
                 <div className="infosEndere">
 
                     <div className="ph">
-                        <p>Rua teixeira de souza</p>
+                        <p>{rua}</p>
                         <p>-</p>
-                        <p>111-111</p>
+                        <p>{cep}</p>
                     
                     </div>
                     <div className="ph">
                         <p>
-                            Praça Cruzeiro
+                            {bairro}
                         </p>
                         <p> - </p>
                         <p>
-                            Rio bonito
+                            {cidade}
                         </p> 
-                        <p>RJ</p>
+                        <p>{estado}</p>
                     </div>
                     <div className="ph">
-                        <p>Bloco 6 - Apt.33</p>
+                        <p>{complemento}</p>
                     </div>
 
                 

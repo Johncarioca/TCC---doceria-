@@ -1,6 +1,9 @@
+import { useEffect, useState } from 'react';
+import storage  from 'local-storage';
+
+import { ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import CardEndereco from '../../../components/cardEndereco';
-
 import './index.scss'
 
 
@@ -8,6 +11,18 @@ import './index.scss'
 export default function MeusEndereco(){
 
 
+    const[Enderecos, setEnderecos] = useState([]);
+
+    async function ListarEndereco(){
+        let id = storage('Cliente-logado').id;
+        
+        const j = await ListarEnderecoId(id);
+        setEnderecos(j);
+    }
+
+    useEffect(() => {
+            ListarEndereco();
+    }, []);
 
     return(
         <main className="telaEndereco">
@@ -62,7 +77,11 @@ export default function MeusEndereco(){
                         </div>
 
                         <div className="cardEnderecos">
-                            <CardEndereco/>
+
+                            {Enderecos.map( item => 
+                                <CardEndereco item ={item}/>
+                            )}
+                            
                         </div>
 
                         <div className="infos">
