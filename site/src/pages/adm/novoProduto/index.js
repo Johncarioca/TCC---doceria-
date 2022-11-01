@@ -47,9 +47,7 @@ export default function NovoProduto(){
             else{
                 await AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,idCategoria,destaque,id);
 
-                // if(typeof(imagem)=== Object){
                 await ImagemProduto(imagem, id);
-                // }
                 
                 toast.dark("Produto Alterado")
             }
@@ -84,12 +82,12 @@ export default function NovoProduto(){
         if (imagem === undefined) {
             return '/assets/image/SelecionarImagem.png'
         } 
-        else if(typeof(imagem)== "string"){
-            console.log(`${API_URL}/${imagem}`);
-            return `${API_URL}/${imagem}`;    
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
         }
         else {
             return URL.createObjectURL(imagem);
+        
         }
     }
 
@@ -105,8 +103,11 @@ export default function NovoProduto(){
         setEstoque(r.info.estoque);
         setDestaque(r.info.destaque);
         setIdCategoria(r.info.categoria);
+        console.log(r)
 
+        if(r.info.imagem){
         setImagem(r.info.imagem)
+        }
     }
 
     return(
@@ -147,7 +148,9 @@ export default function NovoProduto(){
                         </div>
 
                         <div className='cadas'>
-                            <button className="botao-NP" onClick={Produto}  > SALVAR </button>
+                            <button className="botao-NP" onClick={Produto}  >
+                                 {id ? 'ALTERAR' : 'SALVAR'}
+                            </button>
                         </div>
 
                     </div>
@@ -170,7 +173,7 @@ export default function NovoProduto(){
                     
 
                         <div className='div-destaque'>
-                            <input className="destaque" type="checkbox"  value={destaque} onChange={e => setDestaque(e.target.checked)} />
+                            <input className="destaque" type="checkbox"  checked={destaque} onChange={e => setDestaque(e.target.checked)} />
                             <p>Em destaque</p>
                         </div>
                     </div>

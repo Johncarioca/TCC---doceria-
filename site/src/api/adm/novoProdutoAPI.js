@@ -43,7 +43,7 @@ export  function buscarFilmes(imagem){
 }
 
 export async function AlterarProduto(nome,peso,ingredientes,preco,estoque,sinopse,categoria,destaque,id){
-    await api.put(`/adm/cadastro/${id}/alt`,{
+    await api.put(`/adm/produto/${id}/alt`,{
         nome: nome ,
         peso: peso,
         ingredientes: ingredientes,

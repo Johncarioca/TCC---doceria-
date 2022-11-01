@@ -81,12 +81,14 @@
 
                 .inserir-imagem img {
                     cursor: pointer;
-                    max-width:20rem;
-                    
+                    max-width: 20rem;
+                    max-height: 14rem;
+                
                 }
 
                 .inserir-imagem input[type=file]{
                     visibility: hidden;
+
                 }
 
                 .botao-NP {
