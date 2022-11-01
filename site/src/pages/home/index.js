@@ -108,6 +108,42 @@ export default function Home() {
                 </div> */}
             </section>
 
+            <section className="Land-sec3">
+
+                <div className="sec3-img1">
+                    <img src="./assets/image/Land-sec3-img1.png" alt="" />
+                    
+                </div>
+
+                <div className="sec3-img2">
+                    <img src="./assets/image/Land-sec3-img2.png" alt="" />
+                </div>
+
+                <div className="sec3-img3">
+                    <img src="./assets/image/Land-sec3-img3.png" alt="" />
+                </div>
+
+                <div className="sec3-info">
+                    <h1>
+                    Sabores inesquecíveis
+                    </h1>
+
+                    <p>
+                    NOSSOS BOLOS E DOCES SÃO
+                    FEITOS ARTESANALMENTE
+                    PARA AGRADAR OLHOS E PALADARES
+                    </p>
+
+                    <div className="sec3-but">
+                        <button>
+                        Ver cardapio
+                        </button>
+                    </div>
+                
+                </div>
+
+            </section>
+
 
         </main>
     );
