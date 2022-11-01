@@ -53,7 +53,6 @@ export async function AlterarProduto(nome,peso,ingredientes,preco,estoque,sinops
         categoria: categoria,
         destaque: destaque,
         id:id
-        
     })
 
 };

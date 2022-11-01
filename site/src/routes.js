@@ -13,6 +13,7 @@ import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
 import DetalhesProdutos from './pages/usuario/detalhesProduto';
 import Pagamento from './pages/usuario/pagamento';
+import LPedidos from './pages/adm/listaPedidos';
 
 
 import TelaEndereco from './pages/usuario/telaEndereco';
@@ -40,6 +41,7 @@ export default function AppsRoutes() {
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
+                <Route path='/adm/listapedidos' element={<LPedidos/>} />
 
                 <Route path='/pagamento' element={<Pagamento/>} />
 

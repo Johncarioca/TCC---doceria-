@@ -72,6 +72,7 @@ export default function TabelaProduto(){
                         <a className='a-sub-div2-cabTP' href="/">Lista de pedidos</a>
                         <a className='a-sub-div2-cabTP' href="/">Home</a>
                     </div>
+                    
                 </div>
                 
             </header>
