@@ -1,8 +1,8 @@
 .home {
 
     .cabeçalho {
-        * {
-            //border: 1px solid green ;
+        *{
+           // border: 1px solid green ;
         }
 
         display: flex;
@@ -22,20 +22,26 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                width: 42%;
+                width: 50%;
                 height: 3.5rem;
 
                 .text {
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    width: 58%;
+                    width: 60%;
                     color: #fff;
 
-                    .ps {
-                        font-size: 14px;
+                    .a-home{
+                        color: #ffffff;
+                        text-decoration-color: #69160A;
+                        font-size: 1.3rem;
                         width: 20%;
+                        margin-left: 1.5rem;
+                    
                     }
+
+                    
 
                 }
 
@@ -71,12 +77,14 @@
     .section1-landing-page{
         display: flex;
         flex-direction: column;
+        
 
         padding: 6em;
         padding-top: 1em;
         
         background-image: url("../../../public/assets/image/back-sec1-land.png") ;
-        height: 43em;
+        
+
 
         .p-section1-land{
             font-family: 'coiny';

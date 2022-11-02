@@ -1,4 +1,5 @@
 import './index.scss';
+import { useNavigate } from 'react-router-dom';
 
 export default function CabCarrinho() {
 
@@ -9,9 +10,9 @@ export default function CabCarrinho() {
 
                 <div className="img-cab">
                     <div className="SetaLogo">
-
-                        <img className="setas" src="/assets/image/setinha.png" alt="" />
-
+                        <a href="../">
+                             <img className="setas" src="/assets/image/setinha.png" alt="" />
+                        </a>
                         <img className="logos" src="/assets/image/oi.png" alt="" />
 
                     </div>
@@ -21,18 +22,27 @@ export default function CabCarrinho() {
                 <div className="links-car">
 
                     <div className="selecionado">
-                        <p className="linkperfil" >Perfil</p>
-                        
-                        <hr />
+
+                        <a className="a-car" href="../perfil">
+                            <p className="linkperfil" >Perfil</p>
+                        </a>
+                        <hr /> 
                     </div>
+                    
                     <div className="selecionado">
-                        <p className="linkcarrinho" >Carrinho</p>
+                        <a className="a-car" href="../carrinho">
+                            <p className="linkcarrinho" >Carrinho</p>
+                        </a>
                         <hr />
                     </div>
+
                     <div className="selecionado">
-                        <p className="linkhome" >Home</p>
-                        <hr />
+                        <a className="a-car" href="../">
+                             <p className="linkhome" >Home</p>
+                        </a>
+                       <hr />
                     </div>
+                    
                 </div>
                 
             </div>

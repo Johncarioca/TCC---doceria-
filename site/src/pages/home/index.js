@@ -1,5 +1,7 @@
 import './index.scss';
 
+
+
 export default function Home() {
 
 
@@ -17,20 +19,40 @@ export default function Home() {
                     <div className="iconTexto">
 
                         <div className="text">
-                            <p className="ps" >Sobre</p>
-                            <p className="ps" >Cardápio</p>
-                            <p className="ps" >Categoria</p>
-                            <p className="ps" >Destaques</p>
+
+                            <a className='a-home' href="">
+                                <p className="ps" >Sobre</p> 
+                            </a>
+                            <a className='a-home' href="../cardapio">
+                                <p className="ps" >Cardápio</p> 
+                            </a>
+                            <a className='a-home' href="">
+                                <p className="ps" >Categoria</p> 
+                            </a>
+                            <a className='a-home' href="">
+                                <p className="ps" >Destaques</p> 
+                            </a>
+                            <a className='a-home' href="../login">
+                                <p className="ps" >Login</p> 
+                            </a>
+                            <a className='a-home' href="../cadastro">
+                                <p className="ps" >Cadastro</p> 
+                            </a>
+
+
+
                         </div>
 
                         <div className="icons">
 
                             <div className="divImagem">
+                                <a href="../carrinho"></a>
                                 <img className="logi" src="/assets/image/inconLogin.png" alt="" />
                             </div>
 
                             <div className="divImagem">
-                                <img className="Carrinho" src="/assets/image/iconeCarrinho.png" alt="" />
+                                <a href="../carrinho">   <img className="Carrinho" src="/assets/image/iconeCarrinho.png" alt=""   /></a>
+                              
                             </div>
 
                         </div>

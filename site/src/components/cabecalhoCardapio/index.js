@@ -13,7 +13,7 @@ export default function CardCabecario(){
                     <div className="SetaLogo">
 
                         <div>
-                            <img className="setas"  src="/assets/image/seta.png" alt="" />
+                            <img className="setas"  src="../assets/image/setinha.png" alt="" />
                         </div>
 
                         <div>
