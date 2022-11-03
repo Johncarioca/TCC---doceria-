@@ -1,6 +1,6 @@
 .cardEnde{
     
-
+    
     *{
         p{
             font-size: 13px;
@@ -17,6 +17,7 @@
     }
 
     .corpo{
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -78,14 +79,17 @@
         }
         
     }
+
     .corpo:hover{
+        
         width: 35%;
         background-color: #883F35;
+        color: #fff;
         min-height: 9rem;
         max-height: 9rem;
-        
-
         transition: 1.8s;
+
+
 
         .casa{
             padding-left: 0.4rem;
@@ -107,5 +111,5 @@
     }
 
 
-    
+       
 }

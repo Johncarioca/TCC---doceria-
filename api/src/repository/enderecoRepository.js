@@ -12,20 +12,40 @@ export async function CadastroEndereco(id, endereco) {
 }
 
 export async function ListarEnderecoId(id){
-    const comando = 
-    `   
-         select id_endereco 		as id,
-                ds_rua				as rua,
-                ds_complemento 		as complemento,
-                nm_estado 			as estado,
-                ds_cidade 			as cidade,
-                ds_referencia		as referencia,
-                ds_bairro 			as bairro,
-                ds_cep				as cep
-           from tb_endereco
-          where id_usuario = ?
+  const comando = 
+  `   
+        select id_endereco 		as id,
+              ds_rua				as rua,
+              ds_complemento 		as complemento,
+              nm_estado 			as estado,
+              ds_cidade 			as cidade,
+              ds_referencia		as referencia,
+              ds_bairro 			as bairro,
+              ds_cep				as cep
+          from tb_endereco
+        where id_usuario = ?
 
-    `
-    const [registro] = await con.query(comando, [id])
-    return registro;    
+  `
+  const [registro] = await con.query(comando, [id])
+  return registro;    
+}
+
+export async function EnderecoId(idUser,idEnder){
+  const comando = 
+  `   
+        select id_endereco 		as id,
+              ds_rua				as rua,
+              ds_complemento 		as complemento,
+              nm_estado 			as estado,
+              ds_cidade 			as cidade,
+              ds_referencia		as referencia,
+              ds_bairro 			as bairro,
+              ds_cep				as cep
+          from tb_endereco
+        where id_usuario = ?
+          and id_endereco = ?;
+
+  `
+  const [registro] = await con.query(comando, [idUser, idEnder])
+  return registro;    
 }

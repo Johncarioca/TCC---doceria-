@@ -2,9 +2,11 @@ import storage  from 'local-storage';
 import { useEffect, useState } from 'react';
 import {useNavigate}  from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { EnderecoId, ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
 import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
+import { idEndereco } from '../services/funcoesEntrePag.js';
 
 
 
@@ -13,7 +15,8 @@ import './index.scss'
 
 export default function PagamentoUser(){
 
-    const [idEnder, setidEnder ] = useState(false);
+    const ender = idEndereco();
+    const [idEnder, setidEnder ] = useState();
 
 
     const [Numero, setNumero] = useState('');
@@ -68,10 +71,21 @@ export default function PagamentoUser(){
         }
         return total;
     }
+    async function buscarIdEndereco(){
+        let id = storage('Cliente-logado').id;
+        
+        
+        const ID = await EnderecoId(id);
+
+        
+
+    }
+    
 
     useEffect(() => {
         CarregarItensCarrinho();
-        Valortotal()
+        Valortotal();
+        buscarIdEndereco();
     }, [])
 
     async function CadastraPedido(){
@@ -81,7 +95,7 @@ export default function PagamentoUser(){
             let id = storage('Cliente-logado').id;
 
             let pedido = {
-                idEndereco:idEnder,
+                // idEndereco:idEnder,
                 itens: QTD,
                 status: "confirmando pagamento", 
                 vlTotal: vlTotal, 

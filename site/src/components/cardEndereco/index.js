@@ -2,14 +2,22 @@ import './index.scss'
 
 
 
-export default function CardEndereco({item: {rua, complemento, estado, referencia, bairro, cep, cidade} }){
+export default function CardEndereco({item: { id, rua, complemento, estado, referencia, bairro, cep, cidade}, selecionar, selecionado}){
 
 
 
     return(
-        <main className="cardEnde">
+        <main className="cardEnde" 
+            >
 
-            <section className="corpo">
+            <section className="corpo" onClick={() => selecionar(id)} 
+                                        style={{backgroundColor: selecionado ?  '#883F35' :'#FDE5DE',
+                                                color: selecionado ?  '#fff' :'black',
+                                                width: selecionado ?  '35%' : '30%',
+                                                height: selecionado ?  '9rem' : '8rem',
+                                                paddingLeft: selecionado ?  '1rem' : '0rem',
+                                                paddingBottom: selecionado ?  '1rem' : '0rem',
+                                        }}>
 
                 <div className="casa">
 

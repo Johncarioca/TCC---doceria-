@@ -5,11 +5,13 @@ import { ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import CardEndereco from '../../../components/cardEndereco';
 import './index.scss'
+// import { idEndereco } from '../services/funcoesEntrePag.js';
 
 
 
 export default function MeusEndereco(){
 
+    const[selectEnde, setselectEnde] = useState();
 
     const[Enderecos, setEnderecos] = useState([]);
 
@@ -19,11 +21,14 @@ export default function MeusEndereco(){
         const j = await ListarEnderecoId(id);
         setEnderecos(j);
     }
+    // alert(selectEnde);
 
-    
+    if ( Enderecos == selectEnde){
+        
+    }
 
     useEffect(() => {
-            ListarEndereco();
+        ListarEndereco();    
     }, []);
 
     return(
@@ -81,7 +86,7 @@ export default function MeusEndereco(){
                         <div className="cardEnderecos">
 
                             {Enderecos.map( item => 
-                                <CardEndereco item ={item}/>
+                                <CardEndereco item ={item} selecionar={setselectEnde} selecionado={item.id === selectEnde}/>
                             )}
                             
                         </div>
@@ -89,8 +94,9 @@ export default function MeusEndereco(){
                         <div className="infos">
 
                             <div className="botão">
-                                <button> Salvar</button>
+                                <button href="/endereco"> Salvar</button>
                             </div>
+                            
 
                         </div>
 
