@@ -16,21 +16,25 @@ export default function BarraLateral () {
                 <div className="Minhas">
 
             <div >
-        
+                <a href="../carrinho">
                     <img src="../assets/image/carrinhoPreto.png" alt="" />
-        
+                </a>
             </div>
-        
-            <p> Minhas Compras </p>
+
+                     <p> Minhas Compras </p>
 
         </div>
+
         <div className="Minhas">
 
             <div >
-                <img src="../assets/image/IconeCardapio.png" alt="" />
+                <a href="../cardapio">
+                    <img src="../assets/image/IconeCardapio.png" alt="" />
+                </a>  
             </div>
             <p>Cardápio</p>
-             </div>
+            </div>
+
         </div>
     </div>
 

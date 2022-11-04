@@ -15,6 +15,6 @@ export async function ListarPedidos(){
     inner join tb_usuario on tb_usuario.id_usuario = tb_usuario.id_usuario
     inner join tb_pedido on tb_produto_pedido.id_pedido = tb_pedido.id_pedido;
     `
-    const [resp]=await con.query(comando);
+    const [resp]= await con.query(comando);
     return resp;
-}
+}   

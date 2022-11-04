@@ -195,4 +195,12 @@ insert into tb_produto(id_produto, nm_produto ,nr_peso ,nr_preco ,ds_produto ,ds
 insert into tb_cliente(nm_cliente, ds_email, ds_senha )
             values ("cliente1","cliente@gmail.com", "1234");
 
-      
+
+
+/*Categorias*/
+insert into tb_categoria(nm_categoria) values('Doces') ; 
+insert into tb_categoria(nm_categoria) values('Salgado') ;
+insert into tb_categoria(nm_categoria) values('Kits') ;
+insert into tb_categoria(nm_categoria) values('Tortas') ;
+insert into tb_categoria(nm_categoria) values('Bolos') ; 
+  

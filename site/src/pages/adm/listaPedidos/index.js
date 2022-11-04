@@ -1,6 +1,25 @@
+import { useEffect, useState } from "react";
 import "./index.scss";
 
+import { ListaPedido } from "../../../api/adm/tabelasAdmAPI.js";
+
 export default function LPedidos() {
+
+    const [pedido,setPedido]=useState([]);
+
+    function lista(){
+      try {
+        const r=ListaPedido();
+        setPedido(r);
+      } catch (err) {
+        alert(err.message);
+      }
+    } 
+
+    useEffect(() => {
+      lista();
+    },[]);
+
   return (
     <main className="LPed">
       <header className="cabeçalho-LP">
@@ -48,30 +67,30 @@ export default function LPedidos() {
               </tr>
             </thead>
             <tbody>
-              {/* {Produto.map( item =>
+              {pedido.map( item => 
 
                 <tr>
-                    <td>{item.id}</td>
-                    <td>{item.nome}</td>
-                    <td>{item.preco}</td>
-                    <td>{item.peso}</td>
-                    <td>{item.estoque}</td>
-                    <td>{item.sinopse}</td>
-                    <td>{item.categoria}</td>
-                    <td>{item.destaque ? 'Sim' : 'Não'}</td>
+                    <td>{item.info.pedido}</td>
+                    <td>{item.info.cliente}</td>
+                    <td>{item.info.contato}</td>
+                    <td>{item.info.data}</td>
+                    <td>{item.info.status}</td>
+                    <td>{item.info.pagamento}</td>
+                    <td>{item.info.qtdItens}</td>
+                    <td>{item.info.total}</td>
                     <td className="imgs">
 
-                    <button className="but" onClick={()=>editar(item.id)} >
+                    <button className="but"  >
                     <img src="/assets/image/alterar.png" alt="editar" className='editar'/>
                     </button>
                     
-                    <button onClick={()=>removerProduto(item.id)}>
+                    <button>
                     <img src="/assets/image/apagar.png" alt="nao" className='nao'/>
                     </button>
 
                     </td>
                 </tr>
-                )} */}
+                )}
             </tbody>
           </table>
         </div>

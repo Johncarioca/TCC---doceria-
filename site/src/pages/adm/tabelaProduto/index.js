@@ -45,7 +45,7 @@ export default function TabelaProduto(){
 
     useEffect( () => {
         carregarProduto();
-    }, []);
+    }, []); 
 
     return (
         <main className="page-tabela">

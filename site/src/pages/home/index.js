@@ -46,8 +46,11 @@ export default function Home() {
                         <div className="icons">
 
                             <div className="divImagem">
-                                <a href="../carrinho"></a>
-                                <img className="logi" src="/assets/image/inconLogin.png" alt="" />
+                                
+                                <a href="/perfil">
+                                    <img className="logi" src="/assets/image/inconLogin.png" alt="" />
+                                </a>
+                                
                             </div>
 
                             <div className="divImagem">

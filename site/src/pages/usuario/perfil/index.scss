@@ -3,6 +3,7 @@
 
     
     background-color: #FFD3C6;
+   
  
     
        .cont0-per{
@@ -29,14 +30,23 @@
                 height: 7em;
              }
 
+             .info-per{
+               display: flex;
+              flex-direction: column;
+
+              margin-bottom: 2em;
+              justify-content: center;
+              align-items: center;
+
+
+            }
+             
              .infoclin-1{
-                display: flex;
-               flex-direction: row;
-               justify-content: center;
-               align-items: center;
-               
-               
-               margin-top: -5rem;
+               display: flex;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+
                .nmuse{
                     color: #ffffff;
                     font-size: smaller;
@@ -65,3 +75,4 @@
 
         
  }
+

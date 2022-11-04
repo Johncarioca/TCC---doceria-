@@ -26,3 +26,7 @@ export async function BuscarProdutoId(id){
     return r.data;
 }
  
+export async function ListaPedido(){
+    const r=await api.get('/adm/listaPedidos');
+    return r.data;
+}

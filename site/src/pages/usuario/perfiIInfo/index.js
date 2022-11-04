@@ -76,12 +76,12 @@ export default function AlterarPerfilUser(){
                         <div className="ESE">
                             <div className='pa'>
                                 <p>E-mail</p>
-                                <a href="">Clique para alterar</a>
+                                <a href="../perfil/alterar/info">Clique para alterar</a>
                             </div>
 
                             <div className='pa'>
                                 <p>Senha</p>
-                                <a href="">Clique para alterar</a>
+                                <a href="../perfil/alterar/info">Clique para alterar</a>
                             </div> 
 
                             <div className='pa'>
