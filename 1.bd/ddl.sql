@@ -111,3 +111,19 @@ create table tb_pagamento_cartao (
     ds_forma_pagamento	varchar(200),
     foreign key (id_pedido) references tb_pedido (id_pedido)
 );
+
+create table tb_pagamento_pix (
+	id_pagamento_pix	int primary key auto_increment,
+    id_pedido			int,
+    ds_email            varchar(100),
+    ds_cpf            	varchar(15),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
+);
+
+create table tb_pagamento_boleto (
+	id_pagamento_boleto	int primary key auto_increment,
+    id_pedido		       	int,
+    nr_telefone           decimal(15),
+    nr_cod_boleto         decimal(15),
+    foreign key (id_pedido) references tb_pedido (id_pedido)
+);

@@ -54,3 +54,20 @@ export async function InserirPagamentoCartao(idPedido, nvPagamento){
     ]);
     return infos.affectedRows;
 }
+
+export async function InserirPagamentoPix(idPedido, nvPagamento){
+
+    const comando = 
+    `
+        insert into tb_pagamento_pix(id_pedido, ds_email, ds_cpf)
+                              values(?, ?, ?);
+    `
+    const [infos] = await con.query(comando, [
+
+        idPedido,
+        nvPagamento.email,
+        nvPagamento.cpf
+
+    ]);
+    return infos.affectedRows;
+}

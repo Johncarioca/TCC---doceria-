@@ -14,6 +14,9 @@ select * from tb_login_usuario;
 select * from tb_admin_login;
 
 
+insert into tb_pagamento_pix(id_pedido, ds_email, ds_cpf)
+		                 values(4,"aaa", "bbb");
+
 select id_endereco 			as id,
 	   ds_rua				as rua,
        ds_complemento 		as complemento,

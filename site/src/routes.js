@@ -12,7 +12,7 @@ import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
 import DetalhesProdutos from './pages/usuario/detalhesProduto';
-import Pagamento from './pages/usuario/pagamento';
+import PagamentoUser from './pages/usuario/pagamentoCartao';
 import LPedidos from './pages/adm/listaPedidos';
 
 import PerfilUser from './pages/usuario/perfil';
@@ -20,6 +20,8 @@ import TelaEndereco from './pages/usuario/telaEndereco';
 import AlterarPerfilUser from './pages/usuario/perfiIInfo';
 import AlterarEmail from './pages/usuario/alterarEmail';
 import MeusEndereco from './pages/usuario/meusEndereco';
+import PagamentoPix from './pages/usuario/pagamentoPix';
+
  
 
 
@@ -43,7 +45,8 @@ export default function AppsRoutes() {
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
                 <Route path='/adm/listapedidos' element={<LPedidos/>} />
 
-                <Route path='/pagamento' element={<Pagamento/>} />
+                <Route path='/pagamentoCartao' element={<PagamentoUser/>} />
+                <Route path='/pagamentopix' element={<PagamentoPix/>} />
 
                 <Route path='/endereco' element={<TelaEndereco/>} />
                 <Route path='/perfil/alterar' element={<AlterarPerfilUser/>} />
