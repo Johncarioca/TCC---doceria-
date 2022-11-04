@@ -12,7 +12,7 @@ import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
 import DetalhesProdutos from './pages/usuario/detalhesProduto';
-import PagamentoUser from './pages/usuario/pagamentoCartao';
+import Pagamento from './pages/usuario/pagamento';
 import LPedidos from './pages/adm/listaPedidos';
 
 import PerfilUser from './pages/usuario/perfil';
@@ -45,7 +45,7 @@ export default function AppsRoutes() {
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
                 <Route path='/adm/listapedidos' element={<LPedidos/>} />
 
-                <Route path='/pagamentoCartao' element={<PagamentoUser/>} />
+                <Route path='/pagamento' element={<Pagamento/>} />
                 <Route path='/pagamentopix' element={<PagamentoPix/>} />
 
                 <Route path='/endereco' element={<TelaEndereco/>} />

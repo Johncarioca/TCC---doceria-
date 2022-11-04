@@ -1,22 +1,22 @@
-import storage  from 'local-storage';
+    import storage  from 'local-storage';
 import { useEffect, useState } from 'react';
 import {useNavigate}  from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { EnderecoId, ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
+import { EnderecoId } from '../../../api/usuario/enderecoAPI.js';
 import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
-import { idEndereco } from '../services/funcoesEntrePag.js';
+// import { idEndereco } from '../services/funcoesEntrePag.js';
 
 
 
 import './index.scss'
 
 
-export default function PagamentoUser(){
+export default function Pagamento(){
 
-    const ender = idEndereco();
-    const [idEnder, setidEnder ] = useState();
+    // const ender = idEndereco();
+    // const [idEnder, setidEnder ] = useState();
 
 
     const [Numero, setNumero] = useState('');
@@ -165,11 +165,12 @@ export default function PagamentoUser(){
 
                 <div className="rosaCLar">
 
-                    <div className="inf">
+                    <div className="infas">
 
-                        <div className="ph">
+                        <div className="pha">
                             <h2 className="pag"> Pagamento </h2>
-                            <p className="grc">
+
+                            <p className="grci">
                                 Olá! Bem-vindo a ultima parte antes de finalizamos sua compra. 
                                 Insira os dados de acordo como e pedido abaixo
                             </p>
@@ -178,15 +179,18 @@ export default function PagamentoUser(){
                         <section className="inputsPag">
 
                         
-                            <div className="tpPagamento">
+                            <div className="tpPagamentos">
 
                                 <div className=" imgTp">
+
                                     <div className='imgCartão'>
                                         <img className="cartão" src="../assets/image/iconCartão.png" alt="" />
                                     </div>
+
                                     <div className="tpTexte">
                                         <p>Cartão</p>
                                     </div>
+
                                 </div>
                                 
                                 <div className=" imgTp">
@@ -208,7 +212,7 @@ export default function PagamentoUser(){
                                 </div>
                             
                             </div>
-                            <div className='inputsParagrafo'>
+                            <div className='itParagrafo'>
                                 
                                 <div className="SeisInputs">
 
@@ -254,16 +258,19 @@ export default function PagamentoUser(){
                                     </div>     
                                 </div>
 
+                                <div className="botão">
+                                    <button onClick={CadastraPedido}> Finalizar</button>
+                                </div>
+
                             </div>
+                            
                             
                             
                         </section>
 
                         <div className="infos">
 
-                            <div className="botão">
-                                <button onClick={CadastraPedido}> Finalizar</button>
-                            </div>
+                            
 
                         </div>
 
