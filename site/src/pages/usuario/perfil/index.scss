@@ -1,78 +1,75 @@
+.perfil-user {
 
- .perfil-user{
 
-    
-    background-color: #FFD3C6;
-   
- 
-    
-       .cont0-per{
-        display: flex;
-        margin-top: 5rem;
-        justify-content: space-between;
-        
-        .cont2-per{
-           
+   background-color: #FFD3C6;
 
+
+
+   .cont0-per {
+      display: flex;
+      margin-top: 5rem;
+      justify-content: space-between;
+      
+
+      .cont2-per {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         background-color: #F3BEBE;
+         width: 55rem;
+         border-radius: 30px;
+
+
+
+         .bar-per {
+            background-color: #69170a7a;
+            border-radius: 2rem 2rem 0rem 0rem;
+            width: 55em;
+            height: 7em;
+         }
+
+         .info-per {
             display: flex;
             flex-direction: column;
+
+            margin-bottom: 2em;
+            justify-content: center;
             align-items: center;
-            background-color: #F3BEBE ;
-            width: 55rem;
-            border-radius: 30px;
-            
-            
-
-             .bar-per{
-                background-color: #69170a7a;
-                border-radius: 2rem 2rem 0rem 0rem;
-                width: 55em;
-                height: 7em;
-             }
-
-             .info-per{
-               display: flex;
-              flex-direction: column;
-
-              margin-bottom: 2em;
-              justify-content: center;
-              align-items: center;
 
 
-            }
-             
-             .infoclin-1{
-               display: flex;
-              flex-direction: row;
-              justify-content: center;
-              align-items: center;
+         }
 
-               .nmuse{
-                    color: #ffffff;
-                    font-size: smaller;
-                    margin-left:10000em;
-               }
-
-               .imguser{
-                width: 10rem;
-               }
-             }
-        }
-
-        .cont3-per{
+         .infoclin-1 {
             display: flex;
             flex-direction: row;
-           justify-content: end;
-           width: 20%;
-           height: 40rem;
-           background-color: #f4929285;
-           border-radius: 3rem 0rem 0rem 3rem;
-          }
+            justify-content: center;
+            align-items: center;
 
-          
+            .nmuse {
+               color: #ffffff;
+               font-size: smaller;
+               margin-left: 10000em;
+            }
 
-       }
+            .imguser {
+               width: 10rem;
+            }
+         }
+      }
 
-        
- }
+      .cont3-per {
+         display: flex;
+         flex-direction: row;
+         justify-content: end;
+         width: 20%;
+         height: 40rem;
+         background-color: #f4929285;
+         border-radius: 3rem 0rem 0rem 3rem;
+      }
 
+
+
+   }
+
+
+}

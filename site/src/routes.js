@@ -20,7 +20,7 @@ import TelaEndereco from './pages/usuario/telaEndereco';
 import AlterarPerfilUser from './pages/usuario/perfiIInfo';
 import AlterarEmail from './pages/usuario/alterarEmail';
 import MeusEndereco from './pages/usuario/meusEndereco';
-import PagamentoPix from './pages/usuario/pagamentoPix';
+
 
  
 
@@ -46,7 +46,6 @@ export default function AppsRoutes() {
                 <Route path='/adm/listapedidos' element={<LPedidos/>} />
 
                 <Route path='/pagamento' element={<Pagamento/>} />
-                <Route path='/pagamentopix' element={<PagamentoPix/>} />
 
                 <Route path='/endereco' element={<TelaEndereco/>} />
                 <Route path='/perfil/alterar' element={<AlterarPerfilUser/>} />
