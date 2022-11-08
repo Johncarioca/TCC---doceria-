@@ -83,18 +83,7 @@ export default function Home() {
 
             <section className='section2-landing-page'>
                 
-                <div className='d1'>
-                    <div> 
-                        <img className='img-section2-d1' src="/assets/image/oi.png" alt=""></img>
-                    </div>
-                    <div className='div-p1' >
-                        <p>Somos uma confeitaria familiar tradicional da  região de interlagos desde 1990.</p>
-                    </div>
-                    <div className='div-p2'>
-                        <p>Nosso cardápio é recheado de bolos e salgadinhos pra festa, tortas doces e salgadas, lanches de metro, kits completos para comemorações coletivas ou caixinhas individuais, comidinhas congeladas e uma grande variedade de docinhos.</p>
-                    </div>
-                </div>
-                <div className='d2'>
+                 <div className='d1'>
                     <div className="img-d2-4">
                         <div>
                         <img src="/assets/image/image189.png" alt=""></img>
@@ -112,6 +101,19 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                <div className='d2'>
+                    <div> 
+                        <img className='img-section2-d1' src="/assets/image/oi.png" alt=""></img>
+                    </div>
+                    <div className='div-p1' >
+                        <p>Somos uma confeitaria familiar tradicional da  região de interlagos desde 1990.</p>
+                    </div>
+                    <div className='div-p2'>
+                        <p>Nosso cardápio é recheado de bolos e salgadinhos pra festa, tortas doces e salgadas, lanches de metro, kits completos para comemorações coletivas ou caixinhas individuais, comidinhas congeladas e uma grande variedade de docinhos.</p>
+                    </div>
+                </div>
+               
 
                 {/* <div className='d2-img'>
                     <div>
@@ -146,6 +148,8 @@ export default function Home() {
 
                 <div className="sec3-img3">
                     <img src="./assets/image/Land-sec3-img3.png" alt="" />
+                        
+                   
                 </div>
 
                 <div className="sec3-info">
@@ -170,7 +174,24 @@ export default function Home() {
             </section>
 
             <section className="section4-landing-page">
-                <div>
+                <div className="sec-card ">
+                    <div className="sec4-card1">
+                        <img src="./assets/image/bolinho-sec4.png" alt="" />
+                        <h3>Bolos</h3>
+                        <p>Os bolo de chocolate com pedaços morangos  </p>
+                    </div>
+
+                    <div className="sec4-card2">
+                        <img src="./assets/image/trufa-sec4.png" alt="" />
+                        <h3>Trufas</h3>
+                        <p>Trufas recheadas </p>
+                    </div>
+
+                    <div className="sec4-card3">
+                        <img src="./assets/image/torta-sec4.png" alt="" />
+                        <h3>Tortas</h3>
+                        <p>torta de limão com raspa de limão emcima  </p>
+                    </div>
                     
                 </div>
 

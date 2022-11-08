@@ -22,7 +22,7 @@
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
-                width: 50%;
+                width: 70%;
                 height: 3.5rem;
 
                 .text {
@@ -122,13 +122,14 @@
 
     .section2-landing-page{
         display: flex;
-        flex-direction: row-reverse;
+        
+        flex-direction: row;
         
         background-color: #FDD9C5;
 
         height: 43em;
 
-        .d1{
+        .d2{
 
             display: flex;
             flex-direction: column;
@@ -149,11 +150,11 @@
                 
             }
             .div-p1{
-                
+             
                 font-family: 'sail';
                 font-size: 1.5em;
                 height: 5em;
-                padding: 5rem;
+                padding: 7rem;
                 padding-bottom: 5em;
 
                 display: flex;
@@ -170,7 +171,7 @@
             }
         }
         
-        .d2{
+        .d1{
             display: flex;
             flex-direction: column;
 
@@ -277,11 +278,40 @@
                     font-family: 'coiny';
                     font-size: 16px;
                 }
+
+
             }
+
+            
+
+        }
+            
+    }
+    
+     .section4-landing-page{
+        background-image: url("../../../public/assets/image/back-morango.png") ;
+         
+        .sec-card{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 55vh ;
+            width: 90vw;
+            
+            
         }
 
-    }
+        .sec4-card1{
+            display: flex;
+            flex-direction: column;
+            color: #ffffff;
+            height: 30;
+            width: 20%;
+            border: 1px solid #ffffff ;
 
+        }
+    }
     
 
 }
