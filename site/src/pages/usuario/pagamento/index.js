@@ -94,13 +94,13 @@ export default function Pagamento() {
     }
     async function buscarIdEndereco() {
         let id = storage('Cliente-logado').id;
-
-
         const ID = await EnderecoId(id);
-
-
-
     }
+
+ 
+    
+
+    
 
 
     useEffect(() => {
@@ -115,23 +115,44 @@ export default function Pagamento() {
         try {
             let Produtos = storage('carrinho');
             let id = storage('Cliente-logado').id;
+            let idEnd = storage('endereco-selecionado').id;
 
-            let pedido = {
-                // idEndereco:idEnder,
-                itens: QTD,
-                status: "confirmando pagamento",
-                vlTotal: vlTotal,
-                // tpPagamento: "Cartão",
-                cartao: {
+            
+            let pagamento;
+            let tipoPag;
 
+            if (MostrarCartão) {
+                tipoPag = 'cartao';
+                pagamento = {
                     nome: Nome,
                     numero: Numero,
                     vencimento: Vencimento,
                     codSeguranca: codSeguranca,
                     parcelas: Parcelas,
                     formaPagamento: FormaPag
+                }
+            }
+            else if (MostrarBoleto) {
+                tipoPag = 'boleto';
+                pagamento = {
 
-                },
+                }
+            }
+            else {
+                tipoPag = 'pix';
+                pagamento = {
+                    
+                }
+            }
+
+            let pedido = {
+                // idEndereco:idEnder,
+                itens: QTD,
+                endereco: idEnd,
+                status: "confirmando pagamento",
+                vlTotal: vlTotal,
+                tpPagamento: tipoPag,
+                pagamento: pagamento,
                 produtos: Produtos
             }
             const r = await SalvarNovoPedido(id, pedido);

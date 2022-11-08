@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import './index.scss'
 
 
 
-export default function AlterarPerfilUser(){
+export default function AlterarPerfilUser() {
 
     // function escolherImagem(inputId){
     //     document.getElementById(inputId).click();
@@ -17,10 +18,19 @@ export default function AlterarPerfilUser(){
     //     }
     // }
 
-    return(
+
+    const[nome, setNome] = useState('');
+    const[imagem, setImagem] = useState('');
+    const[cpf, setCpf] = useState('');
+    const[Nascimento, setNascimento] = useState(0);
+    const[Numero, setNumero] = useState('');
+    
+    
+    
+    return (
         <main className="telaEndereco">
             <div>
-                <CabeçarioLogin/>
+                <CabeçarioLogin />
             </div>
             <section className="sectionPrincipal">
 
@@ -30,29 +40,29 @@ export default function AlterarPerfilUser(){
 
                         <div className="Minhas">
 
-                            <div >
-                            
+                            <div >''
+
                                 <img src="../assets/image/carrinhoPreto.png" alt="" />
-                            
+
                             </div>
-                            
+
                             <p> Minhas Compras </p>
-    
+
                         </div>
                         <div className="Minhas">
 
                             <div >
-                            
+
                                 <img src="../assets/image/IconeCardapio.png" alt="" />
-                            
+
                             </div>
                             <p>Cardápio</p>
-    
+
                         </div>
 
 
                     </div>
-                    
+
                 </div>
 
                 <div className="rosaCLara">
@@ -67,9 +77,9 @@ export default function AlterarPerfilUser(){
                         <div className="inpucont-cadastro">
                             <p> Foto de perfil </p>
                             <div className="inserir-imagem">
-                                <img  alt="" src="/assets/image/SelecionarImagem.png"/>
+                                <img alt="" src="/assets/image/SelecionarImagem.png" />
 
-                                <input type="file" id="imagem"  />
+                                <input type="file" id="imagem" />
                             </div>
                         </div>
 
@@ -82,12 +92,12 @@ export default function AlterarPerfilUser(){
                             <div className='pa'>
                                 <p>Senha</p>
                                 <a href="../perfil/alterar/info">Clique para alterar</a>
-                            </div> 
+                            </div>
 
                             <div className='pa'>
                                 <p>Endereço</p>
                                 <a href="">Clique para alterar</a>
-                            </div> 
+                            </div>
                         </div>
 
                         <div className="inputs">
@@ -95,13 +105,13 @@ export default function AlterarPerfilUser(){
                             <div className="iptu">
                                 <p className='nome'>
                                     Nome Completo
-                                </p> 
+                                </p>
                                 <input className="put" placeholder='Rua...' type="text" />
                             </div>
                             <div className="iptu">
                                 <p className="cpf">
                                     CPF
-                                </p> 
+                                </p>
                                 <input className='upt' placeholder='Rua...' type="text" />
                             </div>
 
@@ -109,20 +119,22 @@ export default function AlterarPerfilUser(){
                                 <div className="DN">
                                     <p className="data">
                                         Data de Nascimento
-                                    </p> 
-                                    
+                                    </p>
+
                                     <input placeholder='07/10/2004' type="text" />
                                 </div>
+                                
+                            </div>
+                            <div className="pitu">
                                 <div className="cell">
                                     <p>
                                         Número
-                                    </p> 
-                                    
+                                    </p>
+
                                     <input placeholder='()' type="text" />
                                 </div>
                             </div>
 
-                            
 
                             <div className="botão">
                                 <button> Salvar</button>
@@ -131,11 +143,11 @@ export default function AlterarPerfilUser(){
                         </div>
 
                     </div>
-                    
+
                 </div>
 
                 <div className="rosaEscura2">
-                    
+
                 </div>
 
             </section>

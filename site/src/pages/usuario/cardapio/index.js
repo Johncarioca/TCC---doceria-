@@ -162,7 +162,7 @@ export default function Cardapio() {
             <header className="osTres">
 
                 <div className="arroz">
-
+        
                     <div className="SetaLogo">
 
                         <div>
