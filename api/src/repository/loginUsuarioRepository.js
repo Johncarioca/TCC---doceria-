@@ -27,14 +27,35 @@ export async function CadastroUsuar(cliente) {
 }
 
 
-export async function CadastroImagemUser(imangen, id){
+export async function CadastroImagemUser(imangen, id) {
   // console.log(Imagem, id);
   const comando =
-  `
+    `
     update tb_usuario
        set img_usuario   = ?
      where id_usuario    = ? 
   `
   const [resposta] = await con.query(comando, [imangen, id]);
   return resposta;
+}
+
+
+export async function PerfilUser(idUser) {
+  const comando =
+    `   
+    select tb_usuario.id_usuario  		as id,
+            img_usuario					as imagem,
+            ds_cpf     					as cpf,
+            ds_rua           			as rua,
+            nm_usuario       			as nome,
+            ds_telefone					  as cell,
+            dt_nascimento    			as nascimento, 
+            ds_email         			as email
+from tb_usuario
+inner join tb_endereco on tb_endereco.ds_rua = tb_endereco.ds_rua
+inner join tb_login_usuario on tb_login_usuario.ds_email = tb_login_usuario.ds_email
+     where tb_login_usuario.id_usuario = ?;
+  `
+  const [registro] = await con.query(comando, [idUser]);
+  return registro[0];
 }

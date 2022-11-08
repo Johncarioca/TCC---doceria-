@@ -1,7 +1,7 @@
 import {Router} from 'express';
 const server = Router();
 
-import { CadastroUsuar, loginUsuario, CadastroImagemUser } from '../repository/loginUsuarioRepository.js';
+import { CadastroUsuar, loginUsuario, CadastroImagemUser, PerfilUser } from '../repository/loginUsuarioRepository.js';
 import { ValidarCadastro } from '../service/validacao.js';
 
 import multer from 'multer'; 
@@ -68,5 +68,23 @@ server.put('/user/cadastro/:id', upload.array('imagem'),async (req, resp) => {
     }
 });
 
+
+
+server.get('/api/PerfilUser/:idUser', async (req, resp) => {
+
+    try {
+        const idUser = req.params.idUser;
+        const r = await PerfilUser(idUser);
+        // console.log(r);
+
+        resp.send(r);
+    } 
+    catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        })
+    }
+
+});
 
 export default server; 

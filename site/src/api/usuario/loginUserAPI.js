@@ -36,3 +36,8 @@ export async function ImagemCadastroUser(imangen,id){
     });
     return r.data;
 };
+
+export async function UsePerfil(idUser){
+    const resposta = await api.get('/api/PerfilUser/'+ idUser )
+    return resposta.data;
+}

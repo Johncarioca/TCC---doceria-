@@ -1,9 +1,30 @@
 import './index.scss'
+import storage from 'local-storage';
 
 import CabCarrinho from '../../../components/cabecarioCarrinho';
 import BarraLateral from '../../../components/lateralPerfil';
+import { useEffect, useState } from 'react';
+import { UsePerfil } from '../../../api/usuario/loginUserAPI.js';
 
 export default function PerfilUser() {
+
+
+    const[infos, setInfos] = useState([]);
+
+    async function CarregarInforUser(){
+
+        let id = storage('Cliente-logado').id;
+        const r = await UsePerfil(id);
+        setInfos([r]);
+    } 
+
+
+    useEffect(() => {
+        CarregarInforUser();
+    }, []);
+
+
+
     return (
         <main className="perfil-user">
 
@@ -21,111 +42,104 @@ export default function PerfilUser() {
                     <div className="bar-per">
 
                     </div>
-                    <div className="info-cliente">
+                    {infos.map( item =>
+                        <div className="info-cliente">
 
-                        <div className="infoclin-1">
+                            <div className="infoclin-1">
 
-                            <img className="imguser" src="../assets/image/ftperfil.png" alt="" />
+                                <img className="imguser" src="../assets/image/ftperfil.png" alt="" />
 
-                            <div className='infoC-1'>
+                                <div className='infoC-1'>
 
-                                <p className="nmser"> @Killua</p>
+                                    <p className="nmser"> @{item.nome}</p>
 
-                                <a className="btperfil" href="../perfil/alterar">
-                                    <img src="../assets/image/alterarperfil.png" alt="" />
-                                </a>
+                                    <a className="btperfil" href="../perfil/alterar">
+                                        <img src="../assets/image/alterarperfil.png" alt="" />
+                                    </a>
+                                </div>
+
+
                             </div>
-
-
-                        </div>
-
-                        <div className="info-per">
-
-                            <div className="seisP">
-                                <div className="frase">
-
-                                    <h3 className="ifoCli"> E-mail:</h3>
-                                    
-                                    <div className='ifelse'>
-                                    
-                                        <p className="infoCli">killua123@gmail.com</p>
-
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="frase">
-
-                                    <h3 className="ifoCli"> Cpf:</h3>
-
-                                    <div className='ifelse'>
-                                        <p className="infoCli">130.036.037-28</p>
-
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="frase">
-
-                                    <h3 className="ifoCli"> Rua:</h3>
-                                    
-                                    <div className='ifelse'>
-                                    
-                                        <p className="infoCli">Rua teixeira de souza</p>
-
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="frase">
-
-                                    <h3 className="ifoCli"> Nome:</h3>
-                                    
-                                    <div className='ifelse'>
-                                        <p className="infoCli">Jonatas quintanilha balga</p>
-
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
-                                        </div>
-                                    </div>
-                                </div>
+                            
+                            <div className="info-per">
                                 
-                                <div className="frase">
+                                
+                                    <div className="seisP">
+                                        <div className="frase">
 
-                                    <h3 className="ifoCli"> telefone:</h3>
-                                    
-                                    <div className='ifelse'>
+                                            <h3 className="ifoCli"> E-mail:</h3>
+                                            
+                                            <div className='ifelse'>
+                                            
+                                                <p className="infoCli">{item.email}</p>
 
-                                        <p className="infoCli">(21)999449242</p>
 
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
+                                                <div>
+                                                    <img src="../assets/image/olho.png" alt="" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div className="frase">
 
-                                <div className="frase">
+                                            <h3 className="ifoCli"> Cpf:</h3>
 
-                                    <h3 className="ifoCli">Data Nasc:</h3>
-                                    
-                                    <div className='ifelse'>
+                                            <div className='ifelse'>
+                                                <p className="infoCli">{item.cpf}</p>
 
-                                        <p className="infoCli">15/05/1995</p>
-
-                                        <div>
-                                            <img src="../assets/image/olho.png" alt="" />
+                                                <div>
+                                                    <img src="../assets/image/olho.png" alt="" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
+                                        <div className="frase">
 
+                                            <h3 className="ifoCli"> Rua:</h3>
+                                            
+                                            <div className='ifelse'>
+                                            
+                                                <p className="infoCli">{item.rua}</p>
+
+                                                <div>
+                                                    <img src="../assets/image/olho.png" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                                        <div className="frase">
+
+                                            <h3 className="ifoCli"> telefone:</h3>
+                                            
+                                            <div className='ifelse'>
+
+                                                <p className="infoCli">{item.cell}</p>
+
+                                                <div>
+                                                    <img src="../assets/image/olho.png" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="frase">
+
+                                            <h3 className="ifoCli">Data Nasc:</h3>
+                                            
+                                            <div className='ifelse'>
+
+                                                <p className="infoCli">{item.nascimento}</p>
+
+                                                <div>
+                                                    <img src="../assets/image/olho.png" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                
                             </div>
+                            
                         </div>
-
-                    </div>
-
+                    )}
                 </div>
 
                 <div className="cont3-per">
