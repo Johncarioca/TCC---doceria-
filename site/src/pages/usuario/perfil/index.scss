@@ -2,57 +2,143 @@
 
 
    background-color: #FFD3C6;
+   border: 0.1px solid red;
+   height: 70rem;
 
 
 
    .cont0-per {
       display: flex;
-      margin-top: 5rem;
+      flex-direction: row;
       justify-content: space-between;
+      padding-top: 7rem;
+
       
+      .cont1-per{
+         margin-top: 5rem;
+         
+         // border: 0.1px solid red;
+      }
 
       .cont2-per {
          display: flex;
          flex-direction: column;
          align-items: center;
          background-color: #F3BEBE;
-         width: 55rem;
+         width: 48%;
+         height: 50rem;
          border-radius: 30px;
+         
 
+         // border: 0.1px solid red;
 
 
          .bar-per {
             background-color: #69170a7a;
             border-radius: 2rem 2rem 0rem 0rem;
-            width: 55em;
-            height: 7em;
+            width: 100%;
+            height: 12rem;
+            // border: 0.1px solid green;
          }
 
-         .info-per {
+
+         .info-cliente{
             display: flex;
             flex-direction: column;
-
             margin-bottom: 2em;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            width: 85%;
+            height: 50rem;
+            // border: 0.1px solid blueviolet;   
 
-
-         }
-
-         .infoclin-1 {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-
-            .nmuse {
-               color: #ffffff;
-               font-size: smaller;
-               margin-left: 10000em;
+            .infoclin-1 {
+               display: flex;
+               flex-direction: row;
+               justify-content: space-between;
+               align-items: center;
+               width: 100%;
+               height: 3.5rem;
+   
+               // border: 0.1px solid green;
+               
+               .infoC-1{
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: space-between;
+                  width: 70%;
+                  margin-top: 3.5rem;    
+                  
+               }
+               .nmser{
+                  color: #655353 ;
+                  
+                  // color: #6D5959;
+                  font-size: 2.5rem;
+                  
+               }
+   
+               .imguser {
+                  // display: block;
+                  width: 12rem;
+                  height: 12rem;
+                  border-radius: 4rem;
+                  max-width: 100%;
+                  margin-bottom: 3.5rem;
+                  // border: 0.1px solid green;
+               }
             }
 
-            .imguser {
-               width: 10rem;
+
+
+            .info-per{
+               display: flex;
+               flex-direction: column;
+               width: 95%;
+               height: 30rem;
+               
+
+               .seisP{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-around;
+                  align-items: flex-start;
+                  width: 95%;
+                  height: 22rem;
+
+                  // border: 0.1px solid red;
+
+                  .frase{
+                     display: flex;
+                     flex-direction: row;
+                     justify-content: flex-end;
+                     width: 90%;
+                     
+                     // border: 0.1px solid green;
+
+                     .infoCli{
+                        color: #6D5959 ;
+                        font-size: 20px;
+                     }
+
+                     .ifelse{
+                        width: 82%;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        padding-left: 1rem;
+
+                        // border: 0.1px solid green;
+                     }
+
+                     .ifoCli{
+                        color: #423939 ;
+                     }
+
+                  }
+               }
+   
             }
          }
       }
@@ -61,10 +147,14 @@
          display: flex;
          flex-direction: row;
          justify-content: end;
-         width: 20%;
-         height: 40rem;
+         width: 18%;
+         height: 45rem;
          background-color: #f4929285;
          border-radius: 3rem 0rem 0rem 3rem;
+         margin-top: 5rem;
+         // border: 0.1px solid green;
+
+
       }
 
 

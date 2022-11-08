@@ -55,7 +55,7 @@ export async function InserirPagamentoCartao(idPedido, nvPagamento){
     return infos.affectedRows;
 }
 
-export async function InserirPagamentoPix(idPedido, nvPagamento){
+export async function InserirPagamentoPix(idPedido, nvPagamentoPix){
 
     const comando = 
     `
@@ -65,8 +65,25 @@ export async function InserirPagamentoPix(idPedido, nvPagamento){
     const [infos] = await con.query(comando, [
 
         idPedido,
-        nvPagamento.email,
-        nvPagamento.cpf
+        nvPagamentoPix.email,
+        nvPagamentoPix.cpf
+
+    ]);
+    return infos.affectedRows;
+}
+
+export async function InserirPagamentoBoleto(idPedido, nvPagamentoBoleto){
+
+    const comando = 
+    `
+        insert into tb_pagamento_boleto(id_pedido, nr_telefone, nr_cod_boleto)
+                                 values(?, ?, ?);
+    `
+    const [infos] = await con.query(comando, [
+
+        idPedido,
+        nvPagamentoBoleto.telefone,
+        nvPagamentoBoleto.cod_boleto
 
     ]);
     return infos.affectedRows;

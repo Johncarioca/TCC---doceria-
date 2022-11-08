@@ -1,23 +1,21 @@
-
-.cont1-bar
-{
+.cont1-bar {
     display: flex;
-        flex-direction: row;
-    
-        width: 100%;
-        height: 40rem;
+    flex-direction: row;
 
-        
-    .rosaEscura1{
+    width: 100%;
+    height: 45rem;
+
+
+    .rosaEscura1 {
         display: flex;
         flex-direction: row;
         justify-content: end;
         width: 35vh;
-        height: 40rem;
+        height: 45rem;
         background-color: #f492926b;
         border-radius: 0rem 3rem 3rem 0rem;
 
-        .textImage{
+        .textImage {
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
@@ -25,13 +23,13 @@
             height: 20rem;
             // border: solid 0.1px green;
 
-            .Minhas{
+            .Minhas {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 margin-top: 2rem;
 
-                p{
+                p {
                     padding-left: 0.5rem;
                     font-weight: 450;
 
