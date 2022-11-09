@@ -1,9 +1,16 @@
 import './index.scss';
-
-
+import Carousel from 'react-elastic-carousel'
+import Categoria from '../../components/Carousel';
 
 export default function Home() {
 
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 480, itemsToShow: 1.4 },
+        { width: 750, itemsToShow: 2.4, itemsToScroll: 2 },
+        { width: 1100, itemsToShow: 3.4, itemsToScroll: 3 },
+        { width: 1560, itemsToShow: 4.4, itemsToScroll: 4 }
+    ];
 
     return (
         <main className="home">
@@ -223,6 +230,32 @@ export default function Home() {
                     </div>
                     
                 </div>
+
+            </section>
+            
+            <section className='Carousel'>
+
+                        <h1>Conheça todos os nossos sabores</h1>
+
+                        <Carousel isRTL breakPoints={breakPoints}>
+
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+
+
+                        
+
+
+                        </Carousel>
+
+
+
+            </section>
+
+            <section>
 
             </section>
 
