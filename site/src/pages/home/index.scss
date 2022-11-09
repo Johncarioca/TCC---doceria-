@@ -1,7 +1,10 @@
 .home {
- 
+    .rec-dot{
+        background-color: #1bbef000 !important;
+        box-shadow: 0 0 1px 3px #ffffff00 !important;
+    }
     .cabeçalho {
-       
+        
 
         display: flex;
         justify-content: center;
@@ -454,6 +457,25 @@
 
     *{
         //border: 1px solid green ;
+      }
+
+
+      .Carousel{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background-color: #FDE5DE;
+
+        h2{
+            font-family: 'Sail';
+            color: #69160A;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+
       }
     
 

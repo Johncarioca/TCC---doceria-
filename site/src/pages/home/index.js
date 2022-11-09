@@ -229,7 +229,7 @@ export default function Home() {
       </section>
 
       <section className="Carousel">
-        <h1>Conheça todos os nossos sabores</h1>
+        <h2>Conheça todos os nossos sabores</h2>
 
         <Carousel isRTL breakPoints={breakPoints}>
           <Categoria />
