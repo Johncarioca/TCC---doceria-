@@ -1,6 +1,7 @@
 import "./index.scss";
 import Carousel from "react-elastic-carousel";
 import Categoria from "../../components/Carousel";
+import RodapeLand from "../../components/rodapeLand";
 
 export default function Home() {
   const breakPoints = [
@@ -239,7 +240,8 @@ export default function Home() {
         </Carousel>
       </section>
 
-      <section></section>
+    <RodapeLand/>
+      
     </main>
   );
 }
