@@ -1,9 +1,16 @@
 import './index.scss';
-
-
+import Carousel from 'react-elastic-carousel'
+import Categoria from '../../components/Carousel';
 
 export default function Home() {
 
+    const breakPoints = [
+        { width: 1, itemsToShow: 1 },
+        { width: 480, itemsToShow: 1.4 },
+        { width: 750, itemsToShow: 2.4, itemsToScroll: 2 },
+        { width: 1100, itemsToShow: 3.4, itemsToScroll: 3 },
+        { width: 1560, itemsToShow: 4.4, itemsToScroll: 4 }
+    ];
 
     return (
         <main className="home">
@@ -176,24 +183,79 @@ export default function Home() {
             <section className="section4-landing-page">
                 <div className="sec-card ">
                     <div className="sec4-card1">
-                        <img src="./assets/image/bolinho-sec4.png" alt="" />
-                        <h3>Bolos</h3>
-                        <p>Os bolo de chocolate com pedaços morangos  </p>
+                        <div className="sec4-card">
+                             <img className="sec4-img" src="./assets/image/bolinho-sec4.png" alt="" />
+                            <div className="sec4-txtcard1">
+                                 <h3>Bolos</h3>
+                                 <div className="sec4-txt">
+                                     <p>Os bolos de chocolate com pedaços morangos </p>
+                             </div>
+                        </div>
+                        
+                             
+                        </div>
+                       
                     </div>
 
                     <div className="sec4-card2">
-                        <img src="./assets/image/trufa-sec4.png" alt="" />
-                        <h3>Trufas</h3>
-                        <p>Trufas recheadas </p>
+                    
+                        <div className="sec4-card">
+                             <img className="sec4-img" src="./assets/image/trufa-sec4.png" alt="" />
+                        
+                        <div className="sec4-txtcard2">
+                             <h3>Trufas</h3>
+                             <div className="sec4-txt">
+                                 <p>Trufas recheadas </p>
+                             </div>
+                       
+                        </div>
+                       
+                        </div>
+                       
                     </div>
 
                     <div className="sec4-card3">
-                        <img src="./assets/image/torta-sec4.png" alt="" />
-                        <h3>Tortas</h3>
-                        <p>torta de limão com raspa de limão emcima  </p>
+                        <div className="sec4-card">
+                            <img className="sec4-img" src="./assets/image/torta-sec4.png" alt="" />
+                        <div className="sec4-txtcard3">
+                             <h3>Tortas</h3>
+                            <div className="sec4-txt">
+                                <p>torta de limão com raspa de limão emcima  </p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                        
+                       
                     </div>
                     
                 </div>
+
+            </section>
+            
+            <section className='Carousel'>
+
+                        <h1>Conheça todos os nossos sabores</h1>
+
+                        <Carousel isRTL breakPoints={breakPoints}>
+
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+                        <Categoria />
+
+
+                        
+
+
+                        </Carousel>
+
+
+
+            </section>
+
+            <section>
 
             </section>
 
