@@ -1,0 +1,150 @@
+.rod-land {
+  display: flex;
+  flex-direction: row;
+  height: 43vh;
+  width: 100vw;
+  justify-content: space-around;
+  background-color: #f3bebe;
+  align-items: center;
+
+  .rod-pos {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 93%;
+    justify-content: space-around;
+    align-items: center;
+
+    .rodl-sec1 {
+      display: flex;
+      flex-direction: column;
+      height: 91%;
+      width: 34%;
+      justify-content: space-between;
+
+      .rod-logo {
+        background-color: #69160a;
+        border-radius: 24px;
+        width: 68%;
+        height: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+
+        img {
+          width: 91%;
+          height: 81%;
+        }
+      }
+
+      .rod-map {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        width: 95%;
+        height: 54%;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .rod-but {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 11%;
+        width: 38%;
+        margin-left: -2%;
+
+        a {
+          height: 100%;
+          width: 100%;
+
+          button {
+            background-color: #ae6a64;
+            color: #ffffff;
+            height: 100%;
+            width: 100%;
+            border-radius: 10px;
+            font-family: 'inter-extrabold';
+          }
+        }
+
+        
+    }
+    
+  }
+  
+
+    .rodl-sec2{
+        display: flex;
+        flex-direction: column;
+        height: 32%;
+        width: 23%;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .rodl-sec2-p{
+            display: flex;
+            flex-direction: row;
+            width: 80%;
+            height: 25%;
+            justify-content: space-around;
+
+            p{
+              color: #AE6A64 ;
+              font-family: 'inter-regular';
+            }
+
+            .p-bold{
+              font-family: 'inter-extrabold';
+              color: #AE6A64;
+            }
+        }
+        
+        .rodl-sec2-img{
+            display: flex;
+            flex-direction: row;
+            width: 78%;
+            height: 50%;
+            justify-content: space-around;
+
+            img{
+              width: 19%;
+              height: 69%;
+            }
+        }
+    }
+
+    .rodl-sec3{
+      display: flex;
+      flex-direction: column;
+      width: 16%;
+      height: 42%;
+      justify-content: space-evenly;
+      align-items: baseline;
+
+      .rodl-sec3-p1{
+        font-family: 'inter-extrabold';
+        color: #87413B;
+      }
+
+      .rodl-sec3-p2{
+        font-family: 'inter-regular';
+        color: #AE6A64;
+      }
+    }
+  }
+}
+button:hover{
+  cursor: pointer;
+}
+
+
+
+// * {
+//   border: 2px solid blue;
+// }
