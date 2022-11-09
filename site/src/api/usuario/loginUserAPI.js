@@ -14,13 +14,14 @@ export async function loginUsuario(email,senha){
 
 ////////// cadastro do cliente ////////////////
 
-export async function CadastroUsuar(Nome,CPF,Nascimento,Telefone,Sexo){
+export async function CadastroUsuar(Nome,CPF,Nascimento,Telefone,Email,Senha){
     const r = await api.post('/user/cadastro/', {
         nome:Nome,
         cpf:CPF,
         nascimento: Nascimento,
         telefone:Telefone,
-        sexo:Sexo,
+        email:Email,
+        senha:Senha,
     });
     return r.data;
 }

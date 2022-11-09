@@ -50,8 +50,7 @@ nm_usuario           varchar(500),
 img_usuario          varchar(500),
 ds_cpf               varchar(14),
 dt_nascimento        date,
-ds_telefone          varchar(40),
-ds_sexo				 varchar(40)
+ds_telefone          varchar(40)
 );
 
 

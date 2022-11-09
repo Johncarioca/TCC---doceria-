@@ -1,11 +1,12 @@
 import {Router} from 'express';
 const server = Router();
 
-import { CadastroUsuar, loginUsuario, CadastroImagemUser, PerfilUser } from '../repository/loginUsuarioRepository.js';
+import { CadastroUsuar, loginUsuario, CadastroImagemUser, PerfilUser,  } from '../repository/loginUsuarioRepository.js';
 import { ValidarCadastro } from '../service/validacao.js';
 
 import multer from 'multer'; 
 const upload = multer({dest: 'storage/cadastroLogin' });
+
 
 
 
@@ -31,7 +32,7 @@ server.post('/user/Login', async (req,resp) => {
     }
 });
 
-server.post('/user/cadastro/', async (req,resp) => {
+server.post('/user/cadastro', async (req,resp) => {
     try {
         const cliente = req.body;
         await ValidarCadastro(cliente);
