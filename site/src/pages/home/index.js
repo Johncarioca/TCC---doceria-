@@ -176,21 +176,50 @@ export default function Home() {
             <section className="section4-landing-page">
                 <div className="sec-card ">
                     <div className="sec4-card1">
-                        <img src="./assets/image/bolinho-sec4.png" alt="" />
-                        <h3>Bolos</h3>
-                        <p>Os bolo de chocolate com pedaços morangos  </p>
+                        <div className="sec4-card">
+                             <img className="sec4-img" src="./assets/image/bolinho-sec4.png" alt="" />
+                            <div className="sec4-txtcard1">
+                                 <h3>Bolos</h3>
+                                 <div className="sec4-txt">
+                                     <p>Os bolos de chocolate com pedaços morangos </p>
+                             </div>
+                        </div>
+                        
+                             
+                        </div>
+                       
                     </div>
 
                     <div className="sec4-card2">
-                        <img src="./assets/image/trufa-sec4.png" alt="" />
-                        <h3>Trufas</h3>
-                        <p>Trufas recheadas </p>
+                    
+                        <div className="sec4-card">
+                             <img className="sec4-img" src="./assets/image/trufa-sec4.png" alt="" />
+                        
+                        <div className="sec4-txtcard2">
+                             <h3>Trufas</h3>
+                             <div className="sec4-txt">
+                                 <p>Trufas recheadas </p>
+                             </div>
+                       
+                        </div>
+                       
+                        </div>
+                       
                     </div>
 
                     <div className="sec4-card3">
-                        <img src="./assets/image/torta-sec4.png" alt="" />
-                        <h3>Tortas</h3>
-                        <p>torta de limão com raspa de limão emcima  </p>
+                        <div className="sec4-card">
+                            <img className="sec4-img" src="./assets/image/torta-sec4.png" alt="" />
+                        <div className="sec4-txtcard3">
+                             <h3>Tortas</h3>
+                            <div className="sec4-txt">
+                                <p>torta de limão com raspa de limão emcima  </p>
+                            </div>
+                        
+                        </div>
+                    </div>
+                        
+                       
                     </div>
                     
                 </div>
