@@ -317,6 +317,7 @@
         .sec4-card1{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             color: #ffffff;
             height:     89%;
@@ -362,6 +363,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             color: #ffffff;
             height:     89%;
             width: 25%;
@@ -378,11 +380,12 @@
             .sec4-txtcard2{
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content:center;
                 align-items: center;
+                margin-top: 2vh;
                
                 width: 100%;
-                height: 23vh;
+               
 
                 .sec4-txt{
                     display: flex;
@@ -404,6 +407,7 @@
         .sec4-card3{
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             color: #ffffff;
             height:     89%;
@@ -423,16 +427,15 @@
                 flex-direction: column;
                 justify-content:center;
                 align-items: center;
-                
+                margin-top: 2vh;
                 width: 100%;
-                height: 25vh;
+               
 
                 .sec4-txt{
                     display: flex;
                     flex-direction: column;
 
                     align-items: center;
-                    width: 80%;
                 }
 
                 .p{
@@ -450,7 +453,7 @@
     }
 
     *{
-        border: 1px solid green ;
+        //border: 1px solid green ;
       }
     
 
