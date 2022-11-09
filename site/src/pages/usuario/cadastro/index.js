@@ -1,4 +1,5 @@
 import './index.scss'
+
 import {useState} from 'react'
 
 import  CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
@@ -15,8 +16,9 @@ export default function CadastroUsuario (){
     const [Telefone, setTelefone] = useState('');
     const [Nascimento, setNascimento] = useState('');
     const [CPF, setCPF] = useState('');
+    
     const [imangen,setImangen]= useState();
-    const [Sexo,setSexo]= useState();
+    
 
         async function Cadastrar(){
             try {
@@ -24,7 +26,7 @@ export default function CadastroUsuario (){
                 if(!imangen)
                     throw new Error('Escolha a img do produto');
 
-                const r = await CadastroUsuar(Nome,CPF,Nascimento,Telefone,Sexo);
+                const r = await CadastroUsuar(Nome,CPF,Nascimento,Telefone,Email,Senha);
                 // console.log(r.id);
                     await ImagemCadastroUser(imangen, r.id);    
                 toast.dark('Usuario foi cadastrado ');
@@ -76,7 +78,7 @@ export default function CadastroUsuario (){
                             <input className='input-cadastro'type="password" value={Senha} onChange={e => setSenha(e.target.value)}/>
                         </div>
                         <div className='inpucont-cadastro'>
-                            <label > Nome completo:</label>
+                            <label > Nome:</label>
                             <input className='input-cadastro' type="text" placeholder='...' value={Nome} onChange={e => setNome(e.target.value)}/>
                         </div>
 
@@ -108,9 +110,7 @@ export default function CadastroUsuario (){
 
                         <img className="fun-cad" src="../assets/image/cardloginuser.png" />
 
-                        <button className="bt-cadastrar" onClick={Cadastrar}>  
-                        Cadastrar
-                        </button>
+                        <button className="bt-cadastrar" onClick={Cadastrar}> Cadastrar </button>
 
                         <div className="link-logincadastro" >
                             <p> Já possui uma conta? </p>

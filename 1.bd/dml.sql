@@ -105,7 +105,7 @@ update tb_usuario
       where id_usuario    = ? ;
 
 insert into tb_usuario( nm_usuario, ds_cpf, dt_nascimento, ds_telefone)
-                    values ("quintanilha " ,"51","2004-05-10","()");
+                    values ("quintanilha " ,"51","2004-05-10","(21)555");
 
 
 

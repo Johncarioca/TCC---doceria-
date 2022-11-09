@@ -25,7 +25,9 @@ export default function AlterarPerfilUser() {
     const[Nascimento, setNascimento] = useState(0);
     const[Numero, setNumero] = useState('');
     
-    
+    async function AlterarInfosPerfil(){
+
+    }
     
     return (
         <main className="telaEndereco">
@@ -40,7 +42,7 @@ export default function AlterarPerfilUser() {
 
                         <div className="Minhas">
 
-                            <div >''
+                            <div >
 
                                 <img src="../assets/image/carrinhoPreto.png" alt="" />
 
@@ -106,13 +108,13 @@ export default function AlterarPerfilUser() {
                                 <p className='nome'>
                                     Nome Completo
                                 </p>
-                                <input className="put" placeholder='Rua...' type="text" />
+                                <input className="put" placeholder='Rua...' type="text" value={nome} onChange={e => setNome(e.target.value)}/>
                             </div>
                             <div className="iptu">
                                 <p className="cpf">
                                     CPF
                                 </p>
-                                <input className='upt' placeholder='Rua...' type="text" />
+                                <input className='upt' placeholder='Rua...' type="text" value={cpf} onChange={e => setCpf(e.target.value)}/>
                             </div>
 
                             <div className="pitu">
@@ -121,7 +123,7 @@ export default function AlterarPerfilUser() {
                                         Data de Nascimento
                                     </p>
 
-                                    <input placeholder='07/10/2004' type="text" />
+                                    <input placeholder='07/10/2004' type="text" value={Nascimento} onChange={e => setNascimento(e.target.value)}/>
                                 </div>
                                 
                             </div>
@@ -131,13 +133,13 @@ export default function AlterarPerfilUser() {
                                         Número
                                     </p>
 
-                                    <input placeholder='()' type="text" />
+                                    <input placeholder='()' type="text"  value={Numero} onChange={e => setNumero(e.target.value)}/>
                                 </div>
                             </div>
 
 
                             <div className="botão">
-                                <button> Salvar</button>
+                                <button onClick={AlterarInfosPerfil}> Salvar</button>
                             </div>
 
                         </div>
