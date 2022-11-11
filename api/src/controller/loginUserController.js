@@ -1,8 +1,8 @@
 import {Router} from 'express';
 const server = Router();
 
-import { CadastroUsuar, loginUsuario, CadastroImagemUser, PerfilUser,  } from '../repository/loginUsuarioRepository.js';
-import { ValidarCadastro } from '../service/validacao.js';
+import { CadastroUsuar, loginUsuario, CadastroImagemUser, PerfilUser, AlterarCadsUsuar, AlterarESUsuar,  } from '../repository/loginUsuarioRepository.js';
+import { ValidarAlteraçãoES, ValidarCadastro } from '../service/validacao.js';
 
 import multer from 'multer'; 
 const upload = multer({dest: 'storage/cadastroLogin' });
@@ -49,6 +49,41 @@ server.post('/user/cadastro', async (req,resp) => {
 });
 
 
+server.put('/user/alterarUser/:id', async (req,resp) => {
+    try {
+
+        const id = req.params.id;
+        const cliente = req.body;
+
+        const reposta = await AlterarCadsUsuar(id, cliente);
+
+        resp.send(reposta);
+    } 
+    catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+});
+
+server.put('/user/alterarES/:id', async (req,resp) => {
+    try {
+
+        const id = req.params.id;
+        const cliente = req.body;
+        await ValidarAlteraçãoES(cliente);
+        const reposta = await AlterarESUsuar(id, cliente);
+
+        resp.send(reposta);
+    } 
+    catch (err) {
+        resp.status(401).send({
+            erro: err.message
+        });
+    }
+});
+
+
 server.put('/user/cadastro/:id', upload.array('imagem'),async (req, resp) => {
     try {
             
@@ -69,7 +104,25 @@ server.put('/user/cadastro/:id', upload.array('imagem'),async (req, resp) => {
     }
 });
 
+server.put('/user/alterarImg/:id', upload.array('imagem'),async (req, resp) => {
+    try {
+            
+        const imangen = req.files;
+        const id = req.params.id;
 
+        for(const imagem of imangen){
+            
+            await CadastroImagemUser(imagem.path, id);
+        }
+
+        resp.status(204).send();
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+});
 
 server.get('/api/PerfilUser/:idUser', async (req, resp) => {
 

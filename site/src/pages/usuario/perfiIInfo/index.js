@@ -1,34 +1,57 @@
 import { useState } from 'react';
+import storage from 'local-storage';
+
+import { toast } from 'react-toastify';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import './index.scss'
+import { AlterarImagemUser, AlterarUsuar } from '../../../api/usuario/loginUserAPI';
+import { useNavigate } from 'react-router-dom';
+import LoadingBar from 'react-top-loading-bar'
 
 
 
 export default function AlterarPerfilUser() {
 
-    // function escolherImagem(inputId){
-    //     document.getElementById(inputId).click();
-    // }
-
-    // function ExibirImagem(imangen){
-    //     if (imangen === undefined) {
-    //         return '/assets/image/SelecionarImagem.png'
-    //     } else {
-    //         return URL.createObjectURL(imangen);
-    //     }
-    // }
 
 
-    const[nome, setNome] = useState('');
-    const[imagem, setImagem] = useState('');
-    const[cpf, setCpf] = useState('');
-    const[Nascimento, setNascimento] = useState(0);
-    const[Numero, setNumero] = useState('');
-    
-    async function AlterarInfosPerfil(){
+    const [Nome, setNome] = useState('');
+    const [imangen, setImangen] = useState();
+    const [Cpf, setCpf] = useState('');
+    const [Nascimento, setNascimento] = useState(0);
+    const [Numero, setNumero] = useState('');
+
+    const Navigate = useNavigate();
+
+    async function AlterarInfosPerfil() {
+
+        try {
+            let id = storage('Cliente-logado').id;
+
+            const alterar = await AlterarUsuar(id, Nome, Cpf, Nascimento, Numero);
+            let a = await AlterarImagemUser(alterar.id, imangen );
+            toast.dark('Informações do usuario foi alterado ');
+            Navigate('/perfil');
+        }
+        catch (err) {
+            toast.error(err.response.data.erro);
+        }
+
 
     }
-    
+
+
+    function escolherImagem(inputId) {
+        document.getElementById(inputId).click();
+    }
+
+    function ExibirImagem(imangen) {
+        if (imangen === undefined) {
+            return '/assets/image/SelecionarImagem.png'
+        } else {
+            return URL.createObjectURL(imangen);
+        }
+    }
+
     return (
         <main className="telaEndereco">
             <div>
@@ -77,11 +100,14 @@ export default function AlterarPerfilUser() {
                         </div>
 
                         <div className="inpucont-cadastro">
+                            
                             <p> Foto de perfil </p>
+                            
                             <div className="inserir-imagem">
-                                <img alt="" src="/assets/image/SelecionarImagem.png" />
 
-                                <input type="file" id="imagem" />
+                                <img alt="" src={ExibirImagem(imangen)} onClick={() => escolherImagem('imagem')} />
+                                <input type="file" id="imagem" onChange={e => setImangen(e.target.files[0])} />
+                            
                             </div>
                         </div>
 
@@ -106,15 +132,15 @@ export default function AlterarPerfilUser() {
 
                             <div className="iptu">
                                 <p className='nome'>
-                                    Nome Completo
+                                    Nome
                                 </p>
-                                <input className="put" placeholder='Rua...' type="text" value={nome} onChange={e => setNome(e.target.value)}/>
+                                <input className="put" placeholder='Rua...' type="text" value={Nome} onChange={e => setNome(e.target.value)} />
                             </div>
                             <div className="iptu">
                                 <p className="cpf">
                                     CPF
                                 </p>
-                                <input className='upt' placeholder='Rua...' type="text" value={cpf} onChange={e => setCpf(e.target.value)}/>
+                                <input className='upt' placeholder='Rua...' type="text" value={Cpf} onChange={e => setCpf(e.target.value)} />
                             </div>
 
                             <div className="pitu">
@@ -123,9 +149,9 @@ export default function AlterarPerfilUser() {
                                         Data de Nascimento
                                     </p>
 
-                                    <input placeholder='07/10/2004' type="text" value={Nascimento} onChange={e => setNascimento(e.target.value)}/>
+                                    <input placeholder='07/10/2004' type="text" value={Nascimento} onChange={e => setNascimento(e.target.value)} />
                                 </div>
-                                
+
                             </div>
                             <div className="pitu">
                                 <div className="cell">
@@ -133,7 +159,7 @@ export default function AlterarPerfilUser() {
                                         Número
                                     </p>
 
-                                    <input placeholder='()' type="text"  value={Numero} onChange={e => setNumero(e.target.value)}/>
+                                    <input placeholder='()' type="text" value={Numero} onChange={e => setNumero(e.target.value)} />
                                 </div>
                             </div>
 

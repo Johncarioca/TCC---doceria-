@@ -47,7 +47,22 @@ export async function ValidarCadastro(cliente){
     if (!cliente.telefone || cliente.telefone <= 0 ) {
         throw new Error('O telefone é obrigatorio');
     }
+    if (!cliente.email || cliente.email === '' ) {
+        throw new Error('O email é obrigatorio');
+    }
+    if (!cliente.senha || cliente.senha === '' ) {
+        throw new Error('O senha é obrigatorio');
+    }
 }
+
+export async function ValidarAlteraçãoES(cliente){
+    if (!cliente.email || cliente.email === '' ) {
+        throw new Error('O email é obrigatorio');
+    }
+    if (!cliente.senha || cliente.senha === '' ) {
+        throw new Error('O senha é obrigatorio');
+    }
+}  
 
 
 export async function ValidarCadastroEndereco(endereco){  
