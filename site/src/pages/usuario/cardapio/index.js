@@ -7,6 +7,7 @@ import CardCardapioGeral from '../../../components/CorpoCardapio/Geral'
 import CardapioBolos from '../../../components/CorpoCardapio/bolo'
 import CardapioKits from '../../../components/CorpoCardapio/Kits'
 import CardapioSalgados from '../../../components/CorpoCardapio/salgados'
+import RodapeLand2 from '../../../components/rodapeLand-2';
 
 
 import { ProdutosDestaque, BuscarProdutoCardapio, CategoriaBolo, CategoriaDoces, CategoriaKits, CategoriaSalgados, CategoriaTortas } from '../../../api/usuario/cardapioAPI.js';
@@ -297,6 +298,8 @@ export default function Cardapio() {
 
 
             </section>
+
+            <RodapeLand2 />
 
         </main>
     );

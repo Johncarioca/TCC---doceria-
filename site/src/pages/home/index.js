@@ -2,15 +2,23 @@ import "./index.scss";
 import Carousel from "react-elastic-carousel";
 import Categoria from "../../components/Carousel";
 import RodapeLand from "../../components/rodapeLand";
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+
+  const navigate = useNavigate 
+
   const breakPoints = [
     { width: 1, itemsToShow: 1 },
-    { width: 480, itemsToShow: 1.4 },
-    { width: 750, itemsToShow: 2.4, itemsToScroll: 2 },
-    { width: 1100, itemsToShow: 3.4, itemsToScroll: 3 },
-    { width: 1560, itemsToShow: 4.4, itemsToScroll: 4 },
+    { width: 480, itemsToShow: 1.5 },
+    { width: 750, itemsToShow: 2.5, itemsToScroll: 2 },
+    { width: 1100, itemsToShow: 3.5, itemsToScroll: 3 },
+    { width: 1560, itemsToShow: 4.5, itemsToScroll: 4 },
   ];
+
+  function CardClick() {
+    navigate ('/cardapio')
+  }
 
   return (
     <main className="home">
@@ -228,15 +236,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="Carousel">
+      <section className="Carousel" onClick={CardClick}>
         <h2>Conheça todos os nossos sabores</h2>
 
-        <Carousel isRTL breakPoints={breakPoints}>
-          <Categoria />
-          <Categoria />
-          <Categoria />
-          <Categoria />
-          <Categoria />
+        <Carousel breakPoints={breakPoints} >
+          <Categoria img='/assets/image/festa.png' nome='Kit de Festa' />
+          <Categoria img='/assets/image/doces.png' nome='Doces'/>
+          <Categoria img='/assets/image/salgados.png' nome='Salgados'/>
+          <Categoria img='/assets/image/bolos.png' nome='Bolos'/>
+          <Categoria img='/assets/image/torta-7.png' nome='Tortas'/>
         </Carousel>
       </section>
 

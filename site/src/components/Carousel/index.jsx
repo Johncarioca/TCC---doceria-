@@ -8,10 +8,9 @@ const Categoria = (props) => {
     <main className='categoria'>
 
       <div onClick={props.botao}>
-        {/* <img alt="" src={props.img}/>
-          <h5>{props.nome}</h5> */}
-        <img alt="" src='/assets/image/doces.png' />
-        <h1>Doces</h1>
+        <img alt="" src={props.img}/>
+          <h1>{props.nome}</h1>
+        
       </div>
 
 

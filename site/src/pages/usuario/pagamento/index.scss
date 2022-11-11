@@ -93,6 +93,7 @@
                     width: 95%;
                     height: 37rem;
                     margin-left: 0.7rem;
+                    
                     // border: solid 0.1px blueviolet;
                     
                     .tpPagamentos{
@@ -103,6 +104,7 @@
                         width: 60%;
                         height: 3rem; 
                         background-color: #C6B0AD;
+                        
 
                         // border: solid 0.1px blueviolet;
                         
@@ -113,6 +115,7 @@
                             align-items: center;
                             width: 30%;
                             height: 2.5rem;
+                            cursor: pointer;
                             // border: solid 0.1px brown;
 
 
@@ -281,6 +284,8 @@
                                 }
 
                             }
+
+
                            
 
                         }
@@ -399,6 +404,7 @@
             border-radius: 3rem 0rem 0rem 3rem ;
         }
     }
+    
 }
 
 
