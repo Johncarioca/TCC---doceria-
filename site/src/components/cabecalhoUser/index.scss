@@ -1,0 +1,81 @@
+.CardDetalhes{
+    *{
+        box-sizing: border-box ;
+        margin: 0;
+        //border: 0.1px green solid;
+    }    
+
+    .osTres{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        align-items: center;
+        align-items: flex-end;
+        background-color:#69160A;
+        width: 100%;
+        height: 7rem;
+        
+        
+        .arroz{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            justify-items: end;
+            align-items: flex-end;
+            width: 92%;
+            
+            
+
+            .SetaLogo{
+                display: flex;
+                flex-direction: row ;
+                justify-content: space-between;
+                align-items: center;
+                width: 22%;
+                margin-bottom: 3rem;
+    
+    
+                .logos{
+                    width: 14rem;
+                    height: 3rem;
+                }
+    
+                .setas{
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+
+
+    
+            .imgsIcons{
+                
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between  ;
+                width: 8%;
+                height: 2.5rem;
+                align-self: flex-start;
+                
+                .inconLogin{
+                    width: 1.8rem;
+                    height: 2.4rem;
+                }
+    
+                .inconCarrinho{
+                    width: 2.6rem;
+                    height: 2.3rem;
+                }
+            }
+    
+            
+        }    
+       
+                 
+    }
+
+
+    
+}

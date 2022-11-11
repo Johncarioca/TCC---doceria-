@@ -1,6 +1,6 @@
 import './index.scss';
 
-export default function CardCabecario(){
+export default function CardCabecarioUser(){
 
     return(
         <main className="CardCabecario">
@@ -24,30 +24,21 @@ export default function CardCabecario(){
                     <div className="sdcbk">
 
                         <div className="selecionado">
-                            <p className="nomeCategoria" >Salgados</p>
+                            <p className="nomeCategoria" >Cardapio</p>
                             <hr/>
                         </div>
                         <div className="selecionado">
-                            <p className="nomeCategoria" >Doces</p>
+                            <p className="nomeCategoria" >Perfil</p>
                             <hr/>
                         </div>
                         <div className="selecionado">
-                            <p className="nomeCategoria" >Geral</p>
+                            <p className="nomeCategoria" >Home</p>
                             <hr/>
                         </div>
                         <div className="selecionado">
-                            <p className="nomeCategoria" >Tortas</p>
+                            <p className="nomeCategoria" >  Pedidos</p>
                             <hr/>
                         </div>
-                        <div className="selecionado">
-                            <p className="nomeCategoria" >Bolos</p>
-                            <hr/>
-                        </div>
-                        <div className="selecionado">
-                            <p className="nomeCategoria" >Kits</p>
-                            <hr/>
-                        </div>
-
                     </div>
 
                     <div className="imgsIcons">
