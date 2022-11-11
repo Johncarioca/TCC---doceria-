@@ -14,18 +14,31 @@ select * from tb_login_usuario;
 select * from tb_admin_login;
 
 
-select tb_usuario.id_usuario  		as id,
-	   img_usuario					as imagem,
-	   ds_cpf     					as cpf,
-       ds_rua           			as rua,
-       ds_telefone					as cell
-       nm_usuario       			as nome,
-       dt_nascimento    			as nascimento, 
-       ds_email         			as email
-from tb_usuario
-inner join tb_endereco on tb_endereco.ds_rua = tb_endereco.ds_rua
-inner join tb_login_usuario on tb_login_usuario.ds_email = tb_login_usuario.ds_email
-	    where tb_login_usuario.id_usuario = 1;
+	 select tb_usuario.id_usuario  		as id,
+            img_usuario					as imagem,
+            ds_cpf     					as cpf,
+            ds_rua           			as rua,
+            nm_usuario       			as nome,
+            ds_telefone					as cell,
+            dt_nascimento    			as nascimento, 
+            ds_email         			as email
+	   from tb_usuario
+ inner join tb_endereco on tb_endereco.ds_rua = tb_endereco.ds_rua
+     where tb_usuario.id_usuario = 1;
+
+update tb_usuario
+          set  nm_usuario   	= ?,
+               ds_cpf			= ?,
+               dt_nascimento 	= ?,
+               ds_telefone		= ?
+		where id_usuario    = ? ;
+	
+    update tb_usuario
+          set ds_email			= ?,
+               ds_senha			= md5(?)
+		where id_usuario    = ? ;
+
+
         
        
 
