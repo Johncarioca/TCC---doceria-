@@ -25,7 +25,7 @@ export default function LPedidos() {
       <header className="cabeçalho-LP">
         <div className="div1-cabLP">
           <div className="sub-div1-cabLP">
-            <img className="seta-cabLP" src="/assets/image/seta.png" alt="" />
+            <img className="seta-cabLP" src="/assets/image/setinha.png" alt="" />
             <img className="logo-LP" src="/assets/image/oi.png" alt="" />
           </div>
 
@@ -34,7 +34,7 @@ export default function LPedidos() {
           </div>
 
           <div className="sub-div2-cabLP">
-            <a className="a-sub-div2-cabLP" href="/">
+            <a className="a-sub-div2-cabLP" href="/adm/listapedidos">
               Lista de pedidos
             </a>
             <a className="a-sub-div2-cabLP" href="/">

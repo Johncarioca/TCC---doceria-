@@ -42,12 +42,6 @@ export default function Home() {
               <a className="a-home" href="">
                 <p className="ps">Destaques</p>
               </a>
-              <a className="a-home" href="../login">
-                <p className="ps">Login</p>
-              </a>
-              <a className="a-home" href="../cadastro">
-                <p className="ps">Cadastro</p>
-              </a>
             </div>
 
             <div className="icons">

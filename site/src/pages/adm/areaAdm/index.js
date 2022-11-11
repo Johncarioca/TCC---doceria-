@@ -25,7 +25,7 @@ export default function AreaAdm() {
 
                 <div className='div-1'>
 
-                    <img className='seta' src="/assets/image/seta.png" alt="" />
+                    <img className='seta' src="/assets/image/setinha.png" alt="" />
 
                     <img className='logo' src="/assets/image/oi.png" alt="" />
                 </div>

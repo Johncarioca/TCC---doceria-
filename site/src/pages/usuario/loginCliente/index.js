@@ -32,7 +32,7 @@ export default function LoginUsuario() {
             toast.dark('Usuario Logado', { autoClose: 1800, hideProgressBar: true});
 
             setTimeout(() => {
-                Navigate('/')
+                Navigate('/perfil')
             }, 3000);
 
         }

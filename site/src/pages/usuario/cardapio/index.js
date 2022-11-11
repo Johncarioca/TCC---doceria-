@@ -167,7 +167,10 @@ export default function Cardapio() {
                     <div className="SetaLogo">
 
                         <div>
-                            <img className="setas" src="/assets/image/seta.png" alt="" />
+                            <a href="/">
+                                <img className="setas" src="/assets/image/setinha.png" alt="" />
+                            </a>
+                            
                         </div>
 
                         <div>
