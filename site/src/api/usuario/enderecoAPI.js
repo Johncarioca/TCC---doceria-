@@ -15,7 +15,7 @@ export async function ListarEnderecoId(id){
     return resposta.data;
 }
 
-export async function EnderecoId(idUser,idEnder){
-    const resposta = await api.get('/buscar/endereco/'+ idUser + '/' + idEnder)
+export async function EnderecoId(idUser){
+    const resposta = await api.get('/user/buscar/endereco/'+ idUser + '/')
     return resposta.data;
 }

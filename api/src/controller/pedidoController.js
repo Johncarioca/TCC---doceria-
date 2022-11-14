@@ -14,11 +14,10 @@ server.post('/user/pedido/:idUsuario', async (req,resp) => {
 
         const { idUsuario } = req.params;
         const info = req.body;
-        console.log(info.pagamento);
         const nvPedido = CriarNovoPedido( idUsuario, info)
-
+        
         const idPedidoAdicionado = await NovoPedido(nvPedido);
-        // console.log(info.pedido.pagamento);
+        
 
         if (info.tpPagamento === 'cartao') {
             await InserirPagamentoCartao(idPedidoAdicionado, info.pagamento);

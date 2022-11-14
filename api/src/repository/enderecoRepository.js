@@ -30,22 +30,16 @@ export async function ListarEnderecoId(id){
   return registro;    
 }
 
-export async function EnderecoId(idUser,idEnder){
+export async function EnderecoId(idUser){
   const comando = 
   `   
-        select id_endereco 		as id,
-              ds_rua				as rua,
-              ds_complemento 		as complemento,
-              nm_estado 			as estado,
-              ds_cidade 			as cidade,
-              ds_referencia		as referencia,
-              ds_bairro 			as bairro,
-              ds_cep				as cep
-          from tb_endereco
-        where id_usuario = ?
-          and id_endereco = ?;
+        
+      select id_endereco 		as idEnd,
+             ds_rua				as rua          
+        from tb_endereco
+       where id_usuario = ?;
 
   `
-  const [registro] = await con.query(comando, [idUser, idEnder])
+  const [registro] = await con.query(comando, [idUser])
   return registro;    
 }

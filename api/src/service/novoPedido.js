@@ -11,7 +11,7 @@ export function CriarNovoPedido( idUsuario, info){
     let agora = new Date();
     
     return{
-        idEndereco: info.idEndereco, 
+        idEndereco: info.endereco, 
         idUsuario: idUsuario, 
         itens: info.itens,  
         data: agora, 
