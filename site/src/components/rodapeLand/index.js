@@ -15,7 +15,7 @@ export default function RodapeLand() {
           </div>
 
           <div className="rod-but">
-            <a href="/adm/areaadm">
+            <a href="/adm/login">
               <button>Área admistrativa</button>
             </a>
           </div>

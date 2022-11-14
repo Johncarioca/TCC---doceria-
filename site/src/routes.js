@@ -44,7 +44,7 @@ export default function AppsRoutes() {
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
-                <Route path='/adm/listapedidos' element={<LPedidos/>} />
+                <Route path='/adm/listapedido' element={<LPedidos/>} />
 
                 <Route path='/pagamento' element={<Pagamento/>} />
 

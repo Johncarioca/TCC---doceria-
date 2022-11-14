@@ -46,7 +46,7 @@ export default function Home() {
 
             <div className="icons">
               <div className="divImagem">
-                <a href="/perfil">
+                <a href="/login">
                   <img
                     className="logi"
                     src="/assets/image/inconLogin.png"
@@ -215,13 +215,13 @@ export default function Home() {
             <div className="sec4-card">
               <img
                 className="sec4-img"
-                src="./assets/image/torta-sec4.png"
+                src="./assets/image/cupcake.png"
                 alt=""
               />
               <div className="sec4-txtcard3">
-                <h3>Tortas</h3>
+                <h3>Cupcakes</h3>
                 <div className="sec4-txt">
-                  <p>torta de limão com raspa de limão em cima </p>
+                  <p>Deliciosos bolinhos com coberturas variadas</p>
                 </div>
               </div>
             </div>

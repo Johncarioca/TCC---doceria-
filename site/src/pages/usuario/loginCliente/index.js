@@ -64,7 +64,7 @@ export default function LoginUsuario() {
                         </div>
                         <div className="link-loginuser" >
                             <p>Não possui um cadastro ? </p>
-                            <a className="a-loginuser" href="../cadastrouser"> Clique aqui</a>
+                            <a className="a-loginuser" href="../cadastro"> Clique aqui</a>
                         </div>
 
                     </div>

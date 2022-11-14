@@ -25,7 +25,7 @@ export default function LPedidos() {
       <header className="cabeçalho-LP">
         <div className="div1-cabLP">
           <div className="sub-div1-cabLP">
-            <img className="seta-cabLP" src="/assets/image/setinha.png" alt="" />
+            <img className="seta-cabLP" src="/assets/image/etinha.png" alt="" />
             <img className="logo-LP" src="/assets/image/oi.png" alt="" />
           </div>
 

@@ -48,10 +48,10 @@ export default function AlterarEmail() {
     <main className="alterar-email">
       <header className="AE-header">
         <a className="AE-header-set" href="">
-          <img className="AE-set" src="../assets/image/setinha2.png" alt="" />
+          <img className="AE-set" src="../assets/image/setinha.png" alt="" />
         </a>
 
-        <img className="AE-logo" src="../assets/image/oi.png" alt="" />
+        <img className="AE-logo" src="../../assets/image/oi.png" alt="" />
       </header>
 
       <section className="AE-sec">

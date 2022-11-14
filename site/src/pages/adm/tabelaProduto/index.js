@@ -57,7 +57,7 @@ export default function TabelaProduto(){
 
                     <div className="sub-div1-cabTP">
                         
-                        <img className="seta-cabTP" src="/assets/image/seta.png" alt="" />
+                        <img className="seta-cabTP" src="/assets/image/setinha.png" alt="" />
                         <img className="oi" src="/assets/image/oi.png" alt="" />
                     
                     </div>

@@ -167,7 +167,7 @@ export default function Cardapio() {
                     <div className="SetaLogo">
 
                         <div>
-                            <a href="/">
+                            <a href="/perfil">
                                 <img className="setas" src="/assets/image/setinha.png" alt="" />
                             </a>
                             
@@ -210,10 +210,16 @@ export default function Cardapio() {
                     <div className="imgsIcons">
 
                         <div>
-                            <img className="inconLogin" src="/assets/image/inconLogin.png" alt="" />
+                            <a href="../perfil">
+                                <img className="inconLogin" src="/assets/image/inconLogin.png" alt="" />
+                            </a>
+                            
                         </div>
                         <div>
-                            <img className="inconCarrinho" src="/assets/image/iconeCarrinho.png" alt="" />
+                            <a href="carrinho">
+                                <img className="inconCarrinho" src="/assets/image/iconeCarrinho.png" alt="" />
+                            </a>
+                            
                         </div>
 
                     </div>
@@ -228,7 +234,7 @@ export default function Cardapio() {
 
                     <div className="divPesguisa">
                         <div className="Pesquisa">
-                            <input className="barra" type="text" placeholder='Pesquisa...' value={Filtros} onChange={e => setFiltros(e.target.value)} />
+                            <input className="barra" type="text" placeholder='Pesquise um item...' value={Filtros} onChange={e => setFiltros(e.target.value)} />
                             <div> <img className="lupe" src="/assets/image/lupa.png" alt="" onClick={BuscaCard} /></div>
                         </div>
                     </div>

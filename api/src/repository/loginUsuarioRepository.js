@@ -98,3 +98,4 @@ export async function PerfilUser(idUser) {
   const [registro] = await con.query(comando, [idUser]);
   return registro[0];
 }
+
