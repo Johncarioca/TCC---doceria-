@@ -17,6 +17,6 @@ export function CriarNovoPedido( idUsuario, info){
         data: agora, 
         status: info.status, 
         vlTotal: info.vlTotal, 
-        tpPagamento: info.tpPagamento 
+        tpPagamento: info.tpPagamento,
     };
 }

@@ -6,8 +6,8 @@ const api = axios.create({
 
 
 ////////// Login do cliente ////////////////
-export async function SalvarNovoPedido(idUsuario, nvPedido){
+export async function SalvarNovoPedido(idUsuario, pedido){
 
-    const r = await api.post('/pedido/cartao/' + idUsuario,nvPedido);
+    const r = await api.post('/user/pedido/' + idUsuario, pedido);
     return r.data;
 };

@@ -1,8 +1,9 @@
+
 import storage from 'local-storage';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { EnderecoId } from '../../../api/usuario/enderecoAPI.js';
+
 import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
@@ -15,17 +16,23 @@ import './index.scss'
 
 export default function Pagamento() {
 
-    // const ender = idEndereco();
-    // const [idEnder, setidEnder ] = useState();
 
-
-    const [Numero, setNumero] = useState('');
+ ////////////////// pagamento Cartão //////////////////
+    const [Numero, setNumero] = useState(0);
     const [Nome, setNome] = useState('');
-    // const [CNPJ, setCNPJ] = useState('');
     const [codSeguranca, setcodSeguranca] = useState('');
     const [Parcelas, setParcelas] = useState('');
     const [FormaPag, setFormaPag] = useState('');
     const [Vencimento, setVencimento] = useState('');
+    
+
+ ////////////////// pagamento Pix  //////////////////
+    const [CPF, setCpf] = useState('');
+    const [Email, setEmail] = useState('');
+
+ ////////////////// pagamento Boleto //////////////////
+    const [NumeroCell, setNumeroCell] = useState(0);
+    const [codBoleto, setCodBoleto] = useState('');
 
 
     const [itens, setItens] = useState([]);
@@ -92,38 +99,28 @@ export default function Pagamento() {
         }
         return total;
     }
-    async function buscarIdEndereco() {
-        let id = storage('Cliente-logado').id;
-        const ID = await EnderecoId(id);
-    }
-
+  
  
     
 
     
 
 
-    useEffect(() => {
-        CarregarItensCarrinho();
-        Valortotal();
-        buscarIdEndereco();
-        exibirCartao();
-    }, [])
 
     async function CadastraPedido() {
 
         try {
             let Produtos = storage('carrinho');
-            let id = storage('Cliente-logado').id;
-            let idEnd = storage('endereco-selecionado').id;
+            let idUsuario = storage('Cliente-logado').id;
+            // let idEnd = storage('endereco-selecionado').id;
 
             
-            let pagamento;
+            let Pagamento;
             let tipoPag;
 
-            if (MostrarCartão) {
+            if (MostrarCartão === true && MostrarBoleto === false && MostrarPix === false ) {
                 tipoPag = 'cartao';
-                pagamento = {
+                Pagamento = {
                     nome: Nome,
                     numero: Numero,
                     vencimento: Vencimento,
@@ -132,41 +129,57 @@ export default function Pagamento() {
                     formaPagamento: FormaPag
                 }
             }
-            else if (MostrarBoleto) {
-                tipoPag = 'boleto';
-                pagamento = {
+            else if (MostrarBoleto  === true && MostrarCartão === false && MostrarPix === false) {
 
+                tipoPag = 'boleto';
+                Pagamento = {
+    
+                    telefone: NumeroCell,
+                    cod_boleto: codBoleto
                 }
             }
             else {
                 tipoPag = 'pix';
-                pagamento = {
-                    
+                Pagamento = {
+                    email: Email,
+                    cpf:CPF
                 }
             }
 
             let pedido = {
-                // idEndereco:idEnder,
                 itens: QTD,
-                endereco: idEnd,
+                // endereco: idEnd,
                 status: "confirmando pagamento",
                 vlTotal: vlTotal,
                 tpPagamento: tipoPag,
-                pagamento: pagamento,
+                pagamento: Pagamento,
                 produtos: Produtos
             }
-            const r = await SalvarNovoPedido(id, pedido);
+            
+            const r = await SalvarNovoPedido(idUsuario, pedido);
+            
             toast.dark('pedido feito com sucesso');
             storage('carrinho', []);
             Navigate('/');
         }
         catch (err) {
-            toast.error(err.response.data.erro);
+            if (err.response)
+
+                toast.error(err.response.data.erro);
+            else {
+                toast.error(err.message)
+            }
 
         }
 
 
     }
+    useEffect(() => {
+        CarregarItensCarrinho();
+        Valortotal();
+        exibirCartao();
+    }, [])
+
 
     return (
         <main className="telaEndereco">
@@ -331,11 +344,11 @@ export default function Pagamento() {
 
                                             <div className="li">
                                                 <label> CPF</label>
-                                                <input placeholder='Rua...' type="text" />
+                                                <input placeholder='Rua...' type="text"  value={CPF} onChange={e => setCpf(e.target.value)}/>
                                             </div>
                                             <div className="li">
-                                                <label> Numero</label>
-                                                <input placeholder='Rua...' type="text" />
+                                                <label> Email</label>
+                                                <input placeholder='Rua...' type="text" value={Email} onChange={e => setEmail(e.target.value)}/>
                                             </div>
 
                                         </div>
@@ -345,7 +358,7 @@ export default function Pagamento() {
                                                 <img src="../assets/image/QRcode.png" alt="" />
                                             </div>
 
-                                            <div className="botão">
+                                            <div className="botão" onClick={CadastraPedido}>
                                                 <button className='buttonPB'> Finalizar</button>
                                             </div>
                                         </div>
@@ -369,12 +382,12 @@ export default function Pagamento() {
 
 
                                             <div className="lib">
-                                                <label> CPF</label>
-                                                <input placeholder='Rua...' type="text" />
+                                                <label> Numero</label>
+                                                <input placeholder='Rua...' type="text" value={NumeroCell} onChange={e => setNumeroCell(e.target.value)}/>
                                             </div>
                                             <div className="lib">
-                                                <label> Numero</label>
-                                                <input placeholder='Rua...' type="text" />
+                                                <label> codigo do boleto</label>
+                                                <input placeholder='Rua...' type="text" value={codBoleto} onChange={e => setCodBoleto(e.target.value)}/>
                                             </div>
 
                                         </div>
@@ -384,7 +397,7 @@ export default function Pagamento() {
                                                 <img className='bolet' src="../assets/image/blto.png" alt="" />
                                             </div>
 
-                                            <div className="botão">
+                                            <div className="botão"onClick={CadastraPedido}>
                                                 <button className='buttonPB'> Finalizar</button>
                                             </div>
                                         </div>
