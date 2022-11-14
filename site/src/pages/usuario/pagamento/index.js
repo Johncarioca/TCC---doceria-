@@ -112,7 +112,7 @@ export default function Pagamento() {
         try {
             let Produtos = storage('carrinho');
             let idUsuario = storage('Cliente-logado').id;
-            // let idEnd = storage('endereco-selecionado').id;
+            let idEnd = storage('endereco-selecionado').idEnder;
 
             
             let Pagamento;
@@ -148,7 +148,7 @@ export default function Pagamento() {
 
             let pedido = {
                 itens: QTD,
-                // endereco: idEnd,
+                endereco: idEnd,
                 status: "confirmando pagamento",
                 vlTotal: vlTotal,
                 tpPagamento: tipoPag,

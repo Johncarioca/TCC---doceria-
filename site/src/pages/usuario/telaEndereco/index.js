@@ -5,6 +5,7 @@ import { useState } from 'react'
 import Storage from 'local-storage';
 import { toast } from 'react-toastify' 
 import { CadastroEndereco } from '../../../api/usuario/enderecoAPI';
+import { useNavigate } from 'react-router-dom';
 
 export default function TelaEndereco(){
 
@@ -16,12 +17,16 @@ export default function TelaEndereco(){
     const [complemento, setComplemento] = useState('');
     const [cidade, setCidade] = useState('');
 
+    const Navigate = useNavigate();
+
+
     async function SalvarEndereco(){
         try {
             const id = Storage('Cliente-logado').id;
             const resp = await CadastroEndereco(id,rua, complemento, estado, referencia, bairro, cep, cidade);
-            console.log(id,rua, cep, bairro, estado, referencia,complemento);
             toast.dark('Endereço Salvo');
+            Navigate('/meusendereco');
+
         }
         catch (err){
             

@@ -1,6 +1,6 @@
 import './index.scss';
 
-// import {CardCardapioDoces } from '../../../components/CorpoCardapio/doces'
+
 import CardCardapioDoces from '../../../components/CorpoCardapio/doces';
 import CardapioTorta from '../../../components/CorpoCardapio/tortas';
 import CardCardapioGeral from '../../../components/CorpoCardapio/Geral'
@@ -13,23 +13,10 @@ import RodapeLand2 from '../../../components/rodapeLand-2';
 import { ProdutosDestaque, BuscarProdutoCardapio, CategoriaBolo, CategoriaDoces, CategoriaKits, CategoriaSalgados, CategoriaTortas } from '../../../api/usuario/cardapioAPI.js';
 
 import { useEffect, useState } from 'react';
-// import { ProdutosDestaque,BuscarProdutoCardapio } from '../../../api/userAPI';
 
 export default function Cardapio() {
 
-    // const [HeaderSelecionado, setHeaderSelecionado ] = useState('home');
 
-    // function SelecionarHeader(header) {
-    //     setHeaderSelecionado(header);
-    // }
-
-    // function verificarHeaderSelecionado(header) {
-    //     if (header === HeaderSelecionado) {
-    //         return 'selecionadoHover'
-    //     }
-    //     else
-    //         return '';
-    // }
 
 
 

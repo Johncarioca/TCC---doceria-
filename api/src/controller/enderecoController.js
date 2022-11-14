@@ -36,12 +36,12 @@ server.post('/user/:id/endereco', async (req,resp) => {
     }
 }); 
 
-server.get('/buscar/endereco/:idUser/:idEnder', async (req,resp) => {
+server.get('/user/buscar/endereco/:idUser/', async (req,resp) => {
     try {
         const idUser = req.params.idUser;
-        const idEnder = req.params.idEnder;
+        
 
-        const j = await EnderecoId(idUser,idEnder);
+        const j = await EnderecoId(idUser);
         resp.send({j});
     } 
     catch (err) {
