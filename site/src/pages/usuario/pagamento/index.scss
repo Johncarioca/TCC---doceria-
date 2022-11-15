@@ -167,7 +167,9 @@
                             height: 20rem;
                             // border: solid 0.1px red;
 
-
+                            .select{
+                                height: 3.5rem;
+                            }
                             .tresInputs{
                                 display: flex;
                                 flex-direction: column;
@@ -196,16 +198,21 @@
                                 display: flex;
                                 flex-direction: row;
                                 justify-content: center;
+                                background-color:#69160A!important;
+
                                 width: 94%;
                                 height: 2.5rem;
             
-                                // border: solid 0.1px blueviolet;
+                                border: solid 0.1px blueviolet;
             
-                                .buttonCt{
-                                    width: 20%;
-                                    background-color:#69160A;
+                                .Ct{
+                                    width: 80%;
+                                    height: 2.5rem;
+                                    background-color:#69160A !important;
                                     color: #ffffff;
                                     border-radius: 3px;
+                                border: solid 0.1px blueviolet;
+
                                 }
                             }
 
@@ -380,7 +387,7 @@
                             // border: solid 0.1px blueviolet;
         
                             .buttonPB{
-                                width: 20%;
+                                width: 40%;
                                 background-color:#69160A;
                                 color: #ffffff;
                                 border-radius: 3px;

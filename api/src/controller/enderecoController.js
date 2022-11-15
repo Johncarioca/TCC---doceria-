@@ -1,5 +1,5 @@
 import {Router} from 'express';
-import { CadastroEndereco, EnderecoId, ListarEnderecoId } from '../repository/enderecoRepository.js';
+import { ApagarEnderecoId, CadastroEndereco, EnderecoId, ListarEnderecoId } from '../repository/enderecoRepository.js';
 import { ValidarCadastroEndereco } from '../service/validacao.js';
 
 const server = Router();
@@ -42,7 +42,21 @@ server.get('/user/buscar/endereco/:idUser/', async (req,resp) => {
         
 
         const j = await EnderecoId(idUser);
-        resp.send({j});
+        resp.send();
+    } 
+    catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })    
+    }
+});
+
+server.delete('/user/apagar/endereco/:idEnd', async (req,resp) => {
+    try {
+        const idEnd = req.params.idUser;
+        
+        const j = await ApagarEnderecoId(idEnd);
+        resp.status(204);
     } 
     catch (err) {
         resp.status(400).send({

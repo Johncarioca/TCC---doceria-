@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import storage from 'local-storage';
 
-import { ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
+import {  ListarEnderecoId } from '../../../api/usuario/enderecoAPI.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import CardEndereco from '../../../components/cardEndereco';
 import './index.scss'
@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 export default function MeusEndereco() {
 
     const [selectEnde, setselectEnde] = useState();
+    // alert(selectEnde);
 
     const [Enderecos, setEnderecos] = useState([]);
 
@@ -36,31 +37,60 @@ export default function MeusEndereco() {
     async function SalvarEnde() {
 
 
-        const j = {'idEnder' :  selectEnde};
+        const r = {'idEnder' :  selectEnde};
 
-        if (j || j > 0) {
-            console.log(j);
-            storage('endereco-selecionado', j);
-            toast.dark('Endereço Selecionado');
+        
+        if (r > 0|| r.idEnder > 0 ) {
+            console.log(r);
+            storage('endereco-selecionado', r);
+            toast.dark('Endereço foi selecionado');
             Navigate('/pagamento');
-            setEnderecos(j);
+            
         }
-        else {
+        else if (!r || r === 0 || r  ){
             toast.error('selecione o Endereço');
         }
-
-
+        
     }
 
+    function TelasEndere() {
+        Navigate('/endereco')
+    }
 
+    function telaCardapio(){
+        Navigate('/cardarpio')
+    }
+        
+    // async function ApagarEndereco() {
+        
+    //     try {
+    //         const idEnd = selectEnde;
+            
+    //         await ApagarEnderecoId(idEnd);
+    //         await ListarEndereco();
+    //         toast.dark("Endereço deletado!");
+
+
+    //     } 
+    //     catch (err) {
+    //         if (err.response)
+
+    //             toast.error(err.response.data.erro);
+    //         else {
+    //             toast.error(err.message)
+    //         }
+            
+    //     }
+    // }
 
 
     useEffect(() => {
         ListarEndereco();
+        
     }, []);
 
     return (
-        <main className="telaEndereco" >
+        <main className="MeusPedidos" >
             <div>
                 <CabeçarioLogin />
             </div>
@@ -70,7 +100,7 @@ export default function MeusEndereco() {
 
                     <div className="textImage">
 
-                        <div className="Minhas">
+                        <div className="Minha">
 
                             <div >
 
@@ -78,17 +108,17 @@ export default function MeusEndereco() {
 
                             </div>
 
-                            <p> Minhas Compras </p>
+                            <p href="/meuspedidos"> Minhas Compras </p>
 
                         </div>
-                        <div className="Minhas">
+                        <div className="Minha" >
 
                             <div >
 
-                                <img src="../assets/image/IconeCardapio.png" alt="" />
+                                <img onClick={telaCardapio} src="../assets/image/IconeCardapio.png" alt="" />
 
                             </div>
-                            <p>Cardápio</p>
+                            <p href='/cardapio'>Cardapio</p>
 
                         </div>
 
@@ -97,7 +127,7 @@ export default function MeusEndereco() {
 
                 </div>
 
-                <div className="rosaCLara">
+                <div className="rosaCLara3">
 
                     <div className="info">
 
@@ -114,7 +144,10 @@ export default function MeusEndereco() {
                         <div className="cardEnderecos">
 
                             {Enderecos.map(item =>
-                                <CardEndereco item={item} selecionar={setselectEnde} selecionado={item.id === selectEnde} />
+                                <CardEndereco item={item} 
+                                              selecionar={setselectEnde} 
+                                              selecionado={item.id === selectEnde} 
+                                            />
                             )}
 
                         </div>
@@ -122,7 +155,11 @@ export default function MeusEndereco() {
                         <div className="infos">
 
                             <div className="botão" onClick={SalvarEnde}>
-                                <button href="/endereco"> Salvar</button>
+                                <button> Continuar</button>
+                            </div>
+
+                            <div className="botão" onClick={TelasEndere}>
+                                <button> Novo</button>
                             </div>
 
 

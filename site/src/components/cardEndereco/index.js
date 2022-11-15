@@ -2,7 +2,22 @@ import './index.scss'
 
 
 
-export default function CardEndereco({item: { id, rua, complemento, estado, referencia, bairro, cep, cidade}, selecionar, selecionado}){
+
+    export default function CardEndereco({ item: { id, 
+                                                rua, 
+                                                complemento, 
+                                                estado, 
+                                                referencia, 
+                                                bairro, 
+                                                cep, 
+                                                cidade
+                                      }, 
+                                      selecionar, 
+                                      selecionado,
+                                      
+                                    }){
+
+    
 
 
 
@@ -11,16 +26,20 @@ export default function CardEndereco({item: { id, rua, complemento, estado, refe
             >
 
             <section className="cor" onClick={() => selecionar(id)} 
-                                        style={{backgroundColor: selecionado ?  '#883F35' :'#FDE5DE',
-                                                color: selecionado ?  '#fff' :'black',
+                                        style={{backgroundColor: selecionado ?  '#883F35' :'',
+                                                color: selecionado ?  '#fff' :'',
                                                 width: selecionado ?  '100%' : '100%',
-                                                height: selecionado ?  '11rem' : '11rem',
-                                                paddingLeft: selecionado ?  '1.5rem' : '1rem',
-                                                borderRadius: selecionado ?  '10px' : '0px',
-                                        }}
-                                        >
+                                                height: selecionado ?  '11rem' : '10rem',
+                                                paddingLeft: selecionado ?  '1.5rem' : '',
+                                                borderRadius: selecionado ?  '10px' : '',
+                                                paddingBottom: selecionado ?  '1rem' : '',
+                                        }}>
 
+                {/* <div className="ex" >
+                        <img className="xe"  src="../assets/image/excluir2.png" alt="" />
+                </div> */}
                 <div className="casas">
+                    
 
                     <div className="cs">
                         <h2>{referencia}</h2>    
@@ -34,19 +53,20 @@ export default function CardEndereco({item: { id, rua, complemento, estado, refe
                 <div className="infosEndere">
 
                     <div className="ph">
-                        <p>{rua}</p>
+                        <p>{rua} </p>
                         <p>-</p>
-                        <p>{cep}</p>
+                        <p> {cep}</p>
                     
                     </div>
                     <div className="ph">
                         <p>
-                            {bairro}
+                            {bairro} 
                         </p>
                         <p> - </p>
                         <p>
-                            {cidade}
+                             {cidade}
                         </p> 
+                        <p>  -  </p>
                         <p>{estado}</p>
                     </div>
                     <div className="ph">

@@ -1,44 +1,43 @@
-.telaEndereco{
+.MeusPedidos {
 
-    
 
-    height: 60rem;
+
+    height: auto;
     background-color: #FDE5DE;
 
-    .sectionPrincipal{
+    .sectionPrincipal {
 
         display: flex;
         flex-direction: row;
         margin-top: 5rem;
         width: 100%;
-        height: 40rem;
+        height: auto;
 
-        .rsEscura1{
+        .rsEscura1 {
             display: flex;
             flex-direction: row;
             justify-content: end;
             width: 20%;
-            height: 40rem;
+            margin-bottom: 50px;
             background-color: #f4929285;
             border-radius: 0rem 3rem 3rem 0rem;
 
-            .textImage{
+            .textImage {
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
                 width: 87%;
                 height: 20rem;
-                // border: solid 0.1px green;
 
-                .Minhas{
+                .Minha {
                     display: flex;
                     flex-direction: row;
                     align-items: center;
                     margin-top: 2rem;
 
-                    p{
+                    p {
                         padding-left: 0.5rem;
-                        font-weight: 450;
+                        font-weight: 600;
 
                     }
 
@@ -46,99 +45,106 @@
             }
         }
 
-        .rosaCLara{
+        .rosaCLara3 {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
             width: 60%;
-            min-height: auto;
+            margin-bottom: 50px;
             background-color: #FFE1D8;
-            // background-color: blue;
 
-            .info{
+            .info {
 
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 width: 100%;
-                min-height: 40rem;
                 padding-top: 3rem;
                 padding-left: 1.6rem;
-                // border: solid 0.1px black;
 
-                .ph4{
+
+                .ph4 {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
                     width: 70%;
                     height: 7.2rem;
-                    // border: solid 0.1px black;
-                    
-                    .gerencie{
+
+                    .gerencie {
                         font-weight: 600;
-                        padding-bottom:0.6rem;
-                        padding-top:0.6rem;
+                        padding-bottom: 0.6rem;
+                        padding-top: 0.6rem;
                     }
-                    .escolha{
+
+                    .escolha {
                         font-weight: 600;
-                        padding-bottom:1.9rem;   
+                        padding-bottom: 1.9rem;
                     }
                 }
 
-                .cardEnderecos{
+                .cardEnderecos {
                     display: flex;
-                    flex-wrap: wrap;                    
+                    flex-wrap: wrap;
                     justify-content: space-evenly;
                     width: 98%;
-                    min-width:  auto;
-                    padding-top: 2rem;
+                    min-height: auto;
+                    margin-top: 1rem;
 
-                    border: solid 0.1px green;
                 }
+
                 .cardEnderecos>.cardEnde {
-                    // border: solid 0.1px green;
-                    margin-bottom: 10px;
+
+                    margin-bottom: 50px;
                     margin-left: 50px;
                     margin-right: 50px;
                     margin-top: 20px;
                 }
-        
 
-                .botão{
+                .infos {
                     display: flex;
                     flex-direction: row;
                     justify-content: flex-end;
-                    width: 94%;
-                    height: 2.5rem;
 
-                    // border: solid 0.1px blueviolet;
+                    // border: solid 0.2px #69160A;
+                    
+                    .botão {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-end;
+                        padding-right: 1rem;
+                        
+                        width: 20%;
+                        height: 2.5rem;
+                        // border: solid 0.2px green;
 
-                    button{
-                        width: 15%;
-                        background-color:#69160A;
-                        color: #ffffff;
-                        border-radius: 3px;
+
+                        button {
+                            // border: solid 0.2px green;
+
+                            width: 70%;
+                            background-color: #69160A;
+                            color: #ffffff;
+                            border-radius: 3px;
+                        }
                     }
                 }
-                
 
             }
 
 
         }
-        .rsEscura2{
+
+        .rsEscura2 {
             width: 20%;
-            min-height: 40rem;
+            // min-height: 40rem;
             background-color: #f4929285;
-            border-radius: 3rem 0rem 0rem 3rem ;
+            border-radius: 3rem 0rem 0rem 3rem;
+            margin-bottom: 50px;
+
         }
     }
 
-    .rosaCLara > .rsEscura1 {
-        .rsEscura1{
-            min-height: 0rem;
-        }
-    }
+
+
+
 }
-
-

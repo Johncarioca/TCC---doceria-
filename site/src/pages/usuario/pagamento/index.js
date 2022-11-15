@@ -299,7 +299,7 @@ export default function Pagamento() {
                                             </div>
                                             <div className="li">
                                                 <label>Parcelas:</label>
-                                                <select value={Parcelas} onChange={e => setParcelas(e.target.value)}  >
+                                                <select value={Parcelas} onChange={e => setParcelas(e.target.value)}  className="select" >
                                                     <option disabled hidden selected>Selecione</option>
                                                     <option value={1}>01x à Vista</option>
                                                     <option value={1}>01x sem Juros</option>
@@ -310,7 +310,7 @@ export default function Pagamento() {
 
                                             <div className="li">
                                                 <label>Formas de Pagamento:</label>
-                                                <select value={FormaPag} onChange={e => setFormaPag(e.target.value)}   >
+                                                <select value={FormaPag} onChange={e => setFormaPag(e.target.value)} className="select"  >
                                                     <option disabled hidden selected>Selecione</option>
                                                     <option>Crédito</option>
                                                     <option>Débito</option>
@@ -322,7 +322,7 @@ export default function Pagamento() {
                                     </div>
 
                                     <div className="botãoCt">
-                                        <button className="buttonCt" onClick={CadastraPedido}> 
+                                        <button className="Ct" onClick={CadastraPedido}> 
                                             Finalizar
                                         </button>
                                     </div>

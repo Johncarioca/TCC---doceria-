@@ -19,3 +19,8 @@ export async function EnderecoId(idUser){
     const resposta = await api.get('/user/buscar/endereco/'+ idUser + '/')
     return resposta.data;
 }
+
+export async function ApagarEnderecoId(idEnd){
+    const resposta = await api.delete('/user/apagar/endereco/'+ idEnd )
+    return resposta.data;
+}

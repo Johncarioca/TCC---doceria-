@@ -15,7 +15,7 @@
     }
 
     width: 16rem;
-    height: 9rem;
+    height: 10rem;
     // border: 0.1px solid green;
 
 
@@ -25,17 +25,31 @@
         
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: space-between;
         width: 100%;
         height: 10rem;
         border: 0.1px solid black;
-        // border-radius: 15px;
+        
+        .ex{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            padding-right: 2px;
+            padding-top: 2px;
+            width: 100%;
+            height: 16px;
 
+            .xe{
+                width: 0px;
+                height: 0px;
+            }
+
+        }
 
         .casas {
             display: flex;
             flex-direction: row;
-            // justify-content: space-between;
+            
             width: 85%;
             // border: 0.1px solid blue;
 
@@ -71,6 +85,8 @@
             display: flex;
             flex-direction: column;
             height: 4.2rem;
+            margin-bottom: 1rem;
+
             // border: 0.1px solid green;  
 
             .ph {
@@ -91,29 +107,38 @@
     .cor:hover{
 
         width: 35%;
-        background-color: #883F35;
+        background-color: #A65D53;
         color: #fff;
-        min-height: 9rem;
-        max-height: 9rem;
-        transition: 1.8s;
+        transition: 1s;
+        border-radius: 10px;
 
 
+        .xe{
+            width: 13px;
+            height: 13px;
+            transition: 1s;
 
+        }
         .casas{
             padding-left: 0.4rem;
+            // padding-bottom: 0.4rem;
+
             transition: 1s;
             color: #fff;
         }
 
         .ph{
             padding-left: 1rem;
+            
+
             transition: 1s;
             color: #fff;
         }
         .infosEndere{
-            padding-bottom: 5rem;
+            margin-bottom: 1rem;
 
         }
+
 
 
     }
