@@ -101,7 +101,12 @@ export default function Pagamento() {
     }
   
  
-    
+    function telaCardapio(){
+        Navigate('/cardarpio')
+    }
+    function telaMeusPedidos(){
+        Navigate('/meuspedidos')
+    }
 
     
 
@@ -194,23 +199,23 @@ export default function Pagamento() {
 
                         <div className="Minhas">
 
-                            <div >
+                            <div onClick={telaMeusPedidos} >
 
                                 <img src="../assets/image/carrinhoPreto.png" alt="" />
 
                             </div>
 
-                            <p> Minhas Compras </p>
+                            <p onClick={telaMeusPedidos}> Minhas Compras </p>
 
                         </div>
                         <div className="Minhas">
 
-                            <div >
+                            <div onClick={telaCardapio}>
 
                                 <img src="../assets/image/IconeCardapio.png" alt="" />
 
                             </div>
-                            <p>Cardápio</p>
+                            <p onClick={telaCardapio}> Cardápio</p>
 
                         </div>
 

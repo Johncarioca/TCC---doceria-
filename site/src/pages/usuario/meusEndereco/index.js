@@ -60,6 +60,9 @@ export default function MeusEndereco() {
     function telaCardapio(){
         Navigate('/cardarpio')
     }
+    function telaMeusPedidos(){
+        Navigate('/meuspedidos')
+    }
         
     // async function ApagarEndereco() {
         
@@ -102,9 +105,9 @@ export default function MeusEndereco() {
 
                         <div className="Minha">
 
-                            <div >
+                            <div onClick={telaMeusPedidos} >
 
-                                <img src="../assets/image/carrinhoPreto.png" alt="" />
+                                <img src="../assets/image/carrinhoPreto.png" alt="" onClick={telaMeusPedidos}/>
 
                             </div>
 
@@ -118,7 +121,7 @@ export default function MeusEndereco() {
                                 <img onClick={telaCardapio} src="../assets/image/IconeCardapio.png" alt="" />
 
                             </div>
-                            <p href='/cardapio'>Cardapio</p>
+                            <p onClick={telaCardapio}>Cardapio</p>
 
                         </div>
 

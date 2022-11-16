@@ -1,12 +1,10 @@
 import './index.scss'
-
 import { useState } from 'react'
-
 import CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
 import { CadastroUsuar, ImagemCadastroUser } from '../../../api/usuario/loginUserAPI';
-
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import RodapeLand2 from '../../../components/rodapeLand-2';
 
 export default function CadastroUsuario() {
 
@@ -121,6 +119,7 @@ export default function CadastroUsuario() {
                 </div>
 
             </section>
+            <RodapeLand2/>
         </main>
 
     );

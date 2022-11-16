@@ -7,10 +7,13 @@ import ItemCarrinho from '../../../components/itemcarrinho';
 import { useState, useEffect } from 'react'
 import storage from 'local-storage';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
+import { useNavigate } from 'react-router-dom';
 
 export default function CarrinhoUsuario(){
 
     const [itens, setItens] = useState([]);
+
+    const Navigate = useNavigate();
 
     function Valortotal() {
         let total = 0 ;
@@ -24,6 +27,10 @@ export default function CarrinhoUsuario(){
     function ItensQtd() {
         return itens.length
         
+    }
+
+    function telaMeusEnderecos() {
+        Navigate('/meusendereco')
     }
 
 
@@ -114,9 +121,9 @@ export default function CarrinhoUsuario(){
                                             <p>R$: {Valortotal()}</p>
                                         </div>
                                     </div>
-                                    <div className="botto">
+                                    <div className="botto" onClick={telaMeusEnderecos}>
 
-                                     <button className='bt'> Continuar</button> 
+                                     <button className='bt' onClick={telaMeusEnderecos}> Continuar</button> 
                                     
                                     </div>
                                 </div>

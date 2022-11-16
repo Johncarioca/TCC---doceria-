@@ -1,9 +1,7 @@
 import './index.scss'
 import { useRef, useState } from 'react';
-
 import CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
 import { loginUsuario } from '../../../api/usuario/loginUserAPI.js';
-
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Storage from 'local-storage';
@@ -96,6 +94,7 @@ export default function LoginUsuario() {
 
 
             </section>
+            
 
         </main>
     );

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { toast } from 'react-toastify'
+import RodapeLand2 from '../../../components/rodapeLand-2';
 
 
 export default function DetalhesProdutos(){
@@ -110,11 +111,7 @@ export default function DetalhesProdutos(){
                                     </div>
                                 
                                 </div>
-                                <div className="qtdInput">
-
-                                    <div className="a">Quantidade: <input type="number" /></div>
                                 
-                                </div>
                             </div>
 
                         </div>
@@ -126,6 +123,8 @@ export default function DetalhesProdutos(){
                 </section>
             
             </section>
+            <RodapeLand2/>
+
         </main>
     );
 }

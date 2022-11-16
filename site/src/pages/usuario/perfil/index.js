@@ -5,6 +5,8 @@ import CabCarrinho from '../../../components/cabecarioCarrinho';
 import BarraLateral from '../../../components/lateralPerfil';
 import { useEffect, useState } from 'react';
 import { UsePerfil } from '../../../api/usuario/loginUserAPI.js';
+import RodapeLand2 from '../../../components/rodapeLand-2';
+
 
 export default function PerfilUser() {
 
@@ -147,6 +149,7 @@ export default function PerfilUser() {
                 </div>
 
             </div>
+            <RodapeLand2/>
 
 
         </main>

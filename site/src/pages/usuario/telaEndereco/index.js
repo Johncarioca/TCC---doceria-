@@ -39,6 +39,16 @@ export default function TelaEndereco(){
         }
     }
 
+    function Perfil() {
+        Navigate('/perfil')
+    }
+    function Meuspedidos() {
+        Navigate('/meuspedidos')
+    }
+    function Cardapio() {
+        Navigate('/cardapio')
+    }
+
     return(
         <main className="telaEndereco">
             <div>
@@ -52,33 +62,33 @@ export default function TelaEndereco(){
 
                         <div className="Minhas">
 
-                            <div >
+                            <div onClick={Perfil} >
 
                                 <img src="../assets/image/loginPreto.png" alt="" />
                             
                             </div>
-                            <p> Minha Conta</p>
+                            <p onClick={Perfil}> Minha Conta</p>
     
                         </div>
                         <div className="Minhas">
 
-                            <div >
+                            <div onClick={Meuspedidos}>
                             
                                 <img src="../assets/image/carrinhoPreto.png" alt="" />
                             
                             </div>
                             
-                            <p> Minhas Compras </p>
+                            <p onClick={Meuspedidos}> Minhas Compras </p>
     
                         </div>
                         <div className="Minhas">
 
-                            <div >
+                            <div onClick={Cardapio}>
                             
                                 <img src="../assets/image/IconeCardapio.png" alt="" />
                             
                             </div>
-                            <p>Cardápio</p>
+                            <p onClick={Cardapio}>Cardápio</p>
     
                         </div>
 

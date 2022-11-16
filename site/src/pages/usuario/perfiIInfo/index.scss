@@ -173,10 +173,18 @@
                     // border: solid 0.1px blueviolet;
 
                     .nome{
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        height: 2.6rem;
+                        padding-left: 3rem;
                         align-items: center;
                         width: 21.5%;
                         font-size: 14px;
                         font-weight: 550;
+
+                        
+
 
                     }
 
@@ -193,9 +201,11 @@
 
                     }
                     .cpf{
-                        // border: solid 0.1px blueviolet;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        height: 2.6rem;
                         margin-right: 1.2rem;
-
                         align-items: center;
                         font-weight: 500;
                     }
@@ -205,7 +215,7 @@
                 .pitu{
                     display: flex;
                     flex-direction: row;
-                    justify-content: flex-end;
+                    justify-content: flex-start;
                     width: 69%;
                     height:3rem;
                     margin-bottom: 1rem;
@@ -218,49 +228,61 @@
                         justify-content: flex-end;
 
 
-                        width: 60%;
+                        width: 94%;
                         // border: solid 0.1px red;
 
-                        input{
+                        .inputDN{
                             padding-left: 1rem;
-                            width: 50%;
-                            margin-right: 1.4rem;
+                            width: 86%;
+                            // margin-right: 2rem;
                             border-radius: 5px;
 
                         }
 
                         p{
-                            padding-right: 1.2rem;
-
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            width: 30%;
+                            height: 2.6rem;
                             align-self: center;
-                            font-size: 11px;
-                            font-weight: 500;
-
+                            font-size: 12.3px;
+                            font-weight: 600;
 
                         }
+                        
 
                     }
+                    
 
                     .cell{
                         display: flex;
                         flex-direction: row;
-                        justify-content: flex-end;
-                        width: 46%;
-                        p{
-                            padding-right: 0.5rem;
-                            align-self: center;
+                        justify-content: flex-start;
+                        width: 94%;
+                        
+
+                        .pN{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: center;
+                            height: 2.6rem;
+                            width: 26%;
+                            align-self: flex-end;
+                            font-size: 16px;
                             font-weight: 600;
+                            padding-left: 1.6rem;
 
                         }
-                        input{
-                            width: 72%;
-                            padding-left: 1rem;
+                        .inputN{
+                            width: 63%;
                             border-radius: 5px;
 
+                            
                         }
 
 
-                        // border: solid 0.1px black;
+                        
                         
                     }
                 }

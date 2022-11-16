@@ -52,6 +52,13 @@ export default function AlterarPerfilUser() {
         }
     }
 
+    function telaMeusPedidos() {
+        Navigate('/meuspedidos')
+    }
+    function telacardapio() {
+        Navigate('/cardapio')
+    }
+
     return (
         <main className="telaEndereco">
             <div>
@@ -67,21 +74,21 @@ export default function AlterarPerfilUser() {
 
                             <div >
 
-                                <img src="../assets/image/carrinhoPreto.png" alt="" />
+                                <img src="../assets/image/carrinhoPreto.png" alt="" onClick={telaMeusPedidos}/>
 
                             </div>
 
-                            <p> Minhas Compras </p>
+                            <p onClick={telaMeusPedidos}> Minhas Compras </p>
 
                         </div>
                         <div className="Minhas">
 
                             <div >
 
-                                <img src="../assets/image/IconeCardapio.png" alt="" />
+                                <img src="../assets/image/IconeCardapio.png" alt="" onClick={telacardapio}/>
 
                             </div>
-                            <p>Cardápio</p>
+                            <p onClick={telacardapio}>Cardápio</p>
 
                         </div>
 
@@ -149,17 +156,17 @@ export default function AlterarPerfilUser() {
                                         Data de Nascimento
                                     </p>
 
-                                    <input placeholder='07/10/2004' type="text" value={Nascimento} onChange={e => setNascimento(e.target.value)} />
+                                    <input className="inputDN" placeholder='07/10/2004' type="text" value={Nascimento} onChange={e => setNascimento(e.target.value)} />
                                 </div>
 
                             </div>
                             <div className="pitu">
                                 <div className="cell">
-                                    <p>
+                                    <p className="pN">
                                         Número
                                     </p>
 
-                                    <input placeholder='()' type="text" value={Numero} onChange={e => setNumero(e.target.value)} />
+                                    <input className="inputN" placeholder='()' type="text" value={Numero} onChange={e => setNumero(e.target.value)} />
                                 </div>
                             </div>
 
