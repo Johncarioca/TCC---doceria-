@@ -5,6 +5,7 @@ import "./index.scss";
 import { AlterarESUsuar, UsePerfil } from "../../../api/usuario/loginUserAPI";
 import { useNavigate } from "react-router-dom";
 
+
 export default function AlterarEmail() {
 
 
@@ -46,6 +47,7 @@ export default function AlterarEmail() {
 
   return (
     <main className="alterar-email">
+      
       <header className="AE-header">
         <a className="AE-header-set" href="">
           <img className="AE-set" src="../assets/image/setinha.png" alt="" />

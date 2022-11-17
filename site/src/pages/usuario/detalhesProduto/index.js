@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { toast } from 'react-toastify'
+import Block from '../../../components/block';
 
 
 
@@ -55,6 +56,7 @@ export default function DetalhesProdutos(){
 
     return (
         <main>
+            <Block />
             <CardDetalhes/>
 
             <section className="DetalhesProdutos">

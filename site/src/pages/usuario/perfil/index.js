@@ -6,6 +6,8 @@ import BarraLateral from '../../../components/lateralPerfil';
 import { useEffect, useState } from 'react';
 import { UsePerfil } from '../../../api/usuario/loginUserAPI.js';
 import RodapeLand2 from '../../../components/rodapeLand-2';
+import Block from '../../../components/block';
+
 
 
 export default function PerfilUser() {
@@ -29,6 +31,7 @@ export default function PerfilUser() {
 
     return (
         <main className="perfil-user">
+            <Block />
 
             <header>
                 <CabCarrinho />

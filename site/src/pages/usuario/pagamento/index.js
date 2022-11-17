@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 
 import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
+import Block from '../../../components/block/index.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 // import { idEndereco } from '../services/funcoesEntrePag.js';
 
@@ -188,6 +189,7 @@ export default function Pagamento() {
 
     return (
         <main className="telapagamento">
+            <Block />
             <div>
                 <CabeçarioLogin />
             </div>

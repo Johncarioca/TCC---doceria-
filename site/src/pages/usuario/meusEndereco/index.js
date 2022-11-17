@@ -7,6 +7,7 @@ import CardEndereco from '../../../components/cardEndereco';
 import './index.scss'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Block from '../../../components/block/index.js';
 
 
 
@@ -94,6 +95,7 @@ export default function MeusEndereco() {
 
     return (
         <main className="MeusPedidos" >
+            <Block />
             <div>
                 <CabeçarioLogin />
             </div>

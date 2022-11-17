@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Storage from 'local-storage';
 import { Listapedidos } from '../../../api/usuario/pedidoAPI';
 import { toast } from 'react-toastify';
+import Block from '../../../components/block';
 
 
 
@@ -50,6 +51,7 @@ export default function MeusPedidos() {
     return (
 
         <main className="geral">
+            <Block />
             <CabecarioPedido/>
 
 

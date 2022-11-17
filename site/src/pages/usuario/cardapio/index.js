@@ -13,6 +13,7 @@ import RodapeLand2 from '../../../components/rodapeLand-2';
 import { ProdutosDestaque, BuscarProdutoCardapio, CategoriaBolo, CategoriaDoces, CategoriaKits, CategoriaSalgados, CategoriaTortas } from '../../../api/usuario/cardapioAPI.js';
 
 import { useEffect, useState } from 'react';
+import Block from '../../../components/block';
 
 export default function Cardapio() {
 
@@ -146,6 +147,7 @@ export default function Cardapio() {
     return (
 
         <main className="geral">
+            <Block />
 
             <header className="osTres">
 

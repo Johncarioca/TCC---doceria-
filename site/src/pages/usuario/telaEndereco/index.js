@@ -6,6 +6,7 @@ import Storage from 'local-storage';
 import { toast } from 'react-toastify' 
 import { CadastroEndereco } from '../../../api/usuario/enderecoAPI';
 import { useNavigate } from 'react-router-dom';
+import Block from '../../../components/block';
 
 export default function TelaEndereco(){
 
@@ -51,6 +52,7 @@ export default function TelaEndereco(){
 
     return(
         <main className="telaEndereco">
+            <Block />
             <div>
                 <CabeçarioLogin/>
             </div>

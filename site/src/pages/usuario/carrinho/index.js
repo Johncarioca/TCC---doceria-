@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react'
 import storage from 'local-storage';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
 import { useNavigate } from 'react-router-dom';
-
+import Block from '../../../components/block';
 export default function CarrinhoUsuario(){
 
     const [itens, setItens] = useState([]);
@@ -75,6 +75,7 @@ export default function CarrinhoUsuario(){
     return(
 
         <main className="carrimhousuario">
+            <Block />
             <header>
             <CabCarrinho/>
             </header>

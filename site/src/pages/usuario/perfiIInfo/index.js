@@ -7,6 +7,7 @@ import './index.scss'
 import { AlterarImagemUser, AlterarUsuar } from '../../../api/usuario/loginUserAPI';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar'
+import Block from '../../../components/block';
 
 
 
@@ -61,6 +62,7 @@ export default function AlterarPerfilUser() {
 
     return (
         <main className="telaEndereco">
+            <Block />
             <div>
                 <CabeçarioLogin />
             </div>
