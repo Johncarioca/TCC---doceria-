@@ -187,7 +187,7 @@ export default function Pagamento() {
 
 
     return (
-        <main className="telaEndereco">
+        <main className="telapagamento">
             <div>
                 <CabeçarioLogin />
             </div>
@@ -197,7 +197,7 @@ export default function Pagamento() {
 
                     <div className="textImage">
 
-                        <div className="Minhas">
+                        <div className="Minhas" onClick={telaMeusPedidos} >
 
                             <div onClick={telaMeusPedidos} >
 
@@ -242,19 +242,20 @@ export default function Pagamento() {
 
                             <div className="tpPagamentos">
 
-                                <div className=" imgTp" onClick={exibirCartao}>
+                                <div className=" imgTp" onClick={exibirCartao} style={{ backgroundColor: MostrarCartão === true && MostrarBoleto === false && MostrarPix === false ? '#C6B0AD': '' }}>
 
-                                    <div className='imgCartão'>
-                                        <img className="cartão" src="../assets/image/iconCartão.png" alt="" />
+
+                                    <div className='imgCartão' >
+                                        <img onClick={exibirCartao} className="cartão" src="../assets/image/iconCartão.png" alt="" />
                                     </div>
 
                                     <div className="tpTexte">
-                                        <p>Cartão</p>
+                                        <p onClick={exibirCartao}>Cartão</p>
                                     </div>
 
                                 </div>
 
-                                <div className=" imgTp" onClick={exibirPix}>
+                                <div className=" imgTp" onClick={exibirPix} style={{ backgroundColor: MostrarCartão === false && MostrarBoleto === false && MostrarPix === true ? '#C6B0AD': '' }}>
                                     <div className='imgPix'>
                                         <img className="Pix" src="../assets/image/pix.png" alt="" />
                                     </div>
@@ -263,7 +264,7 @@ export default function Pagamento() {
                                     </div>
                                 </div>
 
-                                <div className=" imgTp" onClick={exibirBoleto}>
+                                <div className=" imgTp" onClick={exibirBoleto}  style={{ backgroundColor: MostrarCartão === false && MostrarBoleto === true && MostrarPix === false ? '#C6B0AD': '' }}>
                                     <div className='img'>
                                         <img className="i" src="../assets/image/boleto.png" alt="" />
                                     </div>
@@ -285,27 +286,27 @@ export default function Pagamento() {
                                         <div className="tresInputs">
                                             <div className="li">
                                                 <label> Nº do cartão</label>
-                                                <input placeholder='Rua...' type="text" value={Numero} onChange={e => setNumero(e.target.value)} />
+                                                <input placeholder='0' type="text" value={Numero} onChange={e => setNumero(e.target.value)} />
                                             </div>
                                             <div className="li">
                                                 <label> Nome do cartão</label>
-                                                <input placeholder='Rua...' type="text" value={Nome} onChange={e => setNome(e.target.value)} />
+                                                <input placeholder='Visa' type="text" value={Nome} onChange={e => setNome(e.target.value)} />
                                             </div>
                                             <div className="li">
                                                 <label>Vencimento </label>
-                                                <input placeholder='Rua...' type="text" value={Vencimento} onChange={e => setVencimento(e.target.value)} />
+                                                <input placeholder='10/out' type="text" value={Vencimento} onChange={e => setVencimento(e.target.value)} />
                                             </div>
                                         </div>
 
                                         <div className="tresInputs">
                                             <div className="li">
                                                 <label> Código de segurança</label>
-                                                <input placeholder='Rua...' type="text" value={codSeguranca} onChange={e => setcodSeguranca(e.target.value)} />
+                                                <input placeholder='0' type="text" value={codSeguranca} onChange={e => setcodSeguranca(e.target.value)} />
                                             </div>
                                             <div className="li">
                                                 <label>Parcelas:</label>
-                                                <select value={Parcelas} onChange={e => setParcelas(e.target.value)}  className="select" >
-                                                    <option disabled hidden selected>Selecione</option>
+                                                <select value={Parcelas} onChange={e => setParcelas(e.target.value)}  className="select" placeholder='Rua...' >
+                                                    <option>Selecione</option>
                                                     <option value={1}>01x à Vista</option>
                                                     <option value={1}>01x sem Juros</option>
                                                     <option value={2}>02x sem Juros</option>
@@ -316,7 +317,7 @@ export default function Pagamento() {
                                             <div className="li">
                                                 <label>Formas de Pagamento:</label>
                                                 <select value={FormaPag} onChange={e => setFormaPag(e.target.value)} className="select"  >
-                                                    <option disabled hidden selected>Selecione</option>
+                                                    <option>Selecione</option>
                                                     <option>Crédito</option>
                                                     <option>Débito</option>
                                                 </select>
@@ -349,11 +350,11 @@ export default function Pagamento() {
 
                                             <div className="li">
                                                 <label> CPF</label>
-                                                <input placeholder='Rua...' type="text"  value={CPF} onChange={e => setCpf(e.target.value)}/>
+                                                <input placeholder='255' type="text"  value={CPF} onChange={e => setCpf(e.target.value)}/>
                                             </div>
                                             <div className="li">
                                                 <label> Email</label>
-                                                <input placeholder='Rua...' type="text" value={Email} onChange={e => setEmail(e.target.value)}/>
+                                                <input placeholder='@gmail.com' type="text" value={Email} onChange={e => setEmail(e.target.value)}/>
                                             </div>
 
                                         </div>
@@ -388,11 +389,11 @@ export default function Pagamento() {
 
                                             <div className="lib">
                                                 <label> Numero</label>
-                                                <input placeholder='Rua...' type="text" value={NumeroCell} onChange={e => setNumeroCell(e.target.value)}/>
+                                                <input placeholder='0.' type="text" value={NumeroCell} onChange={e => setNumeroCell(e.target.value)}/>
                                             </div>
                                             <div className="lib">
                                                 <label> codigo do boleto</label>
-                                                <input placeholder='Rua...' type="text" value={codBoleto} onChange={e => setCodBoleto(e.target.value)}/>
+                                                <input placeholder='0' type="text" value={codBoleto} onChange={e => setCodBoleto(e.target.value)}/>
                                             </div>
 
                                         </div>

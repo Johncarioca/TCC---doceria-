@@ -295,7 +295,7 @@ export default function Cardapio() {
 
             </section>
 
-            <RodapeLand2 />
+            <RodapeLand2/>
 
         </main>
     );

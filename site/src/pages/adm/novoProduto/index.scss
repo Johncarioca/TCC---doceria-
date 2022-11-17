@@ -131,6 +131,7 @@
                     height: 13rem;
                     max-width: 25rem;
                     border-radius: 2rem;
+                    padding-left: 2rem;
                 }
 
 
@@ -164,6 +165,7 @@
                 border: none;
                 appearance: none;
                 width: 100%;
+                // padding-left: 1rem;
             }
 
 
@@ -189,10 +191,24 @@
                 p {
                     color: #69160A;
                 }
+                
             }
         }
+        
+        .destaque{
+            width: 2rem;
+            height: 2rem;
+            border-radius: 140px;
+        }
+
         input, textarea, select{
             outline: none;
+            padding-left: 1rem;
+
+        }
+        textarea{
+            padding-left: 2rem;
+
         }
 
     }

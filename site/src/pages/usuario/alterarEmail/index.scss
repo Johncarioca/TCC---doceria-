@@ -4,14 +4,15 @@
   box-sizing: border-box;
   height: 100vh;
 
-  // * {
-  //   border: 2px solid pink;
-  // }
+  *{
+    outline: none;
+  }
+
 
   .AE-header {
     display: flex;
     flex-direction: row;
-    height: 11vh;
+    height: 14vh;
     background-color: #69160a;
 
     .AE-header-set {
@@ -22,6 +23,7 @@
 
       .AE-set {
         width: 75%;
+        padding-left: 2rem;
       }
     }
 
@@ -39,7 +41,8 @@
     justify-content: center;
     align-items: center;
     background-image: url(../../../../public/assets/image/back-AlterarEmail.png);
-    background-size: 100%;
+    background-size: 100% 100% ;
+    background-repeat: no-repeat;
 
     .AE-sec-foto {
       display: flex;
@@ -73,10 +76,13 @@
     .AE-inputs-pos {
       display: flex;
       flex-direction: column;
-      height: 4em;
+      height: 5.5rem;
       width: 21em;
       color: #ffffff;
       margin: 10px 0px;
+      
+
+      
 
       .AE-input {
         height: 100%;
@@ -84,6 +90,7 @@
         border-radius: 8px;
         border-style: none;
         background-color: #eedccf;
+        padding-left: 1rem;
       }
     }
 
@@ -100,5 +107,8 @@
         color: #ffffff;
       }
     }
+  }
+  label{
+    margin-bottom: 1rem;
   }
 }

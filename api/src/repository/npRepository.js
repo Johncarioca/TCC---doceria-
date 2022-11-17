@@ -17,7 +17,7 @@ export async function ImagemProduto(imagen, id){
     `
         update tb_produto
            set img_produto   = ?
-        where id_produto    = ?
+        where id_produto    = ?;
     `
     const [resposta] = await con.query(comando, [imagen, id]);
     return resposta;

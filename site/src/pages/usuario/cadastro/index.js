@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import RodapeLand2 from '../../../components/rodapeLand-2';
 import { useNavigate } from 'react-router-dom';
 
-export default function CadastroUsuario() {
+export default function  CadastroUsuario() {
 
     const [Email, setEmail] = useState('');
     const [Senha, setSenha] = useState('');
@@ -30,7 +30,7 @@ export default function CadastroUsuario() {
             // console.log(r.id);
             await ImagemCadastroUser(imangen, r.id);
             toast.dark('Usuario foi cadastrado ');
-            Navigate('/login')
+            Navigate('/login');
         }
         catch (err) {
             toast.error(err.response.data.erro);
@@ -78,7 +78,7 @@ export default function CadastroUsuario() {
 
                         <div className='inpucont-cadastro'>
                             <label>Senha:</label>
-                            <input className='input-cadastro' type="password" value={Senha} onChange={e => setSenha(e.target.value)} />
+                            <input className='input-cadastro' placeholder='***' type="password" value={Senha} onChange={e => setSenha(e.target.value)} />
                         </div>
                         <div className='inpucont-cadastro'>
                             <label > Nome:</label>

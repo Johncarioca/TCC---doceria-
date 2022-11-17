@@ -48,7 +48,7 @@ export default function TabelaProduto(){
     }, []); 
 
     return (
-        <main className="page-tabela">
+        <main className="LPed">
             <ToastContainer/>
 
             <header className='cabeçalho-TP'> 
@@ -77,16 +77,16 @@ export default function TabelaProduto(){
                 
             </header>
 
-            <section className="corpo">
+            <section className="sec">
 
-                <div className="barraPesquisa">
+                <div className="Bpesquisa-LP">
 
                     <input type="text" placeholder='Pesquisa...' value={Filtro} onChange={e => setFiltro(e.target.value)} /> 
 
                     <img src="/assets/image/lupa.png" alt="" onClick={FiltraProduto}/>
                 </div>
 
-                <div className="tabela">
+                <div className="tabelas">
                     <table> 
                         <thead>
                             <tr key="">
@@ -106,14 +106,14 @@ export default function TabelaProduto(){
                             {Produto.map( item =>
 
                                 <tr>
-                                    <td>{item.id}</td>
-                                    <td>{item.nome}</td>
-                                    <td>{item.preco}</td>
-                                    <td>{item.peso}</td>
-                                    <td>{item.estoque}</td>
-                                    <td>{item.sinopse}</td>
-                                    <td>{item.categoria}</td>
-                                    <td>{item.destaque ? 'Sim' : 'Não'}</td>
+                                    <td className='a'>{item.id}</td>
+                                    <td className='a'>{item.nome}</td>
+                                    <td className='a'>{item.preco}</td>
+                                    <td className='a'>{item.peso}</td>
+                                    <td className='a'>{item.estoque}</td>
+                                    <td className='a'>{item.sinopse}</td>
+                                    <td className='a'>{item.categoria}</td>
+                                    <td className='a'>{item.destaque ? 'Sim' : 'Não'}</td>
                                     <td className="imgs">
                                     <button className="but" onClick={()=>editar(item.id)} ><img src="/assets/image/alterar.png" alt="editar" className='editar'/></button>
                                     <button onClick={()=>removerProduto(item.id)}><img src="/assets/image/apagar.png" alt="nao" className='nao'/></button>

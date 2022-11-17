@@ -80,7 +80,7 @@ export default function LoginUsuario() {
 
                         <div className='inpucont-loginuser'>
                             <label>Senha:</label>
-                            <input className='input-loginuser' type="password" value={senha} onChange={e => SetSenha(e.target.value)} />
+                            <input className='input-loginuser' placeholder='***' type="password" value={senha} onChange={e => SetSenha(e.target.value)} />
                         </div>
 
                         <div className="link-loginuser" >

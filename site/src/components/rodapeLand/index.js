@@ -6,7 +6,7 @@ export default function RodapeLand() {
       <div className="rod-pos">
         {/* mapa */}
         <section className="rodl-sec1">
-          <div className="rod-logo">
+          <div className="rood-logo">
             <img src="./assets/image/oi.png" alt="" />
           </div>
 
@@ -28,7 +28,7 @@ export default function RodapeLand() {
             <p>nas redes sociais</p>
           </div>
 
-          <div className="rodl-sec2-img">
+          <div className="roodl-sec2-img">
             <img src="./assets/image/twitter.png" alt="" />
             <img src="./assets/image/instagram.png" alt="" />
             <img src="./assets/image/facebook.png" alt="" />

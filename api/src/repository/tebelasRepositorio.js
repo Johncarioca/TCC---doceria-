@@ -36,7 +36,7 @@ export async function BuscarNome(nome) {
                 nm_categoria            as categoria
            from tb_produto
      inner join tb_categoria on tb_categoria.id_categoria = tb_produto.id_categoria
-          where nm_produto like ?
+          where nm_produto like ?;
     `
     const [registro] = await con.query(comando, [`%${nome}%`]);
     return registro;
@@ -56,7 +56,7 @@ export async function BuscarProdutoId(idProduto){
     ds_sinopse              as sinopse,
     bt_destaque             as destaque
     from tb_produto
-    where id_produto = ?  `
+    where id_produto = ?;  `
 
     const [registros] = await con.query(comando ,[idProduto]);
     return registros[0];

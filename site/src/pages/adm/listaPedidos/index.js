@@ -43,7 +43,7 @@ export default function LPedidos() {
         </div>
       </header>
 
-      <section className="sec">
+      <section className="seec">
         <div className="Bpesquisa-LP">
           <input type="text" placeholder="Pesquisa..." />
 

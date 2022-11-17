@@ -1,8 +1,8 @@
-.telaEndereco{
+.telapagamento{
 
     
 
-    height: 60rem;
+    height: 64rem;
     background-color: #FDE5DE;
 
     .sectionPrincipal{
@@ -103,7 +103,7 @@
                         align-items: center;
                         width: 60%;
                         height: 3rem; 
-                        background-color: #C6B0AD;
+                        background-color: #7e716f;
                         
 
                         // border: solid 0.1px blueviolet;
@@ -194,28 +194,28 @@
                                 }
 
                             }
-                            .botãoCt{
-                                display: flex;
-                                flex-direction: row;
-                                justify-content: center;
-                                background-color:#69160A!important;
 
-                                width: 94%;
+
+                        }
+                        .botãoCt{
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: flex-start;
+                            
+
+                            width: 94%;
+                            height: 2.5rem;
+        
+                            
+        
+                            .Ct{
+                                width: 20%;
                                 height: 2.5rem;
-            
-                                border: solid 0.1px blueviolet;
-            
-                                .Ct{
-                                    width: 80%;
-                                    height: 2.5rem;
-                                    background-color:#69160A !important;
-                                    color: #ffffff;
-                                    border-radius: 3px;
-                                border: solid 0.1px blueviolet;
+                                background-color:#69160A !important;
+                                color: #ffffff;
+                                border-radius: 3px;
 
-                                }
                             }
-
                         }
 
                            

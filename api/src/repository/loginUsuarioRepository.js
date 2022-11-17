@@ -2,12 +2,12 @@ import { con } from './conection.js'
 
 export async function loginUsuario(email, senha) {
   const comando =
-    `   
+  `   
     select  tb_usuario.id_usuario     as id,
-		        nm_usuario       		  as nome
-		 from tb_usuario
-		where ds_email = ?
-		  and ds_senha =  md5(?);
+	 	        nm_usuario       		  as nome
+	  	 from tb_usuario
+		  where ds_email = ?
+		    and ds_senha =  md5(?);
   `
   const [registro] = await con.query(comando, [email, senha]);
   return registro[0];
@@ -93,7 +93,7 @@ export async function PerfilUser(idUser) {
                         ds_email         		as email
                    from tb_usuario
              inner join tb_endereco on tb_endereco.ds_rua = tb_endereco.ds_rua
-                  where tb_usuario.id_usuario = 1;
+                  where tb_usuario.id_usuario = ?;
   `
   const [registro] = await con.query(comando, [idUser]);
   return registro[0];

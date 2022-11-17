@@ -15,7 +15,6 @@
         align-items: center;
         height: 32em;
         width: 64em;
-    //    border: 1px green solid;
 
     }
 
@@ -26,7 +25,7 @@
         display: flex;
         flex-direction: row;
         background-image:url(../../../../public/assets/image/fund_cadastrouser.png);
-        width: 100vw;
+        width: 100%;
         height: 90vh; 
         background-repeat: no-repeat;
         background-size: 118% 100%;
@@ -109,6 +108,7 @@
         background-color: #EEDCCF;
         border-radius: 0.5em;
         height: 7vh;
+        padding-left: 1rem;
     }
 
     

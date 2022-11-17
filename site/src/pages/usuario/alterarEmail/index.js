@@ -72,12 +72,12 @@ export default function AlterarEmail() {
 
         <div className="AE-inputs-pos" >
           <label> E-mail:</label>
-          <input className="AE-input" type="text" value={Email} onChange={e => SetEmail(e.target.value)} />
+          <input className="AE-input" placeholder='@gmail.com' type="text" value={Email} onChange={e => SetEmail(e.target.value)} />
         </div>
 
         <div className="AE-inputs-pos" >
           <label> Senha:</label>
-          <input className="AE-input" type="text" value={Senha} onChange={e => SetSenha(e.target.value)} />
+          <input className="AE-input" placeholder='***' type="password" value={Senha} onChange={e => SetSenha(e.target.value)} />
         </div>
 
         <div className="AE-button-pos" onClick={AlterarES}>

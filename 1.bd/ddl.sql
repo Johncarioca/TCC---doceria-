@@ -1,19 +1,6 @@
 create database paticeri ;
 use paticeri;
 show tables ;
-drop tables tb_pedido;
-drop tables tb_pagamento_cartao;
-drop tables tb_produto_pedido;
-
-drop tables tb_login_usuario;
-
-select * from tb_produto;
-select * from tb_categoria;
-select * from tb_usuario;
-select * from tb_admin_login;
-
-
-
 
 /*tabela de login do adm*/
 create table tb_admin_login (
@@ -34,8 +21,8 @@ create table tb_produto(
     id_categoria         int,
     nm_produto           varchar(300),
     img_produto          varchar(500),
-    nr_peso              decimal(5,3),
-    nr_preco             decimal(5,2),
+    nr_peso              decimal(10,3),
+    nr_preco             decimal(10,2),
     ds_sinopse           varchar(300),
     ds_ingredientes      varchar(300),
     nr_estoque           int,
@@ -56,13 +43,7 @@ ds_senha			 varchar(800)
 );
 
 
-create table tb_login_usuario(
-id_login_usuario  			 int primary key auto_increment,
-id_usuario					 int,
-ds_email					 varchar(800),
-ds_senha					 varchar(800),
-foreign key (id_usuario)  references tb_usuario(id_usuario)
-);
+
 
 create table tb_endereco(
 	id_endereco 		int primary key auto_increment,
@@ -112,7 +93,6 @@ create table tb_pagamento_cartao (
     ds_forma_pagamento	varchar(200),
     foreign key (id_pedido) references tb_pedido (id_pedido)
 );
-
 create table tb_pagamento_pix (
 	id_pagamento_pix	int primary key auto_increment,
     id_pedido			int,
@@ -124,7 +104,7 @@ create table tb_pagamento_pix (
 create table tb_pagamento_boleto (
 	id_pagamento_boleto	int primary key auto_increment,
     id_pedido		       	int,
-    nr_telefone           decimal(15),
+    ds_email           	  varchar(100),
     nr_cod_boleto         decimal(15),
     foreign key (id_pedido) references tb_pedido (id_pedido)
 );

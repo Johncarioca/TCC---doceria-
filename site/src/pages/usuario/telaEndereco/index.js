@@ -113,11 +113,11 @@ export default function TelaEndereco(){
                             </div>
 
                             <div className="iptu">
-                                <p>Cep</p> <input placeholder='São paulo' type="text" value={cep} onChange={e => setCEP(e.target.value)}/>
+                                <p>Cep</p> <input placeholder='255' type="text" value={cep} onChange={e => setCEP(e.target.value)}/>
                             </div>
 
                             <div className="iptu">
-                                <p>Bairro</p> <input placeholder='Jd.Orion' type="text" value={bairro} onChange={e => setBairro(e.target.value)}/>
+                                <p>Bairro</p> <input placeholder=' Jd primavera' type="text" value={bairro} onChange={e => setBairro(e.target.value)}/>
                             </div>
                             <div className="iptu">
                                 <p>Estado</p> <input placeholder='RJ' type="text" value={estado} onChange={e => setEstado(e.target.value)}/>
@@ -126,11 +126,11 @@ export default function TelaEndereco(){
                                 <p>Referencia</p> <input placeholder='Casa' type="text" value={referencia} onChange={e => setReferencia(e.target.value)}/>
                             </div>
                             <div className="iptu">
-                                <p>Cidade</p> <input placeholder='Casa' type="text" value={cidade} onChange={e => setCidade(e.target.value)}/>
+                                <p>Cidade</p> <input placeholder='curitiba' type="text" value={cidade} onChange={e => setCidade(e.target.value)}/>
                             </div>
 
                             <div className="textArea">
-                                <p>Complemento</p> <textarea placeholder='Descrição...' cols="30" rows="10" value={complemento} onChange={e => setComplemento(e.target.value)}/> 
+                                <p>Complemento</p> <textarea placeholder='...' cols="30" rows="10" value={complemento} onChange={e => setComplemento(e.target.value)}/> 
                             </div>
 
                             <div className="botão">
