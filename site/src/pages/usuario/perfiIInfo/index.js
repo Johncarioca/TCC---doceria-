@@ -1,19 +1,21 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import storage from 'local-storage';
 
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import './index.scss'
-import { AlterarImagemUser, AlterarUsuar } from '../../../api/usuario/loginUserAPI';
+import { AlterarImagemUser, AlterarUsuar ,UsePerfil } from '../../../api/usuario/loginUserAPI';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar'
 import Block from '../../../components/block';
+import {API_URL} from '../../../api/config.js'
 
+import { ImagemCadastroUser } from '../../../api/usuario/loginUserAPI';
 
 
 export default function AlterarPerfilUser() {
 
-
+    const [Id,setId]= useState();
 
     const [Nome, setNome] = useState('');
     const [imangen, setImangen] = useState();
@@ -28,31 +30,57 @@ export default function AlterarPerfilUser() {
         try {
             let id = storage('Cliente-logado').id;
 
-            const alterar = await AlterarUsuar(id, Nome, Cpf, Nascimento, Numero);
-            let a = await AlterarImagemUser(alterar.id, imangen );
+            await AlterarUsuar(Id, Nome, Cpf, Nascimento, Numero);
+
+            await ImagemCadastroUser(imangen,Id)
+            // await AlterarImagemUser(Id, imangen );
             toast.dark('Informações do usuario foi alterado ');
             Navigate('/perfil');
         }
+
         catch (err) {
             toast.error(err.response.data.erro);
         }
-
-
     }
+
+    async function CarregarInforUser(){
+
+        let id = storage('Cliente-logado').id;
+        const r = await UsePerfil(id);
+        
+        setId(r.id);
+        setNome(r.nome);
+        setCpf(r.cpf);
+        setNascimento(r.nascimento.substr(0,10));
+        setNumero(r.cell);
+
+        if(r.imagem)
+            setImangen(r.imagem);
+    } 
 
 
     function escolherImagem(inputId) {
         document.getElementById(inputId).click();
     }
 
-    function ExibirImagem(imangen) {
+    function ExibirImagem(imangen){
         if (imangen === undefined) {
-            return '/assets/image/SelecionarImagem.png'
-        } else {
-            return URL.createObjectURL(imangen);
+            return '/assets/image/login2.png';
+        } 
+        else if (typeof (imangen) == 'string') {
+            return `${API_URL}/${imangen}`
         }
+        else {
+          return URL.createObjectURL(imangen);
+      
+      }
     }
 
+    useEffect(()=>{
+        CarregarInforUser();
+    },[])
+
+    //Navigate
     function telaMeusPedidos() {
         Navigate('/meuspedidos')
     }
@@ -62,7 +90,8 @@ export default function AlterarPerfilUser() {
 
     return (
         <main className="telaEndereco">
-            {/* <Block /> */}
+            <ToastContainer/>
+            <Block />
             <div>
                 <CabeçarioLogin />
             </div>

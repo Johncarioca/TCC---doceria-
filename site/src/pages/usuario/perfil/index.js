@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { UsePerfil } from '../../../api/usuario/loginUserAPI.js';
 import RodapeLand2 from '../../../components/rodapeLand-2';
 import Block from '../../../components/block';
+import {API_URL} from '../../../api/config.js'
 
 
 
@@ -14,13 +15,30 @@ export default function PerfilUser() {
 
 
     const[infos, setInfos] = useState([]);
+    const[imagem,setImagem]=useState();
 
     async function CarregarInforUser(){
 
         let id = storage('Cliente-logado').id;
         const r = await UsePerfil(id);
         setInfos([r]);
+
+        if(r.imagem)
+            setImagem(r.imagem);
     } 
+
+    function ExibirImagem(imagem){
+        if (imagem === undefined) {
+            return '/assets/image/login2.png';
+        } 
+        else if (typeof (imagem) == 'string') {
+            return `${API_URL}/${imagem}`
+        }
+        else {
+          return URL.createObjectURL(imagem);
+      
+      }
+    }
 
 
     useEffect(() => {
@@ -52,7 +70,7 @@ export default function PerfilUser() {
 
                             <div className="infoclin-1">
 
-                                <img className="imguser" src="../assets/image/ftperfil.png" alt="" />
+                                <img className="imguser" src={ExibirImagem(imagem)} alt="" />
 
                                 <div className='infoC-1'>
 
