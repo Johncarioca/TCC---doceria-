@@ -103,7 +103,7 @@ export default function Pagamento() {
   
  
     function telaCardapio(){
-        Navigate('/cardarpio')
+        Navigate('/cardapio')
     }
     function telaMeusPedidos(){
         Navigate('/meuspedidos')

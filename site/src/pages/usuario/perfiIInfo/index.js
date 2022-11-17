@@ -62,7 +62,7 @@ export default function AlterarPerfilUser() {
 
     return (
         <main className="telaEndereco">
-            <Block />
+            {/* <Block /> */}
             <div>
                 <CabeçarioLogin />
             </div>

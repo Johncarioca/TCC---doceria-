@@ -6,7 +6,7 @@ export async function ListarPedidos(){
             select tb_pedido.id_pedido       	as id,
                     nm_usuario			   		as nome,
                     ds_telefone     			as contato,
-                    qtd_produtos      			as qtdItens,
+                    qtd_itens      			    as qtdItens,
                     vl_total        			as total,
                     ds_status       			as status,
                     dt_pedido       			as data,

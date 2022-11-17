@@ -66,7 +66,7 @@ export default function LPedidos() {
               </tr>
             </thead>
 
-            <tbody>
+            <tbody className="">
               {pedidos.map(item =>
 
                 <tr>
