@@ -1,7 +1,25 @@
 import './index.scss';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
-export default function CabCarrinho() {
+export default function CabCarrinho(props) {
+
+
+    const [Selecionado, setSelecionado] = useState(props.selecionado);
+
+    function Selecionarpag(menu) {
+        setSelecionado(menu)
+    }
+
+
+    function verificar(menu) {
+        if (menu === Selecionado) {
+            return 'selecionado:hover'
+        }
+        else{
+            return'';  
+        }
+    }
+
 
     return (
         <main className="cabcarrinho">
@@ -11,7 +29,7 @@ export default function CabCarrinho() {
                 <div className="img-cab">
                     <div className="SetaLogo">
                         <a href="../">
-                             <img className="setas" src="/assets/image/setinha.png" alt="" />
+                            <img className="setas" src="/assets/image/setinha.png" alt="" />
                         </a>
                         <img className="logos" src="/assets/image/oi.png" alt="" />
 
@@ -21,38 +39,49 @@ export default function CabCarrinho() {
 
                 <div className="links-car">
 
-                    <div className="selecionado">
+                    <div className="selecionado" onClick={() => Selecionarpag('Perfil')}>
+                        <div  className={verificar('perfil')}>
 
-                        <a className="a-car" href="../perfil">
-                            <p className="linkperfl" >Perfil</p>
-                        </a>
-                        <hr /> 
+                            <a className="a-car" href="../perfil" >
+                                <p className="linkperfl" >Perfil</p>
+                            </a>
+                            <hr />
+                        
+                        </div>
+                    </div>
+
+                    <div className="selecionado" onClick={() => Selecionarpag('meusPedidos')}>
+                        <div className={ verificar('MeusPedidos')}>
+
+                            <a className="a-car" href="../meuspedidos">
+                                <p className="linkperfil" >Pedidos</p>
+                            </a>
+                            <hr />
+                        
+                        </div>
+                    </div>
+
+                    <div className="selecionado" onClick={() => Selecionarpag('Carrinho')}>
+                        <div className={verificar('Carrinho')}>
+                        
+                            <a className="a-car" href="../carrinho">
+                                <p className="linkcarrinho" >Carrinho</p>
+                            </a>
+                            <hr />
+                        
+                        </div>
                     </div>
 
                     <div className="selecionado">
-
-                        <a className="a-car" href="../meuspedidos">
-                            <p className="linkperfil" >Pedidos</p>
-                        </a>
-                        <hr /> 
-                    </div>
-                    
-                    <div className="selecionado">
-                        <a className="a-car" href="../carrinho">
-                            <p className="linkcarrinho" >Carrinho</p>
+                        
+                        <a className="a-car" href="../">
+                            <p className="linkhome" >Home</p>
                         </a>
                         <hr />
                     </div>
 
-                    <div className="selecionado">
-                        <a className="a-car" href="../">
-                             <p className="linkhome" >Home</p>
-                        </a>
-                       <hr />
-                    </div>
-                    
                 </div>
-                
+
             </div>
         </main>
     );

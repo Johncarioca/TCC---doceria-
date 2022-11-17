@@ -1,11 +1,12 @@
 import './index.scss'
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CabeçarioLogin from '../../../components/cabecalhoLogin/index.js'
 import { loginUsuario } from '../../../api/usuario/loginUserAPI.js';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Storage from 'local-storage';
 import LoadingBar from 'react-top-loading-bar';
+import storage from 'local-storage'
 
 
 
@@ -41,6 +42,13 @@ export default function LoginUsuario() {
 
         }
     }
+
+
+    useEffect(() =>{
+        if (storage('Cliente-logado')) {
+            Navigate('/perfil')
+        }
+    })
 
     return (
 

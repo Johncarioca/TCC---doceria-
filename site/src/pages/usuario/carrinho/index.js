@@ -77,7 +77,7 @@ export default function CarrinhoUsuario(){
         <main className="carrimhousuario">
             <Block />
             <header>
-            <CabCarrinho/>
+            <CabCarrinho selecionado='Carrinho'/>
             </header>
             <div className = "cont1-carrinho">
                 
