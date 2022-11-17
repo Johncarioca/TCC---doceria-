@@ -42,10 +42,11 @@ server.post('/user/pedido/:idUsuario', async (req,resp) => {
     }
 });
 
-server.get('/api/cardsPedidos', async (req, resp) => {
+server.get('/api/cardsPedidos/:idUsuario', async (req, resp) => {
 
     try {
-        const r = await CardPedidos();
+        const {idUsuario} = req.params; 
+        const r = await CardPedidos(idUsuario);
         
         resp.send(r);
     } 

@@ -1,24 +1,23 @@
 import { useEffect, useState } from "react";
 import "./index.scss";
 
-import { ListaPedido } from "../../../api/adm/tabelasAdmAPI.js";
+  import  {listaPedido} from "../../../api/adm/tabelasAdmAPI.js";
 
 export default function LPedidos() {
 
-    const [pedido,setPedido]=useState([]);
+  const [pedidos, setPedido] = useState([]);
 
-    function lista(){
-      try {
-        const r=ListaPedido();
-        setPedido(r);
-      } catch (err) {
-        alert(err.message);
-      }
-    } 
+  async function lista() {
+    const r = await listaPedido();
 
-    useEffect(() => {
-      lista();
-    },[]);
+    setPedido(r);
+
+    console.log(pedidos);
+  }
+
+  useEffect(() => {
+    lista();
+  }, []);
 
   return (
     <main className="LPed">
@@ -44,7 +43,7 @@ export default function LPedidos() {
         </div>
       </header>
 
-      <section className="sec-LP">
+      <section className="sec">
         <div className="Bpesquisa-LP">
           <input type="text" placeholder="Pesquisa..." />
 
@@ -63,34 +62,24 @@ export default function LPedidos() {
                 <th>Status</th>
                 <th> Data do pedido</th>
                 <th>Tipo de Pagamento</th>
-                <th>Ações</th>
+
               </tr>
             </thead>
+
             <tbody>
-              {pedido.map( item => 
+              {pedidos.map(item =>
 
                 <tr>
-                    <td>{item.info.pedido}</td>
-                    <td>{item.info.cliente}</td>
-                    <td>{item.info.contato}</td>
-                    <td>{item.info.data}</td>
-                    <td>{item.info.status}</td>
-                    <td>{item.info.pagamento}</td>
-                    <td>{item.info.qtdItens}</td>
-                    <td>{item.info.total}</td>
-                    <td className="imgs">
-
-                    <button className="but"  >
-                    <img src="/assets/image/alterar.png" alt="editar" className='editar'/>
-                    </button>
-                    
-                    <button>
-                    <img src="/assets/image/apagar.png" alt="nao" className='nao'/>
-                    </button>
-
-                    </td>
+                  <td className="branco">{item.id}</td>
+                  <td className="cinza">{item.nome}</td>
+                  <td className="branco">{item.contato}</td>
+                  <td className="cinza">{item.qtdItens}</td>
+                  <td className="branco">{item.total}</td>
+                  <td className="cinza">{item.status}</td>
+                  <td className="branco">{item.data}</td>
+                  <td className="cinza">{item.pagamento}</td>
                 </tr>
-                )}
+              )}
             </tbody>
           </table>
         </div>

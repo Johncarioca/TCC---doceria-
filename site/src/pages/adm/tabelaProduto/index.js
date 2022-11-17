@@ -13,7 +13,7 @@ export default function TabelaProduto(){
     const [Produto, setProduto] = useState([]);
     const [Filtro, setFiltro] = useState('');
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
     async function FiltraProduto (){
         const reposta = await BuscarProdutoPelaTabela(Filtro);

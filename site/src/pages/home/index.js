@@ -123,7 +123,7 @@ export default function Home() {
             </p>
           </div>
           <div className="div-p2">
-            <p>
+            <p className="nssCardápio">
               Nosso cardápio é recheado de bolos e salgadinhos pra festa, tortas
               doces e salgadas, lanches de metro, kits completos para
               comemorações coletivas ou caixinhas individuais, comidinhas
@@ -231,10 +231,10 @@ export default function Home() {
       </section>
 
       <section className="Carousel" onClick={CardClick}>
-        <h2>Conheça todos os nossos sabores</h2>
+        <h2 className="nss">Conheça todos os nossos sabores</h2>
 
-        <Carousel breakPoints={breakPoints} >
-          <Categoria img='/assets/image/festa.png' nome='Kit de Festa' />
+        <Carousel breakPoints={breakPoints} onClick={CardClick}>
+          <Categoria img='/assets/image/festa.png' nome='Kit de Festa'  />
           <Categoria img='/assets/image/doces.png' nome='Doces'/>
           <Categoria img='/assets/image/salgados.png' nome='Salgados'/>
           <Categoria img='/assets/image/bolos.png' nome='Bolos'/>

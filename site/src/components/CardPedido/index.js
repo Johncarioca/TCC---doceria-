@@ -1,49 +1,49 @@
 import './index.scss'
 
-export default function CardPedido(){
+export default function CardPedido(props){
 
     return(
         <main className="CardPed">
             <section>
-                <h4> 1°Pedido </h4>
+                <h4> Pedido </h4>
             </section>
 
             <section className="sec-img">
-                <img src="./assets/image/CardPedido/CardPedidoTeste.png" alt="" />
+                <img className='compra' src="./assets/image/bolsaCompras2.png" alt="" />
             </section>
 
             <section className="sec-info1">
-                <p>
-                    Itens:
-                </p>
                 <h4>
-                    12                
+                    Itens: 
                 </h4>
+                <p>
+                    {props.item.itens}           
+                </p>
             </section>
 
             <section className="sec-info1">
-                <p>
+                <h4>
                     Total:
-                </p>
-                <h4>
-                    R$: 
                 </h4>
+                <p>
+                    R$:{props.item.vlTotal},00
+                </p>
             </section>
 
             <section className="sec-info2">
-                <p>
-                    Endereço:
-                </p>
                 <h4>
-                    Rua de inacio de almeida arruada                
+                    Endereço:
                 </h4>
+                <p>
+                    {props.item.rua}         
+                </p>
             </section>
 
             <section className="sec-status">
                 <img src="./assets/image/CardPedido/CardPedido-Entregue.png" alt="" />
-                <h4>
-                    Entregue
-                </h4>
+                <p>
+                    {props.item.status}
+                </p>
             </section>
         </main>
     )

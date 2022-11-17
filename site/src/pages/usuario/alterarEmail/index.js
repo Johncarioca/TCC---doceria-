@@ -61,8 +61,8 @@ export default function AlterarEmail() {
 
             <div className="AE-pos-foto" >
               <img
-                src={item.imagem}
-                alt=""
+                src="../../assets/image/login2.png"
+                alt="F49292"
                 className="AE-foto"
               />
             </div>

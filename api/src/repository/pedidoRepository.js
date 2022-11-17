@@ -90,20 +90,20 @@ export async function InserirPagamentoBoleto(idPedido, nvPagamentoBoleto){
     return infos.affectedRows;
 }
 
-export async function CardPedidos() {
+export async function CardPedidos(idUsuario) {
     const comando =
     `   
        select tb_pedido.id_pedido     		as id,
                         img_produto  		as imagem,
-                        qtd_itens 		as itens,
-                        vl_total 			as itens,
-                        ds_status 		as status,
-                        ds_rua			as rua
+                        qtd_itens 		    as itens,
+                        vl_total 			as vlTotal,
+                        ds_status 		    as status,
+                        ds_rua			    as rua
                     from tb_pedido
             inner join tb_endereco on tb_endereco.ds_rua = tb_endereco.ds_rua
             inner join tb_produto on tb_produto.img_produto = tb_produto.img_produto
-                    where tb_pedido.id_pedido = 1;
+                    where tb_pedido.id_pedido = ?;
     `
-    const [registro] = await con.query(comando);
+    const [registro] = await con.query(comando, [idUsuario]);
     return registro;
 }

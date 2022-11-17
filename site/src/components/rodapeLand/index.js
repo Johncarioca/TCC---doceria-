@@ -10,7 +10,7 @@ export default function RodapeLand() {
             <img src="./assets/image/oi.png" alt="" />
           </div>
 
-          <div className="rod-map">
+          <div className="rod-maap">
             <img src="./assets/image/mapa.png" alt="" />
           </div>
 

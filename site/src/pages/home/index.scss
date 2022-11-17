@@ -125,21 +125,27 @@
         display: flex;
         
         flex-direction: row;
+        justify-content: space-evenly;
         
         background-color: #FDD9C5;
-
+        width: 100%;
         height: 43em;
+        // border: 1px solid green;
+
 
         .d2{
 
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             align-items: center;
 
-            width: 100%;
+            width: 54%;
             padding: 10em;
-            margin-left: 3rem;
+            // margin-left: 3rem;
+            padding-bottom: 10rem;
             
+            // border: 1px solid yellow;
             
 
             .img-section2-d1{
@@ -148,25 +154,36 @@
                 border-radius: 1rem;
                 background-color: #69160A;
 
+                // border: 1px solid green;
                 
             }
             .div-p1{
              
                 font-family: 'sail';
                 font-size: 1.5em;
-                height: 5em;
-                padding: 7rem;
-                padding-bottom: 5em;
+                width: 150%;
+                height: 4rem;
+                text-align: center;
+                
 
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+
+                // border: 1px solid red;
+
             }
             .div-p2{
                 font-family: 'livvic';
                 font-size: 1.5em;
-                height: 1em;
-                width: 22em;
+                height: 10rem;
+                width: 210%;
+                font-size: 20px;
+                // align-items: center;
+                text-align: center;
+                // padding-left: 10rem;
+
+                // border: 1px solid green;
                 
                 
             }
@@ -461,6 +478,11 @@
 
 
       .Carousel{
+
+        .nss{
+            width: 30%;
+            
+        }
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -475,7 +497,10 @@
             font-size: 2rem;
             margin-bottom: 2rem;
         }
-
+        .nss{
+            width: 30%;
+            
+        }
 
         .rec.rec-arrow {
             color: black;

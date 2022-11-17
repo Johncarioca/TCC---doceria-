@@ -15,7 +15,7 @@
         align-items: center;
         height: 32em;
         width: 64em;
-       // border: 1px green solid;
+    //    border: 1px green solid;
 
     }
 
@@ -41,10 +41,10 @@
     .subcon1-cadastro{
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
-        height: 34rem;
+        justify-content: space-between;
+        height: 32rem;
 
-        //border: 1px green solid;
+        // border: 1px black solid;
 
     }
 
@@ -52,10 +52,12 @@
 
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        height: 33rem;
+        justify-content: space-between;
+        // justify-content: end;
+        height: 18rem;
+        margin-top: 14rem;
 
-        //border: 1px green solid;
+        // border: 1px rebeccapurple solid;
 
 
     }
@@ -75,14 +77,34 @@
         width: 17em;
         height: 5rem;
         color: #ffffff;
-        justify-content: center;
+        justify-content: space-evenly;
         
 
-        //border: 1px green solid;
+        // border: 1px red solid;
 
 
     }
-    
+    .Imgcadastro{
+
+        display: flex;
+        flex-direction: column;
+        width: 17em;
+        height: 13rem;
+        color: #ffffff;
+        justify-content: center;
+        
+        .igm{
+            border-radius: 10rem;
+        }
+
+        p{
+            margin-bottom: 0.5rem;
+        }
+
+        // border: 1px red solid;
+
+    }
+
     .input-cadastro{
         background-color: #EEDCCF;
         border-radius: 0.5em;
@@ -101,6 +123,18 @@
 
     .fun-cad{
         width: 18em;
+    }
+    .inpu-cadast{
+        display: flex;
+        flex-direction: column;
+        width: 17em;
+        height: 5rem;
+        color: #ffffff;
+        justify-content: space-evenly;
+        // justify-content: end;
+        
+
+
     }
 
     .inserir-imagem{
@@ -121,6 +155,9 @@
 
     .inserir-imagem input{
         visibility: hidden;
+    }
+    label{
+        margin-bottom: 0.5rem;
     }
 
     .link-logincadastro{

@@ -1,0 +1,725 @@
+.geral {
+
+
+    .osTres {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        align-items: center;
+        background-color: #69160A;
+        width: 100%;
+        height: 10.5rem;
+
+
+        .arroz {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 92%;
+
+
+
+            .SetaLogo {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 22%;
+                margin-bottom: 3rem;
+
+
+                .logos {
+                    width: 14rem;
+                    height: 3rem;
+                }
+
+                .setas {
+                    width: 1.2rem;
+                    height: 1.2rem;
+                }
+            }
+
+            .sdcbk {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: flex-end;
+                text-align: center;
+                width: 60%;
+                height: 4rem;
+                padding-right: 1.5rem;
+
+            }
+
+
+            .imgsIcons {
+
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 8%;
+                height: 2.5rem;
+                align-self: flex-start;
+
+                .inconLogin {
+                    width: 1.8rem;
+                    height: 2.4rem;
+                }
+
+                .inconCarrinho {
+                    width: 2.6rem;
+                    height: 2.3rem;
+                }
+            }
+
+
+        }
+
+        .selecionado {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5rem;
+            color: #D9D9D9;
+
+            height: 2rem;
+
+
+            hr {
+                width: 0rem;
+                height: 0rem;
+                background-color: #94423000;
+            }
+
+
+
+        }
+
+        .selecionado:hover {
+
+            height: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+
+
+            hr {
+                width: 5rem;
+                height: 0.20rem;
+                background-color: #944230;
+                transition: 0.3s;
+            }
+        }
+    }
+
+
+
+    .CardapioGeral {
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+
+        }
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        align-items: center;
+        background-color: #FDE5DE;
+        width: 100%;
+        padding-top: 4rem;
+
+        .dois {
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            //border: 1px rgb(128, 0, 113) solid;
+            width: 90%;
+
+            .divPesguisa {
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                .Pesquisa {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 50%;
+                    height: 2.3rem;
+                    background-color: #ffffff;
+                    border-radius: 2rem;
+
+                    .barra {
+                        width: 82%;
+                        outline: none;
+
+                    }
+                }
+
+            }
+
+        }
+
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            width: 100%;
+
+            margin-top: 2em;
+        }
+
+        .card-container>.CardPed {
+            margin-bottom: 10px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 50px;
+        }
+
+
+
+
+
+    }
+
+    .selecionadoHover {
+
+        height: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+
+        hr {
+            width: 5rem;
+            height: 0.20rem;
+            background-color: #944230;
+            transition: 0.3s;
+        }
+    }
+}
+
+@media screen and (min-width:425px) and (max-width:768px) {
+   
+    
+    .loginusuario {
+
+    
+    
+        .cont1-login {
+            display: flex;
+            flex-direction: row;
+            background-image: url(../../../../public/assets/image/fundologinuser.png);
+            width: 100%;
+            height: 80vh;
+            background-size: 118% 100%;
+            background-position: 40%;
+            justify-content: space-evenly;
+            align-items: center;
+    
+            
+        }
+    
+        .subcont1-loginuser {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 20%;
+            height: 29rem;
+    
+    
+            .oir {
+                width: 27vw;
+                height: 30vh;
+            }
+    
+            .btLinks {
+                display: flex;
+                flex-direction: column;
+                
+                align-items: center;
+                margin-top: 1em;
+                width: 100vw;
+                height: 8rem;
+    
+                .bt {
+                    display: flex;
+                    flex-direction: row;
+                    justify-items: center;
+                    justify-content: center;
+                    background-color: #944236;
+                    width: 14vw;
+                    height: 4vh;
+                    border-radius: 14px;
+                    align-self: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        .bt-loginuser {
+            background-color: #944236;
+            color: #ffffff;
+            width: 100%;
+            border-radius: 14px;
+            cursor: pointer;
+        }
+    
+        .link-loginuser {
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 17px;
+        }
+    
+        .a-loginuser {
+            color: #E9877A;
+        }
+    
+        .a-loginuser:hover {
+            font-size: 17.5px;
+        }
+    
+        .subcont2-loginuser {
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 16rem;
+            width: 27%;
+            align-items: center;
+            justify-items: center;
+    
+    
+            .vid{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 14rem;
+    
+            }
+        }
+    
+    
+        .inpucont-loginuser {
+    
+            display: flex;
+            flex-direction: column;
+            width: 22.6rem;
+            
+            color: #ffffff;
+            justify-content: space-between;
+    
+        }
+    
+        .input-loginuser {
+            background-color: #EEDCCF;
+            border-radius: 0.2em;
+            height: 6vh;
+            width: 40vw;
+        }
+    
+        .fun-cad {
+    
+            width: 15vh;
+        }
+    }
+    
+           
+ 
+    
+ 
+  
+}
+
+@media screen and (min-width:370px) and (max-width:425px) {
+ 
+    .geral {
+
+
+        .osTres {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+    
+            align-items: center;
+            background-color: #69160A;
+            width: 100%;
+            height: 10.5rem;
+    
+    
+            .arroz {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-end;
+                width: 92%;
+    
+    
+    
+                .SetaLogo {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 22%;
+                    margin-bottom: 3rem;
+    
+    
+                    .logos {
+                        width: 14rem;
+                        height: 3rem;
+                    }
+    
+                    .setas {
+                        width: 1.2rem;
+                        height: 1.2rem;
+                    }
+                }
+    
+                .sdcbk {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: flex-end;
+                    text-align: center;
+                    width: 60%;
+                    height: 4rem;
+                    padding-right: 1.5rem;
+    
+                }
+    
+    
+                .imgsIcons {
+    
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 8%;
+                    height: 2.5rem;
+                    align-self: flex-start;
+    
+                    .inconLogin {
+                        width: 1.8rem;
+                        height: 2.4rem;
+                    }
+    
+                    .inconCarrinho {
+                        width: 2.6rem;
+                        height: 2.3rem;
+                    }
+                }
+    
+    
+            }
+    
+            .selecionado {
+                display: flex;
+                flex-direction: column;
+                font-size: 1.5rem;
+                color: #D9D9D9;
+    
+                height: 2rem;
+    
+    
+                hr {
+                    width: 0rem;
+                    height: 0rem;
+                    background-color: #94423000;
+                }
+    
+    
+    
+            }
+    
+            .selecionado:hover {
+    
+                height: 3rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+    
+    
+                hr {
+                    width: 5rem;
+                    height: 0.20rem;
+                    background-color: #944230;
+                    transition: 0.3s;
+                }
+            }
+        }
+    
+    
+    
+        .CardapioGeral {
+    
+            * {
+                box-sizing: border-box;
+                margin: 0;
+    
+            }
+    
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+    
+            align-items: center;
+            background-color: #FDE5DE;
+            width: 100%;
+            padding-top: 4rem;
+    
+            .dois {
+    
+                display: flex;
+                flex-direction: column;
+    
+                align-items: center;
+                //border: 1px rgb(128, 0, 113) solid;
+                width: 90%;
+    
+                .divPesguisa {
+    
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+    
+                    .Pesquisa {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-around;
+                        align-items: center;
+                        width: 50%;
+                        height: 2.3rem;
+                        background-color: #8C392E;
+                        border-radius: 2rem;
+    
+                        .barra {
+                            width: 82%;
+                            background-color: #8C392E;
+                            color: #fff;
+                            outline: none;
+    
+                        }
+                    }
+    
+                }
+    
+            }
+    
+    
+            .card-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                width: 100%;
+    
+                margin-top: 2em;
+            }
+    
+            .card-container>.Card {
+                margin-bottom: 10px;
+                margin-left: 50px;
+                margin-right: 50px;
+            }
+    
+    
+    
+    
+    
+        }
+    
+        .selecionadoHover {
+    
+            height: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+    
+    
+            hr {
+                width: 5rem;
+                height: 0.20rem;
+                background-color: #944230;
+                transition: 0.3s;
+            }
+        }
+    }
+    
+
+
+
+
+    @media screen and (min-width:1px) and (max-width:768px) {
+       
+        
+        .loginusuario {
+    
+        
+        
+            .cont1-login {
+                display: flex;
+                flex-direction: row;
+                background-image: url(../../../../public/assets/image/fundologinuser.png);
+                width: 100%;
+                height: 80vh;
+                background-size: 118% 100%;
+                background-position: 40%;
+                justify-content: space-evenly;
+                align-items: center;
+        
+                
+            }
+        
+            .subcont1-loginuser {
+                
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                width: 20%;
+                height: 29rem;
+        
+        
+                .oir {
+                    width: 27vw;
+                    height: 30vh;
+                }
+        
+                .btLinks {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    align-items: center;
+                    margin-top: 1em;
+                    width: 100vw;
+                    height: 8rem;
+        
+                    .bt {
+                        display: flex;
+                        flex-direction: row;
+                        justify-items: center;
+                        justify-content: center;
+                        background-color: #944236;
+                        width: 14vw;
+                        height: 4vh;
+                        border-radius: 14px;
+                        align-self: center;
+                        cursor: pointer;
+                    }
+                }
+            }
+        
+            .bt-loginuser {
+                background-color: #944236;
+                color: #ffffff;
+                width: 100%;
+                border-radius: 14px;
+                cursor: pointer;
+            }
+        
+            .link-loginuser {
+                color: #ffffff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 17px;
+            }
+        
+            .a-loginuser {
+                color: #E9877A;
+            }
+        
+            .a-loginuser:hover {
+                font-size: 17.5px;
+            }
+        
+            .subcont2-loginuser {
+        
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 16rem;
+                width: 27%;
+                align-items: center;
+                justify-items: center;
+        
+        
+                .vid{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 14rem;
+        
+                }
+            }
+        
+        
+            .inpucont-loginuser {
+        
+                display: flex;
+                flex-direction: column;
+                width: 22.6rem;
+                
+                color: #ffffff;
+                justify-content: space-between;
+        
+            }
+        
+            .input-loginuser {
+                background-color: #EEDCCF;
+                border-radius: 0.2em;
+                height: 6vh;
+                width: 40vw;
+            }
+        
+            .fun-cad {
+        
+                width: 15vh;
+            }
+        }
+        
+               
+     
+        
+     
+      
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,7 @@ import { CadastroUsuar, ImagemCadastroUser } from '../../../api/usuario/loginUse
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RodapeLand2 from '../../../components/rodapeLand-2';
+import { useNavigate } from 'react-router-dom';
 
 export default function CadastroUsuario() {
 
@@ -17,6 +18,7 @@ export default function CadastroUsuario() {
 
     const [imangen, setImangen] = useState();
 
+        const Navigate = useNavigate();
 
     async function Cadastrar() {
         try {
@@ -28,6 +30,7 @@ export default function CadastroUsuario() {
             // console.log(r.id);
             await ImagemCadastroUser(imangen, r.id);
             toast.dark('Usuario foi cadastrado ');
+            Navigate('/login')
         }
         catch (err) {
             toast.error(err.response.data.erro);
@@ -46,6 +49,8 @@ export default function CadastroUsuario() {
     }
 
 
+
+
     return (
 
         <main className="cadastrousuario">
@@ -57,12 +62,12 @@ export default function CadastroUsuario() {
                 <div className="alinhamento-cadastrouser">
                     <div className="subcon1-cadastro">
 
-                        <div className="inpucont-cadastro">
+                        <div className="Imgcadastro">
                             <p> Foto de perfil: </p>
 
                             <div className="inserir-imagem">
                                 <img alt="" src={ExibirImagem(imangen)} onClick={() => escolherImagem('imagem')} />
-                                <input type="file" id="imagem" onChange={e => setImangen(e.target.files[0])} />
+                                <input className='igm' type="file" id="imagem" onChange={e => setImangen(e.target.files[0])} />
                             </div>
                         </div>
 
@@ -85,18 +90,18 @@ export default function CadastroUsuario() {
 
                     <div className="subcon2-cadastro">
 
-                        <div className='inpucont-cadastro'>
+                        <div className='inpu-cadast'>
                             <label > Data de nascimento:
                             </label>
                             <input className='input-cadastro' type="date" placeholder='...' value={Nascimento} onChange={e => setNascimento(e.target.value)} />
                         </div>
 
-                        <div className='inpucont-cadastro'>
+                        <div className='inpu-cadast'>
                             <label > Telefone:</label>
                             <input className='input-cadastro' type="text" placeholder='...' value={Telefone} onChange={e => setTelefone(e.target.value)} />
                         </div>
 
-                        <div className='inpucont-cadastro'>
+                        <div className='inpu-cadast'>
                             <label > CPF: </label>
                             <input className='input-cadastro' type="text" placeholder='...' value={CPF} onChange={e => setCPF(e.target.value)} />
                         </div>
@@ -108,7 +113,7 @@ export default function CadastroUsuario() {
 
                         <img className="fun-cad" src="../assets/image/cardloginuser.png" />
 
-                        <button className="bt-cadastrar" onClick={Cadastrar}> Cadastrar </button>
+                        <button className="bt-cadastrar"  onClick={Cadastrar}> Cadastrar </button>
 
                         <div className="link-logincadastro" >
                             <p> Já possui uma conta? </p>

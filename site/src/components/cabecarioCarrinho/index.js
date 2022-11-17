@@ -24,7 +24,15 @@ export default function CabCarrinho() {
                     <div className="selecionado">
 
                         <a className="a-car" href="../perfil">
-                            <p className="linkperfil" >Perfil</p>
+                            <p className="linkperfl" >Perfil</p>
+                        </a>
+                        <hr /> 
+                    </div>
+
+                    <div className="selecionado">
+
+                        <a className="a-car" href="../meuspedidos">
+                            <p className="linkperfil" >Pedidos</p>
                         </a>
                         <hr /> 
                     </div>
