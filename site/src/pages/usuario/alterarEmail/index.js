@@ -4,10 +4,13 @@ import { toast } from "react-toastify";
 import "./index.scss";
 import { AlterarESUsuar, UsePerfil } from "../../../api/usuario/loginUserAPI";
 import { useNavigate } from "react-router-dom";
+import {API_URL} from '../../../api/config.js'
+
 
 export default function AlterarEmail() {
   const [Email, SetEmail] = useState("");
   const [Senha, SetSenha] = useState("");
+  const [imagem,setImagem]=useState()
 
   const Navigate = useNavigate();
 
@@ -16,8 +19,25 @@ export default function AlterarEmail() {
   async function CarregarInforUser() {
     let id = storage("Cliente-logado").id;
     const r = await UsePerfil(id);
-    setInfos([r]);
+    SetEmail(r.email);
+
+    if(r.imagem){
+      setImagem(r.imagem);
+    }
   }
+
+  function ExibirImagem(imagem){
+    if (imagem === undefined) {
+        return '/assets/image/login2.png';
+    } 
+    else if (typeof (imagem) == 'string') {
+        return `${API_URL}/${imagem}`
+    }
+    else {
+      return URL.createObjectURL(imagem);
+  
+  }
+}
 
   async function AlterarES() {
     try {
@@ -49,7 +69,7 @@ export default function AlterarEmail() {
         <div className="AE-sec-foto">
           <div className="AE-pos-foto">
             <img
-              src="../../assets/image/login2.png"
+              src={ExibirImagem(imagem)}
               alt="F49292"
               className="AE-foto"
             />

@@ -131,7 +131,7 @@ export default function PerfilUser() {
                                             
                                             <div className='ifelse'>
 
-                                                <p className="infoCli">{item.nascimento}</p>
+                                                <p className="infoCli">{item.nascimento.substr(0,10)}</p>
 
                                                 <div>
                                                     <img src="../assets/image/olho.png" alt="" />
