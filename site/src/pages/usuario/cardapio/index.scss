@@ -18,6 +18,8 @@
             justify-content: space-between;
             align-items: flex-end;
             width: 92%;
+            // border: green solid 1px;
+
 
 
 
@@ -27,7 +29,7 @@
                 justify-content: space-between;
                 align-items: center;
                 width: 22%;
-                margin-bottom: 3rem;
+                margin-bottom: 5rem;
 
 
                 .logos {
@@ -47,9 +49,10 @@
                 justify-content: space-evenly;
                 align-items: flex-end;
                 text-align: center;
-                width: 60%;
-                height: 4rem;
+                width: 63%;
+                height: 5rem;
                 padding-right: 1.5rem;
+                margin-top: 3rem;
 
             }
 
@@ -97,7 +100,7 @@
         }
 
         .selecionado:hover {
-
+            cursor: pointer;
             height: 3rem;
             display: flex;
             flex-direction: column;

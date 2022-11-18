@@ -71,7 +71,7 @@ export default function Cardapio() {
         setCTtorta(false);
         setCTdoces(false);
         setCTbolo(false);
-        setCTdestaques(true);   
+        setCTdestaques(true);
         setCTkits(false);
         setCTsalgados(false);
     }
@@ -119,6 +119,7 @@ export default function Cardapio() {
         setCTsalgados(true);
     }
 
+
     async function cardSalgados() {
         const q = await CategoriaSalgados();
         setSalgados(q);
@@ -150,14 +151,14 @@ export default function Cardapio() {
             <header className="osTres">
 
                 <div className="arroz">
-        
+
                     <div className="SetaLogo">
 
                         <div>
                             <a href="/perfil">
                                 <img className="setas" src="/assets/image/setinha.png" alt="" />
                             </a>
-                            
+
                         </div>
 
                         <div>
@@ -167,29 +168,98 @@ export default function Cardapio() {
 
                     <div className="sdcbk">
 
-                        <div className="selecionado" onClick={exibirSalgados} >
+                        <div className="selecionado" onClick={exibirSalgados}
+
+                            style={{
+                                height: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '3rem' : '',
+                                display: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'flex' : '',
+                                flexDirection: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'collumn' : '',
+                                alignItems: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'center' : '',
+                                justifyContent: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'space-evenly' : '',
+                            }}>
+
                             <p className="nomeCategoria" onClick={exibirSalgados} >Salgados</p>
-                            <hr />
+
+                            <hr style={{
+                                width: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '7rem' : '',
+                                height: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === true && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '#944230' : ''
+                            }} />
                         </div>
-                        <div className="selecionado" onClick={exibirDoces}>
+                        <div className="selecionado" onClick={exibirDoces}
+                            style={{
+                                height: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '3rem' : '',
+                                display: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'flex' : '',
+                                flexDirection: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'collumn' : '',
+                                alignItems: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'center' : '',
+                                justifyContent: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? 'space-evenly' : '',
+                            }}
+                        >
                             <p className="nomeCategoria" onClick={exibirDoces}>Doces</p>
-                            <hr />
+                            <hr style={{
+                                width: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '6rem' : '',
+                                height: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === false && CTdoces === true && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === false ? '#944230' : ''
+                            }} />
                         </div>
-                        <div className="selecionado" onClick={exibirDestaques}>
+                        <div className="selecionado" onClick={exibirDestaques}
+                            style={{
+                                height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? '3rem' : '',
+                                display: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? 'flex' : '',
+                                flexDirection: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? 'collumn' : '',
+                                alignItems: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? 'center' : '',
+                                justifyContent: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? 'space-evenly' : '',
+
+                            }}>
                             <p className="nomeCategoria" onClick={exibirDestaques}>Geral</p>
-                            <hr />
+                            <hr style={{
+                                width: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? '6rem' : '',
+                                height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === true && CTkits === false && CTtorta === false ? '#944230' : ''
+                            }} />
                         </div>
-                        <div className="selecionado" onClick={exibirTorta} >
+                        <div className="selecionado" onClick={exibirTorta}
+                            style={{
+                                height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? '3rem' : '',
+                                display: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? 'flex' : '',
+                                flexDirection: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? 'collumn' : '',
+                                alignItems: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? 'center' : '',
+                                justifyContent: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? 'space-evenly' : '',
+                            }}>
                             <p className="nomeCategoria" onClick={exibirTorta} >Tortas</p>
-                            <hr />
+                            <hr style={{
+                                width: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? '6rem' : '',
+                                height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === false && CTtorta === true ? '#944230' : ''
+                            }} />
                         </div>
-                        <div className="selecionado">
+                        <div className="selecionado" style={{
+                            height: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? '3rem' : '',
+                            display: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? 'flex' : '',
+                            flexDirection: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? 'collumn' : '',
+                            alignItems: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? 'center' : '',
+                            justifyContent: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? 'space-evenly' : '',
+                        }}>
                             <p className="nomeCategoria" onClick={exibirBolos}>Bolos</p>
-                            <hr />
+                            <hr style={{
+                                width: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? '6rem' : '',
+                                height: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === false && CTdoces === false && CTbolo === true && CTdestaques === false && CTkits === false && CTtorta === false ? '#944230' : ''
+                            }} />
                         </div>
-                        <div className="selecionado">
+                        <div className="selecionado" style={{
+                            height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? '3rem' : '',
+                            display: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? 'flex' : '',
+                            flexDirection: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? 'collumn' : '',
+                            alignItems: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? 'center' : '',
+                            justifyContent: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? 'space-evenly' : '',
+                        }}>
                             <p className="nomeCategoria" onClick={exibirKits} >Kits</p>
-                            <hr />
+                            <hr style={{
+                                width: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? '4rem' : '',
+                                height: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? '0.20rem' : '',
+                                backgroundColor: CTsalgados === false && CTdoces === false && CTbolo === false && CTdestaques === false && CTkits === true && CTtorta === false ? '#944230' : ''
+                            }} />
                         </div>
 
                     </div>
@@ -200,13 +270,13 @@ export default function Cardapio() {
                             <a href="../perfil">
                                 <img className="inconLogin" src="/assets/image/inconLogin.png" alt="" />
                             </a>
-                            
+
                         </div>
                         <div>
                             <a href="carrinho">
                                 <img className="inconCarrinho" src="/assets/image/iconeCarrinho.png" alt="" />
                             </a>
-                            
+
                         </div>
 
                     </div>
@@ -295,7 +365,7 @@ export default function Cardapio() {
 
             </section>
 
-            <RodapeLand2/>
+            <RodapeLand2 />
 
         </main>
     );

@@ -33,21 +33,29 @@ export default function AppsRoutes() {
         <BrowserRouter>
             <Routes>
                 
-                <Route path='/' element={<Home />} />
+
+                {/* ////////////////// ADM //////////////////  */}
                 <Route path='/adm/login' element={<LongnAdm />} />
                 <Route path='/adm/novoproduto' element={<NovoProduto />} />
                 <Route path='/adm/novoproduto/:id' element={<NovoProduto />} />
                 <Route path='/adm/areaadm' element={<AreaAdm />} />
-                <Route path='/login' element={<LoginUsuario />} />
+                <Route path='/adm/listapedido' element={<LPedidos/>} />
                 <Route path='/adm/tabelaproduto' element={<TabelaProduto />} />
+
+
+                {/* ////////////////// HOME  //////////////////  */}
+                        <Route path='/' element={<Home />} />
+
+
+
+                {/* ////////////////// Usuario //////////////////  */}
+
+                <Route path='/login' element={<LoginUsuario />} />
                 <Route path='/cadastro' element={<CadastroUsuario />} />
                 <Route path='/carrinho' element={<CarrinhoUsuario/>} />
                 <Route path='/cardapio' element={<Cardapio/>} />
                 <Route path='/detalhe/produto/:id' element={<DetalhesProdutos/>} />
-                <Route path='/adm/listapedido' element={<LPedidos/>} />
-
                 <Route path='/pagamento' element={<Pagamento/>} />
-
                 <Route path='/endereco' element={<TelaEndereco/>} />
                 <Route path='/perfil/alterar' element={<AlterarPerfilUser/>} />
                 <Route path='/perfil' element={<PerfilUser/>} />

@@ -78,7 +78,7 @@ export default function Home() {
         <div className="div-texto-section1">
           <p>
             {" "}
-            A nossa doceria delicious gourmet aqui você encontra os melhores
+            A nossa doceria Paticeri, aqui você encontra os melhores
             tipos de doces!!!{" "}
           </p>
         </div>
@@ -124,7 +124,7 @@ export default function Home() {
           </div>
           <div className="div-p2">
             <p className="nssCardápio">
-              Nosso cardápio é recheado de bolos e salgadinhos pra festa, tortas
+              Nosso cardápio é recheado de bolos e salgadinhos para festa, tortas
               doces e salgadas, lanches de metro, kits completos para
               comemorações coletivas ou caixinhas individuais, comidinhas
               congeladas e uma grande variedade de docinhos.
@@ -155,7 +155,7 @@ export default function Home() {
           </p>
 
           <div className="sec3-but">
-            <button>Ver cardapio</button>
+            <button>Ver cardápio</button>
           </div>
         </div>
       </section>

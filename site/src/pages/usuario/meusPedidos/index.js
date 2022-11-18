@@ -50,7 +50,7 @@ export default function MeusPedidos() {
 
     return (
 
-        <main className="geral">
+        <main className="meus-pedidos">
             <Block />
             <CabecarioPedido/>
 

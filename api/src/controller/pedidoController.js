@@ -5,6 +5,7 @@ import { DetalhesProdutoId } from '../repository/produtoRepository.js';
 import { CriarNovoPedido } from '../service/novoPedido.js';
 
 import {Router} from 'express';
+import { validarBoleto, validarCartao, validarPix } from '../service/ValidadaoPedido.js';
 
 const server = Router();
 
@@ -20,13 +21,16 @@ server.post('/user/pedido/:idUsuario', async (req,resp) => {
         
 
         if (info.tpPagamento === 'cartao') {
+            
+            await validarCartao(info.pagamento);
             await InserirPagamentoCartao(idPedidoAdicionado, info.pagamento);
         }
         if (info.tpPagamento === 'pix') {
-                
+               await validarPix(info.pagamento);
             await InserirPagamentoPix(idPedidoAdicionado, info.pagamento);
             
         } else {
+            await validarBoleto(info.pagamento);
             await InserirPagamentoBoleto(idPedidoAdicionado, info.pagamento);
         } 
 
