@@ -43,6 +43,10 @@ export default function TabelaProduto(){
         navigate(`/adm/novoproduto/${id}`)
     }
 
+    function areaAdm(){
+        navigate(`/adm/areaadm`)
+    }
+
     useEffect( () => {
         carregarProduto();
     }, []); 
@@ -57,7 +61,7 @@ export default function TabelaProduto(){
 
                     <div className="sub-div1-cabTP">
                         
-                        <img className="seta-cabTP" src="/assets/image/setinha.png" alt="" />
+                        <img className="seta-cabTP" src="/assets/image/setinha.png" alt="" onClick={areaAdm}/>
                         <img className="oi" src="/assets/image/oi.png" alt="" />
                     
                     </div>
@@ -69,7 +73,7 @@ export default function TabelaProduto(){
                     </div>
 
                     <div className="sub-div2-cabTP">
-                        <a className='a-sub-div2-cabTP' href="/">Lista de pedidos</a>
+                        <a className='a-sub-div2-cabTP' href="/adm/listapedido  ">Lista de pedidos</a>
                         <a className='a-sub-div2-cabTP' href="/">Home</a>
                     </div>
                     

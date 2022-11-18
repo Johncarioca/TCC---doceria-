@@ -29,15 +29,19 @@
                 align-items: center;
                 justify-content: space-between;
                 height: 7rem;
-                width: 23%;
+                width: 20%;
+                margin-left: 2rem;
             
                 .seta-cabTP{
-                    margin-left: 20px;
+                    width: 20%;
+                    height: 3rem;
+                    margin-right: 1rem;
+                    margin-top: 0.5rem;
                 }
                     
 
                 .oi{
-                    width: 15rem;
+                    width: 70%;
                     height: 2.8rem;
                 }
 
@@ -84,13 +88,13 @@
         
     }
 
-    .seec{
+    .sec{
         
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        // background-image: url('../../../../public/assets/image/drink.png');
+        background-image: url('../../../../public/assets/image/drink.png');
         // background-color: ;
         width: 100%;
         min-height: 86vh;

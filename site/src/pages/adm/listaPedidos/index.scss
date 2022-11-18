@@ -13,7 +13,7 @@
         flex-direction: row;
         align-items: center;    
         width: 100%;
-        height: 6.8rem;
+        height: 8rem;
         background-color: #69160A;
         
         .div1-cabLP{
@@ -38,8 +38,10 @@
                     
 
                 .logo-LP{
-                    width: 15rem;
+                    margin-right: 1rem;
+                    width: 57%;
                     height: 2.8rem;
+                    margin-bottom: 1rem;
                 }
 
             }
@@ -67,7 +69,7 @@
                 align-items: flex-end ;
 
                 .a-sub-div2-cabLP{
-                    padding: 0rem 2rem;
+                    padding: 0rem 1rem;
                     color: #ffffffff;
                 }
             }

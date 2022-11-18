@@ -40,6 +40,10 @@ export default function LoginAdm(){
         }
     }
 
+    function Telahome () {
+        navigate('/')
+    }
+
 
     return(
         <main className="Login-adm" >
@@ -49,7 +53,7 @@ export default function LoginAdm(){
             <header className="cabeçalho">
                 
                 <div>
-                    <img src="/assets/image/oi.png" alt="" />
+                    <img src="/assets/image/oi.png" alt=""  onClick={Telahome}/>
                 </div>
 
             </header>

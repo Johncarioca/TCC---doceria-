@@ -8,14 +8,14 @@ import { SalvarNovoPedido } from '../../../api/usuario/pagamentoAPI.js';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI.js';
 import Block from '../../../components/block/index.js';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
-// import { idEndereco } from '../services/funcoesEntrePag.js';
+import RodapeLand2 from '../../../components/rodapeLand-2/index.js';
 
 
 
 import './index.scss'
 
 
-export default function Pagamento() {
+export default function     Pagamento() {
 
 
  ////////////////// pagamento Cartão //////////////////
@@ -436,8 +436,11 @@ export default function Pagamento() {
 
                 </div>
 
-            </section>
+            </section >
+            <div className="roda">
+                    <RodapeLand2/>
 
+            </div>
         </main>
     );
 }

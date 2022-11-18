@@ -1,11 +1,13 @@
 import './index.scss';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CabCarrinho(props) {
 
 
     const [Selecionado, setSelecionado] = useState(props.selecionado);
 
+    const Navigate = useNavigate();
     function Selecionarpag(menu) {
         setSelecionado(menu)
     }
@@ -20,6 +22,10 @@ export default function CabCarrinho(props) {
         }
     }
 
+    function home() {
+        Navigate('/')
+    }
+
 
     return (
         <main className="cabcarrinho">
@@ -29,9 +35,9 @@ export default function CabCarrinho(props) {
                 <div className="img-cab">
                     <div className="SetaLogo">
                         <a href="../">
-                            <img className="setas" src="/assets/image/setinha.png" alt="" />
+                            <img className="setas" src="/assets/image/setinha.png" alt="" onClick={home} />
                         </a>
-                        <img className="logos" src="/assets/image/oi.png" alt="" />
+                        <img className="logos" src="/assets/image/oi.png" alt="" onClick={home}/>
 
                     </div>
 

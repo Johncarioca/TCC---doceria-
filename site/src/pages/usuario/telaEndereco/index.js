@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 import { CadastroEndereco } from '../../../api/usuario/enderecoAPI';
 import { useNavigate } from 'react-router-dom';
 import Block from '../../../components/block';
+import RodapeLand2 from '../../../components/rodapeLand-2';
 
 export default function TelaEndereco(){
 
@@ -150,7 +151,7 @@ export default function TelaEndereco(){
                 </div>
 
             </section>
-
+            <RodapeLand2/>
         </main>
     );
 }

@@ -35,10 +35,10 @@ export async function validarPix(pagamento){
 
 export async function validarBoleto(pagamento){
 
-    if ( pagamento.telefone >= 0 ) {
+    if ( pagamento.telefone === 0 ) {
         throw new Error('O telefone é obrigatorio');
     }
-    if ( pagamento.cod_boleto >= 0 ) {
+    if ( pagamento.cod_boleto === 0 ) {
         throw new Error('O codigo do boleto é obrigatorio');
     }
 }

@@ -9,6 +9,7 @@ import storage from 'local-storage';
 import { DetalhesProdutoId } from '../../../api/usuario/produtoAPI';
 import { useNavigate } from 'react-router-dom';
 import Block from '../../../components/block';
+import RodapeLand2 from '../../../components/rodapeLand-2';
 export default function CarrinhoUsuario(){
 
     const [itens, setItens] = useState([]);
@@ -136,6 +137,7 @@ export default function CarrinhoUsuario(){
                 </div>
 
             </div>
+            <RodapeLand2/>
         </main>
 
     )

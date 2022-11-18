@@ -4,18 +4,19 @@ import storage from 'local-storage';
 import { toast, ToastContainer } from 'react-toastify';
 import CabeçarioLogin from '../../../components/cabecalhoLogin';
 import './index.scss'
-import { AlterarImagemUser, AlterarUsuar ,UsePerfil } from '../../../api/usuario/loginUserAPI';
+import { AlterarImagemUser, AlterarUsuar, UsePerfil } from '../../../api/usuario/loginUserAPI';
 import { useNavigate } from 'react-router-dom';
 import LoadingBar from 'react-top-loading-bar'
 import Block from '../../../components/block';
-import {API_URL} from '../../../api/config.js'
+import { API_URL } from '../../../api/config.js'
 
 import { ImagemCadastroUser } from '../../../api/usuario/loginUserAPI';
 
 
+
 export default function AlterarPerfilUser() {
 
-    const [Id,setId]= useState();
+    const [Id, setId] = useState();
 
     const [Nome, setNome] = useState('');
     const [imangen, setImangen] = useState();
@@ -32,7 +33,7 @@ export default function AlterarPerfilUser() {
 
             await AlterarUsuar(Id, Nome, Cpf, Nascimento, Numero);
 
-            await ImagemCadastroUser(imangen,Id)
+            await ImagemCadastroUser(imangen, Id)
             // await AlterarImagemUser(Id, imangen );
             toast.dark('Informações do usuario foi alterado ');
             Navigate('/perfil');
@@ -43,42 +44,42 @@ export default function AlterarPerfilUser() {
         }
     }
 
-    async function CarregarInforUser(){
+    async function CarregarInforUser() {
 
         let id = storage('Cliente-logado').id;
         const r = await UsePerfil(id);
-        
+
         setId(r.id);
         setNome(r.nome);
         setCpf(r.cpf);
-        setNascimento(r.nascimento.substr(0,10));
+        setNascimento(r.nascimento.substr(0, 10));
         setNumero(r.cell);
 
-        if(r.imagem)
+        if (r.imagem)
             setImangen(r.imagem);
-    } 
+    }
 
 
     function escolherImagem(inputId) {
         document.getElementById(inputId).click();
     }
 
-    function ExibirImagem(imangen){
+    function ExibirImagem(imangen) {
         if (imangen === undefined) {
             return '/assets/image/login2.png';
-        } 
+        }
         else if (typeof (imangen) == 'string') {
             return `${API_URL}/${imangen}`
         }
         else {
-          return URL.createObjectURL(imangen);
-      
-      }
+            return URL.createObjectURL(imangen);
+
+        }
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         CarregarInforUser();
-    },[])
+    }, [])
 
     //Navigate
     function telaMeusPedidos() {
@@ -86,11 +87,14 @@ export default function AlterarPerfilUser() {
     }
     function telacardapio() {
         Navigate('/cardapio')
+    } 
+    function telaEndereco() {
+        Navigate('/endereco')
     }
 
     return (
         <main className="telaEndereco">
-            <ToastContainer/>
+            <ToastContainer />
             <Block />
             <div>
                 <CabeçarioLogin />
@@ -105,7 +109,7 @@ export default function AlterarPerfilUser() {
 
                             <div >
 
-                                <img src="../assets/image/carrinhoPreto.png" alt="" onClick={telaMeusPedidos}/>
+                                <img src="../assets/image/carrinhoPreto.png" alt="" onClick={telaMeusPedidos} />
 
                             </div>
 
@@ -116,7 +120,7 @@ export default function AlterarPerfilUser() {
 
                             <div >
 
-                                <img src="../assets/image/IconeCardapio.png" alt="" onClick={telacardapio}/>
+                                <img src="../assets/image/IconeCardapio.png" alt="" onClick={telacardapio} />
 
                             </div>
                             <p onClick={telacardapio}>Cardápio</p>
@@ -138,14 +142,14 @@ export default function AlterarPerfilUser() {
                         </div>
 
                         <div className="inpucont-cadastro">
-                            
+
                             <p> Foto de perfil </p>
-                            
+
                             <div className="inserir-imagem">
 
                                 <img alt="" src={ExibirImagem(imangen)} onClick={() => escolherImagem('imagem')} />
                                 <input type="file" id="imagem" onChange={e => setImangen(e.target.files[0])} />
-                            
+
                             </div>
                         </div>
 
@@ -162,7 +166,7 @@ export default function AlterarPerfilUser() {
 
                             <div className='pa'>
                                 <p>Endereço</p>
-                                <a href="">Clique para alterar</a>
+                                <a href=""onClick={telaEndereco}>Clique para alterar</a>
                             </div>
                         </div>
 
@@ -217,6 +221,7 @@ export default function AlterarPerfilUser() {
                 </div>
 
             </section>
+
 
         </main>
     );

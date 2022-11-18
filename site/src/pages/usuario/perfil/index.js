@@ -97,9 +97,7 @@ export default function PerfilUser() {
                                                 <p className="infoCli">{item.email}</p>
 
 
-                                                <div>
-                                                    <img src="../assets/image/olho.png" alt="" />
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div className="frase">
@@ -109,9 +107,7 @@ export default function PerfilUser() {
                                             <div className='ifelse'>
                                                 <p className="infoCli">{item.cpf}</p>
 
-                                                <div>
-                                                    <img src="../assets/image/olho.png" alt="" />
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         <div className="frase">
@@ -122,9 +118,7 @@ export default function PerfilUser() {
                                             
                                                 <p className="infoCli">{item.rua}</p>
 
-                                                <div>
-                                                    <img src="../assets/image/olho.png" alt="" />
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         
@@ -137,23 +131,19 @@ export default function PerfilUser() {
 
                                                 <p className="infoCli">{item.cell}</p>
 
-                                                <div>
-                                                    <img src="../assets/image/olho.png" alt="" />
-                                                </div>
+                                                
                                             </div>
                                         </div>
 
                                         <div className="frase">
 
-                                            <h3 className="ifoCli">Data Nasc:</h3>
+                                            <h3 className="ifoCli">Data.Nasc:</h3>
                                             
                                             <div className='ifelse'>
 
                                                 <p className="infoCli">{item.nascimento.substr(0,10)}</p>
 
-                                                <div>
-                                                    <img src="../assets/image/olho.png" alt="" />
-                                                </div>
+                                                
                                             </div>
                                         </div>
 

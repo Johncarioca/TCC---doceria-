@@ -29,12 +29,12 @@ export default function LPedidos() {
           </div>
 
           <div className="tit-cabLP">
-            <h2 className="lista-cabLP">Lista de produtos</h2>
+            <h2 className="lista-cabLP">Lista de Pedidos</h2>
           </div>
 
           <div className="sub-div2-cabLP">
-            <a className="a-sub-div2-cabLP" href="/adm/listapedidos">
-              Lista de pedidos
+            <a className="a-sub-div2-cabLP" href="/adm/tabelaproduto">
+              Lista de Produto
             </a>
             <a className="a-sub-div2-cabLP" href="/">
               Home

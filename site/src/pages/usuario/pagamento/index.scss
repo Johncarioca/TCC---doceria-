@@ -5,6 +5,8 @@
     height: 64rem;
     background-color: #FDE5DE;
 
+    border: solid 1px green;
+
     .sectionPrincipal{
 
         display: flex;
@@ -103,6 +105,7 @@
                         align-items: center;
                         width: 60%;
                         height: 3rem; 
+                        border-radius: 0.4rem 0.4rem 0rem 0rem ;
                         background-color: #7e716f;
                         
 
@@ -410,6 +413,9 @@
             background-color: #f4929285;
             border-radius: 3rem 0rem 0rem 3rem ;
         }
+    }
+    .roda{
+        margin-top: 8rem;
     }
     
 }

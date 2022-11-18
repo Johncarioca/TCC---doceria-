@@ -184,8 +184,8 @@ insert into tb_admin_login (ds_email,ds_senha)
             delete from tb_produto
             where id_produto = ?;
             
-            insert into tb_categoria(nm_categoria) values('Doces') ; 
-			insert into tb_categoria(nm_categoria) values('Salgado') ;
+               insert into tb_categoria(nm_categoria) values('Doces') ; 
+		     insert into tb_categoria(nm_categoria) values('Salgado') ;
 			insert into tb_categoria(nm_categoria) values('Kits') ;
 			insert into tb_categoria(nm_categoria) values('Tortas') ;
 			insert into tb_categoria(nm_categoria) values('Bolos') ; 

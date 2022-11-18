@@ -48,7 +48,7 @@ export default function Home() {
               <div className="divImagem">
                 <a href="/login">
                   <img
-                    className="logi"
+                    className="login"
                     src="/assets/image/inconLogin.png"
                     alt=""
                   />
@@ -83,8 +83,8 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="div-button-section1">
-          <button className="button-cardapio-section1"> Cardapio </button>
+        <div className="div-button-section1" onClick={CardClick}>
+          <button className="button-cardapio-section1" onClick={CardClick}> Cardapio </button>
         </div>
       </section>
 
@@ -154,8 +154,8 @@ export default function Home() {
             PALADARES
           </p>
 
-          <div className="sec3-but">
-            <button>Ver cardápio</button>
+          <div className="sec3-but" onClick={CardClick}>
+            <button onClick={CardClick}>Ver cardápio</button>
           </div>
         </div>
       </section>
@@ -230,7 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="Carousel" onClick={CardClick}>
+      <section className="Carousel" >
         <h2 className="nss">Conheça todos os nossos sabores</h2>
 
         <Carousel breakPoints={breakPoints} onClick={CardClick}>

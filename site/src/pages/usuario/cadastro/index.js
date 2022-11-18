@@ -27,7 +27,6 @@ export default function  CadastroUsuario() {
                 throw new Error('Escolha a img do produto');
 
             const r = await CadastroUsuar(Nome, CPF, Nascimento, Telefone, Email, Senha);
-            // console.log(r.id);
             await ImagemCadastroUser(imangen, r.id);
             toast.dark('Usuario foi cadastrado ');
             Navigate('/login');

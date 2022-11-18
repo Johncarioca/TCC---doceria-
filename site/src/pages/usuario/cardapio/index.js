@@ -7,18 +7,20 @@ import CardCardapioGeral from '../../../components/CorpoCardapio/Geral'
 import CardapioBolos from '../../../components/CorpoCardapio/bolo'
 import CardapioKits from '../../../components/CorpoCardapio/Kits'
 import CardapioSalgados from '../../../components/CorpoCardapio/salgados'
-import RodapeLand2 from '../../../components/rodapeLand-2';
+
 
 
 import { ProdutosDestaque, BuscarProdutoCardapio, CategoriaBolo, CategoriaDoces, CategoriaKits, CategoriaSalgados, CategoriaTortas } from '../../../api/usuario/cardapioAPI.js';
 
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import RodapeLand2 from '../../../components/rodapeLand-2';
 
 export default function Cardapio() {
 
 
 
-
+    const Navigate = useNavigate();
 
     const [Doces, setDoces] = useState([]);
     const [Tortas, setTortas] = useState([]);
@@ -133,6 +135,10 @@ export default function Cardapio() {
     }
 
 
+    function home() {
+        Navigate('/')
+    }
+
 
     useEffect(() => {
         cardDoces();
@@ -146,7 +152,7 @@ export default function Cardapio() {
 
     return (
 
-        <main className="geral">
+        <main className="cardapios">
 
             <header className="osTres">
 
@@ -156,13 +162,13 @@ export default function Cardapio() {
 
                         <div>
                             <a href="/perfil">
-                                <img className="setas" src="/assets/image/setinha.png" alt="" />
+                                <img className="setas" src="/assets/image/setinha.png" alt="" onClick={home}/>
                             </a>
 
                         </div>
 
                         <div>
-                            <img className="logos" src="/assets/image/oi.png" alt="" />
+                            <img className="logos" src="/assets/image/oi.png" alt="" onClick={home}/>
                         </div>
                     </div>
 

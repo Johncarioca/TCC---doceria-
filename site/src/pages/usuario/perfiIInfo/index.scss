@@ -2,7 +2,7 @@
 
     
 
-    height: 60rem;
+    height: 57.9rem;
     background-color: #FDE5DE;
 
     .sectionPrincipal{
@@ -101,10 +101,11 @@
                         height: 7em;
                         width: 51%;
                         display: flex;
-                        flex-direction: column;
+                        flex-direction: row;
                         justify-content: center;
                         border-radius: 1.2rem;  
                         align-items: center;
+                        
                         
                     }
                     .inserir-imagem img{
@@ -112,6 +113,8 @@
                         height: 100%;
                         max-width: 100% ;
                         max-height: 7rem;
+                        margin-left: 1rem;
+                        border-radius: 10px;
                     }
                 
                     .inserir-imagem input{

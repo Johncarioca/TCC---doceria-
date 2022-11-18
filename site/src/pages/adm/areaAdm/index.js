@@ -7,16 +7,17 @@ export default function AreaAdm() {
     const navigate = useNavigate();
 
     function pedidos() {
-        navigate('/adm/tabelaproduto')
+        navigate('/adm/listapedido')
     }
 
     function cardapio() {
-        navigate('/adm/novoproduto')
+        navigate('/adm/tabelaproduto')
     }
 
     function inicio() {
         navigate('/')
-    }
+    }    
+
 
     return (
         <main className='main-principal'>
@@ -25,9 +26,9 @@ export default function AreaAdm() {
 
                 <div className='div-1'>
 
-                    <img className='seta' src="/assets/image/setinha.png" alt="" />
+                    <img className='seta' src="/assets/image/setinha.png" alt="" onClick={inicio}/>
 
-                    <img className='logo' src="/assets/image/oi.png" alt="" />
+                    <img className='logo' src="/assets/image/oi.png" alt="" onClick={inicio}/>
                 </div>
                 
 

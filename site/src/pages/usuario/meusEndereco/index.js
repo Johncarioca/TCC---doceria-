@@ -8,6 +8,7 @@ import './index.scss'
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Block from '../../../components/block/index.js';
+import RodapeLand2 from '../../../components/rodapeLand-2/index.js';
 
 
 
@@ -179,7 +180,7 @@ export default function MeusEndereco() {
                 </div>
 
             </section>
-
+            <RodapeLand2/>
         </main>
     );
 }
