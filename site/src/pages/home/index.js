@@ -83,8 +83,10 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="div-button-section1" onClick={CardClick}>
-          <button className="button-cardapio-section1" onClick={CardClick}> Cardapio </button>
+        <div  className="div-button-section1" onClick={CardClick}>
+          <a href="/cardapio">
+            <button className="button-cardapio-section1" onClick={CardClick}> Cardapio </button>
+          </a>
         </div>
       </section>
 
@@ -155,7 +157,9 @@ export default function Home() {
           </p>
 
           <div className="sec3-but" onClick={CardClick}>
+            <a href="/cardapio">
             <button onClick={CardClick}>Ver cardápio</button>
+            </a>
           </div>
         </div>
       </section>
@@ -234,11 +238,12 @@ export default function Home() {
         <h2 className="nss">Conheça todos os nossos sabores</h2>
 
         <Carousel breakPoints={breakPoints} onClick={CardClick}>
-          <Categoria img='/assets/image/festa.png' nome='Kit de Festa'  />
-          <Categoria img='/assets/image/doces.png' nome='Doces'/>
-          <Categoria img='/assets/image/salgados.png' nome='Salgados'/>
-          <Categoria img='/assets/image/bolos.png' nome='Bolos'/>
-          <Categoria img='/assets/image/torta-7.png' nome='Tortas'/>
+
+         <a href="/cardapio"> <Categoria img='/assets/image/festa.png' nome='Kit de Festa' onClick={CardClick} /></a>
+          <a href="/cardapio"><Categoria img='/assets/image/doces.png' nome='Doces' onClick={CardClick}/></a>
+          <a href="/cardapio"><Categoria img='/assets/image/salgados.png' nome='Salgados' onClick={CardClick}/></a>
+          <a href="/cardapio"><Categoria img='/assets/image/bolos.png' nome='Bolos' onClick={CardClick}/></a>
+          <a href="/cardapio"><Categoria img='/assets/image/torta-7.png' nome='Tortas' onClick={CardClick}/></a>
         </Carousel>
       </section>
 
