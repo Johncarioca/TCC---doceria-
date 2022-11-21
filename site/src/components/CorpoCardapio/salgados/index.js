@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../../../api/config';
 import './index.scss';
 
 export default function CardapioSalgados(props){
@@ -10,7 +11,7 @@ export default function CardapioSalgados(props){
             return`/assets/image/caixa.png`;
         }
         else
-            return `http://localhost:5000/${imagem}`
+            return `${API_URL}/${imagem}`
     }
 
     function AbrirDetalhe(id){

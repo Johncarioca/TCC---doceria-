@@ -9,7 +9,7 @@ export default function Block() {
       
     useEffect(() => {
            if (!storage ('Cliente-logado')) {
-              navigate('/');
+              navigate('/login');
            }
     }, [])
   

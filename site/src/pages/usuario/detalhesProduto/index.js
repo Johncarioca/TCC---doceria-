@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import { toast } from 'react-toastify'
-import Block from '../../../components/block';
+import { API_URL } from '../../../api/config';
 
 
 
@@ -28,7 +28,7 @@ export default function DetalhesProdutos(){
             return`/assets/image/caixa.png`;
         }
         else
-            return `http://localhost:5000/${imagem}`
+            return `${API_URL}/${imagem}`
     }
 
     function AdicionarCarrinho(){
@@ -56,7 +56,6 @@ export default function DetalhesProdutos(){
 
     return (
         <main>
-            <Block />
             <CardDetalhes/>
 
             <section className="DetalhesProdutos">
