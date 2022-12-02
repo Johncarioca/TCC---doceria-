@@ -8,6 +8,7 @@ import NovoProduto from './pages/adm/novoProduto';
 import AreaAdm from './pages/adm/areaAdm';
 import LoginUsuario from './pages/usuario/loginCliente';
 import TabelaProduto from './pages/adm/tabelaProduto';
+
 import CadastroUsuario from './pages/usuario/cadastro';
 import CarrinhoUsuario from './pages/usuario/carrinho';
 import Cardapio from './pages/usuario/cardapio';
